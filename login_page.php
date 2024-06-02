@@ -82,6 +82,10 @@ include "session_handler.php";
 
         }
 
+        .form-field input[type="submit"]:hover {
+            background: mediumseagreen;
+        }
+
         .signup-link {
             text-align: center;
             margin-top: 20px;

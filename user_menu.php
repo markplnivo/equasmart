@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Custom Menu Bar</title>
     <style>
         .custom-menu {
@@ -95,31 +95,37 @@
     <img src="./images/equasmartlogo_croppedlogo.png" alt="EquaSmart Logo" id="menuLogo">
     <ul>
         <li>
-            <a href="#">
+            <a href="user_dashboard.php">
                 <span class="icon fa fa-home"></span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="add_system.php">
+                <span class="icon fa fa-plus-circle"></span>
                 <span class="nav-text">Add a System</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="feed_settings.php">
                 <span class="icon fa fa-fish"></span>
                 <span class="nav-text">Feed Settings</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="water_settings.php">
                 <span class="icon fa fa-water"></span>
                 <span class="nav-text">Water Settings</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="notification_settings.php">
                 <span class="icon fa fa-bell"></span>
                 <span class="nav-text">Notification Settings</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="print_logs.php">
                 <span class="icon fa fa-scroll"></span>
                 <span class="nav-text">Print Logs</span>
             </a>

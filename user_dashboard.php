@@ -151,7 +151,7 @@
     <div class="container_menu">
         <div class="chart_header">
             <div id="feedQuick">
-                <span class="icon fa fa-fish"></span><span>500 grams fed</span>
+                <span class="icon fa fa-fish"></span><span class="feedAmount">0 grams fed</span>
             </div>
             <div id="waterQuick">
                 <span class="icon fa fa-tint"></span><span class="status">Water Parameters </span>
@@ -172,6 +172,7 @@
 
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     function updateClock() {
         const now = new Date();
@@ -180,6 +181,24 @@
     }
     setInterval(updateClock, 1000); // Update the clock every second
     updateClock(); // Initialize the clock
+
+    function fetchFeedAmount() {
+        $.ajax({
+            url: './user_dashboard_ajax/fetch_feed_amount.php',
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                const feedAmountSpan = document.querySelector('#feedQuick .feedAmount');
+                feedAmountSpan.textContent = `${data.total_feed} grams fed`;
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching feed amount:', error);
+            }
+        });
+    }
+
+    setInterval(fetchFeedAmount, 60000); // Update the feed amount every minute
+    fetchFeedAmount(); // Initialize the feed amount
 </script>
 
 </html>
