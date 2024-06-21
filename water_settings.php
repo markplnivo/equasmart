@@ -7,6 +7,7 @@
     <title>Water Settings</title>
     <!-- Include Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         /* Every separate page must contain this as user_menu does not have a body */
         body {
@@ -126,6 +127,10 @@
             height: 10px;
             margin: 0px;
         }
+
+        #activateButton {
+            margin-top: 100px;
+        }
     </style>
 </head>
 
@@ -149,6 +154,7 @@
             <h4>Calendar</h4>
             <!-- Calendar content can be added here -->
             <input type="date" id="calendar">
+
         </div>
 
 
@@ -175,12 +181,70 @@
                 <div>
                     <label class="label1">5/5/24</label>
                 </div>
+
+                <button id="activateButton" type="button">Activate Water Pump</button>
+                <button id="activateButton1" type="button">Activate pH Pump</button>
+                <button id="activateButton2" type="button">Activate Ammonia Pump</button>
             </div>
         </div>
+        <!-- Form to trigger the Python script -->
+
 
     </div>
 
+
     <script>
+        $(document).ready(function() {
+            $('#activateButton').on('click', function() {
+                $.ajax({
+                    url: 'control_water.php',
+                    type: 'POST',
+                    data: {
+                        activateWater: true
+                    },
+                    success: function(response) {
+                        alert('Water Pump activated');
+                    },
+                    error: function(error) {
+                        alert('Error activating Water Pump');
+                    }
+                });
+            });
+
+            $('#activateButton1').on('click', function() {
+                $.ajax({
+                    url: 'control_water.php',
+                    type: 'POST',
+                    data: {
+                        phWater: true
+                    },
+                    success: function(response) {
+                        alert('pH Pump activated');
+                    },
+                    error: function(error) {
+                        alert('Error activating pH Pump');
+                    }
+                });
+            });
+
+            $('#activateButton2').on('click', function() {
+                $.ajax({
+                    url: 'control_water.php',
+                    type: 'POST',
+                    data: {
+                        ammoniaWater: true
+                    },
+                    success: function(response) {
+                        alert('Ammonia Pump activated');
+                    },
+                    error: function(error) {
+                        alert('Error activating Ammonia Pump');
+                    }
+                });
+            });
+        });
+
+
         // JavaScript to render the line graph using Chart.js
         document.addEventListener("DOMContentLoaded", function() {
             var ctx = document.getElementById('lineChart').getContext('2d');
