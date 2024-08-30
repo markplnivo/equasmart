@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="shortcut icon" href="images/equasmartlogo_croppedlogo.png" type="image/svg+xml">
 
     <title>Feed Settings</title>
     <style>
-        /* Every separate page must contain this as user_menu does not have a body */
         body {
             display: grid;
             grid-template-columns: 60px 1fr;
@@ -18,14 +18,7 @@
             background-color: azure;
         }
 
-        body:has(.custom-menu:hover) {
-            grid-template-columns: 200px 1fr;
-        }
-
-        /*  Important */
-        /* Every element must be inside of this container menu */
         .container_menu {
-            /* Places the container beside the menu */
             grid-area: 1 / 2 / -1 / -1;
             display: grid;
             grid-template-columns: 50% 50%;
@@ -41,17 +34,19 @@
 
         .date_container {
             grid-area: 2/1/2/2;
-            margin: 50px auto;
-            padding: 20px;
+            margin: 20px auto;
+            margin-left: 24%;
+            margin-top: 5%;
+            padding: 50px;
             background-color: lemonchiffon;
-            border-radius: 50px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             vertical-align: top;
-            width: 80%;
+            width: 66%;
         }
 
         .date_container input {
-            width: 80%;
+            width: 50%;
             margin: 0 auto;
             padding: 10px;
             border-radius: 5px;
@@ -61,12 +56,14 @@
 
         .chart_container {
             grid-area: 2/2/2/2;
-            width: 80%;
+            width: 78%;
+            height: 73%;
             margin: 5%;
-            padding: 20px;
+            margin-left: 9%;
+            padding: 30px;
             background-color: lemonchiffon;
-            border-radius: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             display: inline-block;
             vertical-align: top;
         }
@@ -77,42 +74,41 @@
             text-align: center;
         }
 
-
         .button-container {
             text-align: center;
             margin-top: 20px;
             display: flex;
-            justify-content: space-between;
-            /* Align items with space between them */
+            justify-content: flex-end; /* Align items to the right */
         }
 
         .button-container button {
-            width: 20%;
-            /* Adjust width to accommodate both buttons */
+            width: 20%; /* Adjust width if needed */
         }
 
         /* Added styles for new containers */
         .feedset_container {
             grid-area: 3 / 1 / 4 / 2;
-            width: 100%;
-            height: 100%;
-            margin: auto;
+            width: 80%;
+            height: 95%;
+            margin: 0px auto;
+            margin-left: 25%;
             padding: 0px;
             background-color: lemonchiffon;
-            border-radius: 50px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             display: inline-block;
             vertical-align: top;
         }
 
         .confmen_container {
             grid-area: 3 / 2 / 4 / 3;
-            width: 80%;
-            margin: 0 0 0 5%;
+            width: 80%; 
+            height: 85%;
+            margin-left: 10%;
             padding: 20px;
             background-color: lemonchiffon;
-            border-radius: 50px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             display: inline-block;
             vertical-align: top;
         }
@@ -125,18 +121,19 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: auto 1fr;
-            width: auto;
-            margin: 50px auto;
+            width: 80%;
+            margin: 20px auto;
             padding: 30px;
             background-color: #fff;
             border-radius: 30px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             background-color: honeydew;
+            font-style: arial;
         }
 
         .button {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 5px 50px;
             font-size: 15px;
             font-weight: bold;
             text-align: center;
@@ -146,7 +143,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 10px;
+            margin: 10px;
         }
 
         /* Hover effect */
@@ -174,7 +171,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.9);
             display: none;
             justify-content: center;
             align-items: center;
@@ -234,7 +231,6 @@
             background-color: orange;
             padding: 20px;
             border-radius: 30px;
-
         }
 
         .boxSettings #sessionbox {
@@ -243,7 +239,6 @@
             background-color: moccasin;
             padding: 20px;
             border-radius: 30px;
-
         }
 
         .boxSettings #adjustbox {
@@ -252,7 +247,6 @@
             background-color: palegreen;
             padding: 20px;
             border-radius: 30px;
-
         }
 
         #changeSettings {
@@ -276,7 +270,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size:16px;
+            font-size: 16px;
         }
 
         .day-toggle button.active {
@@ -291,6 +285,28 @@
         .boxx input {
             font-size: 18px;
         }
+
+        /* Styles for the 'Activate Motor' button */
+        #activateMotor {
+            background-color: mediumaquamarine; /* Green background */
+            border: none; /* Remove default border */
+            color: white; /* White text */
+            padding: 12px 24px; /* Some padding for size */
+            text-align: center; /* Center the text */
+            text-decoration: none; /* Remove underline from text */
+            display: inline-block; /* Inline-block for proper layout */
+            font-size: 15px; /* Adjust font size */
+            margin: 4px 2px; /* Small margin around the button */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 8px; /* Rounded corners */
+            transition-duration: 0.4s; /* Smooth transition effects */
+        }
+
+        /* Hover effect */
+        #activateMotor:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
     </style>
 </head>
 
@@ -303,6 +319,8 @@
             <h2>Select Date</h2>
             <input id="date" type="date" value="2021-07-22">
             <button id="activateMotor">Activate Motor</button>
+            <button onclick="controlLED('on')">Turn LED ON</button>
+            <button onclick="controlLED('off')">Turn LED OFF</button>
         </div>
 
         <!-- Left Container -->
@@ -338,12 +356,14 @@
             <div class="box1" id="feedingTimesContainer">
                 <!-- Feeding times will be dynamically inserted here -->
                 <button class="button" id="saveFeedingTimes">Save Feeding Times</button>
+                <button class="button" id="resetFeedingTimes">Reset to Default</button> <!-- New Reset Button -->
             </div>
         </div>
 
     </div>
 
     <div class="overlay" id="overlay">
+    
         <div class="overlay-content">
             <h2>Edit Feed Settings</h2>
             <form id="feedSettingsForm">
@@ -365,13 +385,23 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+
+    function controlLED(action) {
+            const esp32Ip = "http://esp32cam.local"; // Replace with the actual IP address of your ESP32-CAM
+
+            fetch(`${esp32Ip}/led/${action}`)
+                .then(response => response.text())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error:', error));
+        }
+
+
     var currentSettings = {};
     var currentSchedule = {};
 
-
     // Sample data for the line chart
     var data = {
-        labels: ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'],
+        labels: ['Feed 1', 'Feed 2', 'Feed 3', 'Feed 4', 'Feed 5'],
         datasets: [{
             label: 'Total Daily Feed History',
             data: [0, 10, 20, 30, 40, 40],
@@ -398,7 +428,6 @@
         options: options
     });
 
-
     // Function to fetch feed settings from the server
     function fetchFeedSettings() {
         $.ajax({
@@ -419,7 +448,6 @@
         });
     }
 
-
     // Function to fetch feeding schedule from the server
     function fetchFeedingSchedule() {
         $.ajax({
@@ -435,8 +463,6 @@
             }
         });
     }
-
-
 
     // JavaScript to handle the overlay opening and preloading values
     $('#changeSettings').on('click', function() {
@@ -485,8 +511,8 @@
             container.append(timeInput);
         }
 
-     
         container.append('<button class="button" id="saveFeedingTimes">Save Feeding Times</button>');
+        container.append('<button class="button" id="resetFeedingTimes">Reset to Default</button>'); // New Reset Button
 
         // Add event listener for day buttons
         $('.day').on('click', function() {
@@ -532,7 +558,6 @@
         });
     });
 
-
     // Handle saving feeding times
     $(document).on('click', '#saveFeedingTimes', function(event) {
         event.preventDefault();
@@ -568,6 +593,25 @@
         });
     });
 
+    // Handle resetting feeding times to default
+    $(document).on('click', '#resetFeedingTimes', function(event) {
+        event.preventDefault();
+
+        // Call the server to reset to default settings
+        $.ajax({
+            url: './feed_settings_ajax/reset_feed_settings.php', // Make sure this endpoint handles resetting
+            type: 'POST',
+            success: function(response) {
+                // Update the displayed settings and schedule
+                fetchFeedSettings();
+                alert('Feeding settings have been reset to default.');
+            },
+            error: function(error) {
+                console.error('Error resetting feed settings:', error);
+            }
+        });
+    });
+
     // Fetch feed settings on page load
     $(document).ready(function() {
         fetchFeedSettings();
@@ -581,17 +625,17 @@
     });
 
     $('#activateMotor').on('click', function() {
-            $.ajax({
-                url: './feed_settings_ajax/control_arduino.php',
-                type: 'GET',
-                success: function(response) {
-                    alert('Stepper motor activated');
-                },
-                error: function(error) {
-                    console.error('Error activating motor:', error);
-                }
-            });
+        $.ajax({
+            url: './feed_settings_ajax/control_arduino.php',
+            type: 'GET',
+            success: function(response) {
+                alert('Stepper motor activated');
+            },
+            error: function(error) {
+                console.error('Error activating motor:', error);
+            }
         });
+    });
 </script>
 
 

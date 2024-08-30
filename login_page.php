@@ -114,24 +114,36 @@ if (isset($_POST['loginSubmit'])) {
     $username = $conn->real_escape_string($_POST['username']);
     $password = $_POST['password']; 
 
-    $sql = $conn->prepare("SELECT UserID, PasswordHash FROM users WHERE Username = ?");
+    $sql = $conn->prepare("SELECT UserID, Username, PasswordHash, position FROM users WHERE Username = ?");
     $sql->bind_param("s", $username);
     $sql->execute();
-    $sql->bind_result($userID, $passwordHash);
+    $sql->bind_result($userID, $username, $passwordHash, $position);
     $sql->fetch();
     $sql->close();
 
     if (password_verify($password, $passwordHash)) {
-        loginUser($username, $userID); // Use loginUser from session_handler.php
+        loginUser($username, $position, $userID); // Use loginUser from session_handler.php
+        session_regenerate_id(true);
 
-        // Redirect to a new page after successful login
-        header("Location: user_dashboard.php"); // Adjust the redirection to your desired page
-        exit();
+        switch ($position) {
+            case 'admin':
+                // Redirect to admin page
+                header("Location: ./admin/admin_home.php"); // Adjust the redirection to your desired page
+                exit();
+                break;
+            default: 
+            // Redirect to user page
+            header("Location: ./user_dashboard.php"); // Adjust the redirection to your desired page
+            exit();
+        }
+    }
+        // // Redirect to a new page after successful login
+        // header("Location: user_dashboard.php"); // Adjust the redirection to your desired page
+        // exit();
     } else {
-        echo "<script>alert('Invalid username/password combination.');window.location.href='login_form.php';</script>";
+        // echo "<script>alert('Invalid username/password combination.');window.location.href='login_page.php';</script>";
     }
     $conn->close();
-}
 ?>
 
 

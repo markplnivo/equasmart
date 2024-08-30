@@ -1,7 +1,7 @@
 <?php
 $servername="localhost";
-$username="root";
-$password="";
+$username="admin";
+$password="123";
 $dbase="db_equasmart";
 
 $conn = new mysqli($servername,$username,$password,$dbase);

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/equasmartlogo_croppedlogo.png" type="image/svg+xml">
     <title>Notification Settings</title>
     <style>
         /* Every separate page must contain this as user_menu does not have a body */
@@ -12,10 +13,6 @@
             grid-template-columns: 60px 1fr;
             margin: 0;
             height: 100vh;
-        }
-
-        body:has(.custom-menu:hover) {
-            grid-template-columns: 200px 1fr;
         }
 
         /*  Important */
@@ -28,6 +25,7 @@
             grid-template-rows: 12% 1fr 1fr;
             background-color: azure;
             margin-top: 10px;
+            margin-left: 10px;
         }
 
         h2 {
@@ -37,12 +35,14 @@
 
         .container {
             grid-area: 1 / 1 / -1 / -1;
-            width: 50%;
+            width: 83%;
+            height: 82%;
             margin: 50px auto;
+            margin-left: 12%;
             padding: 20px;
             background-color: lemonchiffon;
-            border-radius: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
         }
 
         label {
@@ -83,12 +83,12 @@
         }
 
         .box {
-            width: 50%;
+            width: 70%;
             margin: 50px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             background-color: gray;
         }
 

@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/equasmartlogo_croppedlogo.png" type="image/svg+xml">
     <title>Date Picker and Log Preview</title>
     <style>
-        /* Every separate page must contain this as user_menu does not have a body */
+        /* Layout styles for body */
         body {
             display: grid;
             grid-template-columns: 60px 1fr;
@@ -14,42 +15,37 @@
             height: 100vh;
         }
 
-        body:has(.custom-menu:hover) {
-            grid-template-columns: 200px 1fr;
-        }
-
-        /*  Important */
-        /* Every element must be inside of this container menu */
+        /* Container for the content next to the menu */
         .container_menu {
-            /* Places the container beside the menu */
             grid-area: 1 / 2 / -1 / -1;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 12% 1fr 1fr;
+            grid-template-columns: 1fr 1fr; /* Two columns: left and right */
+            grid-template-rows: auto 1fr; /* Title on top */
+            gap: 20px;
             background-color: azure;
-            margin-top: 10px;
+            padding: 20px;
         }
 
+        /* General styles */
         h2 {
-            font-family: verdana;
+            font-family: Verdana, sans-serif;
             text-align: center;
+            margin: 0;
+            padding: 10px 0;
         }
 
+        /* Date picker styles */
         .date-picker {
-            width: 400px;
+            width: 85%;
+            height: 90%;
             padding: 20px;
             background-color: lemonchiffon;
-            /* Updated color */
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            justify-self: center;
-            grid-area: 2/1/2/2;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+            margin: 0 auto 20px; /* Center and add margin-bottom */
+            margin-left: 23%;
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
         }
 
         label {
@@ -65,7 +61,6 @@
         }
 
         button {
-            display: block;
             width: 100%;
             padding: 10px;
             margin-top: 20px;
@@ -80,22 +75,24 @@
             background-color: #0056b3;
         }
 
+        /* Log container styles */
         .log-container {
-            width: 100%;
-            max-width: 400px;
+            width: 78%;
             padding: 20px;
             background-color: lemonchiffon;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            grid-area: 2/2/2/3;
-            justify-self: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+            margin: 0 auto;
+            margin-left: 15%;
+            grid-column: 2 / 3;
+            grid-row: 2 / 4; /* Span two rows to align with both left elements */
         }
 
         .log {
             border: 1px solid #ccc;
             padding: 10px;
             border-radius: 5px;
-            max-height: 200px;
+            max-height: 400px;
             overflow-y: auto;
         }
 
@@ -103,14 +100,17 @@
             margin: 0;
         }
 
+        /* Log list container styles */
         .log-list-container {
-            width: 400px;
+            width: 85%;
             padding: 20px;
             background-color: lemonchiffon;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            justify-self: center;
-            grid-area: 3/1/3/2;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+            margin-left: 23%;
+
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
         }
 
         .log-list {
@@ -121,10 +121,12 @@
             margin-bottom: 10px;
         }
 
+        /* Page title styles */
         #pageTitle {
-            grid-area: 1 / 1 / 1 / span 3;
-            height: 10px;
-            margin: 0px;
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+            text-align: center;
+            padding-bottom: 20px;
         }
     </style>
 </head>
@@ -133,6 +135,8 @@
     <?php include "user_menu.php"; ?>
     <div class="container_menu">
         <h2 id="pageTitle">DATE PICKER AND LOG PREVIEW</h2>
+
+        <!-- Left side: Date picker and Log list -->
         <div class="date-picker">
             <h2>Select Date</h2>
             <label for="date">Pick a date:</label>
@@ -140,15 +144,21 @@
             <button onclick="logDate()">Log Date</button>
         </div>
 
+        <div class="log-list-container">
+            <h2>Select Log to Print</h2>
+            <div class="log-list" id="logList"></div>
+            <button onclick="printLog()">Daily Log</button>
+            <button onclick="printLog()">Weekly Log</button>
+            <button onclick="printLog()">Monthly Log</button>
+            <button onclick="downloadLog()">Water Test</button>
+        </div>
+        
+
+        <!-- Right side: Log preview -->
         <div class="log-container">
             <h2>Log Preview</h2>
             <div class="log" id="log"></div>
             <button onclick="printLog()">Print Log</button>
-        </div>
-
-        <div class="log-list-container">
-            <h2>Select Log to Print</h2>
-            <div class="log-list" id="logList"></div>
         </div>
     </div>
 
@@ -177,12 +187,22 @@
         function updateLogList() {
             var logListElement = document.getElementById('logList');
             logListElement.innerHTML = '';
-            logs.forEach(function(log, index) {
+            logs.forEach(function (log, index) {
                 var logItem = document.createElement('div');
                 logItem.textContent = 'Log ' + (index + 1) + ': ' + log;
                 logItem.classList.add('log-item');
                 logListElement.appendChild(logItem);
             });
+        }
+
+        function printLog() {
+            // Navigate to the 'print-log.html' page
+            window.location.href = 'daily.php';
+        }
+
+        function downloadLog() {
+            // Navigate to the 'download-log.html' page
+            window.location.href = 'water_test.php';
         }
     </script>
 </body>

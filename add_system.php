@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add System</title>
+    <link rel="shortcut icon" href="images/equasmartlogo_croppedlogo.png" type="image/svg+xml">
+    <title>Add Machine</title>
     <style>
         /* Every separate page must contain this as user_menu does not have a body */
         body {
@@ -14,12 +15,6 @@
             height: 100vh;
         }
 
-        body:has(.custom-menu:hover) {
-            grid-template-columns: 200px 1fr;
-        }
-
-        /*  Important */
-        /* Every element must be inside of this container menu */
         .container_menu {
             /* Places the container beside the menu */
             grid-area: 1 / 2 / -1 / -1;
@@ -37,12 +32,13 @@
 
         .container {
             grid-area: 1 / 1 / -1 / -1;
-            width: 50%;
-            margin: 50px auto;
-            padding: 20px;
+            width: 76%;
+            margin-left: 15%;
+            margin-top: 3%;
+            padding: 30px;
             background-color: lemonchiffon;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
         }
 
         label {
@@ -72,7 +68,6 @@
             margin: 0 auto;
             display: block;
             width: 25%;
-
         }
 
         button:hover {
@@ -108,7 +103,7 @@
 
         #pageTitle {
             grid-area: 1 / 1 / 1 / span 3;
-            height: 10px;
+            height: 50px;
             margin: 0px;
         }
     </style>
@@ -118,10 +113,9 @@
     <?php include "user_menu.php"; ?>
 
     <div class="container_menu">
-    <h2 id="pageTitle">ADD A SYSTEM</h2>
         <div class="container">
+            <h2 id="pageTitle">ADD A MACHINE</h2>
             <form action="#" method="post" enctype="multipart/form-data">
-
                 <label for="full_name">Enter System ID</label>
                 <input>
                 <button type="submit">Submit</button>
@@ -138,8 +132,8 @@
             </form>
 
             <div class="button-container">
-                <button id="renameBtn">Rename System</button>
-                <button id="removeBtn">Remove System</button>
+                <button id="renameBtn">Rename Machine</button>
+                <button id="removeBtn">Remove Machine</button>
             </div>
         </div>
     </div>

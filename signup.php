@@ -13,35 +13,50 @@
       background: whitesmoke;
       display: flex;
       align-items: center;
+      justify-content: center;
       height: 100vh;
       margin: 0;
+    }
+
+    .wrapper {
+      display: flex;
       flex-direction: column;
-      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    #logo {
+      width: 150px;
+      margin-bottom: 20px;
     }
 
     .form-container {
       background: white;
-      padding: 20px;
+      padding: 25px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .form-container h2 {
       text-align: center;
       margin-bottom: 20px;
+      font-size: 24px;
     }
 
     .form-field {
       margin-bottom: 15px;
-      position: relative;
     }
 
     .form-field input[type="text"],
     .form-field input[type="password"] {
-      width: 90%;
+      width: 100%;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      box-sizing: border-box;
     }
 
     .form-field input::placeholder {
@@ -58,9 +73,16 @@
       margin-right: 10px;
     }
 
-    .terms-policy h3 {
-      margin: 0;
-      font-weight: normal;
+    .terms-policy label {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .terms-policy label a {
+      color: mediumaquamarine;
+      cursor: pointer;
+      text-decoration: underline;
     }
 
     .form-action {
@@ -74,11 +96,17 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      transition: background 0.3s;
     }
 
-    .login-redirect h3 {
+    .form-action input[type="submit"]:hover {
+      background: darkseagreen;
+    }
+
+    .login-redirect {
       text-align: center;
-      font-weight: normal;
+      margin-top: 15px;
+      font-size: 14px;
     }
 
     .login-redirect a {
@@ -86,38 +114,95 @@
       text-decoration: none;
     }
 
-    #logo {
-      margin-bottom: 15px;
+    #moreContent {
+      display: none;
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #f9f9f9;
+      max-height: 200px;
+      overflow-y: auto;
     }
 
-    #moreContent {
-  display: none;
-  margin-top: 15px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 5px;
-  background: #f9f9f9;
-}
+    #moreContent.show {
+      display: block;
+    }
 
-#moreContent.show {
-  display: block;
-}
+    #moreContent h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
 
+    #moreContent p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 10px 0;
+    }
 
-    .input-box label a {
-      color: mediumaquamarine;
-      cursor: pointer;
+    /* Styling for scrollbar (for Chrome, Edge, Safari) */
+    #moreContent::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    #moreContent::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 5px;
+    }
+
+    #moreContent::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 5px;
+    }
+
+    #moreContent::-webkit-scrollbar-thumb:hover {
+      background: #999;
     }
   </style>
 </head>
 
 <?php
 if (isset($_POST['registrationSubmit'])) {
+  // Sanitize input
   $username = $conn->real_escape_string($_POST['username']);
   $email = $conn->real_escape_string($_POST['email']);
   $contactNumber = $conn->real_escape_string($_POST['contactNumber']);
   $password = $conn->real_escape_string($_POST['password']);
   $termsAccepted = isset($_POST['terms_and_conditions']) ? true : false;
+
+  // Validation for Contact
+  if (isset($_POST['contactNumber'])) {
+    $contactNumber = preg_replace('/\s+/', '', $contactNumber);
+    if (!preg_match("/^\d{11}$/", $contactNumber)) {
+      echo "<script>alert('Mobile number should be exactly 11 digits long. Please sign up again.');</script>";
+      echo "<script>window.location.href = 'signup.php';</script>";
+      exit;
+    }
+  }
+
+  // Validation for Email
+  if (empty($_POST["email"])) {
+    echo "<script>alert('Email is required. Please sign up again.');</script>";
+    echo "<script>window.location.href = 'signup.php';</script>";
+    exit;
+  } else {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      echo "<script>alert('Invalid email format. Please sign up again.');</script>";
+      echo "<script>window.location.href = 'signup.php';</script>";
+      exit;
+    } else {
+      // Check if the email address is from Yahoo or Gmail domain
+      $allowedDomains = array('yahoo.com', 'gmail.com');
+      $emailParts = explode('@', $email);
+      $domain = end($emailParts);
+
+      if (!in_array($domain, $allowedDomains)) {
+        echo "<script>alert('Only Yahoo and Gmail email addresses are allowed. Please sign up again.');</script>";
+        echo "<script>window.location.href = 'signup.php';</script>";
+        exit;
+      }
+    }
+  }
 
   if ($termsAccepted) {
     // Hash the password for security
@@ -145,87 +230,72 @@ if (isset($_POST['registrationSubmit'])) {
 ?>
 
 <body>
-  <img id="logo" src="./images/equasmartlogo_croppedlogo.png" alt="EquaSmart Logo" style="width: 10%; height: auto;">
-  <div class="form-container">
-    <h2>Registration</h2>
-    <form action="signup.php" method="post">
-      <div class="form-field">
-        <input type="text" name="username" placeholder="Enter your username" required>
-      </div>
-      <div class="form-field">
-        <input type="text" name="email" placeholder="Enter your email" required>
-      </div>
-      <div class="form-field">
-        <input type="text" name="contactNumber" placeholder="Enter your contact number" required>
-      </div>
-      <div class="form-field">
-        <input type="password" name="password" placeholder="Enter your password" required>
-      </div>
-      <div class="input-box terms-policy">
-        <input type="checkbox" name="terms_and_conditions" id="terms_and_conditions" required>
-         <label for="terms_and_conditions">I agree to the terms and conditions <a href="javascript:void(0);" id="showMoreLink">(show more)</a></label>
-      </div>
-      <div id="moreContent">
-        <h3>Terms and Conditions</h3>
-
- <p><strong>Introduction</strong></p>
-
-<p>Welcome to Equa Smart Company. These Terms and Conditions ("Terms") govern your use of our website, products, and services related to aquaponics (collectively referred to as "Services"). By accessing or using our Services, you agree to be bound by these Terms. If you do not agree with these Terms, please do not use our Services.</p>
-
-<p><strong>Definitions</strong></p>
-
-<p>Aquaponics: A system that combines aquaculture (raising fish) and hydroponics (growing plants without soil) in a symbiotic environment.
-User: Any person or entity using our Services.
-Products: Any items sold by the Company, including but not limited to aquaponics systems, components, and related materials.
-Website: Our online platform located at https://equasmart.portfoliomjp.com.
-Eligibility
-To use our Services, you must be at least 18 years old and have the legal capacity to enter into these Terms. By using our Services, you represent and warrant that you meet these requirements.</p>
-
-<p><strong>Use of Services</strong></p>
-
-<p>Account Registration: You may be required to create an account to access certain features of our Services. You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.
-
-Prohibited Conduct: You agree not to use our Services for any unlawful purpose or in a manner that could damage, disable, or impair our Services. Prohibited conduct includes, but is not limited to:
-Compliance with Laws: You agree to comply with all applicable laws and regulations when using our Services.</p>
-
-<p><strong>Limitation of Liability</strong></p>
-
-<p>To the maximum extent permitted by law, the Company shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of our Services. Our total liability to you for any damages shall not exceed the amount you paid, if any, for the use of our Services.</p>
-
-<p><strong>Indemnification</strong></p>
-
-<p>You agree to indemnify, defend, and hold harmless the Company, its affiliates, and their respective officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including reasonable attorneys' fees, arising out of or in any way connected with your access to or use of our Services.</p>
-
-<p><strong>Changes to Terms</strong></p>
-
-<p>We reserve the right to modify these Terms at any time. Any changes will be effective immediately upon posting on our website. Your continued use of our Services after any changes constitute your acceptance of the new Terms.</p>
-
-<p><strong>Contact Us</strong></p>
-
-<p>If you have any questions about these Terms, please contact us at email/hotline.</p>
-      </div>
-      <br>
-
-      <div class="form-field form-action">
-        <input type="submit" name="registrationSubmit" value="Submit">
-      </div>
-      <div class="login-redirect">
-        <h3>Already have an account? <a href="login_page.php">Login now</a></h3>
-      </div>
-    </form>
+  <div class="wrapper">
+    <img id="logo" src="./images/equasmartlogo_croppedlogo.png" alt="EquaSmart Logo">
+    <div class="form-container">
+      <h2>Registration</h2>
+      <form action="signup.php" method="post">
+        <div class="form-field">
+          <input type="text" name="username" placeholder="Enter your username" required>
+        </div>
+        <div class="form-field">
+          <input type="text" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-field">
+          <input type="text" name="contactNumber" placeholder="Enter your contact number" required>
+        </div>
+        <div class="form-field">
+          <input type="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <div class="input-box terms-policy">
+          <input type="checkbox" name="terms_and_conditions" id="terms_and_conditions" required>
+          <label for="terms_and_conditions">I agree to the terms and conditions <a href="javascript:void(0);" id="showMoreLink">(show more)</a></label>
+        </div>
+        <div id="moreContent">
+          <h3>Terms and Conditions</h3>
+          <p><strong>Introduction</strong></p>
+          <p>Welcome to Equa Smart Company. These Terms and Conditions ("Terms") govern your use of our website, products, and services related to aquaponics (collectively referred to as "Services"). By accessing or using our Services, you agree to be bound by these Terms. If you do not agree with these Terms, please do not use our Services.</p>
+          <p><strong>Definitions</strong></p>
+          <p>Aquaponics: A system that combines aquaculture (raising fish) and hydroponics (growing plants without soil) in a symbiotic environment.
+            User: Any person or entity using our Services.
+            Products: Any items sold by the Company, including but not limited to aquaponics systems, components, and related materials.
+            Website: Our online platform located at https://equasmart.portfoliomjp.com.
+            Eligibility
+            To use our Services, you must be at least 18 years old and have the legal capacity to enter into these Terms. By using our Services, you represent and warrant that you meet these requirements.</p>
+          <p><strong>Use of Services</strong></p>
+          <p>Account Registration: You may be required to create an account to access certain features of our Services. You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.
+            Prohibited Conduct: You agree not to use our Services for any unlawful purpose or in a manner that could damage, disable, or impair our Services. Prohibited conduct includes, but is not limited to:
+            Compliance with Laws: You agree to comply with all applicable laws and regulations when using our Services.</p>
+          <p><strong>Limitation of Liability</strong></p>
+          <p>To the maximum extent permitted by law, the Company shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of our Services. Our total liability to you for any damages shall not exceed the amount you paid, if any, for the use of our Services.</p>
+          <p><strong>Indemnification</strong></p>
+          <p>You agree to indemnify, defend, and hold harmless the Company, its affiliates, and their respective officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including reasonable attorneys' fees, arising out of or in any way connected with your access to or use of our Services.</p>
+          <p><strong>Changes to Terms</strong></p>
+          <p>We reserve the right to modify these Terms at any time. Any changes will be effective immediately upon posting on our website. Your continued use of our Services after any changes constitute your acceptance of the new Terms.</p>
+          <p><strong>Contact Us</strong></p>
+          <p>If you have any questions about these Terms, please contact us at email/hotline.</p>
+        </div>
+        <br>
+        <div class="form-field form-action">
+          <input type="submit" name="registrationSubmit" value="Submit">
+        </div>
+        <div class="login-redirect">
+          <h3>Already have an account? <a href="login_page.php">Login now</a></h3>
+        </div>
+      </form>
+    </div>
   </div>
   <script>
-  document.getElementById('showMoreLink').addEventListener('click', function() {
-    var moreContent = document.getElementById('moreContent');
-    moreContent.classList.toggle('show');
-    if (moreContent.classList.contains('show')) {
-      this.innerText = '(show less)';
-    } else {
-      this.innerText = '(show more)';
-    }
-  });
-</script>
-
+    document.getElementById('showMoreLink').addEventListener('click', function() {
+      var moreContent = document.getElementById('moreContent');
+      moreContent.classList.toggle('show');
+      if (moreContent.classList.contains('show')) {
+        this.innerText = '(show less)';
+      } else {
+        this.innerText = '(show more)';
+      }
+    });
+  </script>
 </body>
 
 </html>
