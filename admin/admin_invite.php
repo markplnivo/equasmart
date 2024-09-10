@@ -2,7 +2,7 @@
 include "../logindbase.php";
 ?>
 <!DOCTYPE html>
-<title>Admin Home</title>
+<title>Invite User</title>
 <html lang="en">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +37,7 @@ include "../logindbase.php";
 
         #maintable {
             grid-area: 2 / 2 / 3 / 3;
-            width: 100%;
+            width: 95%;
             place-self: start center;
             overflow-x: auto;
             max-width: 1200px;
@@ -156,7 +156,7 @@ include "../logindbase.php";
 
 <body>
     <header>
-        <h1>eQuaSmart Account Requests</h1>
+        <h1>Invite User</h1>
     </header>
     <?php
     include "admin_menu.php";
@@ -179,13 +179,14 @@ include "../logindbase.php";
             <table>
                 <tr>
                     <th>Select</th>
-                    <th>Assign Role</th>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
+                    <th>Change Role</th>
+                    <th>User ID</th>
                     <th>Username</th>
+                    <th>User Positions</th>
                     <th>Email</th>
                     <th>Contact Number</th>
-                    <th>Request Time</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
                 </tr>
                 <?php
                 while ($row = mysqli_fetch_assoc($rs_result)) {
@@ -213,8 +214,8 @@ include "../logindbase.php";
                 };
                 ?>
             </table>
-            <input id="addSelect" type="submit" name="add_selected" value="Add Selected">
-            <input id="removeSelect" type="submit" name="remove_selected" value="Remove Selected">
+            <input id="addSelect" type="submit" name="add_selected" value="Undo">
+            <input id="removeSelect" type="submit" name="remove_selected" value="Remove Permanent">
     </form>
 
     <div id="pageNumbers">

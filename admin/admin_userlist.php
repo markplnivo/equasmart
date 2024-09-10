@@ -1,181 +1,166 @@
-<?php ob_start(); ?>
-
+<?php ob_start();
+include "../logindbase.php";
+?>
 <!DOCTYPE html>
-<html>
+<title>User List</title>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="../images/equasmartlogo_croppedlogo.png" type="image/svg+xml">
+<style>
+    /* Global styles */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+        display: grid;
+        grid-template-rows: 10vh 1fr 10vh;
+        grid-template-columns: 1fr 3fr 1fr;
+        height: 100%;
+        grid-gap: 20px;
+        overflow: hidden;
+    }
 
+    header {
+        background-color: mediumaquamarine;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        grid-row: 1 / 2;
+        grid-column: 1 / -1;
+        width: 100%;
+        height: 100%;
+    }
 
-<head>
-    <title>Superadmin</title>
-    <style>
-        /* Global styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #919191;
-            color: #FFFFFF;
-            display: grid;
-            grid-template-rows: 10vh 1fr 10vh;
-            grid-template-columns: 300px auto 0.5fr;
-            height: 100%;
-            grid-gap: 50px;
-        }
+    #maintable {
+        grid-area: 2 / 2 / 3 / 3;
+        width: 95%;
+        place-self: start center;
+        overflow-x: auto;
+        max-width: 1200px;
+        background-color: white;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 30px; /* Adjust this value to move the table down */
+    }
 
-        header {
-            /* background-image: url("images/artist_home_header.jpg"); */
-            background-repeat: no-repeat;
-            background-color: #333;
-            color: #fff;
-            font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-            padding: 10px;
-            text-align: center;
-            grid-row: 1 / 2;
-            grid-column: 1 / -1;
-            width: 100vw;
-            height: 100%;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
 
-        #maintable {
-            display: grid;
-            grid-template-columns: auto;
-            grid-template-rows: auto auto auto;
-            grid-area: 2 / 2 / 3 / 3;
-            height: 25vh;
-            width: 100%;
-            place-self: start center;
-            row-gap: 20px;
-            min-width: 1000px;
-        }
+    th,
+    td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
 
-        table {
-            grid-area: 2 / 1 / 3 / -1;
-            color: white;
-            font-family: monospace;
-            font-size: 0.9rem;
-            text-align: center;
-            border: 0px solid #FFFFFF;
-            background-color: lightgray;
-            border-collapse: collapse;
-            width: 100%;
-        }
+    th {
+        background-color: mediumaquamarine;
+        color: white;
+    }
 
-        table,
-        th,
-        td {
-            color: black;
-        }
+    tr:hover {
+        background-color: #f1f1f1;
+    }
 
-        th,
-        td {
-            padding: 12px;
-            text-align: left;
-        }
+    #pageNumbers {
+        margin-top: 20px;
+        text-align: center;
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
 
-        th {
-            background-color: #ffc400;
-            color: #000;
-        }
+    #pageNumbers a {
+        color: #0073e6;
+        padding: 8px 16px;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin: 0 4px;
+        transition: background-color 0.3s ease;
+    }
 
-        tr {
-            border: 1px solid black;
-        }
+    #pageNumbers a:hover {
+        background-color: #0073e6;
+        color: white;
+    }
 
-        .trHover:hover {
-            background-color: white;
-        }
+    #addSelect,
+    #removeSelect {
+        background-color: #0073e6;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
 
-        #pageNumbers {
-            margin-left: auto;
-            grid-column: 1 / -1;
-            grid-row: 3 / 4;
-            width: 100px;
-            font-size: 1.2rem;
+    #addSelect:hover {
+        background-color: #005bb5;
+    }
 
-        }
+    #removeSelect {
+        background-color: #dc3545; /* Warning color (Bootstrap's danger color) */
+    }
 
-        #changeRole {
-            grid-column: 1 / -1;
-            grid-row: 3 / 4;
-            height: 50px;
-            width: 150px;
-            place-self: start start;
-            background-color: #ffc400;
-            border-radius: 8px;
-            border: 0px solid;
-        }
+    #removeSelect:hover {
+        background-color: #c82333; /* Darker shade for hover effect */
+    }
 
-        #removeSelect {
-            grid-column: 1 / -1;
-            grid-row: 3 / 4;
-            height: 50px;
-            width: 120px;
-            margin-left: 200px;
-            background-color: #ffc400;
-            border-radius: 8px;
-            border: 0px solid;
-        }
+    #searchInput {
+        padding: 10px;
+        width: 50%;
+        margin-left: 480px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
 
-        #changeRole:hover {
-            cursor: pointer;
-            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-        }
+    input[type="checkbox"] {
+        cursor: pointer;
+        height: 20px;
+        width: 20px;
+        accent-color: #0073e6;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
 
-        #removeSelect:hover {
-            cursor: pointer;
-            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-        }
+    select {
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+        cursor: pointer;
+        transition: border-color 0.3s ease;
+    }
 
-        #changeRole:active {
-            margin-top: 2px;
-            margin-left: 2px;
-            box-shadow: none;
-        }
+    select:hover {
+        border-color: #0073e6;
+    }
 
-        #removeSelect:active {
-            margin-top: 2px;
-            margin-left: 202px;
-            box-shadow: none;
-        }
-
-        #searchInput {
-            grid-area: 1 / 1 / 1 / 1;
-            width: 300px;
-            height: 25px;
-            place-self: end;
-            border: 0 solid;
-            border-radius: 4px;
-            background-color: lightyellow;
-        }
-
-        input[type="checkbox"] {
-            cursor: pointer;
-            height: 20px;
-            width: 20px;
-            accent-color: #ffc400;
-        }
-
-        select {
-            background-color: lightyellow;
-            height: 25px;
-            border: 2px solid #ffc400;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-    </style>
-</head>
+    h1 {
+        margin: 0;
+        color: black;
+    }
+</style>
 
 <body>
     <header>
         <h1>User List</h1>
-        <h1 style="font-size: 20px; color: red;">Administrator Use Only</h1>
     </header>
-
     <?php
-
     include "admin_menu.php";
 
     $limit = 10; // Number of entries to show in a page.
-    // Look for a GET variable page if not found default is 1.  
     if (isset($_GET["page"])) {
         $pn  = $_GET["page"];
     } else {
@@ -184,10 +169,10 @@
 
     $start_from = ($pn - 1) * $limit;
 
-    $sql = "SELECT UserID, Username, EmailAddress, ContactNumber, position, firstname, lastname FROM users";
+    $sql = "SELECT UserID, Username, EmailAddress, ContactNumber, position, firstname, lastname FROM users ORDER BY UserID ASC LIMIT $start_from, $limit";
     $rs_result = mysqli_query($conn, $sql);
     ?>
-    <form method="post" action="admin_userlist.php"> <!-- Changed action to admin_userlist.php -->
+    <form method="post" action="admin_home.php">
         <div id="maintable">
             <input type="text" id="searchInput" placeholder="Search for names...">
             <table>
@@ -205,7 +190,7 @@
                 <?php
                 while ($row = mysqli_fetch_assoc($rs_result)) {
                 ?>
-                    <tr class="trHover">
+                    <tr>
                         <td><input type="checkbox" name="selected_rows[]" value="<?php echo $row["EmailAddress"]; ?>"></td>
                         <td>
                             <select name="role_<?php echo str_replace('.', '_', $row["EmailAddress"]); ?>">
@@ -226,26 +211,25 @@
                 };
                 ?>
             </table>
-            <input id="changeRole" type="submit" name="change_role" value="Change Privileges">
-            <input id="removeSelect" type="submit" name="remove_selected" value="Remove Selected">
+            <input id="addSelect" type="submit" name="add_selected" value="Add Selected">
+            <input id="removeSelect" type="submit" name="remove_selected" value="Archive">
     </form>
 
     <div id="pageNumbers">
         <?php
-        $sql = "SELECT COUNT(*) FROM users"; // Change the table name
+        $sql = "SELECT COUNT(*) FROM users";
         $rs_result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_row($rs_result);
         $total_records = $row[0];
         $total_pages = ceil($total_records / $limit);
-        $pagLink = "<div class='pagination'>";
+        $pagLink = "";
         for ($i = 1; $i <= $total_pages; $i++) {
-            $pagLink .= "<a href='admin_userlist.php?page=" . $i . "'>" . $i . "</a>"; // Changed the link
+            $pagLink .= "<a href='admin_home.php?page=" . $i . "'>" . $i . "</a>";
         };
-        echo $pagLink . "</div>";
+        echo $pagLink;
         ?>
     </div>
     </div>
-
 </body>
 
 <?php
@@ -257,9 +241,9 @@ if (isset($_POST['remove_selected'])) {
 
         // Prepare the SQL statement to insert the records into the recyclebin table
         $insertSql = "INSERT INTO recyclebin_account_request (firstname, lastname, email, contact_number, request_time, username, user_password) 
-                  SELECT firstname, lastname, email, contact_number, request_time, username, user_password
-                  FROM account_request 
-                  WHERE email IN ($placeholders)";
+                      SELECT firstname, lastname, email, contact_number, request_time, username, user_password
+                      FROM account_request 
+                      WHERE email IN ($placeholders)";
 
         // Create a prepared statement
         if ($stmt = $conn->prepare($insertSql)) {
@@ -286,57 +270,25 @@ if (isset($_POST['remove_selected'])) {
         }
 
         $_POST['selected_rows'] = array(); // Clear the selected rows array
-        header("Location: admin_userlist.php");
+        header("Location: admin_home.php");
         exit(); // Terminate script execution after redirection
     }
 }
 
-// if (isset($_POST['change_role'])) {
-//     // Check if any rows were selected for role update
-//     if (isset($_POST['selected_rows']) && is_array($_POST['selected_rows'])) {
-//         foreach ($_POST['selected_rows'] as $email) {
-//             $roleField = 'role_' . str_replace('.', '_', $email); // Construct the field name
-//             if (isset($_POST[$roleField])) {
-//                 $newRole = $_POST[$roleField];
-
-//                 $updateSql = "UPDATE tbl_userlist SET job_position = ? WHERE EmailAddress = ?";
-//                 if ($stmt = $conn->prepare($updateSql)) {
-//                     $stmt->bind_param('ss', $newRole, $email);
-//                     if (!$stmt->execute()) {
-//                         echo "Error executing update statement: " . $stmt->error;
-//                     }
-//                     $stmt->close();
-//                 } else {
-//                     echo "Error preparing update statement: " . $conn->error;
-//                 }
-//             }
-//         }
-//         $_POST['selected_rows'] = array();
-//         header("Location: admin_userlist.php");
-//         exit();
-//     }
-// }
-
-
-
 ?>
 
 <script>
-    // Get the input element and table
     var input = document.getElementById("searchInput");
     var table = document.querySelector("table");
 
-    // Add an event listener to the input field
     input.addEventListener("keyup", function() {
         var filter = input.value.toUpperCase();
-        var rows = table.querySelectorAll("tr.trHover");
+        var rows = table.querySelectorAll("tr");
 
-        // Loop through all table rows
-        for (var i = 0; i < rows.length; i++) {
+        for (var i = 1; i < rows.length; i++) {
             var cells = rows[i].querySelectorAll("td");
             var found = false;
 
-            // Loop through all table cells in a row
             for (var j = 0; j < cells.length; j++) {
                 var cell = cells[j];
                 if (cell) {
@@ -348,7 +300,6 @@ if (isset($_POST['remove_selected'])) {
                 }
             }
 
-            // Toggle row visibility based on search result
             if (found) {
                 rows[i].style.display = "";
             } else {

@@ -78,11 +78,13 @@
             text-align: center;
             margin-top: 20px;
             display: flex;
-            justify-content: flex-end; /* Align items to the right */
+            justify-content: flex-end;
+            /* Align items to the right */
         }
 
         .button-container button {
-            width: 20%; /* Adjust width if needed */
+            width: 20%;
+            /* Adjust width if needed */
         }
 
         /* Added styles for new containers */
@@ -102,7 +104,7 @@
 
         .confmen_container {
             grid-area: 3 / 2 / 4 / 3;
-            width: 80%; 
+            width: 80%;
             height: 85%;
             margin-left: 10%;
             padding: 20px;
@@ -279,7 +281,7 @@
         }
 
         .boxx {
-            text-align:center;    
+            text-align: center;
         }
 
         .boxx input {
@@ -288,25 +290,67 @@
 
         /* Styles for the 'Activate Motor' button */
         #activateMotor {
-            background-color: mediumaquamarine; /* Green background */
-            border: none; /* Remove default border */
-            color: white; /* White text */
-            padding: 12px 24px; /* Some padding for size */
-            text-align: center; /* Center the text */
-            text-decoration: none; /* Remove underline from text */
-            display: inline-block; /* Inline-block for proper layout */
-            font-size: 15px; /* Adjust font size */
-            margin: 4px 2px; /* Small margin around the button */
-            cursor: pointer; /* Pointer cursor on hover */
-            border-radius: 8px; /* Rounded corners */
-            transition-duration: 0.4s; /* Smooth transition effects */
+            background-color: mediumaquamarine;
+            /* Green background */
+            border: none;
+            /* Remove default border */
+            color: white;
+            /* White text */
+            padding: 12px 24px;
+            /* Some padding for size */
+            text-align: center;
+            /* Center the text */
+            text-decoration: none;
+            /* Remove underline from text */
+            display: inline-block;
+            /* Inline-block for proper layout */
+            font-size: 15px;
+            /* Adjust font size */
+            margin: 4px 2px;
+            /* Small margin around the button */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            border-radius: 8px;
+            /* Rounded corners */
+            transition-duration: 0.4s;
+            /* Smooth transition effects */
         }
 
         /* Hover effect */
         #activateMotor:hover {
-            background-color: #45a049; /* Darker green on hover */
+            background-color: #45a049;
+            /* Darker green on hover */
         }
 
+
+        @media (max-width: 768px) {
+
+            body {
+                display: grid;
+                grid-template-columns: 1fr;
+                margin: 0;
+                height: 100vh;
+                background-color: azure;
+            }
+
+            .date_container {
+                grid-area: auto;
+            }
+
+            .chart_container {
+                grid-area: auto;
+            }
+
+            .feedset_container {
+                grid-area: auto;
+            }
+
+            .confmen_container {
+                grid-area: auto;
+
+            }
+
+        }
     </style>
 </head>
 
@@ -363,7 +407,7 @@
     </div>
 
     <div class="overlay" id="overlay">
-    
+
         <div class="overlay-content">
             <h2>Edit Feed Settings</h2>
             <form id="feedSettingsForm">
@@ -385,15 +429,14 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-
     function controlLED(action) {
-            const esp32Ip = "http://esp32cam.local"; // Replace with the actual IP address of your ESP32-CAM
+        const esp32Ip = "http://esp32cam.local"; // Replace with the actual IP address of your ESP32-CAM
 
-            fetch(`${esp32Ip}/led/${action}`)
-                .then(response => response.text())
-                .then(data => console.log(data))
-                .catch(error => console.error('Error:', error));
-        }
+        fetch(`${esp32Ip}/led/${action}`)
+            .then(response => response.text())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+    }
 
 
     var currentSettings = {};

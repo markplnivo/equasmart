@@ -9,102 +9,120 @@ include "session_handler.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            background: whitesmoke;
-            font-family: 'Verdana', sans-serif;
+            background: #f6f7fb;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            width: 900px;
+            height: 500px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .image-section {
+            width: 50%;
+            background: #f6f7fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .image-section img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .login-section {
+            width: 50%;
+            padding: 40px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
         }
 
-        .login-title a {
-            text-decoration: none;
-            color: mediumaquamarine;
-            font-size: 1.2em;
-        }
-
-        form {
-            max-width: 300px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #fff;
-            width: 25vw;
-            border-radius: 10px;
-            display:flex;
-            flex-direction:column;
+        .login-section h2 {
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #333;
         }
 
         .form-field {
+            margin-bottom: 20px;
             position: relative;
-            margin: 20px 0;
         }
 
         .form-field input[type="text"],
         .form-field input[type="password"] {
-            width: 80%;
-            padding: 10px;
-            background: none;
-            border: none;
-            border-bottom: 1px solid gray;
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 50px;
             font-size: 16px;
             color: #333;
+            padding-left: 50px;
+            background: #f1f1f1;
+            box-sizing: border-box;
         }
 
-        .form-field label {
+        .form-field input[type="text"]::placeholder,
+        .form-field input[type="password"]::placeholder {
+            color: #aaa;
+        }
+
+        .form-field i {
             position: absolute;
-            top: -20px;
-            left: 0;
-            font-size: 16px;
-            color: #333;
-        }
-
-        .form-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .form-content a {
-            font-size: 14px;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            color: #bbb;
+            font-size: 18px;
         }
 
         .form-field input[type="submit"] {
             width: 100%;
-            padding: 10px;
+            padding: 15px;
             border: none;
-            background: mediumaquamarine;
+            border-radius: 50px;
+            background-color: #28a745;
             color: white;
+            font-size: 18px;
+            font-weight: bold;
             cursor: pointer;
-
+            transition: background-color 0.3s;
         }
 
         .form-field input[type="submit"]:hover {
-            background: mediumseagreen;
+            background-color: #218838;
         }
 
-        .signup-link {
-            text-align: center;
-            margin-top: 20px;
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
         }
 
-        .signup-link a {
-            color: #333;
+        .form-options a {
+            color: #007BFF;
+            text-decoration: none;
             font-size: 14px;
         }
 
-        .pass-link {
-            margin-top: 10px;
-            text-align: center;
-
-        }
-
-        .login-title img {
-            width: auto;
-            height: 200px;
+        .form-options a:hover {
+            color: #0056b3;
         }
     </style>
 </head>
@@ -114,68 +132,67 @@ if (isset($_POST['loginSubmit'])) {
     $username = $conn->real_escape_string($_POST['username']);
     $password = $_POST['password']; 
 
-    $sql = $conn->prepare("SELECT UserID, Username, PasswordHash, position FROM users WHERE Username = ?");
+    // Use BINARY to enforce case-sensitive username search
+    $sql = $conn->prepare("SELECT UserID, Username, PasswordHash, position FROM users WHERE BINARY Username = ?");
     $sql->bind_param("s", $username);
     $sql->execute();
     $sql->bind_result($userID, $username, $passwordHash, $position);
-    $sql->fetch();
-    $sql->close();
+    
+    // Check if any result was returned
+    if ($sql->fetch()) {
+        // Case-sensitive password verification
+        if (password_verify($password, $passwordHash)) {
+            loginUser($username, $position, $userID);
+            session_regenerate_id(true);
 
-    if (password_verify($password, $passwordHash)) {
-        loginUser($username, $position, $userID); // Use loginUser from session_handler.php
-        session_regenerate_id(true);
-
-        switch ($position) {
-            case 'admin':
-                // Redirect to admin page
-                header("Location: ./admin/admin_home.php"); // Adjust the redirection to your desired page
-                exit();
-                break;
-            default: 
-            // Redirect to user page
-            header("Location: ./user_dashboard.php"); // Adjust the redirection to your desired page
-            exit();
+            switch ($position) {
+                case 'admin':
+                    header("Location: ./admin/admin_home.php");
+                    exit();
+                default: 
+                    header("Location: ./user_dashboard.php");
+                    exit();
+            }
+        } else {
+            // If password doesn't match, show alert
+            echo "<script>alert('Your account and/or password is incorrect, please try again.');</script>";
         }
-    }
-        // // Redirect to a new page after successful login
-        // header("Location: user_dashboard.php"); // Adjust the redirection to your desired page
-        // exit();
     } else {
-        // echo "<script>alert('Invalid username/password combination.');window.location.href='login_page.php';</script>";
+        // If username doesn't exist, show alert
+        echo "<script>alert('Your account and/or password is incorrect, please try again.');</script>";
     }
-    $conn->close();
+
+    $sql->close();
+}
+$conn->close();
 ?>
 
-
 <body>
-    <div class="login-title">
-        <img src="./images/equasmartlogo_nobackground.png" alt="EquaSmart Logo" id="menuLogo">
+    <div class="container">
+        <div class="image-section">
+            <img src="./images/equasmartlogo_nobackground.png" alt="EquaSmart Logo">
+        </div>
+        <div class="login-section">
+            <h2> Login</h2>
+            <form action="login_page.php" method="post">
+                <div class="form-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="form-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-field">
+                    <input type="submit" name="loginSubmit" value="LOGIN">
+                </div>
+                <div class="form-options">
+                    <a href="#">Forgot Username / Password?</a>
+                    <a href="signup.php">Create your Account →</a>
+                </div>
+            </form>
+        </div>
     </div>
-    <form action="login_page.php" method="post">
-        <div class="form-field">
-            <input type="text" id="username" name="username" required>
-            <label>USERNAME</label>
-        </div>
-        <div class="form-field">
-            <input type="password" id="password" name="password" required>
-            <label>PASSWORD</label>
-        </div>
-        <!-- <div class="form-content">
-            <div class="checkbox">
-                <input type="checkbox" id="remember-me">
-                <label for="remember-me">Remember me</label>
-            </div>
-        </div> -->
-        <div class="form-field">
-            <input type="submit" name="loginSubmit" value="Login">
-        </div>
-        <div class="signup-link">
-            Not a member? <a href="signup.php">Sign-up now</a>
-        </div>
-        <div class="pass-link">
-            <a href="#">Forgot password?</a>
-        </div>
-    </form>
 </body>
 
 </html>
