@@ -325,12 +325,22 @@
 
         @media (max-width: 768px) {
 
+            #pageTitle {
+                grid-area:auto;
+            }
+
             body {
                 display: grid;
                 grid-template-columns: 1fr;
+                /* grid-auto-rows: auto; */
                 margin: 0;
                 height: 100vh;
                 background-color: azure;
+            }
+
+            .container_menu {
+                grid-template-columns: 1fr;
+                grid-auto-rows: auto;
             }
 
             .date_container {

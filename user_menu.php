@@ -1,6 +1,6 @@
     <?php ob_start(); ?>
-    <?php include "session_handler.php"; 
-    
+    <?php include "session_handler.php";
+
     if (!isLoggedIn()) {
         header("Location: ../login_page.php");
         exit();
@@ -15,78 +15,165 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <title>Custom Menu Bar</title>
         <style>
-        .custom-menu {
-            width: 200px; /* Set the width to 200px by default */
-            height: auto;
-            overflow: hidden;
-            background-color: mediumaquamarine;
-            margin: 0;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            grid-area: 1 / 1 / -1 / 2;
-        }
+            .custom-menu {
+                width: 200px;
+                /* Set the width to 200px by default */
+                height: auto;
+                overflow: hidden;
+                background-color: mediumaquamarine;
+                margin: 0;
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+                grid-area: 1 / 1 / -1 / 2;
+            }
 
-        /* Remove the hover effect */
-        .custom-menu:hover {
-            /* This rule is now removed */
-        }
+            /* Remove the hover effect */
+            .custom-menu:hover {
+                /* This rule is now removed */
+            }
 
-        .custom-menu ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 7px 0;
-        }
+            .custom-menu ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 7px 0;
+            }
 
-        .custom-menu ul.logout {
-            margin-bottom: 30%;
-        }
+            .custom-menu ul.logout {
+                margin-bottom: 30%;
+            }
 
-        .custom-menu li {
-            width: 100%;
-            color: white;
-        }
+            .custom-menu li {
+                width: 100%;
+                color: white;
+            }
 
-        .custom-menu li a {
-            display: flex;
-            align-items: center;
-            color: whitesmoke;
-            text-decoration: none;
-            padding: 15px;
-            background-color: mediumaquamarine;
-        }
+            .custom-menu li a {
+                display: flex;
+                align-items: center;
+                color: whitesmoke;
+                text-decoration: none;
+                padding: 15px;
+                background-color: mediumaquamarine;
+            }
 
-        .custom-menu li:hover a {
-            background-color: mediumseagreen;
-            color: white;
-        }
+            .custom-menu li:hover a {
+                background-color: mediumseagreen;
+                color: white;
+            }
 
-        .icon {
-            min-width: 10%;
-            text-align: center;
-            font-size: 1.5em;
-        }
+            .icon {
+                min-width: 10%;
+                text-align: center;
+                font-size: 1.5em;
+            }
 
-        .custom-menu .nav-text {
-            display: flex; /* Always show the nav-text */
-            margin-left: 15px;
-            font-size: 1em;
-        }
+            .custom-menu .nav-text {
+                display: flex;
+                /* Always show the nav-text */
+                margin-left: 15px;
+                font-size: 1em;
+            }
 
-        #menuLogo {
-            margin-top: 15px;
-            align-self: center;
-            width: 50%;
-        }
+            #menuLogo {
+                margin-top: 15px;
+                align-self: center;
+                width: 50%;
+            }
 
-        .logout button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.2em;
-            cursor: pointer;
-        }
+            .logout button {
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.2em;
+                cursor: pointer;
+            }
 
+
+            @media (max-width: 768px) {
+
+                .custom-menu {
+                    width: 60px;
+                    height: auto;
+                    overflow: hidden;
+                    background-color: mediumaquamarine;
+                    margin: 0;
+                    transition: width .05s linear;
+                    z-index: 1;
+                    display: flex;
+                    flex-direction: column;
+                    grid-area: 1 / 1 / -1 / 2;
+                }
+
+                .custom-menu:hover {
+                    display: flex;
+                    width: 200px;
+                    background: mediumaquamarine;
+                    overflow: visible;
+                    grid-area: 1 / 1 / -1 / 2;
+                }
+
+                .custom-menu ul {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 7px 0;
+                }
+
+                .custom-menu ul.logout {
+                    margin-bottom: 30%;
+                }
+
+                .custom-menu li {
+                    width: 100%;
+                    color: white;
+                }
+
+                .custom-menu li a {
+                    display: flex;
+                    align-items: center;
+                    color: whitesmoke;
+                    text-decoration: none;
+                    padding: 15px;
+                    background-color: mediumaquamarine;
+                }
+
+                .custom-menu li:hover a {
+                    background-color: mediumseagreen;
+                    color: white;
+                }
+
+                .icon {
+                    min-width: 10%;
+                    text-align: center;
+                    font-size: 1.5em;
+                }
+
+                .custom-menu .nav-text {
+                    display: none;
+                    font-size: 1.2em;
+                }
+
+                .custom-menu:hover .nav-text {
+                    display: flex;
+                    margin-left: 15px;
+                    font-size: 1em;
+                }
+
+                #menuLogo {
+                    margin-top: 15px;
+                    align-self: center;
+                    width: 50%;
+                }
+
+                .logout button {
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 1.2em;
+                    cursor: pointer;
+                }
+
+            }
         </style>
     </head>
     <div class="custom-menu">
