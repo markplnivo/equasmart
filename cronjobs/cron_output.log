@@ -1,0 +1,114 @@
+PHP Warning:  require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+
+Warning: require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+PHP Fatal error:  require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+
+Fatal error: require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+PHP Warning:  require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+
+Warning: require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+PHP Fatal error:  require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+
+Fatal error: require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+PHP Warning:  require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+
+Warning: require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+PHP Fatal error:  require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+
+Fatal error: require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+PHP Warning:  require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+
+Warning: require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+PHP Fatal error:  require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+
+Fatal error: require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+PHP Warning:  require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+
+Warning: require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+PHP Fatal error:  require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+
+Fatal error: require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+PHP Warning:  require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+
+Warning: require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+PHP Fatal error:  require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+
+Fatal error: require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+PHP Warning:  require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+
+Warning: require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+PHP Fatal error:  require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+
+Fatal error: require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+PHP Warning:  require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+
+Warning: require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+PHP Fatal error:  require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+
+Fatal error: require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+PHP Warning:  require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+
+Warning: require_once(./config.php): failed to open stream: No such file or directory in /var/www/cronjobs/send_sms.php on line 2
+PHP Fatal error:  require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+
+Fatal error: require_once(): Failed opening required './config.php' (include_path='.:/usr/share/php') in /var/www/cronjobs/send_sms.php on line 2
+PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+
+Warning: mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+Database connection failed.PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+
+Warning: mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+Database connection failed.PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+
+Warning: mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+Database connection failed.PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+
+Warning: mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+Database connection failed.PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+
+Warning: mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+Database connection failed.PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+
+Warning: mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+Database connection failed.PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+
+Warning: mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+Database connection failed.PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+
+Warning: mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+Database connection failed.PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+
+Warning: mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+Database connection failed.PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+
+Warning: mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+Database connection failed.PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+
+Warning: mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+Database connection failed.PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+
+Warning: mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+Database connection failed.PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+
+Warning: mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+Database connection failed.PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+
+Warning: mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/cronjobs/checkScheduledFeeding.php on line 16
+Database connection failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.Insert query failed.PHP Catchable fatal error:  Object of class DateTime could not be converted to string in /var/www/cronjobs/checkScheduledFeeding.php on line 118
+
+Catchable fatal error: Object of class DateTime could not be converted to string in /var/www/cronjobs/checkScheduledFeeding.php on line 118
+PHP Catchable fatal error:  Object of class DateTime could not be converted to string in /var/www/cronjobs/checkScheduledFeeding.php on line 118
+
+Catchable fatal error: Object of class DateTime could not be converted to string in /var/www/cronjobs/checkScheduledFeeding.php on line 118
+PHP Catchable fatal error:  Object of class DateTime could not be converted to string in /var/www/cronjobs/checkScheduledFeeding.php on line 118
+
+Catchable fatal error: Object of class DateTime could not be converted to string in /var/www/cronjobs/checkScheduledFeeding.php on line 118
+PHP Catchable fatal error:  Object of class DateTime could not be converted to string in /var/www/cronjobs/checkScheduledFeeding.php on line 118
+
+Catchable fatal error: Object of class DateTime could not be converted to string in /var/www/cronjobs/checkScheduledFeeding.php on line 118
+PHP Catchable fatal error:  Object of class DateTime could not be converted to string in /var/www/cronjobs/checkScheduledFeeding.php on line 118
+
+Catchable fatal error: Object of class DateTime could not be converted to string in /var/www/cronjobs/checkScheduledFeeding.php on line 118
+PHP Catchable fatal error:  Object of class DateTime could not be converted to string in /var/www/cronjobs/checkScheduledFeeding.php on line 118
+
+Catchable fatal error: Object of class DateTime could not be converted to string in /var/www/cronjobs/checkScheduledFeeding.php on line 118
