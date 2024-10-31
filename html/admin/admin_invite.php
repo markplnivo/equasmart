@@ -2,189 +2,189 @@
 include "../logindbase.php";
 ?>
 <!DOCTYPE html>
-<title>Recyle Bin</title>
+<title>Invite User</title>
 <html lang="en">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" href="../images/equasmartlogo_croppedlogo.png" type="image/svg+xml">
 <style>
     /* Global styles */
-    body {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto;
-        margin: 0;
-        height: 100vh;
-    }
-    .container_menu {
-        grid-area: 1 / 2 / -1 / -1;
-        grid-template-columns: 1fr;
-        background-color: azure;
-    }
-    h1 {
-        font-family: verdana;
-        text-align: center;
-        height: 5%;
-    }
-    
-    #maintable {
-        width: 92%;
-        height: auto;
-        background-color: lemonchiffon;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
-        border-radius: 15px;
-        padding: 20px;
-        margin-left: 2%;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-    }
-
-    th,
-    td {
-        padding: 12px 15px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-
-    th {
-        background-color: mediumaquamarine;
-        color: white;
-    }
-
-    tr:hover {
-        background-color: #f1f1f1;
-    }
-
-    #pageNumbers {
-        margin-top: 20px;
-        text-align: center;
-        grid-column: 2 / 3;
-        grid-row: 3 / 4;
-    }
-
-    #pageNumbers a {
-        color: #0073e6;
-        padding: 8px 16px;
-        text-decoration: none;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        margin: 0 4px;
-        transition: background-color 0.3s ease;
-    }
-
-    #pageNumbers a:hover {
-        background-color: #0073e6;
-        color: white;
-    }
-
-    #addSelect,
-    #removeSelect {
-        background-color: #0073e6;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        padding: 10px 20px;
-        margin-right: 10px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    #addSelect:hover {
-        background-color: #005bb5;
-    }
-
-    #removeSelect {
-        background-color: #dc3545; /* Warning color (Bootstrap's danger color) */
-    }
-
-    #removeSelect:hover {
-        background-color: #c82333; /* Darker shade for hover effect */
-    }
-
-    #searchInput {
-        padding: 10px;
-        width: 50%;
-        margin-left: 480px;
-        box-sizing: border-box;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        margin-bottom: 20px;
-    }
-
-    input[type="checkbox"] {
-        cursor: pointer;
-        height: 20px;
-        width: 20px;
-        accent-color: #0073e6;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-    }
-
-    select {
-        padding: 8px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        background-color: #f9f9f9;
-        cursor: pointer;
-        transition: border-color 0.3s ease;
-    }
-    select:hover {
-        border-color: #0073e6;
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 1010px) {
-        .container_menu {
-            grid-template-columns: auto;
+        body {
+            display: grid;
+            grid-template-columns: auto 1fr;
             grid-template-rows: auto;
-            padding: 0px;
+            margin: 0;
+            height: 100vh;
         }
-
+        .container_menu {
+            grid-area: 1 / 2 / -1 / -1;
+            grid-template-columns: 1fr;
+            background-color: azure;
+            
+        }
+        h2 {
+            font-family: verdana;
+            text-align: center;
+            height: 5%;
+        }
+        
         #maintable {
-            width: 98%;
-            margin: 0px;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column; /* Stacks elements vertically */
+            width: 92%;
+            height: auto;
+            background-color: lemonchiffon;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin-left: 2%;
         }
 
-        #searchInput {
-            width: 90%;
-            margin: 10px auto;
-        }
-
-        table, th, td {
-            display: block;
+        table {
             width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
         }
 
-        tr {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 10px;
-        }
-
-        th, td {
+        th,
+        td {
+            padding: 12px 15px;
             text-align: left;
-            padding: 8px;
-            border-bottom: none; /* Removes borders between each cell */
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: mediumaquamarine;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
         }
 
         #pageNumbers {
             margin-top: 20px;
             text-align: center;
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
         }
+
+        #pageNumbers a {
+            color: #0073e6;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        #pageNumbers a:hover {
+            background-color: #0073e6;
+            color: white;
+        }
+
+        #addSelect,
+        #removeSelect {
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #addSelect:hover {
+            background-color: #005bb5;
+        }
+
+        #removeSelect {
+            background-color: #dc3545; /* Warning color (Bootstrap's danger color) */
+        }
+
+        #removeSelect:hover {
+            background-color: #c82333; /* Darker shade for hover effect */
+        }
+
+        #searchInput {
+            padding: 10px;
+            width: 50%;
+            margin-left: 480px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        input[type="checkbox"] {
+            cursor: pointer;
+            height: 20px;
+            width: 20px;
+            accent-color: #0073e6;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        select:hover {
+            border-color: #0073e6;
+        }
+    
+
+
+/* Mobile responsiveness */
+@media (max-width: 1010px) {
+    .container_menu {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        padding: 0px;
     }
+
+    #maintable {
+        width: 98%;
+        margin: 0px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column; /* Stacks elements vertically */
+    }
+
+    #searchInput {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    table, th, td {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: none; /* Removes borders between each cell */
+    }
+
+    #pageNumbers {
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
 </style>
-
-
-
 <body>
-        
     <?php
     include "admin_menu.php";
 
@@ -201,8 +201,8 @@ include "../logindbase.php";
     $rs_result = mysqli_query($conn, $sql);
     ?>
     <div class="container_menu">
-    <h1>Recyle Bin</h1>
-    <div class="container">
+        <h2>Invite User</h2>
+    <div class="container_menu"></div>
     <form method="post" action="admin_home.php">
         <div id="maintable">
             <input type="text" id="searchInput" placeholder="Search for names...">
