@@ -10,6 +10,68 @@
 
     <title>Feed Settings</title>
     <style>
+        :root {
+        /* FLUID RESPONSIVE PADDING/MARGIN SPACE BASE VALUE = 12px, MIN WIDTH = 320px, AND MAX VALUE = 21px, MAX WIDTH = 1240px (added by mark romualdo)*/
+            --space-3xs: clamp(3px, 2.3043px + 0.2174cqi, 5px);/*Multiplier = 0.25*/
+            --space-2xs: clamp(6px, 4.2609px + 0.5435cqi, 11px);/*Multiplier = 0.5*/
+            --space-xs: clamp(9px, 6.5652px + 0.7609cqi, 16px);/*Multiplier = 0.75*/
+            --space-s: clamp(12px, 8.8696px + 0.9783cqi, 21px);/*Multiplier = 1*/
+            --space-m: clamp(13px, 9.5217px + 1.087cqi, 23px);/*Multiplier = 1.1*/
+            --space-l: clamp(14px, 10.1739px + 1.1957cqi, 25px);/*Multiplier = 1.2*/
+            --space-xl: clamp(16px, 12.1739px + 1.1957cqi, 27px);/*Multiplier = 1.3*/
+            --space-2xl: clamp(17px, 12.8261px + 1.3043cqi, 29px);/*Multiplier = 1.4*/
+            --space-3xl: clamp(18px, 13.1304px + 1.5217cqi, 32px);/*Multiplier = 1.5*/
+            --space-4xl: clamp(19px, 13.7826px + 1.6304cqi, 34px);/*Multiplier = 1.6*/
+            --space-5xl: clamp(24px, 17.7391px + 1.9565cqi, 42px);/*Multiplier = 2*/
+            --space-6xl: clamp(30px, 22px + 2.5cqi, 53px);/*Multiplier = 2.5*/
+            --space-7xl: clamp(36px, 26.6087px + 2.9348cqi, 63px);/*Multiplier = 3*/
+            --space-8xl: clamp(42px, 30.8696px + 3.4783cqi, 74px);/*Multiplier = 3.5*/
+            --space-9xl: clamp(48px, 35.4783px + 3.913cqi, 84px);/*Multiplier = 4*/
+            --space-10xl: clamp(54px, 39.7391px + 4.4565cqi, 95px);/*Multiplier = 4.5*/
+            --space-11xl: clamp(60px, 44.3478px + 4.8913cqi, 105px);/*Multiplier = 5*/
+            --space-12xl: clamp(66px, 48.6087px + 5.4348cqi, 116px);/*Multiplier = 5.5*/
+            --space-13xl: clamp(72px, 53.2174px + 5.8696cqi, 126px);/*Multiplier = 6*/
+            /* One-up pairs */
+            --space-3xs-2xs: clamp(3px, 0.2174px + 0.8696cqi, 11px);
+            --space-2xs-xs: clamp(6px, 2.5217px + 1.087cqi, 16px);
+            --space-xs-s: clamp(9px, 4.8261px + 1.3043cqi, 21px);
+            --space-s-m: clamp(12px, 8.1739px + 1.1957cqi, 23px);
+            --space-m-l: clamp(13px, 8.8261px + 1.3043cqi, 25px);
+            --space-l-xl: clamp(14px, 9.4783px + 1.413cqi, 27px);
+            --space-xl-2xl: clamp(16px, 11.4783px + 1.413cqi, 29px);
+            --space-2xl-3xl: clamp(17px, 11.7826px + 1.6304cqi, 32px);
+            --space-3xl-4xl: clamp(18px, 12.4348px + 1.7391cqi, 34px);
+            --space-4xl-5xl: clamp(19px, 11px + 2.5cqi, 42px);
+            --space-5xl-6xl: clamp(24px, 13.913px + 3.1522cqi, 53px);
+            --space-6xl-7xl: clamp(30px, 18.5217px + 3.587cqi, 63px);
+            --space-7xl-8xl: clamp(36px, 22.7826px + 4.1304cqi, 74px);
+            --space-8xl-9xl: clamp(42px, 27.3913px + 4.5652cqi, 84px);
+            --space-9xl-10xl: clamp(48px, 31.6522px + 5.1087cqi, 95px);
+            --space-10xl-11xl: clamp(54px, 36.2609px + 5.5435cqi, 105px);
+            --space-11xl-12xl: clamp(60px, 40.5217px + 6.087cqi, 116px);
+            --space-12xl-13xl: clamp(66px, 45.1304px + 6.5217cqi, 126px);
+            /* Custom pairs */
+            --space-s-l: clamp(12px, 7.4783px + 1.413cqi, 25px);
+            /* FLUID RESPONSIVE FONT SIZE BASE VALUE = 9px MIN WIDTH = 425px AND MAX VALUE = 14px MAX WIDTH = 1480px*/
+            --step--6: clamp(0.1884rem, 0.1741rem + 0.0713vw, 0.2294rem);
+            --step--5: clamp(0.2261rem, 0.205rem + 0.1055vw, 0.2867rem);
+            --step--4: clamp(0.2713rem, 0.241rem + 0.1515vw, 0.3584rem);
+            --step--3: clamp(0.3255rem, 0.2829rem + 0.213vw, 0.448rem);
+            --step--2: clamp(0.3906rem, 0.3317rem + 0.2946vw, 0.56rem);
+            --step--1: clamp(0.4688rem, 0.3883rem + 0.4022vw, 0.7rem);
+            --step-0: clamp(0.5625rem, 0.4538rem + 0.5435vw, 0.875rem);
+            --step-1: clamp(0.675rem, 0.5293rem + 0.7283vw, 1.0938rem);
+            --step-2: clamp(0.81rem, 0.6162rem + 0.969vw, 1.3672rem);
+            --step-3: clamp(0.972rem, 0.7157rem + 1.2817vw, 1.709rem);
+            --step-4: clamp(1.1664rem, 0.8291rem + 1.6867vw, 2.1362rem);
+            --step-5: clamp(1.3997rem, 0.9577rem + 2.2098vw, 2.6703rem);
+            --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
+    }
+        html{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             display: grid;
             grid-template-columns: auto 1fr;
@@ -17,65 +79,60 @@
             height: 100vh;
             background-color: azure;
         }
-
         .container_menu {
             grid-area: 1 / 2 / -1 / -1;
             display: grid;
             grid-template-columns: 50% 50%;
-            grid-template-rows: 50% 50%;
+            grid-template-rows: 30% 70%;
             background-color: azure;
-            margin-top: 10px;
+            padding: 1%;
         }
-
         h2 {
             font-family: verdana;
             text-align: center;
-
+            font-size: var(--step-1);
+            margin-block: var(--space-2xs);
         }
-
         .date_container {
             /* grid-area: 2/1/2/2; */
-            margin: 20px auto;
+            margin: auto;
             /* margin-left: 24%; */
-            margin-top: 5%;
-            padding: 50px;
+            padding: 2%;
             background-color: lemonchiffon;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             /* vertical-align: top; */
             width: 66%;
         }
-
         .date_container input {
             /* width: 50%; */
             margin: 0 auto;
-            padding: 10px;
+            padding: 5%;
             border-radius: 5px;
             border: 1px solid #ccc;
             display: block;
+            font-size: var(--step-1);
         }
-
         .chart_container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-area: 1/1/2/span 2;
-            /* width: 100%; */
+            width: 90%;
             height: 70%;
             /* margin: 5%;
             margin-left: 9%; */
-            padding: 30px;
+            padding-block: 1%;
+            padding-inline: 2%;
             background-color: lemonchiffon;
             border-radius: 15px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             margin: auto;
         }
-
         label {
             display: block;
             margin-bottom: 8px;
             text-align: center;
         }
-
         .button-container {
             text-align: center;
             margin-top: 20px;
@@ -83,12 +140,10 @@
             justify-content: flex-end;
             /* Align items to the right */
         }
-
         .button-container button {
             width: 20%;
             /* Adjust width if needed */
         }
-
         /* Added styles for new containers */
         .feedset_container {
             /* grid-area: 2 / 1 / 3 / 2; */
@@ -103,12 +158,11 @@
             display: inline-block;
             vertical-align: top; */
         }
-
         .confmen_container {
             display: grid;
-            margin: auto;
+            margin:  3% auto;
             grid-area: 2 / 1 / 3 / span 2;
-            width: 80%;
+            width: 90%;
             /* height: 85%;
             margin-left: 10%; */
             padding: 20px;
@@ -119,30 +173,30 @@
             vertical-align: top; */
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr;
+            gap: 2%;
         }
-
         h4 {
             text-align: center;
         }
-
         .boxSettings {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: auto 1fr;
-            width: 80%;
-            margin: 20px auto;
-            padding: 30px;
+            width: 100%;
+            margin: 3% auto;
+            padding: var(--space-2xs);
             background-color: #fff;
             border-radius: 30px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             background-color: honeydew;
             font-style: arial;
+            gap: var(--space-2xs); /* Added gap */
         }
-
         .button {
             display: inline-block;
-            padding: 5px 50px;
-            font-size: 15px;
+            padding-block: var(--space-xs);
+            padding-inline: var(--space-2xl);
+            font-size: var(--step-0);
             font-weight: bold;
             text-align: center;
             text-decoration: none;
@@ -153,26 +207,21 @@
             cursor: pointer;
             margin: 10px;
         }
-
         /* Hover effect */
         .button:hover {
             background-color: mediumseagreen;
         }
-
         #pageTitle {
             grid-area: 1 / 1 / 1 / span 3;
             height: 10px;
-            margin: 0px;
         }
-
         .gear-icon {
             min-width: 10%;
             display: inline-block;
-            margin-left: 10px;
             cursor: pointer;
-            font-size: 16px;
+            margin: 1%;
+            font-size: var(--step-1);
         }
-
         .overlay {
             position: fixed;
             top: 0;
@@ -185,7 +234,6 @@
             align-items: center;
             z-index: 1000;
         }
-
         .overlay-content {
             background-color: white;
             padding: 20px;
@@ -194,23 +242,19 @@
             max-width: 500px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
         .overlay-content h2 {
             text-align: center;
         }
-
         .overlay-content form {
             display: flex;
             flex-direction: column;
         }
-
         .overlay-content form input {
             margin-bottom: 15px;
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
         }
-
         .overlay-content form button {
             padding: 10px;
             border: none;
@@ -220,94 +264,85 @@
             font-size: 16px;
             cursor: pointer;
         }
-
         .overlay-content form button:hover {
             background-color: mediumseagreen;
         }
-
         #feedSettingsForm {
             font-size: 20px;
         }
-
+        .boxSettings .icon{
+            font-size: var(--step-1);
+            margin: var(--space-3xs-2xs);
+        }
         .boxSettings span {
             text-align: center;
+            font-size: var(--step-2);
         }
-
         .boxSettings #amountbox {
             grid-area: 2 / 1;
-            font-size: 20px;
             background-color: orange;
             padding: 20px;
             border-radius: 30px;
         }
-
         .boxSettings #sessionbox {
             grid-area: 2 / 2;
-            font-size: 20px;
             background-color: moccasin;
             padding: 20px;
             border-radius: 30px;
         }
-
         .boxSettings #adjustbox {
             grid-area: 2 / 3;
-            font-size: 20px;
             background-color: palegreen;
             padding: 20px;
             border-radius: 30px;
         }
-
         #changeSettings {
             grid-area: 1 / 1 / 1 / span 3;
-            margin-bottom: 2%;
+            margin-block: 3%;
+            margin-inline: 3%;
+            font-size: var(--step-0);
         }
-
         .settingsdef {
             font-size: 16px;
         }
-
-        .day-toggle {
+        .day-toggle{
             margin-bottom: 10px;
             display: flex;
             justify-content: center;
             column-gap: 15px;
         }
-
         .day-toggle button {
-            padding: 10px;
+            padding: var(--space-2xs);
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: var(--step-1);
         }
-
         .day-toggle button.active {
             background-color: mediumaquamarine;
             color: white;
         }
-
         #feedingTimesContainer {
-            max-height: 300px;
+            max-height: 500px ;
             /* Set the desired height */
             overflow-y: auto;
             /* Enable vertical scrolling */
-            overflow-x: hidden;
+            overflow-x: auto;
             /* Hide horizontal scrolling */
-            padding: 10px;
+            
             /* border: 1px solid #ddd; */
             /* background-color: #f9f9f9; */
             display: grid;
-            border-radius:15px;
         }
-
-        .boxx {
+        .boxx{
             text-align: center;
         }
-
-        .boxx input {
-            font-size: 18px;
+        .boxx label{
+            font-size: var(--step-1);
         }
-
+        .boxx input {
+            font-size: var(--step-1);
+        }
         /* Styles for the 'Activate Motor' button */
         #activateMotor {
             background-color: mediumaquamarine;
@@ -324,9 +359,9 @@
             /* Remove underline from text */
             display: inline-block;
             /* Inline-block for proper layout */
-            font-size: 15px;
+            font-size: var(--step-2);
             /* Adjust font size */
-            margin: 4px 2px;
+            margin: var(--space-3xs);
             /* Small margin around the button */
             cursor: pointer;
             /* Pointer cursor on hover */
@@ -335,15 +370,13 @@
             transition-duration: 0.4s;
             /* Smooth transition effects */
         }
-
         /* Hover effect */
         #activateMotor:hover {
             background-color: #45a049;
             /* Darker green on hover */
         }
-
                 /* The Modal (background) */
-                .modal {
+        .modal{
             display: none;
             /* Hidden by default */
             position: fixed;
@@ -361,71 +394,98 @@
             overflow: auto;
             /* Enable scroll if needed */
         }
-
         /* Modal Content */
         .modal-content {
             background-color: #fefefe;
             margin: 15% auto;
             /* 15% from the top and centered */
-            padding: 20px;
+            padding: var(--space-m-l);
+            font-size: var(--step-1);
             border: 1px solid #888;
-            width: 30%;
+            width: 50%;
             /* Could be more or less, depending on screen size */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            border-radius: 15px;
+            background-color: lemonchiffon;
+            font-family: 'Poppins', 'Arial', sans-serif;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
         }
-
+        .modal-content input{
+            padding-block: var(--space-xs);
+            padding-inline: var(--space-2xl);
+            font-size: var(--step-1);
+            width: 100%;
+            margin: 3% auto;
+            border-radius: 8px;
+            border-style: none;
+        }
+        .modal-content button{
+            display: inline-block;
+            padding-block: var(--space-xs);
+            padding-inline: var(--space-2xl);
+            font-size: var(--step-0);
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: mediumaquamarine;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin: 2% auto;
+        }
+        .modal-content button:active{
+            background-color: mediumseagreen;
+        }
+        .modal-content label{
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+            margin: 2% auto;
+            text-align: left;
+        }
         /* Close button */
         .close {
             color: #aaa;
             float: right;
-            font-size: 28px;
+            font-size: var(--step-3);
             font-weight: bold;
         }
-
         .close:hover,
         .close:focus {
             color: black;
             text-decoration: none;
             cursor: pointer;
         }
-
         #debugMenu {
             grid-area: 1 / 1 / 1 / span 3;
         }
-
         #calibrateMotorBtn {
             grid-area: 3 / 1/ 4/ span 3;
+            padding-block: var(--space-s);
         }
-
-
-        @media (max-width: 1010px) {
-
-            body {
+        @media (max-width: 1010px){
+            body{
                 display: grid;
                 grid-template-columns: auto 1fr;
                 margin: 0;
                 height: 100vh;
                 background-color: azure;
             }
-
             #pageTitle, #debugMenu {
                 grid-area: unset;
                 margin:2%;
             }
-
             .container_menu {
                 display:grid;
                 grid-template-rows: auto;
                 grid-template-columns: auto;
-                row-gap:2%;
                 overflow-y:scroll;
             }
-
             .date_container {
                 grid-area: auto;
+                margin: 2% auto;
             }
-
             .chart_container {
                 grid-area: auto;
                 display:grid;
@@ -433,22 +493,61 @@
                 grid-template-columns: 1fr;
                 height:auto;
                 width:90%;
-                
             }
-
-            .feedset_container {
-                grid-area: auto;
-            }
-
             .confmen_container {
                 grid-area: auto;
                 width: 90%;
                 grid-template-columns: auto;
                 grid-template-rows: auto;
-           
-
+                padding: 0px;
+                justify-items: center;
             }
-
+            #feedingTimesContainer {
+                width: 80%; /* Ensure it spans full width */
+                 /* Center it if necessary */
+                 /* Adjust padding for smaller screens */
+                overflow-y: auto; /* Keep scrolling */
+                display: flex; /* Use flexbox for better layout management */
+                flex-direction: column; /* Stack children vertically */
+                gap: 2%; /* Add space between child elements */
+                justify-content: center;
+                box-sizing: border-box;
+            }
+            #feedingTimesContainer .boxx {
+                width: 100%; /* Make input boxes and labels full-width */
+                margin: 2px auto;
+                height: auto;
+            }
+            #feedingTimesContainer input {
+                width: 100%; /* Ensure input fields span the full container */
+                padding: 2%; /* Add padding for better touch interaction */
+                font-size: var(--step-0); /* Adjust font size for readability */
+            }
+            #feedingTimesContainer button {
+                width: 100%; /* Buttons span the full width */
+                margin: 2% auto; /* Add margin between buttons */
+            }
+            .day-toggle {
+                flex-wrap: wrap; /* Allow wrapping on smaller screens */
+                justify-content: center; /* Center the buttons */
+            }
+            .day-toggle button {
+                flex: 1 1 5%; /* Ensure buttons adjust evenly */
+            }
+            .boxSettings {
+                display: flex; /* Use flexbox to simplify vertical stacking */
+                flex-direction: column; /* Stack children vertically */
+                gap: 2%; /* Add spacing between boxes */
+                width: 100%; /* Ensure the boxSettings container takes full width */
+            }
+            .boxSettings > div {
+                width: 100%; /* Ensure each child div takes the full width */
+                margin: 0; /* Remove any default margin */
+            }
+            .modal-content input{
+                font-size: var(--step-0);
+            }
+            
         }
 
 
@@ -491,7 +590,7 @@
                 <br><br>
                 <label for="gramsPerSecond">Input Grams per Second:</label>
                 <input type="number" id="gramsPerSecond" placeholder="Enter grams per second">
-                <button class="button" onclick="saveCalibrationData()">Save Calibration</button>
+                <button class="overly_button" onclick="saveCalibrationData()">Save Calibration</button>
                 <p id="statusMessage"></p>
             </div>
         </div>
@@ -529,8 +628,7 @@
                 <button class="button" id="resetFeedingTimes">Reset to Default</button> <!-- New Reset Button -->
             </div>
 
-            <div class="feedset_container">
-                <!-- <h4>Feed Settings</h4> -->
+            
                 <div class="boxSettings">
                     <i id="changeSettings" class="fa-solid fa-gear gear-icon"> Change settings</i>
                     <br></br>
@@ -551,31 +649,23 @@
                     <button class="button" id="calibrateMotorBtn">Calibrate Motor</button>
 
                 </div>
-            </div>
         </div>
-
     </div>
-
     <div class="overlay" id="overlay">
-
         <div class="overlay-content">
             <h2>Edit Feed Settings</h2>
             <form id="feedSettingsForm">
                 <label for="amount">Amount per Feeding</label>
                 <input type="number" id="amount" name="amount">
-
                 <label for="times">Feeding Times</label>
                 <input type="number" id="times" name="times">
-
                 <label for="adjust">Adjust Amount by</label>
                 <input type="number" id="adjust" name="adjust">
-
                 <button type="submit">Submit</button>
             </form>
         </div>
     </div>
 </body>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
