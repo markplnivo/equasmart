@@ -1,4 +1,5 @@
-    <?php ob_start(); ?>
+<!-- github by jayson -->
+<?php ob_start(); ?>
     <?php include "session_handler.php"; 
     
     if (!isLoggedIn()) {
@@ -8,7 +9,6 @@
     ?>
     <!DOCTYPE html>
     <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +19,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', 'Arial', sans-serif;
             }
             
         .custom-menu {
@@ -32,27 +33,22 @@
             flex-direction: column;
             grid-area: 1 / 1 / -1 / 2;
         }
-
         /* Remove the hover effect */
         .custom-menu:hover {
             /* This rule is now removed */
         }
-
         .custom-menu ul {
             list-style-type: none;
             padding: 0;
             margin: 7px 0;
         }
-
         .custom-menu ul.logout {
             margin-bottom: 30%;
         }
-
         .custom-menu li {
             width: 100%;
             color: white;
         }
-
         .custom-menu li a {
             display: flex;
             align-items: center;
@@ -61,41 +57,45 @@
             padding: 15px;
             background-color: mediumaquamarine;
         }
-
         .custom-menu li:hover a {
             background-color: mediumseagreen;
             color: white;
         }
-
         .icon {
             min-width: 10%;
             text-align: center;
             font-size: 1.5em;
         }
-
         .custom-menu .nav-text {
             display: flex; /* Always show the nav-text */
             margin-left: 15px;
             font-size: 1em;
         }
-
         #menuLogo {
             margin-top: 15px;
             align-self: center;
             width: 50%;
         }
-
         .logout button {
+            display: flex;
             background: none;
             border: none;
             color: white;
             font-size: 1.2em;
             cursor: pointer;
+            height: 100%;
+            width: 100%;
+            padding: 15px;
         }
-
-
+        .logout li a{
+            padding: 0;
+        }
+        .logout span{
+            align-self: left;
+            font-size: 1.2em;
+            margin-right: 10%;
+        }
             @media (max-width: 1010px) {
-    
         .custom-menu {
             width: 60px;
             height: auto;
@@ -108,7 +108,6 @@
             flex-direction: column;
             grid-area: 1 / 1 / -1 / 2;
         }
-
         .custom-menu:hover {
             display: flex;
             width: 200px;
@@ -116,22 +115,18 @@
             overflow: visible;
             grid-area: 1 / 1 / -1 / 2;
         }
-
         .custom-menu ul {
             list-style-type: none;
             padding: 0;
             margin: 7px 0;
         }
-
         .custom-menu ul.logout {
             margin-bottom: 30%;
         }
-
         .custom-menu li {
             width: 100%;
             color: white;
         }
-
         .custom-menu li a {
             display: flex;
             align-items: center;
@@ -140,35 +135,29 @@
             padding: 15px;
             background-color: mediumaquamarine;
         }
-
         .custom-menu li:hover a {
             background-color: mediumseagreen;
             color: white;
         }
-
         .icon {
             min-width: 10%;
             text-align: center;
             font-size: 1.5em;
         }
-
         .custom-menu .nav-text {
             display: none;
             font-size: 1.2em;
         }
-
         .custom-menu:hover .nav-text {
             display: flex;
             margin-left: 15px;
             font-size: 1em;
         }
-
         #menuLogo {
             margin-top: 15px;
             align-self: center;
             width: 50%;
         }
-
         .logout button {
             background: none;
             border: none;
@@ -176,7 +165,9 @@
             font-size: 1.2em;
             cursor: pointer;
         }
-
+        .logout li a{
+            padding: 0;
+        }
     }
 
         </style>
@@ -232,8 +223,10 @@
                 <li>
                     <a href="#">
                         <form action="user_menu.php" method="post">
+                            <button name="logout">
                             <span class="icon fa fa-power-off"></span>
-                            <button class="nav-text" name="logout">Logout</button>
+                                <span class="nav-text">Logout</span>
+                            </button>
                             <?php if (isset($_POST['logout'])) {
                                 logoutUser();
                                 header("Location: login_page.php");
@@ -243,6 +236,5 @@
             </ul>
         </form>
     </div>
-
     </html>
     <?php ob_end_flush(); ?>
