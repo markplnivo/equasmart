@@ -31,11 +31,6 @@
             z-index: 1;
             display: flex;
             flex-direction: column;
-            grid-area: 1 / 1 / -1 / 2;
-        }
-        /* Remove the hover effect */
-        .custom-menu:hover {
-            /* This rule is now removed */
         }
         .custom-menu ul {
             list-style-type: none;
@@ -95,7 +90,7 @@
             font-size: 1.2em;
             margin-right: 10%;
         }
-            @media (max-width: 1010px) {
+    @media (max-width: 1010px) {
         .custom-menu {
             width: 60px;
             height: auto;
