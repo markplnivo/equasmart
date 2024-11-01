@@ -1,4 +1,6 @@
 <?php ob_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include "../logindbase.php";
 ?>
 <!DOCTYPE html>
@@ -65,9 +67,9 @@ include "../logindbase.php";
             --step-5: clamp(1.3997rem, 0.9577rem + 2.2098vw, 2.6703rem);
             --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
     }
-            /* Global styles */
-            body {
-                display: grid;
+    /* Global styles */
+    body {
+        display: grid;
                 grid-template-columns: auto 1fr;
                 grid-template-rows: auto;
                 margin: 0;
@@ -81,105 +83,120 @@ include "../logindbase.php";
             }
             h2 {
                 font-family: verdana;
-                text-align: center;
+        text-align: center;
                 height: 5%;
-            }
-            
-            #maintable {
+    }
+
+    #maintable {
                 width: 92%;
                 height: auto;
                 background-color: lemonchiffon;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
                 border-radius: 15px;
-                padding: 20px;
+        padding: 20px;
                 margin-left: 2%;
-            }
-            table {
-                width: 100%;
-                border-collapse: collapse;
-                margin-bottom: 20px;
-            }
-            th,
-            td {
-                padding: 12px 15px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th,
+    td {
+        padding: 12px 15px;
                 text-align: center;
-                border-bottom: 1px solid #ddd;
-            }
-            th {
-                background-color: mediumaquamarine;
-                color: white;
-            }
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: mediumaquamarine;
+        color: white;
+    }
             tr{
-                background-color: #f1f1f1;
-            }
+        background-color: #f1f1f1;
+    }
             .show-more-toggle{
                 display: none;
             }
-            #pageNumbers {
-                margin-top: 20px;
-                text-align: center;
-                grid-column: 2 / 3;
-                grid-row: 3 / 4;
-            }
-            #pageNumbers a {
-                color: #0073e6;
-                padding: 8px 16px;
-                text-decoration: none;
-                border: 1px solid #ddd;
-                border-radius: 4px;
-                margin: 0 4px;
-                transition: background-color 0.3s ease;
-            }
-            #pageNumbers a:hover {
-                background-color: #0073e6;
-                color: white;
-            }
+    #pageNumbers {
+        margin-top: 20px;
+        text-align: center;
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+
+    #pageNumbers a {
+        color: #0073e6;
+        padding: 8px 16px;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin: 0 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    #pageNumbers a:hover {
+        background-color: #0073e6;
+        color: white;
+    }
             #addSelect,
-            #removeSelect {
-                background-color: #0073e6;
-                color: white;
-                border: none;
-                border-radius: 4px;
-                padding: 10px 20px;
-                margin-right: 10px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-            }
+    #removeSelect {
+        background-color: #0073e6;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
             #addSelect:hover {
-                background-color: #005bb5;
-            }
-            #removeSelect {
+        background-color: #005bb5;
+    }
+
+    #removeSelect {
                 background-color: #dc3545; /* Warning color (Bootstrap's danger color) */
-            }
-            #removeSelect:hover {
+    }
+
+    #removeSelect:hover {
                 background-color: #c82333; /* Darker shade for hover effect */
-            }
-            #searchInput {
-                padding: 10px;
-                width: 50%;
-                box-sizing: border-box;
-                border: 1px solid #ddd;
-                border-radius: 4px;
+    }
+
+    #searchInput {
+        padding: 10px;
+        width: 50%;
+        margin-left: 480px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 4px;
                 float: right;
                 margin-bottom: 1%;
-            }
-            input[type="checkbox"] {
-                cursor: pointer;
-                accent-color: #0073e6;
-                border: 1px solid #ddd;
-                border-radius: 4px;
-            }
-            select {
-                border: 1px solid #ddd;
-                border-radius: 4px;
-                background-color: #f9f9f9;
-                cursor: pointer;
-                transition: border-color 0.3s ease;
-            }
-            select:hover {
-                border-color: #0073e6;
-            }
-        
+    }
+
+    input[type="checkbox"] {
+        cursor: pointer;
+        height: 20px;
+        width: 20px;
+        accent-color: #0073e6;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    select {
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+        cursor: pointer;
+        transition: border-color 0.3s ease;
+    }
+
+    select:hover {
+        border-color: #0073e6;
+    }
+
 /* Mobile responsiveness */
 @media (max-width: 1010px) {
     .container_menu {
@@ -293,12 +310,14 @@ include "../logindbase.php";
     }
 }
 
-    </style>
+</style>
+
 <body>
     <?php
     include "admin_menu.php";
 
     $limit = 10; // Number of entries to show in a page.
+    // Look for a GET variable page if not found default is 1.  
     if (isset($_GET["page"])) {
         $pn  = $_GET["page"];
     } else {
@@ -307,48 +326,76 @@ include "../logindbase.php";
 
     $start_from = ($pn - 1) * $limit;
 
-    $sql = "SELECT UserID, Username, EmailAddress, ContactNumber, position, firstname, lastname FROM users ORDER BY UserID ASC LIMIT $start_from, $limit";
+    $sql = "SELECT UserID, Username, EmailAddress, ContactNumber, position, firstname, lastname, account_creation FROM users";
     $rs_result = mysqli_query($conn, $sql);
     ?>
-    <div class="container_menu">
+        <div class="container_menu">
         <h2>User List</h2>
     <div class="container">
-    <form method="post" action="admin_home.php">
+    <form method="post" action="admin_userlist.php"> <!-- Changed action to admin_userlist.php -->
         <div id="maintable">
             <input type="text" id="searchInput" placeholder="Search for names...">
             <table>
                 <tr>
                     <th>Select</th>
+                    <th>Change Role</th>
                     <th>User ID</th>
                     <th>Username</th>
-                    <th>Job Position</th>
+                    <th>Position</th>
                     <th>Email</th>
-                    <th>Change Role</th>
                     <th>Contact Number</th>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Account Created</th>
                 </tr>
-                <?php while ($row = mysqli_fetch_assoc($rs_result)) { ?>
-                    <tr>
-                        <td data-label="Select"><input type="checkbox" name="selected_rows[]" value="<?php echo $row['EmailAddress']; ?>"></td>
-                        <td data-label="User ID"><?php echo $row['UserID']; ?></td>
-                        <td data-label="Username"><?php echo $row['Username']; ?></td>
-                        <td class="toggle-content" data-label="Job Position"><?php echo $row['position']; ?></td>
-                        <td class="toggle-content" data-label="Email"><?php echo $row['EmailAddress']; ?></td>
-                        <td class="toggle-content" data-label="Change Role">
-                            <select name="role_<?php echo str_replace('.', '_', $row['EmailAddress']); ?>">
-                                <option value="Agent">Agent</option>
-                                <option value="Artist">Artist</option>
-                                <option value="Manager">Manager</option>
-                            </select>
+                <?php
+                while ($row = mysqli_fetch_assoc($rs_result)) {
+                    $userId = $row["UserID"];
+
+                    // Fetch user permissions from the database
+                    $permissionsSql = "SELECT p.permission_name 
+                                   FROM user_permissions up
+                                   JOIN permissions p ON up.permission_id = p.permission_id
+                                   WHERE up.user_id = ?";
+
+                    $permissionsStmt = $conn->prepare($permissionsSql);
+                    $permissionsStmt->bind_param('i', $userId);
+                    $permissionsStmt->execute();
+                    $permissionsResult = $permissionsStmt->get_result();
+
+                    // Store permissions in an array
+                    $userPermissions = [];
+                    while ($permissionRow = $permissionsResult->fetch_assoc()) {
+                        $userPermissions[] = $permissionRow['permission_name'];
+                    }
+
+                    $permissionsStmt->close();
+                ?>
+                    <tr class=>
+                        <td data-label="Select"><input type="checkbox" name="selected_rows[]" value="<?php echo $row["EmailAddress"]; ?>"></td>
+                        <td id="roleCheckbox">
+                            <!-- Checkboxes with automatic checking based on user permissions -->
+                            <input type="checkbox" name="permissions[<?php echo $row["EmailAddress"]; ?>][]" value="view_only"
+                                <?php echo in_array('view_only', $userPermissions) ? 'checked' : ''; ?>> View Only
+                            <input type="checkbox" name="permissions[<?php echo $row["EmailAddress"]; ?>][]" value="control_motors"
+                                <?php echo in_array('control_motors', $userPermissions) ? 'checked' : ''; ?>> Control Motors
+                            <input type="checkbox" name="permissions[<?php echo $row["EmailAddress"]; ?>][]" value="set_schedules"
+                                <?php echo in_array('set_schedules', $userPermissions) ? 'checked' : ''; ?>> Set Schedules
                         </td>
-                        <td class="toggle-content" data-label="Contact Number"><?php echo $row['ContactNumber']; ?></td>
-                        <td class="toggle-content" data-label="First Name"><?php echo $row['firstname']; ?></td>
-                        <td class="toggle-content" data-label="Last Name"><?php echo $row['lastname']; ?></td>
-                        <!-- Show more td goes here, at the bottom -->
+                        <td data-label="User ID"><?php echo $row["UserID"]; ?></td>
+                        <td data-label="Username"><?php echo $row["Username"]; ?></td>
+                        <td class="toggle-content"><?php echo $row["position"]; ?></td>
+                        <td class="toggle-content"><?php echo $row["EmailAddress"]; ?></td>
+                        <td class="toggle-content"><?php echo $row["ContactNumber"]; ?></td>
+                        <td class="toggle-content"><?php echo $row["firstname"]; ?></td>
+                        <td class="toggle-content"><?php echo $row["lastname"]; ?></td>
+                        <td class="toggle-content"><?php echo $row["account_creation"]; ?></td>
                         <td class="show-more-toggle" data-label="Show More" onclick="toggleRow(this)">Show more</td>
+
                     </tr>
-                <?php } ?>
+                <?php
+                };
+                ?>
             </table>
             <input id="addSelect" type="submit" name="add_selected" value="Add Selected">
             <input id="removeSelect" type="submit" name="remove_selected" value="Archive">
@@ -356,16 +403,16 @@ include "../logindbase.php";
 
     <div id="pageNumbers">
         <?php
-        $sql = "SELECT COUNT(*) FROM users";
+        $sql = "SELECT COUNT(*) FROM users"; // Change the table name
         $rs_result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_row($rs_result);
         $total_records = $row[0];
         $total_pages = ceil($total_records / $limit);
-        $pagLink = "";
+        $pagLink = "<div class='pagination'>";
         for ($i = 1; $i <= $total_pages; $i++) {
-            $pagLink .= "<a href='admin_home.php?page=" . $i . "'>" . $i . "</a>";
+            $pagLink .= "<a href='admin_userlist.php?page=" . $i . "'>" . $i . "</a>"; // Changed the link
         };
-        echo $pagLink;
+        echo $pagLink . "</div>";
         ?>
     </div>
     </div>
@@ -381,10 +428,10 @@ if (isset($_POST['remove_selected'])) {
         $placeholders = implode(',', array_fill(0, count($_POST['selected_rows']), '?'));
 
         // Prepare the SQL statement to insert the records into the recyclebin table
-        $insertSql = "INSERT INTO recyclebin_account_request (firstname, lastname, email, contact_number, request_time, username, user_password) 
-                      SELECT firstname, lastname, email, contact_number, request_time, username, user_password
-                      FROM account_request 
-                      WHERE email IN ($placeholders)";
+        $insertSql = "INSERT INTO recyclebin_account_request (firstname, lastname, email, contact_number, request_datetime, username, user_password) 
+                  SELECT firstname, lastname, EmailAddress, ContactNumber, account_creation, Username, PasswordHash
+                  FROM users
+                  WHERE EmailAddress IN ($placeholders)";
 
         // Create a prepared statement
         if ($stmt = $conn->prepare($insertSql)) {
@@ -396,7 +443,8 @@ if (isset($_POST['remove_selected'])) {
         }
 
         // Prepare the SQL statement to delete the records from the original table
-        $deleteSql = "DELETE FROM account_request WHERE email IN ($placeholders)";
+        // $placeholders = implode(',', array_fill(0, count($_POST['selected_rows']), '?'));
+        $deleteSql = "DELETE FROM users WHERE EmailAddress IN ($placeholders)";
 
         // Create a prepared statement
         if ($stmt = $conn->prepare($deleteSql)) {
@@ -411,15 +459,76 @@ if (isset($_POST['remove_selected'])) {
         }
 
         $_POST['selected_rows'] = array(); // Clear the selected rows array
-        header("Location: admin_home.php");
+        header("Location: admin_userlist.php");
         exit(); // Terminate script execution after redirection
     }
 }
 
+if (isset($_POST['change_role'])) {
+    // Check if any rows were selected for role update
+    if (isset($_POST['selected_rows']) && is_array($_POST['selected_rows'])) {
+        // Loop over each selected user
+        foreach ($_POST['selected_rows'] as $email) {
+            // Get the new permissions from the form
+            $newPermissions = isset($_POST['permissions'][$email]) ? $_POST['permissions'][$email] : [];
+
+            // Fetch the user ID based on the email
+            $userIdSql = "SELECT UserID FROM users WHERE EmailAddress = ?";
+            $stmt = $conn->prepare($userIdSql);
+            $stmt->bind_param('s', $email);
+            $stmt->execute();
+            $stmt->bind_result($userId);
+            $stmt->fetch();
+            $stmt->close();
+
+            if (!$userId) {
+                continue; // If user ID is not found, skip this user
+            }
+
+            // Delete existing permissions for this user
+            $deletePermissionsSql = "DELETE FROM user_permissions WHERE user_id = ?";
+            $stmt = $conn->prepare($deletePermissionsSql);
+            $stmt->bind_param('i', $userId);
+            $stmt->execute();
+            $stmt->close();
+
+            // Assign new permissions to the user
+            if (!empty($newPermissions)) {
+                foreach ($newPermissions as $permissionName) {
+                    // Fetch permission ID based on the permission name
+                    $permissionIdSql = "SELECT permission_id FROM permissions WHERE permission_name = ?";
+                    $stmt = $conn->prepare($permissionIdSql);
+                    $stmt->bind_param('s', $permissionName);
+                    $stmt->execute();
+                    $stmt->bind_result($permissionId);
+                    $stmt->fetch();
+                    $stmt->close();
+
+                    // If the permission ID is valid, insert it into the user_permissions table
+                    if ($permissionId) {
+                        $insertPermissionSql = "INSERT INTO user_permissions (user_id, permission_id) VALUES (?, ?)";
+                        $stmt = $conn->prepare($insertPermissionSql);
+                        $stmt->bind_param('ii', $userId, $permissionId);
+                        $stmt->execute();
+                        $stmt->close();
+                    }
+                }
+            }
+        }
+
+        // Redirect to the admin_userlist.php page
+        header("Location: admin_userlist.php");
+        exit();
+    }
+}
+
+
+
+
 ?>
 
 <script>
-    function toggleRow(td) {
+       function toggleRow(td) {
     // Find the parent row
     var row = td.closest('tr');
     
@@ -443,9 +552,11 @@ if (isset($_POST['remove_selected'])) {
     }
 }
 
+    // Get the input element and table
     var input = document.getElementById("searchInput");
     var table = document.querySelector("table");
 
+    // Add an event listener to the input field
     input.addEventListener("keyup", function() {
         var filter = input.value.toUpperCase();
         var rows = table.querySelectorAll("tr");
@@ -454,6 +565,7 @@ if (isset($_POST['remove_selected'])) {
             var cells = rows[i].querySelectorAll("td");
             var found = false;
 
+            // Loop through all table cells in a row
             for (var j = 0; j < cells.length; j++) {
                 var cell = cells[j];
                 if (cell) {
@@ -465,6 +577,7 @@ if (isset($_POST['remove_selected'])) {
                 }
             }
 
+            // Toggle row visibility based on search result
             if (found) {
                 rows[i].style.display = "";
             } else {
