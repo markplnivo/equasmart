@@ -295,7 +295,7 @@ if (isset($_POST['add_selected'])) {
             // Prepare the SQL statement to insert the record into the tbl_userlist table
             $insertSql = "INSERT INTO users (Username, PasswordHash, EmailAddress, ContactNumber, firstname, lastname, account_creation) 
                 SELECT username, user_password, email, contact_number, firstname, lastname, NOW()
-                FROM account_request 
+                FROM recyclebin_account_request 
                 WHERE email = ?";
 
             // Create a prepared statement
