@@ -351,7 +351,10 @@
                     <!-- Images will be loaded here -->
                 </div>
             </div>
-        </div>
+           
+            <canvas id="lineChart"></canvas>
+
+            </div>
 
         <div class="calendar">
             <h4>Calendar</h4>
@@ -505,10 +508,10 @@
             var lineChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['Amonia 1', 'Amonia 2', 'Amonia 3', 'Amonia 4', 'Amonia 5'],
+                    labels: ['Ammonia 1', 'Ammonia 2', 'Ammonia 3', 'Ammonia 4', 'Ammonia 5'],
                     datasets: [{
-                        label: 'Amonia',
-                        data: [0, 10, 20, 30, 40],
+                        label: 'Ammonia',
+                        data: [0, 10, 20, 30, 100],
                         backgroundColor: 'rgba(255, 99, 132, 0.2)',
                         borderColor: 'rgba(255, 99, 132, 1)',
                         borderWidth: 1
