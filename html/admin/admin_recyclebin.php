@@ -10,42 +10,31 @@ include "../logindbase.php";
     <style>
         /* Global styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
             display: grid;
-            grid-template-rows: 10vh 1fr 10vh;
-            grid-template-columns: 1fr 3fr 1fr;
-            height: 100%;
-            grid-gap: 20px;
-            overflow: hidden;
-        }
-
-        header {
-            background-color: mediumaquamarine;
-            color: white;
-            padding: 15px;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto;
+        margin: 0;
+        height: 100vh;
+    }
+    .container_menu {
+        grid-area: 1 / 2 / -1 / -1;
+        grid-template-columns: 1fr;
+        background-color: azure;
+    }
+    h1 {
+        font-family: verdana;
             text-align: center;
-            grid-row: 1 / 2;
-            grid-column: 1 / -1;
-            width: 100%;
-            height: 100%;
-            
+        height: 5%;
         }
 
         #maintable {
-            grid-area: 2 / 2 / 3 / 3;
-            width: 95%;
-            place-self: start center;
-            overflow-x: auto;
-            max-width: 1200px;
-            background-color: white;
+        width: 92%;
+        height: auto;
+        background-color: lemonchiffon;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
-            border-radius: 8px;
+        border-radius: 15px;
             padding: 20px;
-            margin-top: 30px; /* Adjust this value to move the table down */
+        margin-left: 2%;
         }
 
         table {
@@ -147,17 +136,55 @@ include "../logindbase.php";
         select:hover {
             border-color: #0073e6;
         }
-        h1 {
-            margin: 0;
-            color: black;
+
+    /* Mobile responsiveness */
+    @media (max-width: 1010px) {
+        .container_menu {
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            padding: 0px;
+        }
+
+        #maintable {
+            width: 98%;
+            margin: 0px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column; /* Stacks elements vertically */
+        }
+
+        #searchInput {
+            width: 90%;
+            margin: 10px auto;
+        }
+
+        table, th, td {
+            display: block;
+            width: 100%;
+        }
+
+        tr {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: none; /* Removes borders between each cell */
+        }
+
+        #pageNumbers {
+            margin-top: 20px;
+            text-align: center;
+        }
         }
     </style>
 
 
 <body>
-    <header>
-        <h1>Recyle Bin</h1>
-    </header>
+        
     <?php
     include "admin_menu.php";
 
@@ -173,7 +200,9 @@ include "../logindbase.php";
     $sql = "SELECT firstname, lastname, email, contact_number, request_datetime, username FROM recyclebin_account_request ORDER BY request_datetime DESC LIMIT $start_from, $limit";
     $rs_result = mysqli_query($conn, $sql);
     ?>
-    <form method="post" action="admin_recyclebin.php">
+    <div class="container_menu">
+    <h1>Recyle Bin</h1>
+    <div class="container">    <form method="post" action="admin_recyclebin.php">
         <div id="maintable">
             <input type="text" id="searchInput" placeholder="Search for names...">
             <table>
@@ -221,6 +250,8 @@ include "../logindbase.php";
         ?>
     </div>
     </div>
+    </div>
+    </div>
 </body>
 
 <?php
@@ -264,7 +295,7 @@ if (isset($_POST['add_selected'])) {
             // Prepare the SQL statement to insert the record into the tbl_userlist table
             $insertSql = "INSERT INTO users (Username, PasswordHash, EmailAddress, ContactNumber, firstname, lastname, account_creation) 
                 SELECT username, user_password, email, contact_number, firstname, lastname, NOW()
-                FROM account_request 
+                FROM recyclebin_account_request 
                 WHERE email = ?";
 
             // Create a prepared statement
