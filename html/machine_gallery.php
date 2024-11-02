@@ -89,12 +89,14 @@
             background-color: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
 
         .modal img {
-            max-width: 80%;
-            max-height: 80%;
+            max-width: 90vw;
+            max-height: 90vh;
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
         .modal .close-btn {
@@ -112,10 +114,6 @@
 <body>
     <?php include "user_menu.php"; ?>
     <div class="container_menu">
-        <div class="view-buttons">
-            <button id="feedMachineBtn">Feed Machine</button>
-            <button id="waterMachineBtn">Water Machine</button>
-        </div>
 
         <!-- Sorting Buttons -->
         <div class="sort-buttons">
@@ -124,45 +122,15 @@
         </div>
 
         <div class="gallery-container">
-            <!-- Feed Machine Gallery -->
-            <div id="feedMachineGallery" class="image-gallery" style="display: none;">
-                <?php
-                // Load images from 'uploads_feeder' directory
-                $feedDir = './uploads_feeder/';
-                $feedImages = glob($feedDir . "*.{jpg,png,gif,jpeg}", GLOB_BRACE);
-
-                // Sort function for images based on filenames (assuming they contain dates)
-                usort($feedImages, function ($a, $b) {
-                    // Extract the date from the filename (assuming it's in Y-m-d format)
-                    preg_match('/(\d{4}-\d{2}-\d{2})/', basename($a), $aMatch);
-                    preg_match('/(\d{4}-\d{2}-\d{2})/', basename($b), $bMatch);
-                    $aDate = isset($aMatch[1]) ? strtotime($aMatch[1]) : 0;
-                    $bDate = isset($bMatch[1]) ? strtotime($bMatch[1]) : 0;
-                    return $aDate - $bDate;
-                });
-
-                if (count($feedImages) > 0) {
-                    foreach ($feedImages as $image) {
-                        $imageUrl = str_replace($feedDir, '/uploads_feeder/', $image);
-                        echo "<img src='$imageUrl' alt='Feed Machine Image' class='gallery-image' style='transform:rotate(90deg);' />";
-                        // echo "<img src='$imageUrl' alt='Feed Machine Image' class='gallery-image' />";
-                    }
-                } else {
-                    echo "<p>No images found in Feed Machine.</p>";
-                }
-                ?>
-            </div>
-
             <!-- Water Machine Gallery -->
-            <div id="waterMachineGallery" class="image-gallery" style="display: none;">
+            <div id="waterMachineGallery" class="image-gallery">
                 <?php
                 // Load images from 'uploads' directory
                 $waterDir = './uploads/';
                 $waterImages = glob($waterDir . "*.{jpg,png,gif,jpeg}", GLOB_BRACE);
 
-                // Sort function for images based on filenames (assuming they contain dates)
+                // Sort function for images based on filenames (assuming they contain dates in YYYY-MM-DD format)
                 usort($waterImages, function ($a, $b) {
-                    // Extract the date from the filename (assuming it's in Y-m-d format)
                     preg_match('/(\d{4}-\d{2}-\d{2})/', basename($a), $aMatch);
                     preg_match('/(\d{4}-\d{2}-\d{2})/', basename($b), $bMatch);
                     $aDate = isset($aMatch[1]) ? strtotime($aMatch[1]) : 0;
@@ -173,9 +141,7 @@
                 if (count($waterImages) > 0) {
                     foreach ($waterImages as $image) {
                         $imageUrl = str_replace($waterDir, '/uploads/', $image);
-                        echo "<img src='$imageUrl' alt='Water Machine Image' class='gallery-image' style='transform:rotate(180deg);' />";
-                        // echo "<img src='$imageUrl' alt='Water Machine Image' class='gallery-image'/>";
-
+                        echo "<img src='$imageUrl' alt='Water Machine Image' class='gallery-image' />";
                     }
                 } else {
                     echo "<p>No images found in Water Machine.</p>";
@@ -192,19 +158,6 @@
     </div>
 
     <script>
-        // Handle gallery view switch
-        document.getElementById('feedMachineBtn').addEventListener('click', function() {
-            document.getElementById('feedMachineGallery').style.display = 'block';
-            document.getElementById('waterMachineGallery').style.display = 'none';
-            sortImages('desc');
-        });
-
-        document.getElementById('waterMachineBtn').addEventListener('click', function() {
-            document.getElementById('feedMachineGallery').style.display = 'none';
-            document.getElementById('waterMachineGallery').style.display = 'block';
-            sortImages('desc');
-        });
-
         // Enlarge image when clicked
         document.querySelectorAll('.gallery-image').forEach(function(image) {
             image.addEventListener('click', function() {
@@ -231,40 +184,28 @@
 
         // Sorting Functionality
         function sortImages(order) {
-            const feedGallery = document.getElementById('feedMachineGallery');
             const waterGallery = document.getElementById('waterMachineGallery');
 
             const sortImagesInGallery = (gallery) => {
                 const images = Array.from(gallery.querySelectorAll('img'));
                 const sortedImages = images.sort((a, b) => {
-                    // Extract the date in YYYY.MM.DD format from the filename
-                    const dateA = a.src.match(/(\d{4}\.\d{2}\.\d{2})/);
-                    const dateB = b.src.match(/(\d{4}\.\d{2}\.\d{2})/);
+                    // Extract date assuming format in src URL is YYYY-MM-DD
+                    const dateA = a.src.match(/(\d{4}-\d{2}-\d{2})/);
+                    const dateB = b.src.match(/(\d{4}-\d{2}-\d{2})/);
 
-                    // Ensure both images contain valid date matches before sorting
                     if (dateA && dateB) {
-                        const parsedDateA = new Date(dateA[0].replace(/\./g, '-')); // Convert to 'YYYY-MM-DD' format
-                        const parsedDateB = new Date(dateB[0].replace(/\./g, '-')); // Convert to 'YYYY-MM-DD' format
-
-                        // Sort based on the selected order (ascending or descending)
+                        const parsedDateA = new Date(dateA[0]);
+                        const parsedDateB = new Date(dateB[0]);
                         return order === 'asc' ? parsedDateA - parsedDateB : parsedDateB - parsedDateA;
                     }
-
-                    // If either image does not contain a valid date, leave their order unchanged
                     return 0;
                 });
 
-                // Clear gallery and re-add sorted images
                 gallery.innerHTML = ''; // Clear gallery
                 sortedImages.forEach(img => gallery.appendChild(img)); // Re-add sorted images
             };
 
-            // Apply sorting to the currently visible gallery (Feed or Water)
-            if (feedGallery.style.display !== 'none') {
-                sortImagesInGallery(feedGallery);
-            } else if (waterGallery.style.display !== 'none') {
-                sortImagesInGallery(waterGallery);
-            }
+            sortImagesInGallery(waterGallery);
         }
 
         // Handle sort buttons
@@ -277,7 +218,7 @@
         });
 
         window.onload = function() {
-            sortImages('desc');
+            sortImages('desc'); // Default sort on load
         };
     </script>
 
