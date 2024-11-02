@@ -1,4 +1,3 @@
-<!--github by jayson -->
 <?php ob_start(); ?>
 <?php
 include "../session_handler.php";
@@ -40,18 +39,22 @@ if ($_SESSION['position'] != 'admin') {
     display: flex;
     flex-direction: column;
 }
+
 .custom-menu ul {
     list-style-type: none;
     padding: 0;
     margin: 7px 0;
   }
+
 .custom-menu ul.logout {
     margin-bottom: 30%;
   }
+
 .custom-menu li {
     width: 100%;
     color: white;
 }
+
 .custom-menu li a {
     display: flex;
     align-items: center;
@@ -60,6 +63,7 @@ if ($_SESSION['position'] != 'admin') {
     padding: 15px;
     background-color: mediumaquamarine;
   }
+
 .custom-menu li:hover a {
     background-color: mediumseagreen;
     color: white;
@@ -78,7 +82,7 @@ if ($_SESSION['position'] != 'admin') {
   }
 
 #menuLogo {
-    margin-top: 5%;
+    margin-top: 15px;
     align-self: center;
     width: 50%;
 }
