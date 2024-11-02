@@ -19,127 +19,98 @@ if ($_SESSION['position'] != 'admin') {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <style>
-  /* Hamburger menu styles
-  #menu_toggle {
-    opacity: 0;
-  }
-
-  #menu_toggle:checked+.menu_btn>span {
-    transform: rotate(45deg);
-  }
-
-  #menu_toggle:checked+.menu_btn>span::before {
-    top: 0;
-    transform: rotate(0deg);
-  }
-
-  #menu_toggle:checked+.menu_btn>span::after {
-    top: 0;
-    transform: rotate(90deg);
-  }
-
-  #menu_toggle:checked~.menu_box {
-    left: 0 !important;
-  }
-
-  .menu_btn {
-    position: fixed;
-    top: 50px;
-    left: 20px;
-    width: 26px;
-    height: 26px;
-    cursor: pointer;
-    z-index: 1;
-  }
-
-  .menu_btn>span,
-  .menu_btn>span::before,
-  .menu_btn>span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background-color: #616161;
-    transition-duration: .25s;
-  }
-
-  .menu_btn>span::before {
-    content: '';
-    top: -8px;
-  }
-
-  .menu_btn>span::after {
-    content: '';
-    top: 8px;
-  } */
-
-  .menu_box {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
+ *, body{
     margin: 0;
-    padding: 80px 0;
-    list-style: none;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Arial', sans-serif;
+} 
+.custom-menu {
+    width: 200px;
+    height: auto;
+    overflow: hidden;
     background-color: mediumaquamarine;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .9);
+    margin: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 7px 0;
   }
 
-  .menu_box img {
-    display: block;
-    margin: 0 auto;
-    height: 150px;
-    width: auto;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.0);
-    /* Add shadow effect */
+.custom-menu ul.logout {
+    margin-bottom: 30%;
   }
 
-  .menu_box button {
-    display: block;
-    margin: 0 auto;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-    /* Add shadow effect */
-  }
-
-  .menu_item {
-    display: block;
-    padding: 12px 24px;
+.custom-menu li {
+    width: 100%;
     color: white;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
+}
+
+.custom-menu li a {
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
     text-decoration: none;
-    transition-duration: .25s;
+    padding: 15px;
+    background-color: mediumaquamarine;
   }
 
-  .menu_spacer {
-    height: 40px;
-  }
-
-  .menu_item:hover {
+.custom-menu li:hover a {
     background-color: mediumseagreen;
-    font-size: 25px;
+    color: white;
+}
+
+.icon {
+    min-width: 10%;
+    text-align: center;
+    font-size: 1.5em;
   }
 
-  body {
-    grid-template-columns: 300px auto 0.5fr;
+.custom-menu .nav-text {
+    display: flex;
+    margin-left: 15px;
+    font-size: 1em;
   }
 
-  #buttonlogout {
-    color: #333;
-  }
+#menuLogo {
+    margin-top: 15px;
+    align-self: center;
+    width: 50%;
+}
 
-  #buttonlogout:hover {
+.logout button {
+    display: flex;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
     cursor: pointer;
-  }
-
-  /* Toggle switch style */
-  .switch {
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+}
+.logout li a{
+    padding: 0;
+}
+.logout span{
+    align-self: left;
+    font-size: 1.2em;
+    margin-right: 10%;
+}
+.custom-menu div{
+  margin: 3% auto;
+  padding: 15px;
+}
+.switch {
     position: relative;
     display: inline-block;
     width: 60px;
@@ -162,6 +133,7 @@ if ($_SESSION['position'] != 'admin') {
     background-color: #ccc;
     transition: .4s;
     border-radius: 34px;
+    margin: 3% auto;
   }
 
   .slider:before {
@@ -182,28 +154,103 @@ if ($_SESSION['position'] != 'admin') {
 
   input:checked+.slider:before {
     transform: translateX(26px);
+
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1010px) {
+    .custom-menu {
+        width: 60px;
+        height: auto;
+        overflow: hidden;
+        background-color: mediumaquamarine;
+        margin: 0;
+        transition: width .05s linear;
+        z-index: 1;
+        display: flex;
+        flex-direction: column; 
+    }
+
+    .custom-menu:hover {
+        display: flex;
+        width: 200px;
+        background: mediumaquamarine;
+        overflow: visible;
+    }
+
+    .custom-menu .nav-text {
+        display: none;
+    }
+
+    .custom-menu:hover .nav-text {
+        display: flex;
+        margin-left: 15px;
+        font-size: 1em;
   }
+
+  /* Updated Toggle switch style for smaller screens */
+  .custom-menu div{
+        margin: 2% auto;
+        padding: 8px;
+    }
+  .switch {
+        width: 50px;
+        height: 28px;
+  }
+
+  .slider {
+        background-color: #ddd;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.4s, box-shadow 0.4s;
+  }
+
+  .slider:before {
+        height: 20px;
+        width: 20px;
+        left: 3px;
+    bottom: 4px;
+  }
+
+    input:checked + .slider {
+    background-color: #4CAF50;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+    input:checked + .slider:before {
+        transform: translateX(22px);
+  }
+}
 </style>
 
 <body>
-  <div class="hamburger-menu">
+<div class="custom-menu">
+<img src="../images/equasmartlogo_croppedlogo.png" alt="Logo" id="menuLogo">
     <!-- <input id="menu_toggle" type="checkbox" />
     <label class="menu_btn" for="menu_toggle">
       <span></span>
     </label> -->
 
-    <ul class="menu_box">
-      <li><img src="../images/equasmartlogo_croppedlogo.png" alt="Logo" width="100" height="100"></li>
+    <ul>
       <li>
-        <div class="menu_spacer"></div>
+      <a href="admin_home.php">
+        <span class="icon fa fa-home"></span>
+        <span class="nav-text">Home</span>
+      </a>
       </li>
-      <li><a class="menu_item" href="admin_home.php">Home</a></li>
-      <li><a class="menu_item" href="admin_recyclebin.php">Recycle Bin</a></li>
-      <li><a class="menu_item" href="admin_userlist.php">User List</a></li>
+      <li>
+      <a href="admin_recyclebin.php">
+        <span class="icon fa fa-recycle"></span>
+        <span class="nav-text">Recycle Bin</span>
+      </a>
+      </li>
+      <li>
+      <a href="admin_userlist.php">
+        <span class="icon fa fa-users"></span>
+        <span class="nav-text">User List</span>
+      </a>
+      </li>
       <!-- <li><a class="menu_item" href="admin_invite.php">Invite User</a></li> -->
-      <li>
-        <div class="menu_spacer"></div>
-      </li>
+      
       <!-- Toggle slider for ngrok control -->
       <div>
         <label class="switch">
@@ -212,24 +259,28 @@ if ($_SESSION['position'] != 'admin') {
         </label>
       <p id="statusMessage"></p>
       </div>
-
-      <li>
-        <form action="admin_menu.php" method="post">
-          <div class="logButton">
-            <button id="buttonlogout" type="submit" name="logoutButton" class="menu_item">Logout</button>
-          </div>
-        </form>
-      </li>
     </ul>
-  </div>
 
+    <ul class="logout">
+      <li>
+        <a href="#">
+        <form action="admin_menu.php" method="post">
+          <button name="logout">
+          <span class="icon fa fa-power-off"></span>
+            <span class="nav-text">Logout</span>
+          </button>
   <?php
-  if (isset($_POST['logoutButton'])) {
+            if (isset($_POST['logout'])) {
     logoutUser();
     header("Location: ../login_page.php");
     exit();
   }
   ?>
+            </a>
+        </li>
+      </ul>
+    </form>
+  </div>
 
   <!-- <script>
     // Existing code
