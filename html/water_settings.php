@@ -95,30 +95,36 @@
         }
 
         .container {
-            grid-area: 2 / 1 / 2 / span 2;
-            width: 84%;
-            margin: 20px auto;
-            margin-top: 3%;
-            margin-left: 12%;
-            padding: 20px;
-            background-color: lemonchiffon;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-        }
+    grid-area: 2 / 1 / 2 / span 2;
+    width: 87.5%;
+    margin: 20px auto;
+    margin-top: 3%;
+    margin-left: 12%;
+    padding: 20px;
+    background-color: lemonchiffon;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* Adjusts spacing equally */
+    align-items: center;
+}
 
-        .chart-container{
-            width: 40%;
-            height: auto;
-        }
-        canvas {
-            width: 40%;
-            height: auto;
-        }
+        .chart-container {
+    width: 50%; /* Adjust width to fit your desired size */
+    height: 300px; /* Set a specific height for the chart container */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    width: 10%;
+    height: 10%; /* Make sure the canvas takes full height */
+}
+
+
 
         h4 {
             text-align: center;
@@ -138,6 +144,27 @@
         }
 
         .calendar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: lemonchiffon;
+            border-radius: 20px;
+            
+            padding: 90px;
+            width: 100%;
+        }
+        .calendar h4 {
+            margin-bottom: 10px;
+        }
+
+        .calendar input[type="date"] {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .input{
             grid-area: 3 / 1 / 3 / 1;
             display: flex;
             gap: 20px;
@@ -154,22 +181,33 @@
             margin-left: 24%;
         }
 
-        .calendar h4 {
-            margin-bottom: 10px;
+        .input input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+        .input button {
+            width: 50%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
         }
 
-        .calendar input[type="date"] {
-            width: 80%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .input button:hover {
+            background-color: #45a049;
         }
 
         .testing-history {
             grid-area: 3 / 2 / 3 / 2;
-            width: 92%;
-            height: 85%;
-            margin: 3px auto;
+            width: 99%;
+            height: 95%;
             margin-right: 70%;
             background-color: lemonchiffon;
             border-radius: 20px;
@@ -185,11 +223,9 @@
         .boxx {
             width: 60%;
             height: 60%;
-            margin: 1px auto;
+           
             padding: 20px;
-            background-color: gray;
             border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             color: white;
         }
 
@@ -345,21 +381,29 @@
                 </div>
             </div>
         </div>
+        
         <div class="container">
             <div class="gallery-container">
                 <div id="imageGallery" class="image-gallery">
                     <!-- Images will be loaded here -->
                 </div>
             </div>
-           
+            <div class="calendar">
+            <h4>Calendar</h4>
+            <input type="date" id="calendar">
+        </div>
             <canvas id="lineChart"></canvas>
 
             </div>
 
-        <div class="calendar">
-            <h4>Calendar</h4>
-            <input type="date" id="calendar">
+        <div class="input">
+            <h4>Input Fields</h4>
+            <input type="text" id="input1" placeholder="Enter Ammonia value">
+            <input type="text" id="input2" placeholder="Enter Nitrate value">
+            <input type="text" id="input3" placeholder="Enter pH value">
+            <button id="insertButton">Insert</button>
         </div>
+
 
         <div class="testing-history">
             <!-- <h4>Testing History</h4> -->
@@ -375,9 +419,9 @@
                     <label class="label1">5/5/24</label>
                 </div> -->
 
-                <button id="activateButton" type="button">Activate Ammonia Pump</button>
-                <!-- <button id="activateButton1" type="button">Activate pH Pump</button>
-                <button id="activateButton2" type="button">Activate Ammonia Pump</button> -->
+                <button id="activateButton" type="button">Test Ammonia</button>
+                <button id="activateButton1" type="button">Test Nitrate</button>
+                <button id="activateButton2" type="button">Test pH</button> 
                 <button id="activateButton2" onclick="captureImage()">Capture and Upload Image</button>
                 <p id="status"></p>
             </div>
@@ -548,6 +592,39 @@
                 }
             });
         });
+
+        document.getElementById('insertButton').addEventListener('click', function () {
+    // Get values from input fields
+    const ammonia = document.getElementById('input1').value;
+    const nitrate = document.getElementById('input2').value;
+    const pH = document.getElementById('input3').value;
+
+    // Send data to the backend PHP script using fetch API
+    fetch('insert_data.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            ammonia: ammonia,
+            nitrate: nitrate,
+            pH: pH
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Clear the input fields
+            document.getElementById('input1').value = '';
+            document.getElementById('input2').value = '';
+            document.getElementById('input3').value = '';
+        } else {
+            console.error("Failed to insert data.");
+        }
+    })
+    .catch(error => console.error('Error:', error));
+});
+
     </script>
 </body>
 
