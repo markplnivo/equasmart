@@ -173,17 +173,14 @@ if ($_SESSION['position'] != 'admin') {
         background: mediumaquamarine;
         overflow: visible;
     }
-
     .custom-menu .nav-text {
         display: none;
     }
-
     .custom-menu:hover .nav-text {
         display: flex;
         margin-left: 15px;
         font-size: 1em;
   }
-
   /* Updated Toggle switch style for smaller screens */
   .custom-menu div{
         margin: 2% auto;
@@ -217,7 +214,6 @@ if ($_SESSION['position'] != 'admin') {
   }
 }
 </style>
-
 <body>
 <div class="custom-menu">
 <img src="../images/equasmartlogo_croppedlogo.png" alt="Logo" id="menuLogo">
