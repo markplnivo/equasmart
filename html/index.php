@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-    <title>EQUA SMART</title>
+    <title>eQuaSmart</title>
 
     <meta name="description" content="Free download theme onepage, clean and modern responsive for all"/>
     <meta name="keywords" content="responsive, html5, onepage, themes, template, clean layout, free web"/>
@@ -151,7 +151,7 @@ h1 span{
   width:100%;
   height:100%;
   z-index:10;
-  background:url('../img/background/18.jpg') #c0c0c0 bottom center fixed no-repeat;
+  background:transparent;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -173,6 +173,7 @@ h1 span{
   width:100%;
   height:100%;
   background:rgba(51,51,51,0.5); /* Standard Off */
+  display:none;
 }
 
 
@@ -1339,14 +1340,16 @@ video#coverVideo {
     <!-- section start-page -->
     <section class="start-page parallax-background" id="home">
     <div class="video-background">
-        <img src="img/cover.gif" alt="Background GIF" style="width: 100%; height: auto;">
+    <video autoplay muted loop style="width: 100%; height: auto;">
+    <source src="./video/background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
     </div>
     <div class="opacity"></div> <!-- Opacity color -->
     <div class="content">
         <div class="text">
-            <h1>eQuaSmart</h1>
-            <div><img src="imag/logos.png" alt="" style="width: 20%;"></div>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 100px;">
+            <div><img src="images/equasmartlogo_croppedlogo.png" alt="" style="width: 10%;"></div>
+            <div style="display: flex; justify-content: center; gap: 20px;">
                 <a href="#about-us"><div class="read-more">View more</div></a>
                 <a href="login_page.php"><div class="read-more">Login</div></a>
             </div>
@@ -1368,7 +1371,6 @@ video#coverVideo {
         <a href="#home"><li href="#home">HOME</li></a>
         <a href="#about-us"><li href="#about-us">ABOUT US</li></a>
         <a href="#portfolio"><li href="#portfolio">GALLERY</li></a>
-        <a href="#contact"><li href="#contact">CONTACT</li></a>
         <a href="login_page.php"><li href="login_page.php">LOGIN</li></a>
     </ul>
    
@@ -1377,13 +1379,12 @@ video#coverVideo {
         <div class="menu-content">
             <div class="logo" style="display: flex; align-items: center;">
                 <img src="img/logos.png" alt="" style="width: 20%; margin-right: 10px;">
-                <span>eQua Smart</span>
+                <span>eQuaSmart</span>
             </div>
             <ul id="menu">
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#about-us">ABOUT US</a></li>
                 <li><a href="#portfolio">GALLERY</a></li>
-                <li><a href="#contact">CONTACT</a></li>
                 <li><a href="login_page.php">LOGIN</a></li>
 
 
@@ -1396,7 +1397,7 @@ video#coverVideo {
         <div class="content">
             <h1>ABOUT US</h1>
             <hr/>
-            <p>About eQua Smart</p>
+            <p>About eQuaSmart</p>
             <p class="title">Welcome to EQUA SMART Aquaponics, your premier destination for sustainable aquaponic solutions. Founded on the principles of environmental stewardship and innovation, we are dedicated to revolutionizing food production through the integration of aquaculture and hydroponics.</p>
         
             <div class="column-one">
@@ -1434,24 +1435,6 @@ video#coverVideo {
             </ul>
         </div>
     </section>
-
-    <!-- Contact -->
-    <section class="app-promo">
-    <div class="container">
-        <div class="promo-left">
-            <img src="img/phone.png" alt="Phone Image" class="phone-image">
-        </div>
-        <div class="promo-right">
-            <h1>MoboMarket for Android</h1>
-            <p>Discover Your Next Favourite App<br>Simple, Free, Featured Contents Every Day</p>
-            
-            <div class="buttons">
-                <a href="#" class="btn-download-android"><i class="fa fa-android"></i>Download for Android</a>
-            </div>
-        </div>
-    </div>
-</section>
-
 
 
 </div>
