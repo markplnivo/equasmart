@@ -1,3 +1,6 @@
+<?php 
+include "../logindbase.php";  // Ensure the path is correct
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,13 +106,30 @@
                 <h1>Daily Log</h1>
             </div>
             <div class="logo">
-                <img src="images/logo.png" alt="Description of the image" title="Image Tooltip">
+                <img src="images/logos.png" alt="Description of the image" title="Image Tooltip">
             </div>
         </div>
 
         <div class="info">
+        <?php
+            $feed_time = '';
+            $amount = '';
+            if (isset($conn)) {
+                $result = $conn->query("SELECT * FROM feed_history WHERE id = 1");
+
+                if ($result && $result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    $feed_time = $row['feed_time'];
+                    $amount = $row['amount'];
+                } else {
+                    echo "No data found.";
+                }
+            } else {
+                echo "Database connection not established.";
+            }
+            ?>
             <div class="date">
-                <p>Date: <span>Nov 15, 2017</span></p>
+                <p>Date: <span><?php echo htmlspecialchars($feed_time); ?></span></p>
             </div>
             <div class="temperature">
                 <p>Water Temp: <span>16°</span></p>
@@ -200,7 +220,7 @@
                     <td>&#10003;</td>
                 </tr>
                 <tr>
-                    <td colspan="4" class="notes">Notes:</td>
+                    <td colspan="4" class="notes">Amount: <?php echo htmlspecialchars($amount); ?></td>
                 </tr>
             </tbody>
         </table>
