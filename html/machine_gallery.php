@@ -129,8 +129,9 @@
                 $waterDir = './uploads/';
                 $waterImages = glob($waterDir . "*.{jpg,png,gif,jpeg}", GLOB_BRACE);
 
-                // Sort function for images based on filenames (assuming they contain dates in YYYY-MM-DD format)
+                // Sort function for images based on filenames (assuming they contain dates)
                 usort($waterImages, function ($a, $b) {
+                    // Extract the date from the filename (assuming it's in Y-m-d format)
                     preg_match('/(\d{4}-\d{2}-\d{2})/', basename($a), $aMatch);
                     preg_match('/(\d{4}-\d{2}-\d{2})/', basename($b), $bMatch);
                     $aDate = isset($aMatch[1]) ? strtotime($aMatch[1]) : 0;
@@ -141,7 +142,9 @@
                 if (count($waterImages) > 0) {
                     foreach ($waterImages as $image) {
                         $imageUrl = str_replace($waterDir, '/uploads/', $image);
-                        echo "<img src='$imageUrl' alt='Water Machine Image' class='gallery-image' />";
+                        echo "<img src='$imageUrl' alt='Water Machine Image' class='gallery-image' style='transform:rotate(180deg);' />";
+                        // echo "<img src='$imageUrl' alt='Water Machine Image' class='gallery-image'/>";
+
                     }
                 } else {
                     echo "<p>No images found in Water Machine.</p>";
@@ -189,23 +192,29 @@
             const sortImagesInGallery = (gallery) => {
                 const images = Array.from(gallery.querySelectorAll('img'));
                 const sortedImages = images.sort((a, b) => {
-                    // Extract date assuming format in src URL is YYYY-MM-DD
-                    const dateA = a.src.match(/(\d{4}-\d{2}-\d{2})/);
-                    const dateB = b.src.match(/(\d{4}-\d{2}-\d{2})/);
+                    // Extract the date in YYYY.MM.DD format from the filename
+                    const dateA = a.src.match(/(\d{4}\.\d{2}\.\d{2})/);
+                    const dateB = b.src.match(/(\d{4}\.\d{2}\.\d{2})/);
 
+                    // Ensure both images contain valid date matches before sorting
                     if (dateA && dateB) {
-                        const parsedDateA = new Date(dateA[0]);
-                        const parsedDateB = new Date(dateB[0]);
+                        const parsedDateA = new Date(dateA[0].replace(/\./g, '-')); // Convert to 'YYYY-MM-DD' format
+                        const parsedDateB = new Date(dateB[0].replace(/\./g, '-')); // Convert to 'YYYY-MM-DD' format
+
+                        // Sort based on the selected order (ascending or descending)
                         return order === 'asc' ? parsedDateA - parsedDateB : parsedDateB - parsedDateA;
                     }
+
+                    // If either image does not contain a valid date, leave their order unchanged
                     return 0;
                 });
 
+                // Clear gallery and re-add sorted images
                 gallery.innerHTML = ''; // Clear gallery
                 sortedImages.forEach(img => gallery.appendChild(img)); // Re-add sorted images
             };
 
-            sortImagesInGallery(waterGallery);
+                sortImagesInGallery(waterGallery);
         }
 
         // Handle sort buttons
