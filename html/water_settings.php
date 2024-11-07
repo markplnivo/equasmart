@@ -11,67 +11,86 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-    :root {
-    /* FLUID RESPONSIVE PADDING/MARGIN SPACE BASE VALUE = 12px, MIN WIDTH = 320px, AND MAX VALUE = 21px, MAX WIDTH = 1240px (added by mark romualdo)*/
-        --space-3xs: clamp(3px, 2.3043px + 0.2174cqi, 5px);/*Multiplier = 0.25*/
-        --space-2xs: clamp(6px, 4.2609px + 0.5435cqi, 11px);/*Multiplier = 0.5*/
-        --space-xs: clamp(9px, 6.5652px + 0.7609cqi, 16px);/*Multiplier = 0.75*/
-        --space-s: clamp(12px, 8.8696px + 0.9783cqi, 21px);/*Multiplier = 1*/
-        --space-m: clamp(13px, 9.5217px + 1.087cqi, 23px);/*Multiplier = 1.1*/
-        --space-l: clamp(14px, 10.1739px + 1.1957cqi, 25px);/*Multiplier = 1.2*/
-        --space-xl: clamp(16px, 12.1739px + 1.1957cqi, 27px);/*Multiplier = 1.3*/
-        --space-2xl: clamp(17px, 12.8261px + 1.3043cqi, 29px);/*Multiplier = 1.4*/
-        --space-3xl: clamp(18px, 13.1304px + 1.5217cqi, 32px);/*Multiplier = 1.5*/
-        --space-4xl: clamp(19px, 13.7826px + 1.6304cqi, 34px);/*Multiplier = 1.6*/
-        --space-5xl: clamp(24px, 17.7391px + 1.9565cqi, 42px);/*Multiplier = 2*/
-        --space-6xl: clamp(30px, 22px + 2.5cqi, 53px);/*Multiplier = 2.5*/
-        --space-7xl: clamp(36px, 26.6087px + 2.9348cqi, 63px);/*Multiplier = 3*/
-        --space-8xl: clamp(42px, 30.8696px + 3.4783cqi, 74px);/*Multiplier = 3.5*/
-        --space-9xl: clamp(48px, 35.4783px + 3.913cqi, 84px);/*Multiplier = 4*/
-        --space-10xl: clamp(54px, 39.7391px + 4.4565cqi, 95px);/*Multiplier = 4.5*/
-        --space-11xl: clamp(60px, 44.3478px + 4.8913cqi, 105px);/*Multiplier = 5*/
-        --space-12xl: clamp(66px, 48.6087px + 5.4348cqi, 116px);/*Multiplier = 5.5*/
-        --space-13xl: clamp(72px, 53.2174px + 5.8696cqi, 126px);/*Multiplier = 6*/
+        :root {
+            /* FLUID RESPONSIVE PADDING/MARGIN SPACE BASE VALUE = 12px, MIN WIDTH = 320px, AND MAX VALUE = 21px, MAX WIDTH = 1240px (added by mark romualdo)*/
+            --space-3xs: clamp(3px, 2.3043px + 0.2174cqi, 5px);
+            /*Multiplier = 0.25*/
+            --space-2xs: clamp(6px, 4.2609px + 0.5435cqi, 11px);
+            /*Multiplier = 0.5*/
+            --space-xs: clamp(9px, 6.5652px + 0.7609cqi, 16px);
+            /*Multiplier = 0.75*/
+            --space-s: clamp(12px, 8.8696px + 0.9783cqi, 21px);
+            /*Multiplier = 1*/
+            --space-m: clamp(13px, 9.5217px + 1.087cqi, 23px);
+            /*Multiplier = 1.1*/
+            --space-l: clamp(14px, 10.1739px + 1.1957cqi, 25px);
+            /*Multiplier = 1.2*/
+            --space-xl: clamp(16px, 12.1739px + 1.1957cqi, 27px);
+            /*Multiplier = 1.3*/
+            --space-2xl: clamp(17px, 12.8261px + 1.3043cqi, 29px);
+            /*Multiplier = 1.4*/
+            --space-3xl: clamp(18px, 13.1304px + 1.5217cqi, 32px);
+            /*Multiplier = 1.5*/
+            --space-4xl: clamp(19px, 13.7826px + 1.6304cqi, 34px);
+            /*Multiplier = 1.6*/
+            --space-5xl: clamp(24px, 17.7391px + 1.9565cqi, 42px);
+            /*Multiplier = 2*/
+            --space-6xl: clamp(30px, 22px + 2.5cqi, 53px);
+            /*Multiplier = 2.5*/
+            --space-7xl: clamp(36px, 26.6087px + 2.9348cqi, 63px);
+            /*Multiplier = 3*/
+            --space-8xl: clamp(42px, 30.8696px + 3.4783cqi, 74px);
+            /*Multiplier = 3.5*/
+            --space-9xl: clamp(48px, 35.4783px + 3.913cqi, 84px);
+            /*Multiplier = 4*/
+            --space-10xl: clamp(54px, 39.7391px + 4.4565cqi, 95px);
+            /*Multiplier = 4.5*/
+            --space-11xl: clamp(60px, 44.3478px + 4.8913cqi, 105px);
+            /*Multiplier = 5*/
+            --space-12xl: clamp(66px, 48.6087px + 5.4348cqi, 116px);
+            /*Multiplier = 5.5*/
+            --space-13xl: clamp(72px, 53.2174px + 5.8696cqi, 126px);
+            /*Multiplier = 6*/
 
-        /* One-up pairs */
-        --space-3xs-2xs: clamp(3px, 0.2174px + 0.8696cqi, 11px);
-        --space-2xs-xs: clamp(6px, 2.5217px + 1.087cqi, 16px);
-        --space-xs-s: clamp(9px, 4.8261px + 1.3043cqi, 21px);
-        --space-s-m: clamp(12px, 8.1739px + 1.1957cqi, 23px);
-        --space-m-l: clamp(13px, 8.8261px + 1.3043cqi, 25px);
-        --space-l-xl: clamp(14px, 9.4783px + 1.413cqi, 27px);
-        --space-xl-2xl: clamp(16px, 11.4783px + 1.413cqi, 29px);
-        --space-2xl-3xl: clamp(17px, 11.7826px + 1.6304cqi, 32px);
-        --space-3xl-4xl: clamp(18px, 12.4348px + 1.7391cqi, 34px);
-        --space-4xl-5xl: clamp(19px, 11px + 2.5cqi, 42px);
-        --space-5xl-6xl: clamp(24px, 13.913px + 3.1522cqi, 53px);
-        --space-6xl-7xl: clamp(30px, 18.5217px + 3.587cqi, 63px);
-        --space-7xl-8xl: clamp(36px, 22.7826px + 4.1304cqi, 74px);
-        --space-8xl-9xl: clamp(42px, 27.3913px + 4.5652cqi, 84px);
-        --space-9xl-10xl: clamp(48px, 31.6522px + 5.1087cqi, 95px);
-        --space-10xl-11xl: clamp(54px, 36.2609px + 5.5435cqi, 105px);
-        --space-11xl-12xl: clamp(60px, 40.5217px + 6.087cqi, 116px);
-        --space-12xl-13xl: clamp(66px, 45.1304px + 6.5217cqi, 126px);
+            /* One-up pairs */
+            --space-3xs-2xs: clamp(3px, 0.2174px + 0.8696cqi, 11px);
+            --space-2xs-xs: clamp(6px, 2.5217px + 1.087cqi, 16px);
+            --space-xs-s: clamp(9px, 4.8261px + 1.3043cqi, 21px);
+            --space-s-m: clamp(12px, 8.1739px + 1.1957cqi, 23px);
+            --space-m-l: clamp(13px, 8.8261px + 1.3043cqi, 25px);
+            --space-l-xl: clamp(14px, 9.4783px + 1.413cqi, 27px);
+            --space-xl-2xl: clamp(16px, 11.4783px + 1.413cqi, 29px);
+            --space-2xl-3xl: clamp(17px, 11.7826px + 1.6304cqi, 32px);
+            --space-3xl-4xl: clamp(18px, 12.4348px + 1.7391cqi, 34px);
+            --space-4xl-5xl: clamp(19px, 11px + 2.5cqi, 42px);
+            --space-5xl-6xl: clamp(24px, 13.913px + 3.1522cqi, 53px);
+            --space-6xl-7xl: clamp(30px, 18.5217px + 3.587cqi, 63px);
+            --space-7xl-8xl: clamp(36px, 22.7826px + 4.1304cqi, 74px);
+            --space-8xl-9xl: clamp(42px, 27.3913px + 4.5652cqi, 84px);
+            --space-9xl-10xl: clamp(48px, 31.6522px + 5.1087cqi, 95px);
+            --space-10xl-11xl: clamp(54px, 36.2609px + 5.5435cqi, 105px);
+            --space-11xl-12xl: clamp(60px, 40.5217px + 6.087cqi, 116px);
+            --space-12xl-13xl: clamp(66px, 45.1304px + 6.5217cqi, 126px);
 
-        /* Custom pairs */
-        --space-s-l: clamp(12px, 7.4783px + 1.413cqi, 25px);
+            /* Custom pairs */
+            --space-s-l: clamp(12px, 7.4783px + 1.413cqi, 25px);
 
-        /* FLUID RESPONSIVE FONT SIZE BASE VALUE = 9px MIN WIDTH = 425px AND MAX VALUE = 14px MAX WIDTH = 1480px*/
-        --step--6: clamp(0.1884rem, 0.1741rem + 0.0713vw, 0.2294rem);
-        --step--5: clamp(0.2261rem, 0.205rem + 0.1055vw, 0.2867rem);
-        --step--4: clamp(0.2713rem, 0.241rem + 0.1515vw, 0.3584rem);
-        --step--3: clamp(0.3255rem, 0.2829rem + 0.213vw, 0.448rem);
-        --step--2: clamp(0.3906rem, 0.3317rem + 0.2946vw, 0.56rem);
-        --step--1: clamp(0.4688rem, 0.3883rem + 0.4022vw, 0.7rem);
-        --step-0: clamp(0.5625rem, 0.4538rem + 0.5435vw, 0.875rem);
-        --step-1: clamp(0.675rem, 0.5293rem + 0.7283vw, 1.0938rem);
-        --step-2: clamp(0.81rem, 0.6162rem + 0.969vw, 1.3672rem);
-        --step-3: clamp(0.972rem, 0.7157rem + 1.2817vw, 1.709rem);
-        --step-4: clamp(1.1664rem, 0.8291rem + 1.6867vw, 2.1362rem);
-        --step-5: clamp(1.3997rem, 0.9577rem + 2.2098vw, 2.6703rem);
-        --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
-}
-        
+            /* FLUID RESPONSIVE FONT SIZE BASE VALUE = 9px MIN WIDTH = 425px AND MAX VALUE = 14px MAX WIDTH = 1480px*/
+            --step--6: clamp(0.1884rem, 0.1741rem + 0.0713vw, 0.2294rem);
+            --step--5: clamp(0.2261rem, 0.205rem + 0.1055vw, 0.2867rem);
+            --step--4: clamp(0.2713rem, 0.241rem + 0.1515vw, 0.3584rem);
+            --step--3: clamp(0.3255rem, 0.2829rem + 0.213vw, 0.448rem);
+            --step--2: clamp(0.3906rem, 0.3317rem + 0.2946vw, 0.56rem);
+            --step--1: clamp(0.4688rem, 0.3883rem + 0.4022vw, 0.7rem);
+            --step-0: clamp(0.5625rem, 0.4538rem + 0.5435vw, 0.875rem);
+            --step-1: clamp(0.675rem, 0.5293rem + 0.7283vw, 1.0938rem);
+            --step-2: clamp(0.81rem, 0.6162rem + 0.969vw, 1.3672rem);
+            --step-3: clamp(0.972rem, 0.7157rem + 1.2817vw, 1.709rem);
+            --step-4: clamp(1.1664rem, 0.8291rem + 1.6867vw, 2.1362rem);
+            --step-5: clamp(1.3997rem, 0.9577rem + 2.2098vw, 2.6703rem);
+            --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
+        }
+
         body {
             display: grid;
             grid-template-columns: 60px 1fr;
@@ -95,34 +114,38 @@
         }
 
         .container {
-    grid-area: 2 / 1 / 2 / span 2;
-    width: 87.5%;
-    margin: 20px auto;
-    margin-top: 3%;
-    margin-left: 12%;
-    padding: 20px;
-    background-color: lemonchiffon;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around; /* Adjusts spacing equally */
-    align-items: center;
-}
+            grid-area: 2 / 1 / 2 / span 2;
+            width: 87.5%;
+            margin: 20px auto;
+            margin-top: 3%;
+            margin-left: 12%;
+            padding: 20px;
+            background-color: lemonchiffon;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            /* Adjusts spacing equally */
+            align-items: center;
+        }
 
         .chart-container {
-    width: 50%; /* Adjust width to fit your desired size */
-    height: 300px; /* Set a specific height for the chart container */
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+            width: 50%;
+            /* Adjust width to fit your desired size */
+            height: 300px;
+            /* Set a specific height for the chart container */
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-canvas {
-    width: 10%;
-    height: 10%; /* Make sure the canvas takes full height */
-}
+        canvas {
+            width: 10%;
+            height: 10%;
+            /* Make sure the canvas takes full height */
+        }
 
 
 
@@ -140,7 +163,7 @@ canvas {
             margin: 0 auto;
             margin-top: 20px;
             width: 100%;
-            height: auto;
+            height: 70%
         }
 
         .calendar {
@@ -149,10 +172,11 @@ canvas {
             align-items: center;
             background-color: lemonchiffon;
             border-radius: 20px;
-            
+
             padding: 90px;
             width: 100%;
         }
+
         .calendar h4 {
             margin-bottom: 10px;
         }
@@ -164,7 +188,7 @@ canvas {
             border-radius: 5px;
         }
 
-        .input{
+        .input {
             grid-area: 3 / 1 / 3 / 1;
             display: flex;
             gap: 20px;
@@ -182,12 +206,12 @@ canvas {
         }
 
         .input input[type="text"] {
-    width: 80%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
 
         .input button {
             width: 50%;
@@ -216,14 +240,16 @@ canvas {
 
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centers children vertically */
-            align-items: center;    /* Centers children horizontally */
+            justify-content: center;
+            /* Centers children vertically */
+            align-items: center;
+            /* Centers children horizontally */
         }
 
         .boxx {
             width: 60%;
             height: 60%;
-           
+
             padding: 20px;
             border-radius: 20px;
             color: white;
@@ -256,7 +282,7 @@ canvas {
             background-color: #45a049;
         }
 
-        
+
         .gallery-container {
             width: 100%;
             max-height: 400px;
@@ -334,33 +360,43 @@ canvas {
         }
 
         @media (max-width: 1010px) {
-            *, body{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+
+            *,
+            body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
 
             .container_menu {
-                display: block; /* Stack menu items vertically */
+                display: block;
+                /* Stack menu items vertically */
             }
 
-            .container, .calendar, .testing-history {
-                width: 90%; /* Ensure full width for each section */
-                margin-block: 30px; /* Center elements and add spacing */
+            .container,
+            .calendar,
+            .testing-history {
+                width: 90%;
+                /* Ensure full width for each section */
+                margin-block: 30px;
+                /* Center elements and add spacing */
                 margin-inline: 20px;
-                height: auto; /* Let height adjust based on content */
+                height: auto;
+                /* Let height adjust based on content */
             }
 
             .chart-container {
-                width: auto; /* Make chart containers take full width */
+                width: auto;
+                /* Make chart containers take full width */
             }
 
             canvas {
-                width: 100%; /* Ensure canvases fill their containers */
+                width: 100%;
+                /* Ensure canvases fill their containers */
             }
 
-            
-}
+
+        }
     </style>
 </head>
 
@@ -381,7 +417,7 @@ canvas {
                 </div>
             </div>
         </div>
-        
+
         <div class="container">
             <div class="gallery-container">
                 <div id="imageGallery" class="image-gallery">
@@ -389,12 +425,12 @@ canvas {
                 </div>
             </div>
             <div class="calendar">
-            <h4>Calendar</h4>
-            <input type="date" id="calendar">
-        </div>
+                <h4>Calendar</h4>
+                <input type="date" id="calendar">
+            </div>
             <canvas id="lineChart"></canvas>
 
-            </div>
+        </div>
 
         <div class="input">
             <h4>Input Fields</h4>
@@ -421,7 +457,7 @@ canvas {
 
                 <button id="activateButton" type="button">Test Ammonia</button>
                 <button id="activateButton1" type="button">Test Nitrate</button>
-                <button id="activateButton2" type="button">Test pH</button> 
+                <button id="activateButton2" type="button">Test pH</button>
                 <button id="activateButton2" onclick="captureImage()">Capture and Upload Image</button>
                 <p id="status"></p>
             </div>
@@ -542,9 +578,9 @@ canvas {
                 sendCommand('TITRATE_PH');
             });
 
-        //     $('#activateButton2').on('click', function() {
-        //         sendCommand('TITRATE_NITRATE');
-        //     });
+            //     $('#activateButton2').on('click', function() {
+            //         sendCommand('TITRATE_NITRATE');
+            //     });
         });
 
         document.addEventListener("DOMContentLoaded", function() {
@@ -562,6 +598,7 @@ canvas {
                     }]
                 },
                 options: {
+                    maintainAspectRatio: false,
                     scales: {
                         y: {
                             beginAtZero: true
@@ -570,61 +607,60 @@ canvas {
                 }
             });
 
-            var ctx2 = document.getElementById('lineChart2').getContext('2d');
-            var lineChart2 = new Chart(ctx2, {
-                type: 'line',
-                data: {
-                    labels: ['pH 1', 'pH 2', 'pH 3', 'pH 4', 'pH 5'],
-                    datasets: [{
-                        label: 'pH',
-                        data: [0, 10, 20, 30, 40],
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                        borderColor: 'rgba(54, 162, 235, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
+            // var ctx2 = document.getElementById('lineChart2').getContext('2d');
+            // var lineChart2 = new Chart(ctx2, {
+            //     type: 'line',
+            //     data: {
+            //         labels: ['pH 1', 'pH 2', 'pH 3', 'pH 4', 'pH 5'],
+            //         datasets: [{
+            //             label: 'pH',
+            //             data: [0, 10, 20, 30, 40],
+            //             backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            //             borderColor: 'rgba(54, 162, 235, 1)',
+            //             borderWidth: 1
+            //         }]
+            //     },
+            //     options: {
+            //         scales: {
+            //             y: {
+            //                 beginAtZero: true
+            //             }
+            //         }
+            //     }
+            // });
         });
 
-        document.getElementById('insertButton').addEventListener('click', function () {
-    // Get values from input fields
-    const ammonia = document.getElementById('input1').value;
-    const nitrate = document.getElementById('input2').value;
-    const pH = document.getElementById('input3').value;
+        document.getElementById('insertButton').addEventListener('click', function() {
+            // Get values from input fields
+            const ammonia = document.getElementById('input1').value;
+            const nitrate = document.getElementById('input2').value;
+            const pH = document.getElementById('input3').value;
 
-    // Send data to the backend PHP script using fetch API
-    fetch('insert_data.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            ammonia: ammonia,
-            nitrate: nitrate,
-            pH: pH
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            // Clear the input fields
-            document.getElementById('input1').value = '';
-            document.getElementById('input2').value = '';
-            document.getElementById('input3').value = '';
-        } else {
-            console.error("Failed to insert data.");
-        }
-    })
-    .catch(error => console.error('Error:', error));
-});
-
+            // Send data to the backend PHP script using fetch API
+            fetch('insert_data.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        ammonia: ammonia,
+                        nitrate: nitrate,
+                        pH: pH
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Clear the input fields
+                        document.getElementById('input1').value = '';
+                        document.getElementById('input2').value = '';
+                        document.getElementById('input3').value = '';
+                    } else {
+                        console.error("Failed to insert data.");
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
     </script>
 </body>
 
