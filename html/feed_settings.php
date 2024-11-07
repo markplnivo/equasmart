@@ -846,7 +846,7 @@ function fetchFeedLogs() {
                 row.innerHTML = `
                     <td>${formatTimeTo12Hour(log.feed_time)}</td>
                     <td>${log.amount}</td>
-                    <td>${log.notes || ''}</td>
+                    <td>${log.motor_runtime}</td>
                 `;
                 tableBody.appendChild(row);
             });
