@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,27 +6,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/equasmartlogo_croppedlogo.png" type="image/svg+xml">
+    <link rel="stylesheet" href="css/css/all.min.css">
+    <link rel="stylesheet" href="css/css/fontawesome.min.css">
     <title>Date Picker and Log Preview</title>
     <style>
         /* Layout styles for body */
         body {
             display: grid;
-            grid-template-columns: 60px 1fr;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto;
             margin: 0;
             height: 100vh;
         }
-
         /* Container for the content next to the menu */
         .container_menu {
             grid-area: 1 / 2 / -1 / -1;
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Two columns: left and right */
-            grid-template-rows: auto 1fr; /* Title on top */
-            gap: 20px;
+            grid-template-columns: 1fr;
             background-color: azure;
-            padding: 20px;
         }
-
         /* General styles */
         h2 {
             font-family: Verdana, sans-serif;
@@ -33,33 +31,26 @@
             margin: 0;
             padding: 10px 0;
         }
-
         /* Date picker styles */
-        .date-picker {
-            width: 85%;
-            height: 90%;
+        .log-container {
+            width: 95%;
+            height: 50%;
             padding: 20px;
             background-color: lemonchiffon;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-            margin: 0 auto 20px; /* Center and add margin-bottom */
-            margin-left: 23%;
-            grid-column: 1 / 2;
-            grid-row: 2 / 3;
+            margin: 0 auto; /* Center and add margin-bottom */
         }
-
         label {
             display: block;
             margin-bottom: 10px;
         }
-
         input[type="date"] {
-            width: calc(100% - 22px);
+            width: 100%;
             padding: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-
         button {
             width: 100%;
             padding: 10px;
@@ -70,24 +61,24 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
         button:hover {
             background-color: #0056b3;
         }
-
-        /* Log container styles */
-        .log-container {
-            width: 78%;
+        .side-by-side-wrapper {
+            display: flex;
+            justify-content: center;
+            height: 30%;
+            gap: 2%; /* Adds space between the containers */
+            margin: 3% 2%;
+        }
+        /* Adjust widths to fit side-by-side */
+        .date-picker, .log-list-container {
+            width: 50%; /* Set appropriate widths */
             padding: 20px;
             background-color: lemonchiffon;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-            margin: 0 auto;
-            margin-left: 15%;
-            grid-column: 2 / 3;
-            grid-row: 2 / 4; /* Span two rows to align with both left elements */
         }
-
         .log {
             border: 1px solid #ccc;
             padding: 10px;
@@ -95,32 +86,15 @@
             max-height: 400px;
             overflow-y: auto;
         }
-
         .log p {
             margin: 0;
         }
-
-        /* Log list container styles */
-        .log-list-container {
-            width: 85%;
-            padding: 20px;
-            background-color: lemonchiffon;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-            margin-left: 23%;
-
-            grid-column: 1 / 2;
-            grid-row: 3 / 4;
-        }
-
         .log-list {
             text-align: center;
         }
-
         .log-item {
             margin-bottom: 10px;
         }
-
         /* Page title styles */
         #pageTitle {
             grid-column: 1 / 3;
@@ -128,39 +102,44 @@
             text-align: center;
             padding-bottom: 20px;
         }
-
         @media (max-width: 1010px) {
             *, body {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
             }
-
             .container_menu {
                 display: block;
                 padding: 10px;
             }
-
-            .date-picker, .log-container, .log-list-container {
+            .log-container{
                 width: 100%;
                 height: auto;   
-                margin-left: 0;
-                margin-right: 0;
+                margin: 20px auto;
             }
-
-            .log-container {
+            .side-by-side-wrapper {
+                display: flex;
+                flex-direction: column; /* Stack date-picker and log-list-container vertically*/
+                width: 100%;
+                margin-top: 15%;
+                margin-inline: 0;
+            }
+            .date-picker, .log-list-container {
+                width: 100%; /* Full width on smaller screens */
                 margin-top: 20px;
             }
-
             #pageTitle {
                 padding: 10px 0;
             }
-
             h2 {
                 font-size: 1.5rem;
             }
-
             
+        }
+        @media (max-width: 480px){
+            .side-by-side-wrapper {
+                margin-top: 45%;
+            }
         }
     </style>
 </head>
@@ -170,6 +149,13 @@
     <div class="container_menu">
         <h2 id="pageTitle">DATE PICKER AND LOG PREVIEW</h2>
 
+        <!-- Right side: Log preview -->
+        <div class="log-container">
+            <h2>Log Preview</h2>
+            <div class="log" id="log"></div>
+            <button onclick="printLog()">Print Log</button>
+        </div>
+        <div class="side-by-side-wrapper">
         <!-- Left side: Date picker and Log list -->
         <div class="date-picker">
             <h2>Select Date</h2>
@@ -177,7 +163,6 @@
             <input type="date" id="date">
             <button onclick="logDate()">Log Date</button>
         </div>
-
         <div class="log-list-container">
             <h2>Select Log to Print</h2>
             <div class="log-list" id="logList"></div>
@@ -185,14 +170,8 @@
             <button onclick="showLog('/templates/waterlog_template.php')">Water Log</button>
             <!-- <button onclick="downloadLog()">Water Test</button> -->
         </div>
-        
-
-        <!-- Right side: Log preview -->
-        <div class="log-container">
-            <h2>Log Preview</h2>
-            <div class="log" id="log"></div>
-            <button onclick="printLog()">Print Log</button>
         </div>
+        
     </div>
 
     <script>
