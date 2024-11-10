@@ -89,15 +89,23 @@
             padding: 10px 0;
             font-size: var(--step-2);
         }
-        /* Date picker styles */
         .log-container {
             width: 95%;
-            height: 50%;
+            height: 60%;
             padding: 20px;
             background-color: lemonchiffon;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             margin: 0 auto; /* Center and add margin-bottom */
+        }
+        .log-container button{
+            margin-top: 0px;
+            margin-bottom: 2%;
+        }
+        .log-container h2{
+            font-size: var(--step-0);
+            padding-top: 0px;
+            padding-bottom: 5px;
         }
         label {
             display: block;
@@ -118,6 +126,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: var(--step-0);
         }
         button:hover {
             background-color: #0056b3;
@@ -125,9 +134,9 @@
         .side-by-side-wrapper {
             display: flex;
             justify-content: center;
-            height: 30%;
+            height: 25%;
             gap: 2%; /* Adds space between the containers */
-            margin: 3% 2%;
+            margin: 2%;
         }
         /* Adjust widths to fit side-by-side */
         .date-picker, .log-list-container {
@@ -137,11 +146,15 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
         }
+        .date-picker h2, .log-list-container h2{
+            padding: 0;
+            font-size: var(--step-0);
+        }
         .log {
             border: 1px solid #ccc;
-            padding: 10px;
+            padding: 2%;
             border-radius: 5px;
-            max-height: 400px;
+            max-height: 325px;
             overflow-y: auto;
         }
         .log p {
@@ -218,8 +231,8 @@
         <!-- Right side: Log preview -->
         <div class="log-container">
             <h2>Log Preview</h2>
-            <div class="log" id="log"></div>
             <button onclick="printLog()">Print Log</button>
+            <div class="log" id="log"></div>
         </div>
         <div class="side-by-side-wrapper">
         <!-- Left side: Date picker and Log list -->
@@ -232,8 +245,8 @@
         <div class="log-list-container">
             <h2>Select Log to Print</h2>
             <div class="log-list" id="logList"></div>
-            <button onclick="showLog('/templates/feedlog_template.php')">Feed Log</button>
-            <button onclick="showLog('/templates/waterlog_template.php')">Water Log</button>
+            <button onclick="showLog('/equasmart-main/templates/feedlog_template.php')">Feed Log</button>
+            <button onclick="showLog('/equasmart-main/templates/waterlog_template.php')">Water Log</button>
             <!-- <button onclick="downloadLog()">Water Test</button> -->
         </div>
         </div>
