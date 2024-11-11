@@ -7,30 +7,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="shortcut icon" href="images/equasmartlogo_croppedlogo.png" type="image/svg+xml">
+    <link rel="stylesheet" href="css/css/all.min.css">
+    <link rel="stylesheet" href="css/css/fontawesome.min.css">
 
     <title>Feed Settings</title>
     <style>
         :root {
-        /* FLUID RESPONSIVE PADDING/MARGIN SPACE BASE VALUE = 12px, MIN WIDTH = 320px, AND MAX VALUE = 21px, MAX WIDTH = 1240px (added by mark romualdo)*/
-            --space-3xs: clamp(3px, 2.3043px + 0.2174cqi, 5px);/*Multiplier = 0.25*/
-            --space-2xs: clamp(6px, 4.2609px + 0.5435cqi, 11px);/*Multiplier = 0.5*/
-            --space-xs: clamp(9px, 6.5652px + 0.7609cqi, 16px);/*Multiplier = 0.75*/
-            --space-s: clamp(12px, 8.8696px + 0.9783cqi, 21px);/*Multiplier = 1*/
-            --space-m: clamp(13px, 9.5217px + 1.087cqi, 23px);/*Multiplier = 1.1*/
-            --space-l: clamp(14px, 10.1739px + 1.1957cqi, 25px);/*Multiplier = 1.2*/
-            --space-xl: clamp(16px, 12.1739px + 1.1957cqi, 27px);/*Multiplier = 1.3*/
-            --space-2xl: clamp(17px, 12.8261px + 1.3043cqi, 29px);/*Multiplier = 1.4*/
-            --space-3xl: clamp(18px, 13.1304px + 1.5217cqi, 32px);/*Multiplier = 1.5*/
-            --space-4xl: clamp(19px, 13.7826px + 1.6304cqi, 34px);/*Multiplier = 1.6*/
-            --space-5xl: clamp(24px, 17.7391px + 1.9565cqi, 42px);/*Multiplier = 2*/
-            --space-6xl: clamp(30px, 22px + 2.5cqi, 53px);/*Multiplier = 2.5*/
-            --space-7xl: clamp(36px, 26.6087px + 2.9348cqi, 63px);/*Multiplier = 3*/
-            --space-8xl: clamp(42px, 30.8696px + 3.4783cqi, 74px);/*Multiplier = 3.5*/
-            --space-9xl: clamp(48px, 35.4783px + 3.913cqi, 84px);/*Multiplier = 4*/
-            --space-10xl: clamp(54px, 39.7391px + 4.4565cqi, 95px);/*Multiplier = 4.5*/
-            --space-11xl: clamp(60px, 44.3478px + 4.8913cqi, 105px);/*Multiplier = 5*/
-            --space-12xl: clamp(66px, 48.6087px + 5.4348cqi, 116px);/*Multiplier = 5.5*/
-            --space-13xl: clamp(72px, 53.2174px + 5.8696cqi, 126px);/*Multiplier = 6*/
+            /* FLUID RESPONSIVE PADDING/MARGIN SPACE BASE VALUE = 12px, MIN WIDTH = 320px, AND MAX VALUE = 21px, MAX WIDTH = 1240px (added by mark romualdo)*/
+            --space-3xs: clamp(3px, 2.3043px + 0.2174cqi, 5px);
+            /*Multiplier = 0.25*/
+            --space-2xs: clamp(6px, 4.2609px + 0.5435cqi, 11px);
+            /*Multiplier = 0.5*/
+            --space-xs: clamp(9px, 6.5652px + 0.7609cqi, 16px);
+            /*Multiplier = 0.75*/
+            --space-s: clamp(12px, 8.8696px + 0.9783cqi, 21px);
+            /*Multiplier = 1*/
+            --space-m: clamp(13px, 9.5217px + 1.087cqi, 23px);
+            /*Multiplier = 1.1*/
+            --space-l: clamp(14px, 10.1739px + 1.1957cqi, 25px);
+            /*Multiplier = 1.2*/
+            --space-xl: clamp(16px, 12.1739px + 1.1957cqi, 27px);
+            /*Multiplier = 1.3*/
+            --space-2xl: clamp(17px, 12.8261px + 1.3043cqi, 29px);
+            /*Multiplier = 1.4*/
+            --space-3xl: clamp(18px, 13.1304px + 1.5217cqi, 32px);
+            /*Multiplier = 1.5*/
+            --space-4xl: clamp(19px, 13.7826px + 1.6304cqi, 34px);
+            /*Multiplier = 1.6*/
+            --space-5xl: clamp(24px, 17.7391px + 1.9565cqi, 42px);
+            /*Multiplier = 2*/
+            --space-6xl: clamp(30px, 22px + 2.5cqi, 53px);
+            /*Multiplier = 2.5*/
+            --space-7xl: clamp(36px, 26.6087px + 2.9348cqi, 63px);
+            /*Multiplier = 3*/
+            --space-8xl: clamp(42px, 30.8696px + 3.4783cqi, 74px);
+            /*Multiplier = 3.5*/
+            --space-9xl: clamp(48px, 35.4783px + 3.913cqi, 84px);
+            /*Multiplier = 4*/
+            --space-10xl: clamp(54px, 39.7391px + 4.4565cqi, 95px);
+            /*Multiplier = 4.5*/
+            --space-11xl: clamp(60px, 44.3478px + 4.8913cqi, 105px);
+            /*Multiplier = 5*/
+            --space-12xl: clamp(66px, 48.6087px + 5.4348cqi, 116px);
+            /*Multiplier = 5.5*/
+            --space-13xl: clamp(72px, 53.2174px + 5.8696cqi, 126px);
+            /*Multiplier = 6*/
             /* One-up pairs */
             --space-3xs-2xs: clamp(3px, 0.2174px + 0.8696cqi, 11px);
             --space-2xs-xs: clamp(6px, 2.5217px + 1.087cqi, 16px);
@@ -66,8 +87,8 @@
             --step-4: clamp(1.1664rem, 0.8291rem + 1.6867vw, 2.1362rem);
             --step-5: clamp(1.3997rem, 0.9577rem + 2.2098vw, 2.6703rem);
             --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
-    }
-        html{
+        }
+        html {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -87,22 +108,19 @@
             background-color: azure;
             padding: 1%;
         }
-        h2 {
+        h2{
             font-family: verdana;
             text-align: center;
             font-size: var(--step-1);
-            margin-block: var(--space-2xs);
         }
         .date_container {
-            /* grid-area: 2/1/2/2; */
             margin: auto;
-            /* margin-left: 24%; */
             padding: 2%;
             background-color: lemonchiffon;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-            /* vertical-align: top; */
             width: 66%;
+            font-size: var(--step-0);
         }
         .date_container input {
             /* width: 50%; */
@@ -111,16 +129,15 @@
             border-radius: 5px;
             border: 1px solid #ccc;
             display: block;
-            font-size: var(--step-1);
+            font-size: var(--step--1);
+            width: 70%;
         }
         .chart_container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 40% 1fr;
             grid-area: 1/1/2/span 2;
-            width: 90%;
-            height: 70%;
-            /* margin: 5%;
-            margin-left: 9%; */
+            width: 100%; /* Increase width */
+            height: 120%; /* Increase height */
             padding-block: 1%;
             padding-inline: 2%;
             background-color: lemonchiffon;
@@ -128,10 +145,33 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             margin: auto;
         }
+        #lineChart {
+            width: 100%; /* Make canvas width 100% of container */
+            height: 100%; /* Make canvas height 100% of container */
+        }
         label {
             display: block;
             margin-bottom: 8px;
             text-align: center;
+        }
+        .view-buttons{
+            display: flex;
+            flex-direction: column;
+        }
+        #feedLogs{ /* view feed logs button */
+            font-size: var(--step-0) ;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: lightsalmon;
+            color: #000;
+            height: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+            width: 65%;
+            margin: 5px auto;
+        }
+        #feedLogs:hover{
+            background-color: #ff8554;
         }
         .button-container {
             text-align: center;
@@ -160,11 +200,12 @@
         }
         .confmen_container {
             display: grid;
-            margin:  3% auto;
+            margin: 3% auto;
             grid-area: 2 / 1 / 3 / span 2;
-            width: 90%;
+            width: 100%;
             /* height: 85%;
             margin-left: 10%; */
+            margin-top: 5%;
             padding: 20px;
             background-color: lemonchiffon;
             border-radius: 15px;
@@ -190,7 +231,8 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             background-color: honeydew;
             font-style: arial;
-            gap: var(--space-2xs); /* Added gap */
+            gap: var(--space-2xs);
+            /* Added gap */
         }
         .button {
             display: inline-block;
@@ -211,6 +253,7 @@
         .button:hover {
             background-color: mediumseagreen;
         }
+
         #pageTitle {
             grid-area: 1 / 1 / 1 / span 3;
             height: 10px;
@@ -270,7 +313,7 @@
         #feedSettingsForm {
             font-size: 20px;
         }
-        .boxSettings .icon{
+        .boxSettings .icon {
             font-size: var(--step-1);
             margin: var(--space-3xs-2xs);
         }
@@ -305,7 +348,7 @@
         .settingsdef {
             font-size: 16px;
         }
-        .day-toggle{
+        .day-toggle {
             margin-bottom: 10px;
             display: flex;
             justify-content: center;
@@ -322,27 +365,31 @@
             background-color: mediumaquamarine;
             color: white;
         }
+
         #feedingTimesContainer {
-            max-height: 500px ;
+            height: auto;
             /* Set the desired height */
             overflow-y: auto;
             /* Enable vertical scrolling */
             overflow-x: auto;
             /* Hide horizontal scrolling */
-            
+
             /* border: 1px solid #ddd; */
             /* background-color: #f9f9f9; */
             display: grid;
         }
-        .boxx{
+        .boxx {
             text-align: center;
         }
-        .boxx label{
+
+        .boxx label {
             font-size: var(--step-1);
         }
+
         .boxx input {
             font-size: var(--step-1);
         }
+
         /* Styles for the 'Activate Motor' button */
         #activateMotor {
             background-color: mediumaquamarine;
@@ -370,13 +417,14 @@
             transition-duration: 0.4s;
             /* Smooth transition effects */
         }
+
         /* Hover effect */
         #activateMotor:hover {
             background-color: #45a049;
             /* Darker green on hover */
         }
-                /* The Modal (background) */
-        .modal{
+        /* The Modal (background) */
+        .modal {
             display: none;
             /* Hidden by default */
             position: fixed;
@@ -397,8 +445,7 @@
         /* Modal Content */
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto;
-            /* 15% from the top and centered */
+            margin: 5% auto;/* 5% from the top and centered */
             padding: var(--space-m-l);
             font-size: var(--step-1);
             border: 1px solid #888;
@@ -409,7 +456,7 @@
             font-family: 'Poppins', 'Arial', sans-serif;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
         }
-        .modal-content input{
+        .modal-content input {
             padding-block: var(--space-xs);
             padding-inline: var(--space-2xl);
             font-size: var(--step-1);
@@ -418,7 +465,7 @@
             border-radius: 8px;
             border-style: none;
         }
-        .modal-content button{
+        .modal-content button {
             display: inline-block;
             padding-block: var(--space-xs);
             padding-inline: var(--space-2xl);
@@ -434,10 +481,10 @@
             width: 100%;
             margin: 2% auto;
         }
-        .modal-content button:active{
+        .modal-content button:active {
             background-color: mediumseagreen;
         }
-        .modal-content label{
+        .modal-content label {
             text-decoration: none;
             font-weight: bold;
             color: black;
@@ -464,93 +511,141 @@
             grid-area: 3 / 1/ 4/ span 3;
             padding-block: var(--space-s);
         }
-        @media (max-width: 1010px){
-            body{
+        @media (max-width: 1010px) {
+            body {
                 display: grid;
                 grid-template-columns: auto 1fr;
                 margin: 0;
                 height: 100vh;
                 background-color: azure;
             }
-            #pageTitle, #debugMenu {
+            #pageTitle,
+            #debugMenu {
                 grid-area: unset;
-                margin:2%;
+                margin: 2%;
             }
             .container_menu {
-                display:grid;
+                display: grid;
                 grid-template-rows: auto;
                 grid-template-columns: auto;
-                overflow-y:scroll;
+                overflow-y: scroll;
+            }
+            .view-buttons{
+                display: flex;
+                flex-direction: column;
+            }
+            #feedLogs{
+                width: 65%;
+                align-self: center;
             }
             .date_container {
-                grid-area: auto;
                 margin: 2% auto;
             }
             .chart_container {
                 grid-area: auto;
-                display:grid;
-                grid-template-rows: auto;
+                display: grid;
                 grid-template-columns: 1fr;
-                height:auto;
-                width:90%;
+                height: auto;
+                width: 90%;
             }
             .confmen_container {
                 grid-area: auto;
                 width: 90%;
                 grid-template-columns: auto;
-                grid-template-rows: auto;
                 padding: 0px;
                 justify-items: center;
+                gap: 0;
             }
             #feedingTimesContainer {
-                width: 80%; /* Ensure it spans full width */
-                 /* Center it if necessary */
-                 /* Adjust padding for smaller screens */
-                overflow-y: auto; /* Keep scrolling */
-                display: flex; /* Use flexbox for better layout management */
-                flex-direction: column; /* Stack children vertically */
-                gap: 2%; /* Add space between child elements */
+                width: 80%;
+                /* Ensure it spans full width */
+                /* Center it if necessary */
+                /* Adjust padding for smaller screens */
+                overflow-y: auto;
+                /* Keep scrolling */
+                display: flex;
+                /* Use flexbox for better layout management */
+                flex-direction: column;
+                /* Stack children vertically */
+                gap: 0;
+                /* Add space between child elements */
                 justify-content: center;
                 box-sizing: border-box;
+                height: 400px;
             }
             #feedingTimesContainer .boxx {
-                width: 100%; /* Make input boxes and labels full-width */
+                width: 100%;
+                /* Make input boxes and labels full-width */
                 margin: 2px auto;
                 height: auto;
             }
             #feedingTimesContainer input {
-                width: 100%; /* Ensure input fields span the full container */
-                padding: 2%; /* Add padding for better touch interaction */
-                font-size: var(--step-0); /* Adjust font size for readability */
+                width: 100%;
+                /* Ensure input fields span the full container */
+                padding: 2%;
+                /* Add padding for better touch interaction */
+                font-size: var(--step-0);
+                /* Adjust font size for readability */
             }
             #feedingTimesContainer button {
-                width: 100%; /* Buttons span the full width */
-                margin: 2% auto; /* Add margin between buttons */
+                width: 100%;
+                margin: 2% auto;
             }
             .day-toggle {
-                flex-wrap: wrap; /* Allow wrapping on smaller screens */
-                justify-content: center; /* Center the buttons */
+                flex-wrap: wrap;
+                /* Allow wrapping on smaller screens */
+                justify-content: center;
+                /* Center the buttons */
             }
+
             .day-toggle button {
-                flex: 1 1 5%; /* Ensure buttons adjust evenly */
+                flex: 1 1 5%;
+                /* Ensure buttons adjust evenly */
             }
+
             .boxSettings {
-                display: flex; /* Use flexbox to simplify vertical stacking */
-                flex-direction: column; /* Stack children vertically */
-                gap: 2%; /* Add spacing between boxes */
-                width: 100%; /* Ensure the boxSettings container takes full width */
+                display: flex;
+                /* Use flexbox to simplify vertical stacking */
+                flex-direction: column;
+                /* Stack children vertically */
+                gap: 0;
+                /* Add spacing between boxes */
+                width: 100%;
+                /* Ensure the boxSettings container takes full width */
             }
-            .boxSettings > div {
-                width: 100%; /* Ensure each child div takes the full width */
-                margin: 0; /* Remove any default margin */
+
+            .boxSettings>div {
+                width: 100%;
+                /* Ensure each child div takes the full width */
+                margin: 0;
+                /* Remove any default margin */
             }
-            .modal-content input{
+
+            .modal-content input {
                 font-size: var(--step-0);
             }
-            
+
         }
-
-
+        .view-buttons {
+            display: flex;
+            justify-content: start;
+            margin-bottom: 1%;
+            margin-top: 1%;
+        }
+        .view-buttons button {
+            margin: auto 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: lightsalmon;
+            color: #000;
+            height: 50%;
+        }
+        .view-buttons button:hover {
+            background-color: peru;
+        }
     </style>
 </head>
 
@@ -563,15 +658,34 @@
             <i id="openDebug" class="fa-solid fa-gear gear-icon" onclick="openDebugMenu()">debug</i>
         </div>
 
+        <div id="logModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeLogModal()">&times;</span>
+                <h3>Feed History Logs</h3>
+                <table id="feedLogTable">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Amount</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Logs will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         <!-- Debug Menu Popup Modal -->
         <div id="debugModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeDebugMenu()">&times;</span>
                 <h3>Debug Menu</h3>
                 <p style=color:red;>For presentation purposes only!</p>
-                <!-- <button id="activateMotor">Activate Motor</button>
+                <button id="activateMotor">Activate Motor</button>
                 <button onclick="controlMotor('on')">Turn Motor ON</button>
-                <button onclick="controlMotor('off')">Turn Motor OFF</button> -->
+                <button onclick="controlMotor('off')">Turn Motor OFF</button>
                 <button id="cronToggleButton" onclick="toggleCronJob()">Toggle Cron Job</button>
                 <button onclick="captureImage()">Capture and Upload Image</button>
                 <p id="statusMessage"></p>
@@ -598,22 +712,19 @@
 
         <!-- Left Container -->
         <div class="chart_container">
-
-
-            <div class="date_container">
-                <h2>Select Date</h2>
-                <input id="date" type="date" value="2021-07-22">
-                <!-- <button id="activateMotor">Activate Motor</button>
-                <button onclick="controlLED('on')">Turn LED ON</button>
-                <button onclick="controlLED('off')">Turn LED OFF</button>
-                <button onclick="controlMotor('on')">Turn Motor ON</button>
-                <button onclick="controlMotor('off')">Turn Motor OFF</button>
+            <div class="view-buttons">
+                <button id="feedLogs">View Logs</button>
+                <div class="date_container">
+                    <h2>Select Date</h2>
+                    <input id="date" type="date" value="2021-07-22">
+                    <!-- <button onclick="controlMotor('off')">Turn Motor OFF</button>
                 <button id="cronToggleButton" onclick="toggleCronJob()">Toggle Cron Job</button>
                 <button onclick="captureImage()">Capture and Upload Image</button>
                 <p id="statusMessage"></p> -->
+                </div>
             </div>
 
-            <canvas id="lineChart"></canvas>
+            <canvas id="lineChart" style="justify-self:center;"></canvas>
 
         </div>
 
@@ -628,27 +739,27 @@
                 <button class="button" id="resetFeedingTimes">Reset to Default</button> <!-- New Reset Button -->
             </div>
 
-            
-                <div class="boxSettings">
-                    <i id="changeSettings" class="fa-solid fa-gear gear-icon"> Change settings</i>
-                    <br></br>
-                    <div id="amountbox">
-                        <center><i class="fa-solid fa-utensils icon"></i> <span id="amountPerFeeding"></span></center>
-                        <center><span class="settingsdef"> Amount per Feeding (grams)</span></center>
-                    </div>
-                    <br>
-                    <div id="sessionbox">
-                        <center><i class="fa-solid fa-sync icon"></i> <span id="feedingTimes"></span></center>
-                        <center><span class="settingsdef"> Feed session per day</span></center>
-                    </div>
-                    <br>
-                    <div id="adjustbox">
-                        <center><i class="fa-solid fa-sliders-h icon"></i> <span id="adjustAmountBy"></span></center>
-                        <center><span class="settingsdef"> Adjust Amount by<br> (grams)</span></center>
-                    </div>
-                    <button class="button" id="calibrateMotorBtn">Calibrate Motor</button>
 
+            <div class="boxSettings">
+                <i id="changeSettings" class="fa-solid fa-gear gear-icon"> Change settings</i>
+                <br></br>
+                <div id="amountbox">
+                    <center><i class="fa-solid fa-utensils icon"></i> <span id="amountPerFeeding"></span></center>
+                    <center><span class="settingsdef"> Amount per Feeding (grams)</span></center>
                 </div>
+                <br>
+                <div id="sessionbox">
+                    <center><i class="fa-solid fa-sync icon"></i> <span id="feedingTimes"></span></center>
+                    <center><span class="settingsdef"> Feed session per day</span></center>
+                </div>
+                <br>
+                <div id="adjustbox">
+                    <center><i class="fa-solid fa-sliders-h icon"></i> <span id="adjustAmountBy"></span></center>
+                    <center><span class="settingsdef"> Adjust Amount by<br> (grams)</span></center>
+                </div>
+                <button class="button" id="calibrateMotorBtn">Calibrate Motor</button>
+
+            </div>
         </div>
     </div>
     <div class="overlay" id="overlay">
@@ -674,6 +785,56 @@
         fetchFeedSettings();
         fetchFeedHistory();
     });
+
+    // Function to open the log modal
+function openLogModal() {
+    document.getElementById('logModal').style.display = 'block';
+    fetchFeedLogs(); // Fetch logs when opening the modal
+}
+
+// Function to close the log modal
+function closeLogModal() {
+    document.getElementById('logModal').style.display = 'none';
+}
+
+// Function to fetch feed logs and display them in the table
+function fetchFeedLogs() {
+    $.ajax({
+        url: './feed_settings_ajax/get_feed_logs.php', // Server endpoint for fetching logs
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            const tableBody = document.getElementById('feedLogTable').querySelector('tbody');
+            tableBody.innerHTML = ''; // Clear any existing rows
+
+            // Populate the table with logs
+            response.forEach(log => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${formatTimeTo12Hour(log.feed_time)}</td>
+                    <td>${log.amount}</td>
+                    <td>${log.motor_runtime}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        },
+        error: function(error) {
+            console.error('Error fetching feed logs:', error);
+        }
+    });
+}
+
+// Event listener to open feed logs modal
+document.getElementById('feedLogs').addEventListener('click', openLogModal);
+
+// Close modal if the user clicks outside the modal content
+window.onclick = function(event) {
+    var modal = document.getElementById('logModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
 
     // Function to open the calibration modal
     function openCalibrateModal() {
@@ -875,9 +1036,9 @@
     }
 
     function controlMotor(action) {
-        const esp32Ip = "http://esp32feeder.local"; // Replace with the actual IP address of your ESP32-CAM
+        const esp32Ip = "https://equasmart.local"; // Replace with the actual IP address of your ESP32-CAM
 
-        fetch(`${esp32Ip}/motor/${action}`)
+        fetch(`${esp32Ip}/feeder/${action}`)
             .then(response => response.text())
             .then(data => console.log(data))
             .catch(error => console.error('Error:', error));
