@@ -412,84 +412,95 @@ canvas {
                 width: 100%; /* Ensure canvases fill their containers */
             }
 
-                    /* Modal should be hidden initially */
-        #myModal {
-            display: none; /* Hidden by default */
-            position: fixed;
-            z-index: 1;
-            padding-top: 100px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        /* Modal content styling */
-        .modal-content {
-            background-color: #FFF6DB;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 8px;
-            position: relative;
-        }
-
-        /* Close button styling */
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-        }
-
-        /* Custom styles for feeding times modal */
-        .days-container button {
-            background-color: #82D9A8;
-            color: white;
-            border: none;
-            padding: 10px;
-            margin: 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .feeding-time {
-            margin: 10px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .action-button {
-            background-color: #5FC6A5;
-            color: white;
-            border: none;
-            padding: 10px;
-            margin: 10px 0;
-            width: 100%;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .action-button:hover {
-            background-color: #4EA28D;
-        }
-
-            
+            .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
 }
+
+.modal-content {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 900px;
+}
+
+.modal-content img {
+    max-width: 50%;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Overlay */
+.modalActivateButton3 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modalContentActivateButton3 {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+/* The Close Button */
+.closeButtonActivateButton3 {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.closeButtonActivateButton3:hover,
+.closeButtonActivateButton3:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+
+
+
     </style>
 </head>
 
@@ -510,6 +521,7 @@ canvas {
                 </div>
             </div>
         </div>
+        
         
         <div class="container">
             <div class="gallery-container">
@@ -547,44 +559,21 @@ canvas {
                 <div>
                     <label class="label1">5/5/24</label>
                 </div> -->
+                
+                
                         <!-- Button to open the modal -->
-        <button id="activateButton3" type="button">Open Feeding Times</button>
+                <button id="activateButton3" type="button"></button>
 
-<!-- Feeding Times Modal -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h3>Select Days of the Week:</h3>
-        <div class="days-container">
-            <button>Sun</button>
-            <button>Mon</button>
-            <button>Tue</button>
-            <button>Wed</button>
-            <button>Thu</button>
-            <button>Fri</button>
-            <button>Sat</button>
-        </div>
-        <div class="feeding-time">
-            Feeding Time 1:
-            <input type="time" value="06:00">
-        </div>
-        <div class="feeding-time">
-            Feeding Time 2:
-            <input type="time" value="12:00">
-        </div>
-        <div class="feeding-time">
-            Feeding Time 3:
-            <input type="time" value="12:43">
-        </div>
-        <button class="action-button">Save Feeding Times</button>
-        <button class="action-button">Reset to Default</button>
+                <div id="modalActivateButton3" class="modalActivateButton3">
+    <div class="modalContentActivateButton3">
+        <span class="closeButtonActivateButton3">&times;</span>
+        <h2>Modal Title</h2>
+        <p>This is the content of the modal.</p>
     </div>
 </div>
-</div>
+                
+                
 
-
-
-  
                 
                 <button id="activateButton" type="button">Test Ammonia</button>
                 <button id="activateButton1" type="button">Test Nitrate</button>
@@ -834,33 +823,33 @@ canvas {
     .catch(error => console.error('Error:', error));
 });
 
-        // JavaScript to control the modal behavior
+// Get the modal
+var modal = document.getElementById("modalActivateButton3");
 
-        // Get the modal element
-        const modal = document.getElementById("myModal");
+// Get the button that opens the modal
+var btn = document.getElementById("activateButton3");
 
-        // Get the button that opens the modal
-        const btn = document.getElementById("activateButton3");
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("closeButtonActivateButton3")[0];
 
-        // Get the close button element
-        const closeBtn = modal.querySelector(".close");
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+};
 
-        // Show the modal when the button is clicked
-        btn.addEventListener("click", function() {
-            modal.style.display = "block"; // Change display to show modal
-        });
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+};
 
-        // Close the modal when the close button is clicked
-        closeBtn.addEventListener("click", function() {
-            modal.style.display = "none"; // Hide modal
-        });
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
 
-        // Close the modal if the user clicks outside the modal content
-        window.addEventListener("click", function(event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        });
+
     </script>
 </body>
 
