@@ -142,16 +142,19 @@
             display: grid;
             grid-template-columns: 40% 1fr;
             grid-area: 1/1/2/span 2;
-            width: 90%;
-            height: 70%;
-            /* margin: 5%;
-            margin-left: 9%; */
+            width: 100%; /* Increase width */
+            height: 120%; /* Increase height */
             padding-block: 1%;
             padding-inline: 2%;
             background-color: lemonchiffon;
             border-radius: 15px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             margin: auto;
+        }
+
+        #lineChart {
+            width: 100%; /* Make canvas width 100% of container */
+            height: 100%; /* Make canvas height 100% of container */
         }
 
         label {
@@ -192,9 +195,10 @@
             display: grid;
             margin: 3% auto;
             grid-area: 2 / 1 / 3 / span 2;
-            width: 90%;
+            width: 100%;
             /* height: 85%;
             margin-left: 10%; */
+            margin-top: 5%;
             padding: 20px;
             background-color: lemonchiffon;
             border-radius: 15px;
@@ -716,9 +720,9 @@
                 <span class="close" onclick="closeDebugMenu()">&times;</span>
                 <h3>Debug Menu</h3>
                 <p style=color:red;>For presentation purposes only!</p>
-                <!-- <button id="activateMotor">Activate Motor</button>
+                <button id="activateMotor">Activate Motor</button>
                 <button onclick="controlMotor('on')">Turn Motor ON</button>
-                <button onclick="controlMotor('off')">Turn Motor OFF</button> -->
+                <button onclick="controlMotor('off')">Turn Motor OFF</button>
                 <button id="cronToggleButton" onclick="toggleCronJob()">Toggle Cron Job</button>
                 <button onclick="captureImage()">Capture and Upload Image</button>
                 <p id="statusMessage"></p>
@@ -757,7 +761,7 @@
                 </div>
             </div>
 
-            <canvas id="lineChart"></canvas>
+            <canvas id="lineChart" style="justify-self:center;"></canvas>
 
         </div>
 
@@ -1069,9 +1073,9 @@ window.onclick = function(event) {
     }
 
     function controlMotor(action) {
-        const esp32Ip = "http://esp32feeder.local"; // Replace with the actual IP address of your ESP32-CAM
+        const esp32Ip = "https://equasmart.local"; // Replace with the actual IP address of your ESP32-CAM
 
-        fetch(`${esp32Ip}/motor/${action}`)
+        fetch(`${esp32Ip}/feeder/${action}`)
             .then(response => response.text())
             .then(data => console.log(data))
             .catch(error => console.error('Error:', error));
