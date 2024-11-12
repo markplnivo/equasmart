@@ -163,7 +163,8 @@
             margin: 0 auto;
             margin-top: 20px;
             width: 100%;
-            height: 70%
+            height: 70%;
+            max-width: 30%;
         }
 
         .calendar {
@@ -424,6 +425,53 @@
             cursor: pointer;
         }
 
+        .test-controls {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .response {
+            color: green;
+        }
+
+        /* Config Modal styling */
+        .config_modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent background */
+        }
+
+        .config_modal_content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .config_close_btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
         @media (max-width: 1010px) {
 
             *,
@@ -556,62 +604,62 @@
         }
 
         .calendar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: mediumaquamarine;
-        border-radius: 12px;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        width: 50%;
-        max-width: 500px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        
-    }
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: mediumaquamarine;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            max-width: 500px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    .calendar:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
-    }
+        }
 
-    .calendar h4 {
-        margin-bottom: 10px;
-        font-family: Arial, sans-serif;
-        color: #333;
-    }
+        .calendar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
+        }
 
-    .calendar input[type="date"],
-    .calendar select {
-        width: 100%;
-        padding: 10px;
-        margin: 8px 0;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 16px;
-        color: #333;
-        transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
+        .calendar h4 {
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
 
-    .calendar input[type="date"]:hover,
-    .calendar select:hover {
-        background-color: #f0f8ff;
-        border-color: #a0a0a0;
-    }
+        .calendar input[type="date"],
+        .calendar select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
 
-    .calendar select:focus,
-    .calendar input[type="date"]:focus {
-        outline: none;
-        border-color: #4a90e2;
-        box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
-    }
+        .calendar input[type="date"]:hover,
+        .calendar select:hover {
+            background-color: #f0f8ff;
+            border-color: #a0a0a0;
+        }
 
-    .calendar select {
-        appearance: none;
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5H7z"/></svg>');
-        background-repeat: no-repeat;
-        background-position: right 10px center;
-        background-size: 15px;
-    }
+        .calendar select:focus,
+        .calendar input[type="date"]:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+        }
+
+        .calendar select {
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5H7z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 15px;
+        }
     </style>
 </head>
 
@@ -633,6 +681,17 @@
             </div>
         </div>
 
+
+        <!-- The Config Modal -->
+        <div id="config_modal" class="config_modal">
+            <div class="config_modal_content">
+                <span class="config_close_btn" onclick="closeConfigModal()">&times;</span>
+                <div id="config_modal_body">
+                    <!-- Content from motor_config.php will be loaded here -->
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <div class="gallery-container">
                 <div id="imageGallery" class="image-gallery">
@@ -640,8 +699,8 @@
                 </div>
             </div>
             <div class="calendar">
-            <h4>Calendar</h4>
-            <input type="date" id="calendar" onchange="updateChart()">
+                <h4>Calendar</h4>
+                <input type="date" id="calendar" onchange="updateChart()">
                 <select id="dateRange" onchange="updateChart()">
                     <option value="daily">Daily</option>
                     <option value="weekly">Weekly</option>
@@ -649,8 +708,7 @@
                     <option value="yearly">Yearly</option>
                 </select>
             </div>
-        <canvas id="lineChart"></canvas>
-            
+            <canvas id="lineChart"></canvas>
 
         </div>
 
@@ -659,7 +717,7 @@
             <input type="text" id="input1" placeholder="Enter Ammonia value">
             <input type="text" id="input2" placeholder="Enter Nitrate value">
             <input type="text" id="input3" placeholder="Enter pH value">
-            <button id="insertButton">Insert</button>
+            <button id="insertButton">asdf</button>
         </div>
 
 
@@ -691,17 +749,69 @@
 
 
 
+                <div class="test-controls">
+                    <h2>Run Tests</h2>
+                    <button onclick="startTest('test_ammonia')">Test Ammonia</button>
+                    <button onclick="startTest('test_nitrate')">Test Nitrate</button>
+                    <button onclick="startTest('test_ph')">Test pH</button>
+                    <button onclick="startTest('flush_test_tube')">Flush Test Tube</button>
+                    <button onclick="openConfigModal()">Open Configuration</button> <!-- New button to open the modal -->
+                </div>
 
-                <button id="activateButton" type="button">Test Ammonia</button>
+
+                <!-- <button id="activateButton" type="button">Test Ammonia</button>
                 <button id="activateButton1" type="button">Test Nitrate</button>
-                <button id="activateButton2" type="button">Test pH</button>
+                <button id="activateButton2" type="button">Test pH</button> -->
                 <button id="activateButton2" onclick="captureImage()">Capture and Upload Image</button>
                 <p id="status"></p>
             </div>
+
         </div>
     </div>
 
+
     <script>
+        // Open the config modal
+        function openConfigModal() {
+            document.getElementById("config_modal").style.display = "block";
+
+            // Fetch the motor configuration content from motor_config.php
+            fetch("watermotor_config.php")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("config_modal_body").innerHTML = data;
+                })
+                .catch(error => console.error("Error loading content:", error));
+        }
+
+        // Close the config modal
+        function closeConfigModal() {
+            document.getElementById("config_modal").style.display = "none";
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById("config_modal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function startTest(testType) {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "motor_control.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    if (response.status === "test_started") {
+                        document.getElementById("status").innerText = testType + " test started in background.";
+                    }
+                }
+            };
+            xhr.send("test_type=" + testType);
+        }
+
         // Function to set the current date in the input field
         function setCurrentDate() {
             const today = new Date();
@@ -818,114 +928,8 @@
             //     $('#activateButton2').on('click', function() {
             //         sendCommand('TITRATE_NITRATE');
             //     });
-        });
 
-        const ctx = document.getElementById('lineChart').getContext('2d');
-let lineChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: [],
-        datasets: [
-            {
-                label: 'Ammonia',
-                data: [],
-                borderColor: '#ff6b6b',
-                borderWidth: 3,
-                tension: 0.4,
-                pointRadius: 0,
-                backgroundColor: 'rgba(255, 107, 107, 0.1)'
-            },
-            {
-                label: 'Nitrate',
-                data: [],
-                borderColor: '#4d96ff',
-                borderWidth: 3,
-                tension: 0.4,
-                pointRadius: 0,
-                backgroundColor: 'rgba(77, 150, 255, 0.1)'
-            },
-            {
-                label: 'pH',
-                data: [],
-                borderColor: '#ffd93d',
-                borderWidth: 3,
-                tension: 0.4,
-                pointRadius: 0,
-                backgroundColor: 'rgba(255, 217, 61, 0.1)'
-            }
-        ]
-    },
-    options: {
-        scales: {
-            y: { beginAtZero: true, max: 100 },
-            x: { grid: { display: false } }
-        },
-    }
-});
-
-function updateChart() {
-    const selectedDate = document.getElementById('calendar').value;
-    const dateRange = document.getElementById('dateRange').value;
-
-    fetch(`fetch_water_data.php?date=${selectedDate}&range=${dateRange}`)
-        .then(response => response.json())
-        .then(data => {
-            const labels = [];
-            const ammoniaData = [];
-            const nitrateData = [];
-            const pHData = [];
-
-            data.forEach(entry => {
-                const date = entry.Date_and_Time;
-                const value = parseFloat(entry.Value);
-
-                if (!labels.includes(date)) {
-                    labels.push(date);
-                }
-
-                if (entry.Name === "Ammonia") {
-                    ammoniaData.push(value);
-                } else if (entry.Name === "Nitrate") {
-                    nitrateData.push(value);
-                } else if (entry.Name === "pH") {
-                    pHData.push(value);
-                }
-            });
-
-            // Update chart data
-            lineChart.data.labels = labels;
-            lineChart.data.datasets[0].data = ammoniaData;
-            lineChart.data.datasets[1].data = nitrateData;
-            lineChart.data.datasets[2].data = pHData;
-            lineChart.update();
-        })
-        .catch(error => console.error('Error fetching data:', error));
-}
-
-// Initialize with default values
-document.addEventListener("DOMContentLoaded", function() {
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('calendar').value = today;
-    updateChart();
-});
-
-
-    // Trigger data fetching on date change
-    document.getElementById('calendar').addEventListener('change', function () {
-        const selectedDate = this.value;
-        fetchWaterData(selectedDate);  // Update chart data based on the selected date
-    });
-
-    // Set default date and load initial data
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('calendar').value = today;
-    fetchWaterData(today);
-
-
-
-
-
-        document.getElementById('insertButton').addEventListener('click', function() {
+            document.getElementById('insertButton').addEventListener('click', function() {
             // Get values from input fields
             const ammonia = document.getElementById('input1').value;
             const nitrate = document.getElementById('input2').value;
@@ -957,6 +961,128 @@ document.addEventListener("DOMContentLoaded", function() {
                 .catch(error => console.error('Error:', error));
         });
 
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const ctx = document.getElementById('lineChart').getContext('2d');
+            let lineChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                            label: 'Ammonia',
+                            data: [],
+                            borderColor: '#ff6b6b',
+                            borderWidth: 3,
+                            tension: 0.4,
+                            pointRadius: 0,
+                            backgroundColor: 'rgba(255, 107, 107, 0.1)'
+                        },
+                        {
+                            label: 'Nitrate',
+                            data: [],
+                            borderColor: '#4d96ff',
+                            borderWidth: 3,
+                            tension: 0.4,
+                            pointRadius: 0,
+                            backgroundColor: 'rgba(77, 150, 255, 0.1)'
+                        },
+                        {
+                            label: 'pH',
+                            data: [],
+                            borderColor: '#ffd93d',
+                            borderWidth: 3,
+                            tension: 0.4,
+                            pointRadius: 0,
+                            backgroundColor: 'rgba(255, 217, 61, 0.1)'
+                        }
+                    ]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                }
+            });
+
+
+            function updateChart() {
+                const selectedDate = document.getElementById('calendar').value;
+                const dateRange = document.getElementById('dateRange').value;
+
+                fetch(`fetch_water_data.php?date=${selectedDate}&range=${dateRange}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const labels = [];
+                        const ammoniaData = [];
+                        const nitrateData = [];
+                        const pHData = [];
+
+                        data.forEach(entry => {
+                            const date = entry.Date_and_Time;
+                            const value = parseFloat(entry.Value);
+
+                            // Push unique dates to labels
+                            if (!labels.includes(date)) {
+                                labels.push(date);
+                            }
+
+                            // Populate data arrays based on the Name field
+                            if (entry.Name === "Ammonia") {
+                                ammoniaData.push(value);
+                            } else if (entry.Name === "Nitrate") {
+                                nitrateData.push(value);
+                            } else if (entry.Name === "pH") {
+                                pHData.push(value);
+                            }
+                        });
+
+                        // Update chart data
+                        lineChart.data.labels = labels;
+                        lineChart.data.datasets[0].data = ammoniaData;
+                        lineChart.data.datasets[1].data = nitrateData;
+                        lineChart.data.datasets[2].data = pHData;
+
+                        // Refresh the chart to show new data
+                        lineChart.update();
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
+            }
+        });
+
+        // Initialize with default values
+        document.addEventListener("DOMContentLoaded", function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('calendar').value = today;
+            updateChart();
+        });
+
+
+        // Trigger data fetching on date change
+        document.getElementById('calendar').addEventListener('change', function() {
+            const selectedDate = this.value;
+            fetchWaterData(selectedDate); // Update chart data based on the selected date
+        });
+
+        // Set default date and load initial data
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('calendar').value = today;
+        fetchWaterData(today);
+
+
+
+
+
+      
         // Get the modal
         var modal = document.getElementById("modalActivateButton3");
 

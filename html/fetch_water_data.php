@@ -1,4 +1,5 @@
 <?php
+// github
 header('Content-Type: application/json');
 
 // Database connection
