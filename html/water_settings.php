@@ -163,7 +163,8 @@
             margin: 0 auto;
             margin-top: 20px;
             width: 100%;
-            height: 70%
+            height: 70%;
+            max-width: 30%;
         }
 
         .calendar {
@@ -246,6 +247,38 @@
             /* Centers children horizontally */
         }
 
+        /* Default background colors */
+        #input1 {
+            background-color: #ffe6e6;
+            /* Solid light red for Ammonia */
+        }
+
+        #input2 {
+            background-color: #f0e6ff;
+            /* Solid light violet for Nitrate */
+        }
+
+        #input3 {
+            background-color: #e6f2ff;
+            /* Solid light blue for pH */
+        }
+
+        /* Hover effect with distinct colors */
+        #input1:hover {
+            background-color: #fc9680;
+            /* Darker red on hover for Ammonia */
+        }
+
+        #input2:hover {
+            background-color: #de9df6;
+            /* Darker violet on hover for Nitrate */
+        }
+
+        #input3:hover {
+            background-color: #c1d1ff;
+            /* Darker blue on hover for pH */
+        }
+
         .boxx {
             width: 60%;
             height: 60%;
@@ -281,6 +314,39 @@
         #activateButton2:hover {
             background-color: #45a049;
         }
+
+        #activateButton3 {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            color: white;
+            border: none;
+            font-size: 10px;
+            display: block;
+            margin: 10px auto 0;
+            cursor: pointer;
+            text-align: center;
+            background-image: url('./img/icons/sched.png');
+            background-size: 30px 30px;
+            /* Adjust size based on button dimensions */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
+            /* Initial shadow for raised effect */
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-bottom: 15px;
+            transition: all 0.2s ease;
+            /* Smooth transition for push effect */
+        }
+
+        #activateButton3:active {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+            /* Shadow gets closer to the button */
+            transform: translateY(2px);
+            /* Slightly moves button down */
+        }
+
+
 
 
         .gallery-container {
@@ -359,6 +425,53 @@
             cursor: pointer;
         }
 
+        .test-controls {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .response {
+            color: green;
+        }
+
+        /* Config Modal styling */
+        .config_modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent background */
+        }
+
+        .config_modal_content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .config_close_btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
         @media (max-width: 1010px) {
 
             *,
@@ -395,7 +508,99 @@
                 /* Ensure canvases fill their containers */
             }
 
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 999;
+                padding-top: 100px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                overflow: auto;
+            }
 
+            .modal-content {
+                margin: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 80%;
+                max-width: 900px;
+            }
+
+            .modal-content img {
+                max-width: 50%;
+                border-radius: 10px;
+                margin: 0 10px;
+            }
+
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            /* Modal Overlay */
+            .modalActivateButton3 {
+                display: none;
+                /* Hidden by default */
+                position: fixed;
+                /* Stay in place */
+                z-index: 1;
+                /* Sit on top */
+                padding-top: 100px;
+                /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%;
+                /* Full width */
+                height: 100%;
+                /* Full height */
+                overflow: auto;
+                /* Enable scroll if needed */
+                background-color: rgba(0, 0, 0, 0.4);
+                /* Black w/ opacity */
+            }
+
+            /* Modal Content */
+            .modalContentActivateButton3 {
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+                max-width: 500px;
+                border-radius: 8px;
+            }
+
+            /* The Close Button */
+            .closeButtonActivateButton3 {
+                color: #aaaaaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            .closeButtonActivateButton3:hover,
+            .closeButtonActivateButton3:focus {
+                color: #000;
+                text-decoration: none;
+            }
         }
     </style>
 </head>
@@ -414,6 +619,17 @@
                     <!-- Comparison Image -->
                     <!-- <div id="comparisonLabel"><span>OPTIMAL</span><span>OKAY</span><span>NOT RECOMMENDED</span> </div> -->
                     <img id="comparisonImage" src="/uploads/ammonia_comparison.jpg" alt="Comparison Image" style="max-width: 50%;">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- The Config Modal -->
+        <div id="config_modal" class="config_modal">
+            <div class="config_modal_content">
+                <span class="config_close_btn" onclick="closeConfigModal()">&times;</span>
+                <div id="config_modal_body">
+                    <!-- Content from motor_config.php will be loaded here -->
                 </div>
             </div>
         </div>
@@ -455,16 +671,83 @@
                     <label class="label1">5/5/24</label>
                 </div> -->
 
-                <button id="activateButton" type="button">Test Ammonia</button>
+
+                <!-- Button to open the modal -->
+                <button id="activateButton3" type="button"></button>
+
+                <div id="modalActivateButton3" class="modalActivateButton3">
+                    <div class="modalContentActivateButton3">
+                        <span class="closeButtonActivateButton3">&times;</span>
+                        <h2>Modal Title</h2>
+                        <p>This is the content of the modal.</p>
+                    </div>
+                </div>
+
+
+
+                <div class="test-controls">
+                    <h2>Run Tests</h2>
+                    <button onclick="startTest('test_ammonia')">Test Ammonia</button>
+                    <button onclick="startTest('test_nitrate')">Test Nitrate</button>
+                    <button onclick="startTest('test_ph')">Test pH</button>
+                    <button onclick="startTest('flush_test_tube')">Flush Test Tube</button>
+                    <button onclick="openConfigModal()">Open Configuration</button> <!-- New button to open the modal -->
+                </div>
+
+
+                <!-- <button id="activateButton" type="button">Test Ammonia</button>
                 <button id="activateButton1" type="button">Test Nitrate</button>
-                <button id="activateButton2" type="button">Test pH</button>
+                <button id="activateButton2" type="button">Test pH</button> -->
                 <button id="activateButton2" onclick="captureImage()">Capture and Upload Image</button>
                 <p id="status"></p>
             </div>
+
         </div>
     </div>
 
+
     <script>
+        // Open the config modal
+        function openConfigModal() {
+            document.getElementById("config_modal").style.display = "block";
+
+            // Fetch the motor configuration content from motor_config.php
+            fetch("watermotor_config.php")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("config_modal_body").innerHTML = data;
+                })
+                .catch(error => console.error("Error loading content:", error));
+        }
+
+        // Close the config modal
+        function closeConfigModal() {
+            document.getElementById("config_modal").style.display = "none";
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById("config_modal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function startTest(testType) {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "motor_control.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    if (response.status === "test_started") {
+                        document.getElementById("status").innerText = testType + " test started in background.";
+                    }
+                }
+            };
+            xhr.send("test_type=" + testType);
+        }
+
         // Function to set the current date in the input field
         function setCurrentDate() {
             const today = new Date();
@@ -584,18 +867,33 @@
         });
 
         document.addEventListener("DOMContentLoaded", function() {
-            var ctx = document.getElementById('lineChart').getContext('2d');
-            var lineChart = new Chart(ctx, {
+            const ctx = document.getElementById('lineChart').getContext('2d');
+            let lineChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['Ammonia 1', 'Ammonia 2', 'Ammonia 3', 'Ammonia 4', 'Ammonia 5'],
+                    labels: [],
                     datasets: [{
-                        label: 'Ammonia',
-                        data: [0, 10, 20, 30, 100],
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 1
-                    }]
+                            label: 'Ammonia',
+                            data: [],
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Nitrate',
+                            data: [],
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'pH',
+                            data: [],
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }
+                    ]
                 },
                 options: {
                     maintainAspectRatio: false,
@@ -607,28 +905,53 @@
                 }
             });
 
-            // var ctx2 = document.getElementById('lineChart2').getContext('2d');
-            // var lineChart2 = new Chart(ctx2, {
-            //     type: 'line',
-            //     data: {
-            //         labels: ['pH 1', 'pH 2', 'pH 3', 'pH 4', 'pH 5'],
-            //         datasets: [{
-            //             label: 'pH',
-            //             data: [0, 10, 20, 30, 40],
-            //             backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            //             borderColor: 'rgba(54, 162, 235, 1)',
-            //             borderWidth: 1
-            //         }]
-            //     },
-            //     options: {
-            //         scales: {
-            //             y: {
-            //                 beginAtZero: true
-            //             }
-            //         }
-            //     }
-            // });
+            fetchWaterData();
+
+            function fetchWaterData() {
+                fetch('fetch_water_data.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("Fetched data:", data); // Log the fetched data
+
+                        // Group data by Name (Ammonia, Nitrate, pH)
+                        const labels = [];
+                        const ammoniaData = [];
+                        const nitrateData = [];
+                        const pHData = [];
+
+                        data.forEach(entry => {
+                            const date = entry.Date_and_Time;
+                            const value = parseFloat(entry.Value);
+
+                            // Push unique dates to labels
+                            if (!labels.includes(date)) {
+                                labels.push(date);
+                            }
+
+                            // Populate data arrays based on the Name field
+                            if (entry.Name === "Ammonia") {
+                                ammoniaData.push(value);
+                            } else if (entry.Name === "Nitrate") {
+                                nitrateData.push(value);
+                            } else if (entry.Name === "pH") {
+                                pHData.push(value);
+                            }
+                        });
+
+                        // Update chart data
+                        lineChart.data.labels = labels;
+                        lineChart.data.datasets[0].data = ammoniaData;
+                        lineChart.data.datasets[1].data = nitrateData;
+                        lineChart.data.datasets[2].data = pHData;
+
+                        // Refresh the chart to show new data
+                        lineChart.update();
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
+            }
         });
+
+
 
         document.getElementById('insertButton').addEventListener('click', function() {
             // Get values from input fields
@@ -661,6 +984,32 @@
                 })
                 .catch(error => console.error('Error:', error));
         });
+
+        // Get the modal
+        var modal = document.getElementById("modalActivateButton3");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("activateButton3");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("closeButtonActivateButton3")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
     </script>
 </body>
 
