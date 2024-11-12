@@ -62,10 +62,7 @@ table {
     border-collapse: collapse; 
     border-spacing: 0; 
 }
-
 @import url(http://fonts.googleapis.com/css?family=Lato:400,300,100,700,900&subset=latin,latin-ext);
-
-
 .preloader{
   position:fixed;
   width:100%;
@@ -73,7 +70,6 @@ table {
   background:white;
   z-index:99999;
 }
- 
 .preloader .item{
   position:absolute;
   width:100px;
@@ -83,8 +79,6 @@ table {
   margin-left:-50px;
   margin-top:-50px;
 } 
-
-
 html, body{
   font-family: 'Lato', sans-serif;
   font-size:15px;
@@ -93,13 +87,11 @@ html, body{
   font-weight:400;
   height:100%;
 }
-
 a{
   text-decoration:none;
   outline:none;
   font-size:14px;
 }
-
 h1{
   font-size:34px;
   color:white;
@@ -107,7 +99,6 @@ h1{
   letter-spacing:6px;
   line-height:1.2;
 }
-
 p{
   font-size:14px;
   color:white;
@@ -115,37 +106,23 @@ p{
   letter-spacing:1px;
   margin-top:40px;
 }
-
-
 h1 span{
   color:#2fa68e;
 }
-
-
 ::selection {
   background: #ada074;
   color:white;
 }
-
 ::-moz-selection {
   background: #ada074;
   color:white;
 }
-
-
 .container{
   position:absolute;
   width:100%;
   height:100%;
 }
-
-
-
-
-
-
 /* Start page */
-
 .start-page{
   position:relative;
   width:100%;
@@ -157,7 +134,6 @@ h1 span{
   -o-background-size: cover;
   background-size: cover;
 }
-
 .start-page hr{
   color: white;
   margin-top:30px;
@@ -165,9 +141,7 @@ h1 span{
   height: 1px;
   width:106px;
   border:0;
-
 }
-
 .start-page .opacity{
   position:absolute;
   width:100%;
@@ -175,15 +149,12 @@ h1 span{
   background:rgba(51,51,51,0.5); /* Standard Off */
   display:none;
 }
-
-
 .start-page .content{
   position:relative;
   width:700px;
   margin:0 auto;
   height:100%;
 }
-
 .start-page .content .text{
   position:absolute;
   text-align:center;
@@ -195,15 +166,12 @@ h1 span{
   width:700px;
   height:520px;
 }
-
 .start-page .content .text .logo{
   width:123px;
   height:123px;
   margin:0 auto 50px;
   
 }
-
-
 .start-page .content .text .read-more{
   width:183px;
   height:47px;
@@ -223,13 +191,11 @@ h1 span{
 	-o-transition: all 0.6s ease-in;
 	transition: all 0.6s ease-in;
 }
-
 .start-page .content .text .read-more:hover{
   color:white;
   background: #ada074;
   border:1px solid #ada074;
 }
-
 .start-page .content .arrow-down{
   position: absolute;
   bottom: 110px;
@@ -244,8 +210,6 @@ h1 span{
   -o-animation:      bounce-fade 1.2s infinite; /* Opera 12+ */
    animation:        bounce-fade 1.2s infinite; /* IE 10+ */
 }
-
-
 @-webkit-keyframes bounce-fade {
     0%   { opacity: 0; bottom: 70px; }
     100% { opacity: 1; bottom: 35px; }
@@ -262,10 +226,7 @@ h1 span{
     0%   { opacity: 0; bottom: 70px; }
     100% { opacity: 1; bottom: 35px; }
 }
-
-
 /* Menu mobile */
-
 .menu-media{
   position:relative;
   width:100%;
@@ -274,13 +235,11 @@ h1 span{
   z-index:1000;
   display:none;
 }
-
 .menu-media .menu-content{
   width:280px;
   position:relative;
   margin:0 auto;
 }
-
 .menu-media .menu-content .logo {
    color:white;
    font-weight:700;
@@ -290,19 +249,15 @@ h1 span{
    float:left;
    list-style: none;
 }
-
 .menu-media .menu-content .icon{
   width:41px;
   height:23px;
   float:right;
   line-height:100px;
 }
-
 .menu-click{
   display:none;
 }
-
-
 .menu-click li {
   position:relative;
   width:100%;
@@ -319,14 +274,10 @@ h1 span{
 	-o-transition: all 0.2s ease-in;
 	transition: all 0.2s ease-in;
  }
-
 .menu-click li:hover {
   color:#ada074;
  }
-
-
 /* Menu */
-
 .menu{
   position:relative;
   width:100%;
@@ -335,13 +286,11 @@ h1 span{
   border-bottom:1px solid #f2f2f2;
   z-index:1000;
 }
-
 .menu-content{
   width:900px;
   position:relative;
   margin:0 auto;
 }
-
 .menu-content .logo {
    color:#333;
    font-weight:700;
@@ -351,7 +300,6 @@ h1 span{
    float:left;
    list-style: none;
  }
-
 .menu-content ul{
 
   width:500px;
@@ -360,12 +308,10 @@ h1 span{
   text-align:right;
   list-style:none;
 }
-
 .menu-content li{
    display:inline-block;
    position:relative;
 }
-
 .menu-content li a{
   color:#333;
   font-size:16px;
@@ -378,32 +324,25 @@ h1 span{
 	-o-transition: all 0.2s ease-in;
 	transition: all 0.2s ease-in;
 }
-
 .menu-content li.active a{
   color:#ada074;
 }
-
 .menu-content li a:hover{
   color:#ada074;
 }
-
-
 /* About us */
-
 .about-us{
   position:relative;
   width:100%;
   background:lemonchiffon;
   z-index:10;
 }
-
 .about-us .content{
   position:relative;
   width:900px;
   margin: 0 auto;
   overflow: hidden;
 }
-
 .about-us h1{
   font-size:34px;
   color:black;
@@ -415,7 +354,6 @@ h1 span{
   line-height:1.2;
 
 }
-
 .about-us hr{
   color: black;
   margin-top:30px;
@@ -425,7 +363,6 @@ h1 span{
   border:0;
 
 }
-
 .about-us p.title{
   color: #a4a4a4;
   margin:40px auto;
@@ -436,7 +373,6 @@ h1 span{
   font-weight:300;
   text-align:center;
 }
-
 .about-us h2{
   text-align:center;
   margin-top:50px;
@@ -448,7 +384,6 @@ h1 span{
   position:relative;
   font-weight:400;
 }
-
 .about-us p{
   text-align:center;
   font-size:14px;
@@ -460,7 +395,6 @@ h1 span{
   position:relative;
   font-weight:300;
 }
-
 .about-us .column-one{
   margin-top:40px;
   width:300px;
@@ -468,7 +402,6 @@ h1 span{
   margin-bottom:70px;
   height:350px;
 }
-
 .about-us .column-one .circle-one{
   height: 100px;
   position:relative;
@@ -486,12 +419,10 @@ h1 span{
 	-o-transition: all 0.2s ease-in;
 	transition: all 0.2s ease-in;
 }
-
 .about-us .column-one .circle-one:hover{
   border:2px solid #ada074;
 
 }
-
 .about-us .column-two{
   margin-top:40px;
   width:300px;
@@ -499,7 +430,6 @@ h1 span{
   margin-bottom:70px;
   height:350px;
 }
-
 .about-us .column-two .circle-two{
   height: 100px;
   position:relative;
@@ -517,12 +447,9 @@ h1 span{
 	-o-transition: all 0.2s ease-in;
 	transition: all 0.2s ease-in;
 }
-
 .about-us .column-two .circle-two:hover{
   border:2px solid #ada074;
 }
-
-
 .about-us .column-three{ 
   margin-top:40px;
   width:300px;
@@ -530,7 +457,6 @@ h1 span{
   margin-bottom:70px;
   height:350px;
 }
-
 .about-us .column-three .circle-three{ 
   height: 100px;
   position:relative;
@@ -548,16 +474,10 @@ h1 span{
 	-o-transition: all 0.2s ease-in;
 	transition: all 0.2s ease-in;
 }
-
 .about-us .column-three .circle-three:hover{ 
   border:2px solid #ada074;
 }
-
-
-
 /* Portfolio */
-
-
 .portfolio{
   position:relative;
   width:100%;
@@ -565,14 +485,12 @@ h1 span{
   z-index:10;
 
 }
-
 .portfolio .portfolio-margin{
   position:relative;
   width:900px;
   overflow:hidden;
   margin:0 auto;
 }
-
 .portfolio .portfolio-margin .read-more{
   width:183px;
   height:47px;
@@ -593,13 +511,11 @@ h1 span{
 	transition: all 0.6s ease-in;
 	letter-spacing:1px;
 }
-
 .portfolio .portfolio-margin .read-more:hover{
   background:#ada074;
   color:white;
   border:1px solid #ada074;
 }
-
 .portfolio .portfolio-margin h1{
   font-size:34px;
   color:black;
@@ -610,7 +526,6 @@ h1 span{
   text-transform:uppercase;
   line-height:1.2;
 }
-
 .portfolio .portfolio-margin hr{
   color: black;
   margin-top:30px;
@@ -619,12 +534,7 @@ h1 span{
   width:106px;
   border:0;
 }
-
-
-
-
 /* Portfolio grid */
-
 .grid{
   margin-top:70px;
   width:100%;
@@ -632,7 +542,6 @@ h1 span{
   margin-bottom:70px;
   overflow:hidden;
 }
-
 .grid li{
   width:285px;
   margin:0 15px 15px 0;
@@ -640,13 +549,11 @@ h1 span{
   position: relative;
   overflow: hidden;
 }
-
 .grid img{
   width:285px;
   float: left;
   position: relative;
 }
-
 .grid .text {
   position: absolute;
   width: 285px;
@@ -660,11 +567,9 @@ h1 span{
 	-o-transition: all 0.6s ease-in;
 	transition: all 0.6s ease-in;
 }
-
 .grid .text:hover {
   opacity:1;
 }
-
 .grid .no-text {
   position: absolute;
   width: 285px;
@@ -678,11 +583,9 @@ h1 span{
 	-o-transition: all 0.6s ease-in;
 	transition: all 0.6s ease-in;
 }
-
 .grid .no-text:hover {
   opacity:1;
 }
-
 .grid p {
   font-size: 18px;
   text-align:center;
@@ -692,7 +595,6 @@ h1 span{
   letter-spacing:1px;
   color: #FFF;
 }
-
 .grid p.description {
   font-size: 12px;
   width:300px;
@@ -703,13 +605,10 @@ h1 span{
   color: #FFF;
   position:relative;
 }
-
 .clear { 
     clear:both; 
 }
-
 /* Partners */
-
 .partners{
   position:relative;
   width:100%;
@@ -721,14 +620,12 @@ h1 span{
   -o-background-size: cover;
   background-size: cover;
 }
-
 .partners .opacity{
   position:absolute;
   width:100%;
   height:400px;
   background:rgba(79,79,79,0.6);
 }
-
 .partners .content{
   position:absolute;
   width:900px;
@@ -739,7 +636,6 @@ h1 span{
   left:0;
   right:0;
 }
-
 .partners h2{
   color:white;
   letter-spacing:1px;
@@ -747,7 +643,6 @@ h1 span{
   font-weight:300;
   text-align:center;
 }
-
 .partners .logo{
   position:relative;
   width:900px;
@@ -755,7 +650,6 @@ h1 span{
   margin-top:50px;
   text-align:center;
 }
-
 .partners .logo img{
   opacity:0.5;
   -webkit-transition: all 0.2s ease-in;
@@ -764,13 +658,10 @@ h1 span{
 	-o-transition: all 0.2s ease-in;
 	transition: all 0.2s ease-in;
 }
-
 .partners .logo img:hover{
   opacity:1;
 }
-
 /* Contact */
-
 .contact {
   position: relative;
   width: 100%;
@@ -780,7 +671,6 @@ h1 span{
   margin-bottom: 100px;
   padding: 40px 20px;
 }
-
 .contact h1 {
   font-size: 34px;
   color: black;
@@ -791,7 +681,6 @@ h1 span{
   text-transform: uppercase;
   line-height: 1.2;
 }
-
 .contact hr {
   margin: 30px auto;
   background-color: black;
@@ -799,7 +688,6 @@ h1 span{
   width: 106px;
   border: 0;
 }
-
 .contact .content {
   max-width: 900px;
   margin: 40px auto;
@@ -807,7 +695,6 @@ h1 span{
   flex-direction: column;  /* Stack elements vertically */
   align-items: center;  /* Center the content */
 }
-
 .contact .contact-text {
   font-weight: 300;
   font-size: 16px;
@@ -816,25 +703,11 @@ h1 span{
   color: black;
   
 }
-
 .map-container {
   width: 100%;/* Increase max-width */
   height: 300px; /* Adjust height */
 }
-
-@media (max-width: 768px) {
-  .contact .content {
-    padding: 10px;
-  }
-  .map-container {
-    max-width: 100%; /* Full width on mobile */
-  }
-}
-
-
 /* Footer */
-
-
 .footer{
   position:fixed;
   bottom:0;
@@ -895,329 +768,6 @@ h1 span{
   max-width: 900px; /* You can adjust this width to make the map smaller */
   height: 200px;
   margin-top: 20px;
-}
-
-
-/* iPad (portrait) */
-@media (min-width: 320px) and (max-width: 579px) {
-
-.menu{
-  display:none;
-}
-
-.menu-media{
-  display:block;
-}
-
-.start-page .content {
-  width:300px;
-  height:100%;
-}
-
-.start-page, .start-page .opacity{
-  height:100%;
-}
-.start-page .content .text {
-  width:300px;
-}
-
-
-h1 {
-  font-size:36px;
-}
-
-.about-us h1 {
-  margin-top:0;
-}
-
-.about-us .content{
-  width:300px;
-}
-
-.about-us hr,.portfolio .portfolio-margin hr, .contact hr {
-  width:106px;
-}
-
-.about-us .column-one, .about-us .column-two{
-  width:300px;
-  margin-bottom:20px;
-}
-
- .about-us .content .column-three{
-  width:300px;
-  margin-bottom:70px;
- }
-
-.portfolio .portfolio-margin{
-  width:300px;
-}
-
-.partners .content{
-  width:300px;
-}
-
-.partners .logo {
-  width:300px;
-}
-
-.partners .logo img {
-  width:80px;
-  padding-bottom:20px;
-}
-
-.contact, .contact .content, .contact .content .form{
-  width:300px;
-}
-
-.contact .content .contact-text{
-  padding-left:0px;
-  width:300px;
-  text-align:center;
-  margin-top:60px;
-}
-
-input{
-  width:320px;
-}
-
-textarea{
-  width:320px;
-}
-
-.contact .content .contact-text {
-  width:275px;
-}
-
-.contact .content .form .column, .contact .content .form .column-3{
-  width:320px;
-}
-
-.contact .content .form .column-2{
-  width:320px;
-  padding-left:0;
-}
-
-.grid li{
-  margin:0 0 15px 0;
-}
-
-.contact{ 
-  margin:0 auto;
-}
-
-.footer{
-  position:relative;
-}
-
-}
-
-
-
-/* iPad (portrait) */
-@media (min-width: 580px) and (max-width: 767px) {
-
-.menu{
-  display:none;
-}
-
-.menu-media{
-  display:block;
-}
-
-.menu-media .menu-content{
-  width:540px;
-}
-
-.partners .logo img {
-  padding-bottom:20px;
-}
-
-.start-page .content {
-  width:300px;
-  height:100%;
-}
-
-.start-page, .start-page .opacity{
-  height:100%;
-}
-.start-page .content .text {
-  width:300px;
-}
-
-
-h1 {
-  font-size:36px;
-}
-
-.about-us h1 {
-  margin-top:0;
-}
-
-.about-us .content{
-  width:300px;
-}
-
-.about-us hr,.portfolio .portfolio-margin hr, .contact hr {
-  width:106px;
-}
-
-.about-us .column-one, .about-us .column-two{
-  width:300px;
-  margin-bottom:20px;
-}
-
- .about-us .column-three{
-  width:300px;
-  margin-bottom:70px;
- }
-
-.portfolio .portfolio-margin{
-  width:300px;
-}
-
-.partners .content{
-  width:400px;
-}
-
-.partners .logo {
-  width:400px;
-}
-
-.partners .logo img {
-  width:80px;
-  padding-bottom:20px;
-}
-
-.contact, .contact .content, .contact .content .form{
-  width:300px;
-}
-
-.contact .content .contact-text{
-  padding-left:0px;
-  width:300px;
-  text-align:center;
-  margin-top:60px;
-}
-
-.contact .content .contact-text {
-  width:275px;
-}
-
-.contact .content .form .column, .contact .content .form .column-3{
-  width:420px;
-}
-
-.contact .content .form .column-2{
-  width:420px;
-  padding-left:0;
-}
-
-.contact{ 
-  margin:0 auto;
-}
-
-.footer{
-  position:relative;
-}
-
-input{
-  width:420px;
-}
-
-textarea{
-  width:420px;
-}
-
-
-}
-
-/* iPad (portrait) */
-@media (min-width: 768px) and (max-width: 1023px) {
-
-
-
-.menu-content .logo{
-  width:200px;
-}
-
-.menu-content{
-  width:700px;
-}
-
-.about-us .content{
-  width:700px;
-}
-
-.about-us p{
-  width:200px;
-}
-
-.about-us h2{
-  letter-spacing:2px;
-}
-
-.about-us .column-one{
-  width:233px;
-}
-
-.about-us .column-two{
-  width:233px;
-}
-
-.about-us .column-three{
-  width:233px;
-}
-
-.portfolio .portfolio-margin {
-  width:600px;
-}
-
-.partners .content{
-  width:700px;
-}
-
-.partners .logo {
-  width:700px;
-}
-
-.contact{ 
-  margin:0 auto;
-}
-
-.contact .content {
-  width:700px
-}
-
-.footer{
-  position:relative;
-}
-
-.contact .content .form{
-  width:355px;
-}
-
-input{
-  width:320px;
-}
-
-textarea{
-  width:320px;
-}
-
-.contact .content .contact-text {
-  width:275px;
-}
-
-.contact .content .form .column, .contact .content .form .column-3{
-  width:450px;
-}
-
-.contact .content .form .column-2{
-  width:450px;
-  padding-left:0;
-}
-
-
 }
 
 .video-background {
@@ -1316,14 +866,6 @@ video#coverVideo {
 .app-promo .btn-download-pc:hover {
     background-color: #4830b3;
 }
-
-
-
-
-
-
-
-
     </style>
 </head>
 
