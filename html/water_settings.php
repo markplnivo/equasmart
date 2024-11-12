@@ -246,6 +246,38 @@
             /* Centers children horizontally */
         }
 
+        /* Default background colors */
+        #input1 {
+            background-color: #ffe6e6;
+            /* Solid light red for Ammonia */
+        }
+
+        #input2 {
+            background-color: #f0e6ff;
+            /* Solid light violet for Nitrate */
+        }
+
+        #input3 {
+            background-color: #e6f2ff;
+            /* Solid light blue for pH */
+        }
+
+        /* Hover effect with distinct colors */
+        #input1:hover {
+            background-color: #fc9680;
+            /* Darker red on hover for Ammonia */
+        }
+
+        #input2:hover {
+            background-color: #de9df6;
+            /* Darker violet on hover for Nitrate */
+        }
+
+        #input3:hover {
+            background-color: #c1d1ff;
+            /* Darker blue on hover for pH */
+        }
+
         .boxx {
             width: 60%;
             height: 60%;
@@ -281,6 +313,39 @@
         #activateButton2:hover {
             background-color: #45a049;
         }
+
+        #activateButton3 {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            color: white;
+            border: none;
+            font-size: 10px;
+            display: block;
+            margin: 10px auto 0;
+            cursor: pointer;
+            text-align: center;
+            background-image: url('./img/icons/sched.png');
+            background-size: 30px 30px;
+            /* Adjust size based on button dimensions */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
+            /* Initial shadow for raised effect */
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-bottom: 15px;
+            transition: all 0.2s ease;
+            /* Smooth transition for push effect */
+        }
+
+        #activateButton3:active {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+            /* Shadow gets closer to the button */
+            transform: translateY(2px);
+            /* Slightly moves button down */
+        }
+
+
 
 
         .gallery-container {
@@ -395,8 +460,158 @@
                 /* Ensure canvases fill their containers */
             }
 
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 999;
+                padding-top: 100px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                overflow: auto;
+            }
 
+            .modal-content {
+                margin: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 80%;
+                max-width: 900px;
+            }
+
+            .modal-content img {
+                max-width: 50%;
+                border-radius: 10px;
+                margin: 0 10px;
+            }
+
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            /* Modal Overlay */
+            .modalActivateButton3 {
+                display: none;
+                /* Hidden by default */
+                position: fixed;
+                /* Stay in place */
+                z-index: 1;
+                /* Sit on top */
+                padding-top: 100px;
+                /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%;
+                /* Full width */
+                height: 100%;
+                /* Full height */
+                overflow: auto;
+                /* Enable scroll if needed */
+                background-color: rgba(0, 0, 0, 0.4);
+                /* Black w/ opacity */
+            }
+
+            /* Modal Content */
+            .modalContentActivateButton3 {
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+                max-width: 500px;
+                border-radius: 8px;
+            }
+
+            /* The Close Button */
+            .closeButtonActivateButton3 {
+                color: #aaaaaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            .closeButtonActivateButton3:hover,
+            .closeButtonActivateButton3:focus {
+                color: #000;
+                text-decoration: none;
+            }
         }
+
+        .calendar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: mediumaquamarine;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 50%;
+        max-width: 500px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+    }
+
+    .calendar:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
+    }
+
+    .calendar h4 {
+        margin-bottom: 10px;
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+
+    .calendar input[type="date"],
+    .calendar select {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        color: #333;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .calendar input[type="date"]:hover,
+    .calendar select:hover {
+        background-color: #f0f8ff;
+        border-color: #a0a0a0;
+    }
+
+    .calendar select:focus,
+    .calendar input[type="date"]:focus {
+        outline: none;
+        border-color: #4a90e2;
+        box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    }
+
+    .calendar select {
+        appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5H7z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 15px;
+    }
     </style>
 </head>
 
@@ -425,10 +640,17 @@
                 </div>
             </div>
             <div class="calendar">
-                <h4>Calendar</h4>
-                <input type="date" id="calendar">
+            <h4>Calendar</h4>
+            <input type="date" id="calendar" onchange="updateChart()">
+                <select id="dateRange" onchange="updateChart()">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
             </div>
-            <canvas id="lineChart"></canvas>
+        <canvas id="lineChart"></canvas>
+            
 
         </div>
 
@@ -454,6 +676,21 @@
                 <div>
                     <label class="label1">5/5/24</label>
                 </div> -->
+
+
+                <!-- Button to open the modal -->
+                <button id="activateButton3" type="button"></button>
+
+                <div id="modalActivateButton3" class="modalActivateButton3">
+                    <div class="modalContentActivateButton3">
+                        <span class="closeButtonActivateButton3">&times;</span>
+                        <h2>Modal Title</h2>
+                        <p>This is the content of the modal.</p>
+                    </div>
+                </div>
+
+
+
 
                 <button id="activateButton" type="button">Test Ammonia</button>
                 <button id="activateButton1" type="button">Test Nitrate</button>
@@ -583,52 +820,110 @@
             //     });
         });
 
-        document.addEventListener("DOMContentLoaded", function() {
-            var ctx = document.getElementById('lineChart').getContext('2d');
-            var lineChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['Ammonia 1', 'Ammonia 2', 'Ammonia 3', 'Ammonia 4', 'Ammonia 5'],
-                    datasets: [{
-                        label: 'Ammonia',
-                        data: [0, 10, 20, 30, 100],
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
+        const ctx = document.getElementById('lineChart').getContext('2d');
+let lineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [],
+        datasets: [
+            {
+                label: 'Ammonia',
+                data: [],
+                borderColor: '#ff6b6b',
+                borderWidth: 3,
+                tension: 0.4,
+                pointRadius: 0,
+                backgroundColor: 'rgba(255, 107, 107, 0.1)'
+            },
+            {
+                label: 'Nitrate',
+                data: [],
+                borderColor: '#4d96ff',
+                borderWidth: 3,
+                tension: 0.4,
+                pointRadius: 0,
+                backgroundColor: 'rgba(77, 150, 255, 0.1)'
+            },
+            {
+                label: 'pH',
+                data: [],
+                borderColor: '#ffd93d',
+                borderWidth: 3,
+                tension: 0.4,
+                pointRadius: 0,
+                backgroundColor: 'rgba(255, 217, 61, 0.1)'
+            }
+        ]
+    },
+    options: {
+        scales: {
+            y: { beginAtZero: true, max: 100 },
+            x: { grid: { display: false } }
+        },
+    }
+});
+
+function updateChart() {
+    const selectedDate = document.getElementById('calendar').value;
+    const dateRange = document.getElementById('dateRange').value;
+
+    fetch(`fetch_water_data.php?date=${selectedDate}&range=${dateRange}`)
+        .then(response => response.json())
+        .then(data => {
+            const labels = [];
+            const ammoniaData = [];
+            const nitrateData = [];
+            const pHData = [];
+
+            data.forEach(entry => {
+                const date = entry.Date_and_Time;
+                const value = parseFloat(entry.Value);
+
+                if (!labels.includes(date)) {
+                    labels.push(date);
+                }
+
+                if (entry.Name === "Ammonia") {
+                    ammoniaData.push(value);
+                } else if (entry.Name === "Nitrate") {
+                    nitrateData.push(value);
+                } else if (entry.Name === "pH") {
+                    pHData.push(value);
                 }
             });
 
-            // var ctx2 = document.getElementById('lineChart2').getContext('2d');
-            // var lineChart2 = new Chart(ctx2, {
-            //     type: 'line',
-            //     data: {
-            //         labels: ['pH 1', 'pH 2', 'pH 3', 'pH 4', 'pH 5'],
-            //         datasets: [{
-            //             label: 'pH',
-            //             data: [0, 10, 20, 30, 40],
-            //             backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            //             borderColor: 'rgba(54, 162, 235, 1)',
-            //             borderWidth: 1
-            //         }]
-            //     },
-            //     options: {
-            //         scales: {
-            //             y: {
-            //                 beginAtZero: true
-            //             }
-            //         }
-            //     }
-            // });
-        });
+            // Update chart data
+            lineChart.data.labels = labels;
+            lineChart.data.datasets[0].data = ammoniaData;
+            lineChart.data.datasets[1].data = nitrateData;
+            lineChart.data.datasets[2].data = pHData;
+            lineChart.update();
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}
+
+// Initialize with default values
+document.addEventListener("DOMContentLoaded", function() {
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('calendar').value = today;
+    updateChart();
+});
+
+
+    // Trigger data fetching on date change
+    document.getElementById('calendar').addEventListener('change', function () {
+        const selectedDate = this.value;
+        fetchWaterData(selectedDate);  // Update chart data based on the selected date
+    });
+
+    // Set default date and load initial data
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('calendar').value = today;
+    fetchWaterData(today);
+
+
+
+
 
         document.getElementById('insertButton').addEventListener('click', function() {
             // Get values from input fields
@@ -661,6 +956,32 @@
                 })
                 .catch(error => console.error('Error:', error));
         });
+
+        // Get the modal
+        var modal = document.getElementById("modalActivateButton3");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("activateButton3");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("closeButtonActivateButton3")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
     </script>
 </body>
 
