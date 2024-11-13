@@ -3,13 +3,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// Remove database connection, no scheduled feeding found, cron job completed, and cron jobo checkScheduledFeeding.php started.
 // Include the SMS and Email notification files
 require_once '/var/www/cronjobs/send_sms.php';
 require_once '/var/www/cronjobs/send_email.php';
 require_once '/var/www/cronjobs/log.php';
 
 // Log script start
-logMessage("Cron job checkScheduledFeeding.php started.");
+// logMessage("Cron job checkScheduledFeeding.php started.");
 
 // Database connection
 $conn = new mysqli("localhost", "admin", "123", "db_equasmart");
@@ -19,7 +20,7 @@ if ($conn->connect_error) {
     die("Database connection failed.");
 }
 
-logMessage("Database connection established.");
+// logMessage("Database connection established.");
 
 // Get current time and day for scheduled feeding checks
 $current_time = new DateTime();  // Current time as DateTime object
@@ -139,7 +140,7 @@ if ($result_schedule && $result_schedule->num_rows > 0) {
 
 // Close the database connection
 $conn->close();
-logMessage("Cron job completed.");
+// logMessage("Cron job completed.");
 
 /**
  * Function to control the motor (on or off) by sending requests to the ESP32

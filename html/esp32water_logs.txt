@@ -1,0 +1,8 @@
+2024-11-13 14:30:25 - Motor control command sent: MOTOR,ammonia1,forward,10000
+2024-11-13 14:30:25 - Motor control command sent: MOTOR,ammonia1,reverse,10000
+2024-11-13 14:30:27 - Motor control command sent: MOTOR,ammonia2,forward,1200
+2024-11-13 14:30:27 - Motor control command sent: MOTOR,ammonia2,reverse,1200
+2024-11-13 14:30:28 - Motor control command sent: MOTOR,air_pump,forward,500
+2024-11-13 14:30:31 - Attempting to connect to server for image upload
+2024-11-13 14:30:31 - Connection to server successful for image upload
+2024-11-13 14:30:31 - Image upload failed

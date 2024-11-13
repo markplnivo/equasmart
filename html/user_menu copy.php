@@ -15,6 +15,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <title>Custom Menu Bar</title>
         <style>
+            *, body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+            
         .custom-menu {
             width: 200px; /* Set the width to 200px by default */
             height: auto;
@@ -88,7 +94,7 @@
         }
 
 
-    @media (max-width: 768px) {
+            @media (max-width: 1010px) {
     
         .custom-menu {
             width: 60px;
@@ -184,12 +190,12 @@
                     <span class="nav-text">Dashboard</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="add_system.php">
                     <span class="icon fa fa-plus-circle"></span>
                     <span class="nav-text">Add a Machine</span>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="feed_settings.php">
                     <span class="icon fa fa-fish"></span>
@@ -202,16 +208,22 @@
                     <span class="nav-text">Water Settings</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="notification_settings.php">
                     <span class="icon fa fa-bell"></span>
                     <span class="nav-text">Notification Settings</span>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="print_logs.php">
                     <span class="icon fa fa-scroll"></span>
                     <span class="nav-text">Print Logs</span>
+                </a>
+            </li>
+            <li>
+                <a href="machine_gallery.php">
+                    <span class="icon fa fa-image"></span>
+                    <span class="nav-text">Machine Gallery</span>
                 </a>
             </li>
         </ul>
