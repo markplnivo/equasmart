@@ -47,6 +47,8 @@ footer, header, hgroup, menu, nav, section {
 body { 
     line-height: 1; 
 } 
+
+
 ol, ul { 
     list-style: none; 
 } 
@@ -150,10 +152,9 @@ h1 span{
   display:none;
 }
 .start-page .content{
-  position:relative;
-  width:700px;
-  margin:0 auto;
-  height:100%;
+  width: 100%;               /* Ensure the content container also fits within screen width */
+  max-width: 1010px;         /* Set a max width for screens larger than 1010px */
+  margin: 0 auto;            /* Center content horizontally */
 }
 .start-page .content .text{
   position:absolute;
@@ -172,6 +173,7 @@ h1 span{
   margin:0 auto 50px;
   
 }
+
 .start-page .content .text .read-more{
   width:183px;
   height:47px;
@@ -774,10 +776,11 @@ h1 span{
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     overflow: hidden;
     z-index: -1;
+    object-fit: cover; /* Ensures the video covers the container without stretching */
 }
 
 video#coverVideo {
@@ -866,6 +869,231 @@ video#coverVideo {
 .app-promo .btn-download-pc:hover {
     background-color: #4830b3;
 }
+
+  
+@media (max-width: 1010px) {
+ 
+ 
+  /* Adjust font sizes */
+  h1 {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+ 
+  p {
+    font-size: 15px;
+    margin-top: 15px;
+  }
+
+  .about-us p.title {
+    margin: 15px auto;
+    width: 95%;
+    text-align: center;
+  }
+
+  .about-us {
+    overflow: hidden;
+  }
+
+  .content {
+    width: 90%;
+  }
+  .logo {
+    width: 60px; /* Smaller for mobile */
+  }
+
+  /* Responsive layout adjustments */
+  .container, .menu-content, .about-us .content, .portfolio .portfolio-margin, .partners .content {
+    width: 90%; /* Full width with padding for smaller screens */
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* Adjust `.start-page` content */
+  .start-page .content {
+    width: 90%;
+  }
+  .start-page .content .text {
+    width: 80px !important;    /* Smaller for compact display */
+    height: 40px !important;
+    padding: 3px !important;
+    margin: 80px auto 0 !important; /* Adjust top margin for positioning */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: visible !important;
+  }
+  .start-page .content .text .logo {
+    width: 50px; /* Smaller logo for mobile */
+    height: 50px;
+    margin: 15px auto;
+  }
+  .start-page .content .text .read-more {
+    font-size: 6px !important;
+    padding: 2px 4px !important;
+    margin: 0 !important;
+    text-align: center;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  /* Reduce menu dimensions */
+  .menu {
+    height: 45px;
+  }
+  .menu-content {
+    border: none;
+  }
+  .menu-content .logo {
+    border: none;
+  }
+  .menu-content li a {
+    text-decoration: none;
+    border-bottom: none;
+    font-size: 12px;
+  }
+
+  /* View More */
+  .read-more {
+    width: auto;
+    min-width: 40px;
+    font-size: 8px;
+    padding: 2px 3px;
+    margin: 5px 0;
+    text-align: center;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  /* About Us Section */
+  .about-us h1 {
+    font-size: 24px;
+    margin-top: 50px;
+  }
+  .about-us h2 {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .about-us .column-one, .about-us .column-two, .about-us .column-three {
+    width: 100%; /* Stacks columns vertically */
+    float: none;
+    margin-bottom: 20px;
+  }
+
+  /* Portfolio Section */
+  .portfolio .portfolio-margin .read-more {
+    width: 80px; /* Adjusted for mobile */
+    font-size: 10px;
+  }
+
+  .menu-click li {
+      position: relative;
+      width: 100%;                  /* Full width for mobile */
+      height: 50px;                 /* Reduced height for smaller screens */
+      color: #333333;
+      font-size: 16px;              /* Slightly smaller font size */
+      text-align: center;
+      line-height: 50px;            /* Match line height to new height */
+      z-index: 1000;
+      border-bottom: 1px solid #f2f2f2;
+      -webkit-transition: all 0.2s ease-in;
+      -moz-transition: all 0.2s ease-in;
+      -ms-transition: all 0.2s ease-in;
+      -o-transition: all 0.2s ease-in;
+      transition: all 0.2s ease-in;
+  }
+
+  /* Grid Items */
+  .grid li {
+    width: 100%;
+    margin: 8px 0;
+  }
+  .grid img {
+    width: 100%;
+  }
+
+  /* Partners Section */
+  .partners .content {
+    width: 100%;
+  }
+  .partners .logo {
+    width: 100%;
+    text-align: center;
+  }
+  .partners .logo img {
+    width: 40px;
+    height: auto;
+  }
+
+  /* Contact Section */
+  .contact h1 {
+    font-size: 24px;
+    margin-top: 30px;
+  }
+  .contact .content {
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer {
+    position: static;
+    padding: 15px 0;
+  }
+  .footer .logo {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+  }
+  .footer .menu-footer {
+    width: 100%;
+  }
+  .footer .menu-footer a {
+    font-size: 12px;
+    padding: 4px;
+  }
+  .footer .copyright {
+    font-size: 10px;
+  }
+
+  /* Video Background */
+  .video-background {
+    width: 100%;               /* Set width to 100% to fit the screen */
+    height: 70%;              /* Adjust height to occupy 70% of the viewport height */
+    object-fit: cover;         /* Ensures the video covers the container without stretching */
+    position: relative;        /* Position video relative to its container */
+    top: 0;
+    left: 0;
+  }
+
+  /* App Promo Section */
+  .app-promo .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .app-promo .phone-image {
+    max-width: 50%;
+    margin-top: 15px;
+  }
+  .app-promo .promo-right h1 {
+    font-size: 24px;
+  }
+  .app-promo .promo-right p {
+    font-size: 12px;
+  }
+  .app-promo .buttons {
+    margin-bottom: 10px;
+  }
+  .app-promo .btn-download-android,
+  .app-promo .btn-download-pc {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+
+
     </style>
 </head>
 
@@ -890,7 +1118,7 @@ video#coverVideo {
     <div class="opacity"></div> <!-- Opacity color -->
     <div class="content">
         <div class="text">
-            <div><img src="images/equasmartlogo_croppedlogo.png" alt="" style="width: 10%;"></div>
+            <div class="logo-container"><img src="images/equasmartlogo_croppedlogo.png" alt="" style="width: 10%;"></div>
             <div style="display: flex; justify-content: center; gap: 20px;">
                 <a href="#about-us"><div class="read-more">View more</div></a>
                 <a href="login_page.php"><div class="read-more">Login</div></a>
