@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/equasmartlogo_croppedlogo.png" type="image/svg+xml">
+    <link rel="stylesheet" href="css/css/all.min.css">
+    <link rel="stylesheet" href="css/css/fontawesome.min.css">
     <title>User Dashboard</title>
 </head>
 <style>
@@ -70,43 +72,36 @@
         --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
 }
     *, body{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
     body {
         display: grid;
-        grid-template-columns: 60px 1fr;
+        grid-template-columns: auto 1fr;
         grid-template-rows: auto;
-        margin: 0;
         height: 100vh;
     }
-
     .container_menu {
         grid-area: 1 / 2 / -1 / -1;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto 12% 1fr 1fr;
+        grid-template-rows: auto 1fr 1fr;
         background-color: azure;
-        /* margin-top: var(--space-s); */
     }
-
     .chart_header {
         grid-area: 1 / 1 / 2 / span 3;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        padding-inline-start: var(--space-13xl);
-        margin-top: 1%;
+        margin-block: 2%;
     }
-
     #feedQuick:hover,
     #waterQuick:hover,
     #tempQuick:hover {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+        font-size: var(--step-2);
     }
-
     #feedQuick,
     #waterQuick,
     #tempQuick {
@@ -119,8 +114,9 @@
         align-items: center;
         border-radius: 10px;
         margin: var(--space-2xs);
-        font-size: var(--step-2);
+        font-size: var(--step-0);
         padding: var(--space-s);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     }
     #feedQuick{
         margin-left: var(--space-9xl);
@@ -130,22 +126,22 @@
         background-color: cornflowerblue;
         color: whitesmoke;
     }
-
+    #waterQuick a{
+        text-decoration: none;
+    }
     #tempQuick {
         background-color: lightcoral;
         color: whitesmoke;
         margin-right: var(--space-9xl);
     }
-
     #feedQuick .icon,
     #waterQuick .icon,
     #tempQuick .icon {
         font-size: var(--step-5);
         margin-right: var(--space-xs);
     }
-
     .liveImage {
-        grid-row: 3 / span 2;
+        grid-row: 2 / span 2;
         grid-column: 1 / span 3;
         display: flex;
         flex-direction: column;
@@ -155,60 +151,35 @@
         height: 100%;
         position: relative;
     }
-
-    .liveImage .videoWrapper {
+    .videoWrapper {
         display: flex;
         justify-content: center;
         width: 100%;
-        /* height: 70%; */
-        margin-left: 10%;
-        overflow:scroll;
-        height:auto;
+        height: 400px;
     }
-
-    .liveImage #video1 {
-        /* background-color: whitesmoke;
-        border-radius: 10px;
-        width: 30%; 
-        height: auto;
-        margin-inline: var(--space-s);
-        margin-block: var(--space-m-l); */
+    .liveImage #video1{
+        width: 400px;
         transform: rotate(90deg);
-        margin-right:2%;
-        width:50vw;
-        margin-bottom:2%;
+        border: 5px solid #333;          /* Creates a solid border around the image */
+        border-radius: 15px;               /* Adds rounded corners for a frame effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds a shadow for depth */
+        padding: .5%;                      /* Space between image and frame */
+        background-color: #f8f8f8;         /* Background color for the frame effect */
     }
-
     #liveClock {
-        font-size: var(--step-4);
+        font-size: var(--step-0);
         color: darkslategray;
         text-align: center;
     }
-
-    .clockContainer {
-        position: auto;
-        top: 0;
-        width: 50%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        padding: var(--space-2xs);
+    #liveClock:hover{
+        font-size: var(--step-2);
     }
-
-    .clockContainer .icon {
-        font-size: var(--step-4);
-        margin-inline: var(--space-xs);
-        margin-block: var(--space-4xl);
-    }
-    
-    @media (max-width: 1010px) {/* added by mark romualdo */
-    .container_menu {
+    @media (max-width: 1010px){/* added by mark romualdo */
+    .container_menu{
         grid-template-columns: 1fr; /* Make the columns stack vertically */
         grid-template-rows: auto; /* Adjust rows to fit the content */
         padding: 0px; /* Add padding to the container */
     }
-
     .chart_header {
         flex-direction: column; /* Stack the elements vertically */
         align-items: flex-start; /* Align items to the start of the container */
@@ -227,35 +198,48 @@
         width: 100%; /* Ensure full width */
         height: auto; /* Allow height to adjust */
     }
-
     .videoWrapper {
         overflow:hidden;
+        margin-bottom: 5%;
+        padding-inline: 5%;
     }
-
-    /* .liveImage .videoWrapper {
-        width: 100%; 
-        height: auto; 
- 
-        margin-bottom: 10px; 
-        margin-left: 5%;
-    } */
-
     .liveImage #video1 {
-        width: 90%; /* Adjust video width */
+        max-width: 400px; /* Adjust video width */
         height: auto; /* Maintain aspect ratio */
-        margin-block: var(--space-xs); /* Remove side margins */
         transform: rotate(90deg);
-        margin-top:10%; 
-        margin-right:2%;
+        align-self: center;
+        margin-block: 2%;
+    }
+    @media (max-width: 370px){
+        .liveImage #video1{
+            height: 200px;
+        }
     }
 
 }
 
 
 </style>
+<?php
+include "logindbase.php";
+
+$sql = "SELECT SUM(distance) as total_distance FROM measurements";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $calculated_value = round(($row['total_distance'] / 28) * 100); // Round to the nearest integer
+
+} else {
+    echo json_encode(['calculated_value' => 0]);
+}
+
+$conn->close();
+?>
 
 <body>
-    <?php include "user_menu.php"; ?>
+    <?php include "user_menu.php"; 
+    ?>
     <div class="container_menu">
 
         <!-- Header Section -->
@@ -264,7 +248,10 @@
                 <span class="icon fa fa-fish"></span><span class="feedAmount">0 grams fed</span>
             </div>
             <div id="waterQuick">
-                <a href="water_settings.php"> <span class="icon fa fa-tint"></span><span class="status">Water Parameters</span></a>
+            <div id="calculated_value">Calculated Distance: <?php echo isset($calculated_value) ? round($calculated_value) : 0; ?> <i class="fa-solid fa-percent"></i></div>
+
+
+
             </div>
             <div id="tempQuick">
                 <!-- <span class="icon fa fa-thermometer-half"></span> -->
@@ -321,6 +308,26 @@
 
     setInterval(fetchFeedAmount, 60000);
     fetchFeedAmount();
+
+    function fetchCalculatedDistance() {
+    $.ajax({
+        url: './user_dashboard_ajax/fetch_total_distance.php', // Path to your PHP script
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            const distanceDisplay = document.querySelector('#distanceDisplay');
+            distanceDisplay.textContent = `Calculated Distance: ${data.calculated_value.toFixed(2)}`;
+        },
+        error: function(xhr, status, error) {
+            console.error('Error fetching calculated distance:', error);
+        }
+    });
+}
+
+// Fetch and update the calculated distance on page load and periodically
+setInterval(fetchCalculatedDistance, 60000); // Fetch every 60 seconds
+fetchCalculatedDistance();
+
 </script>
 
 </html>
