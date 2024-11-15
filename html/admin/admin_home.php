@@ -1,3 +1,4 @@
+<!-- gitHUB by Jayson -->
 <?php ob_start();
 include "../logindbase.php";
 ?>
@@ -66,25 +67,31 @@ include "../logindbase.php";
         --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
 }
     /* Global styles */
+    *, html{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
     body {
         display: grid;
             grid-template-columns: auto 1fr;
             grid-template-rows: auto;
             margin: 0;
             height: 100vh;
+        font-family: 'Poppins', 'Arial', sans-serif;
         }
         .container_menu {
             grid-area: 1 / 2 / -1 / -1;
             grid-template-columns: 1fr;
             background-color: azure;
-            
         }
         h2 {
+        font-size: var(--step-1);
             font-family: verdana;
         text-align: center;
             height: 5%;
+        margin-top: 2%;
     }
-
     #maintable {
             width: 92%;
             height: auto;
@@ -94,36 +101,41 @@ include "../logindbase.php";
         padding: 20px;
             margin-left: 2%;
     }
-
     table {
         width: 100%;
         border-collapse: collapse;
         margin-bottom: 20px;
+        font-size: var(--step-0);
     }
-
+    .table-scrollable{
+        overflow: auto;
+        height: 450px;
+        width: 100%;
+    }
     th,
     td {
-        padding: 12px 15px;
+        font-size: var(--step--1);
+        padding-inline: var(--space-2xs);
+        padding-block: var(--space-xs);
             text-align: center;
         border-bottom: 1px solid #ddd;
     }
-
     th {
         background-color: mediumaquamarine;
         color: white;
     }
-
-    tr:hover {
+    tr{
         background-color: #f1f1f1;
     }
-
+    .show-more-toggle {
+        display: none;
+    }
     #pageNumbers {
         margin-top: 20px;
         text-align: center;
         grid-column: 2 / 3;
         grid-row: 3 / 4;
     }
-
     #pageNumbers a {
         color: #0073e6;
         padding: 8px 16px;
@@ -132,8 +144,8 @@ include "../logindbase.php";
         border-radius: 4px;
         margin: 0 4px;
         transition: background-color 0.3s ease;
+        font-size: var(--step-0);
     }
-
     #pageNumbers a:hover {
         background-color: #0073e6;
         color: white;
@@ -147,24 +159,21 @@ include "../logindbase.php";
         border-radius: 4px;
         padding: 10px 20px;
         margin-right: 10px;
+        margin-top: 10px;
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
-
     #addSelect:hover {
         background-color: #005bb5;
     }
-
     #removeSelect {
         background-color: #dc3545;
         /* Warning color (Bootstrap's danger color) */
     }
-
     #removeSelect:hover {
         background-color: #c82333;
         /* Darker shade for hover effect */
     }
-
     #searchInput {
         padding: 10px;
         width: 50%;
@@ -173,17 +182,15 @@ include "../logindbase.php";
         border: 1px solid #ddd;
         border-radius: 4px;
             float: right;
+        margin-bottom: 1%;
+        font-size: var(--step--2);
     }
-
     input[type="checkbox"] {
         cursor: pointer;
-        height: 20px;
-        width: 20px;
         accent-color: #0073e6;
         border: 1px solid #ddd;
         border-radius: 4px;
     }
-
     select {
         padding: 8px;
         border: 1px solid #ddd;
@@ -192,50 +199,296 @@ include "../logindbase.php";
         cursor: pointer;
         transition: border-color 0.3s ease;
     }
-
     select:hover {
         border-color: #0073e6;
     }
-
 /* Mobile responsiveness */
 @media (max-width: 1010px) {
+        *, body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Arial', sans-serif;
+        }
     .container_menu {
+            background-color: azure;
         grid-template-columns: auto;
         grid-template-rows: auto;
-        padding: 0px;
+            padding: 5%;
     }
     #maintable {
-        width: 80%;
-        margin:auto;
+            width: 100%;
+            height: auto;
+            margin: auto;
+            padding-inline: 2%;
         border-radius: 10px;
         display: flex;
-        flex-direction: column; /* Stacks elements vertically */
+            flex-direction: column;
+            /* Stacks elements vertically */
+        }
+        h2{
+            margin: 10px 0;
+            text-align: center;
     }
     #searchInput {
-        width: 25%;
+            width: 35%;
         align-self: end;
         margin-bottom: 1%;
-    }
-    th,
-    td {
-        padding: 8px 4px;
+            font-size: var(--step--2);
+        }
+        table,
+        tbody,
+        td,
+        tr {
+            display: block;
+        }
+        th {
+            display: none;
+        }
+        .table-scrollable{
+            overflow: auto;
+            height: 400px;
+        }
+        tr{
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+            font-size: var(--step--2);
+        }
+        tr:nth-of-type(1) {
+            display: none;
+        }
+        tr:nth-of-type(2n) {
+            background-color: #d1d1d1;
+        }
+        /* align table data cells information of (select, change role, user id, username) */
+        td {
+            text-align: left;
+            padding-left: 31%;
+            padding-block: 5%;
+            position: relative;
+            height: var(--space-s-l);
+            word-break: break-word;/* Prevent long text from overflowing */
+        }
+        td:first-child {
+            background-color: mediumaquamarine;
+        }
+        td:before {
+            content: attr(data-label);
+            position: absolute;
+            top: 1;
+            left: var(--step-0);
+            font-weight: bold;
+        }
+        td:last-child {
+            margin-bottom: 5%;
+        }
+        /* table row Toggle content */
+        .toggle-content {
+            display: none;
+            /* Hidden by default */
+            color: #333;
+            padding-block: 5%;
+            padding-inline: 15%;
+            word-break: break-word;
+        }
+        /* from html td cell "label-data" control position of span */
+        .toggle-content span{
+            display: block; /* or 'block' if needed */
+            padding-left: 24%;
+        }
+        .toggle-content tr:nth-of-type(1) {
+            background-color: #d1d1d1;
+        }
+        /* Style the "Show more" td to look like a clickable button */
+        .show-more-toggle {
+            cursor: pointer;
+            color: #008cba;
+            text-align: center;
+            font-weight: bold;
+            padding: 10px 15px;
+            width: 100%;
+            /* Full width */
+            font-size: var(--step--2);
+            display: block;
+        }
+        /* Adjust show-less styling */
+        .show-more-toggle.show-less {
+            color: #f44336;
+            /* Different color for "Show less" state */
+        }
+        /* Ensure full width and good alignment */
+        .show-more-toggle {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            word-break: break-word;
+            /* Prevent long text from overflowing */
+        }
+        #pageNumbers{
+            display: block;
+            font-size: var(--step--1);
+        }
+        .pagination{
+            display: inline;
+        }
+        #addSelect,
+        #removeSelect {
+            padding-block: 2%;
+            margin-bottom: 2%;
+            margin-inline: 0;
         font-size: var(--step-0);
     }
-    
-    #pageNumbers {
-        margin-top: 20px;
+    }
+        @media (max-width: 360px){
+                *, body{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', 'Arial', sans-serif;
+            }
+            .container_menu {
+                grid-template-columns: auto;
+                grid-template-rows: auto;
+                padding: 2%;
+                background-color: azure;
+                width: 80vw;
+            }
+            #maintable {
+                width: 95%;
+                height: auto;
+                padding-inline: 2%;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                /* Stacks elements vertically */
+            }
+            h2{
+                margin: 10px 0;
         text-align: center;
     }
+            #searchInput {
+                width: 35%;
+                align-self: end;
+                margin-bottom: 1%;
+                font-size: var(--step--2);
+            }
+            input[type="checkbox"] {
+                zoom: .7;
+            }
+            table,
+            tbody,
+            td,
+            tr {
+                display: block;
+            }
+            th {
+                display: none;
+            }
+            .table-scrollable{
+                overflow: auto;
+                height: 400px;
+            }
+            tr{
+                border-bottom: 1px solid #ddd;
+                margin-bottom: 20px;
+                font-size: var(--step--2);
+            }
+            tr:nth-of-type(1) {
+                display: none;
+            }
+            tr:nth-of-type(2n) {
+                background-color: #d1d1d1;
+            }
+            /* align table data cells information of (select, change role, user id, username) */
+            td {
+                text-align: left;
+                padding-left: 41%;
+                padding-block: 5%;
+                position: relative;
+                font-size: var(--step--2);
+                height: var(--space-s-l);
+
+                word-break: break-word;/* Prevent long text from overflowing */
+            }
+            #roleCheckbox{
+                padding-block: 20px;
+            }
+            #roleCheckbox span{
+                display: inline-block;
+            }
+            td:first-child {
+                background-color: mediumaquamarine;
+            }
+            td:before {
+                content: attr(data-label);
+                position: absolute;
+                top: 1;
+                left: var(--step-0);
+                font-weight: bold;
+            }
+            td:last-child {
+                margin-bottom: 5%;
+            }
+            /* table row Toggle content */
+            .toggle-content {
+                display: none;
+                /* Hidden by default */
+                color: #333;
+                padding-block: 5%;
+                padding-inline: 15%;
+                word-break: break-word;
+            }
+            /* from html td cell "label-data" control position of span */
+            .toggle-content span{
+                display: block; /* or 'block' if needed */
+                padding-left: 38%;
+            }
+            .toggle-content tr:nth-of-type(1) {
+                background-color: #d1d1d1;
+            }
+            /* Style the "Show more" td to look like a clickable button */
+            .show-more-toggle {
+                cursor: pointer;
+                color: #008cba;
+                text-align: center;
+                font-weight: bold;
+                padding: 10px 15px;
+                width: 100%;
+                /* Full width */
+                font-size: var(--step--2);
+                display: block;
+            }
+            /* Adjust show-less styling */
+            .show-more-toggle.show-less {
+                color: #f44336;
+                /* Different color for "Show less" state */
+            }
+            /* Ensure full width and good alignment */
+            .show-more-toggle {
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                word-break: break-word;
+                /* Prevent long text from overflowing */
+            }
+            #pageNumbers{
+                display: block;
+                font-size: var(--step--1);
+            }
+            .pagination{
+                display: inline;
+            }
     #addSelect,
-    #removeSelect{
+            #removeSelect {
         padding-block: 2%;
         margin-bottom: 2%;
         margin-inline: 0;
+                font-size: var(--step-0);
     }
     }
 </style>
-
-
 <body>
     <?php
     include "admin_menu.php";
@@ -254,11 +507,12 @@ include "../logindbase.php";
     $rs_result = mysqli_query($conn, $sql);
     ?>
     <div class="container_menu">
-        <h2>eQuaSmart Account Requests</h2>
+        <h2>Account Requests</h2>
         <div class="container">
     <form method="post" action="admin_home.php">
         <div id="maintable">
             <input type="text" id="searchInput" placeholder="Search for names...">
+                    <div class="table-scrollable">
             <table>
                 <tr>
                     <th>Select</th>
@@ -274,28 +528,28 @@ include "../logindbase.php";
                 while ($row = mysqli_fetch_assoc($rs_result)) {
                 ?>
                     <tr>
-                        <td><input type="checkbox" name="selected_rows[]" value="<?php echo $row["email"]; ?>"></td>
+                        <td data-label="Select"><input type="checkbox" name="selected_rows[]" value="<?php echo $row["email"]; ?>"></td>
                         <!-- <td>
                             <input type="checkbox" name="permissions[<?php echo $row["email"]; ?>][]" value="view_only"> View Only
                             <input type="checkbox" name="permissions[<?php echo $row["email"]; ?>][]" value="control_motors"> Control Motors
                             <input type="checkbox" name="permissions[<?php echo $row["email"]; ?>][]" value="set_schedules"> Set Schedules
                         </td> -->
-                        <td><?php echo $row["firstname"]; ?></td>
-                        <td><?php echo $row["lastname"]; ?></td>
-                        <td><?php echo $row["username"]; ?></td>
-                        <td><?php echo $row["email"]; ?></td>
-                        <td><?php echo $row["contact_number"]; ?></td>
-                        <td><?php echo date("h:i A, M j", strtotime($row["request_datetime"])); ?></td>
+                        <td data-label="First Name"><?php echo $row["firstname"]; ?></td>
+                        <td data-label="Last Name"><?php echo $row["lastname"]; ?></td>
+                        <td data-label="Username"><?php echo $row["username"]; ?></td>
+                        <td data-label="Email" class="toggle-content"><span><?php echo $row["email"]; ?></span></td>
+                        <td data-label="Contact Number" class="toggle-content"><span><?php echo $row["contact_number"]; ?></span></td>
+                        <td data-label="Date Requested" class="toggle-content"><span><?php echo date("h:i A, M j", strtotime($row["request_datetime"])); ?></span></td>
+                        <td class="show-more-toggle" onclick="toggleRow(this)">Show more</td>
                     </tr>
                 <?php
                 };
                 ?>
             </table>
+            </div>
             <input id="addSelect" type="submit" name="add_selected" value="Add Selected">
             <input id="removeSelect" type="submit" name="remove_selected" value="Remove Selected">
-                </div>
     </form>
-
     <div id="pageNumbers">
         <?php
         $sql = "SELECT COUNT(*) FROM account_request";
@@ -309,6 +563,7 @@ include "../logindbase.php";
         };
         echo $pagLink . "</div>";
         ?>
+    </div>
     </div>
     </div>
 </body>
@@ -325,7 +580,6 @@ if (isset($_POST['remove_selected'])) {
                   SELECT firstname, lastname, email, contact_number, request_datetime, username, user_password
                   FROM account_request 
                   WHERE email IN ($placeholders)";
-
         // Create a prepared statement
         if ($stmt = $conn->prepare($insertSql)) {
             // Bind each email to its own placeholder
@@ -334,22 +588,17 @@ if (isset($_POST['remove_selected'])) {
             // Execute the statement to insert the selected rows into the recyclebin table
             $stmt->execute();
         }
-
         // Prepare the SQL statement to delete the records from the original table
         $deleteSql = "DELETE FROM account_request WHERE email IN ($placeholders)";
-
         // Create a prepared statement
         if ($stmt = $conn->prepare($deleteSql)) {
             // Bind each email to its own placeholder
             $stmt->bind_param(str_repeat('s', count($_POST['selected_rows'])), ...$_POST['selected_rows']);
-
             // Execute the statement to delete the selected rows from the original table
             $stmt->execute();
-
             // Close the prepared statement
             $stmt->close();
         }
-
         $_POST['selected_rows'] = array(); // Clear the selected rows array
         header("Location: admin_home.php");
         exit(); // Terminate script execution after redirection
@@ -432,6 +681,27 @@ if (isset($_POST['add_selected'])) {
 }
 ?>
 <script>
+        function toggleRow(td) {
+        // Find the parent row
+        var row = td.closest('tr');
+        // Toggle the visibility of the hidden cells
+        var hiddenCells = row.querySelectorAll('.toggle-content');
+        hiddenCells.forEach(cell => {
+            if (cell.style.display === "none" || cell.style.display === "") {
+                cell.style.display = "block"; // Show hidden content
+            } else {
+                cell.style.display = "none"; // Hide content again
+            }
+        });
+        // Toggle text and style of the "Show more" cell
+        if (td.textContent === "Show more") {
+            td.textContent = "Show less";
+            td.classList.add('show-less');
+        } else {
+            td.textContent = "Show more";
+            td.classList.remove('show-less');
+        }
+    }
     // Get the input element and table
     var input = document.getElementById("searchInput");
     var table = document.querySelector("table");
