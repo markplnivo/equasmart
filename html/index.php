@@ -66,23 +66,26 @@ table {
 @import url(http://fonts.googleapis.com/css?family=Lato:400,300,100,700,900&subset=latin,latin-ext);
 
 
-.preloader{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:white;
-  z-index:99999;
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 5s ease; /* 1-second transition */
 }
- 
-.preloader .item{
-  position:absolute;
-  width:100px;
-  height:100px;
-  left:50%;
-  top:50%;
-  margin-left:-50px;
-  margin-top:-50px;
-} 
+
+.preloader .item img {
+  width: 500px; /* Adjust size of the loading icon */
+  height: auto;
+}
 
 
 html, body{
@@ -631,6 +634,7 @@ h1 span{
   position:relative;
   margin-bottom:70px;
   overflow:hidden;
+  gap: 10px;
 }
 
 .grid li{
@@ -1329,10 +1333,10 @@ video#coverVideo {
 
 <body>
 
-<div class="preloader" id="preloader">
-    <div class="item">
-      <img src="img/loading.gif">
-    </div>
+<div class="preloader">
+  <div class="item">
+    <img src="img/icons/loading.gif" alt="Loading">
+  </div>
 </div>
 
 <div class="container">
@@ -1362,7 +1366,7 @@ video#coverVideo {
     <!-- section menu mobile -->
     <section class="menu-media">
         <div class="menu-content">
-            <div><img src="imag/logos.png" alt="" style="width: 20%;"></div>
+            <div><img src="imag/logos.png" alt="" style="width: 10%; align-items: center;"></div>
             <div class="icon"><a href="#"><img src="img/icons/menu-media.png"/></a></div>
         </div>
     </section>
@@ -1458,6 +1462,21 @@ video#coverVideo {
 </script>
 <script src="js/jquery.parallax.js"></script> <!-- jQuery Parallax -->    
 <script src="js/script.js"></script> <!-- All script -->
+
+<script>
+  // JavaScript to randomize the transition time
+  window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    // Random transition time between 1 and 5 seconds
+    const randomTransitionTime = (Math.random() * 4 + 1).toFixed(2); // 1-5 seconds
+    preloader.style.transition = `opacity ${randomTransitionTime}s ease`;
+    
+    preloader.style.opacity = '0';
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, randomTransitionTime * 1000); // convert to milliseconds
+  });
+</script>
 
 </body>
 </html>
