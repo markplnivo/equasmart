@@ -1,11 +1,12 @@
 <?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/equasmartlogo_croppedlogo.png" type="image/svg+xml">
+    <link rel="stylesheet" href="css/css/all.min.css">
+    <link rel="stylesheet" href="css/css/fontawesome.min.css">
     <title>Water Settings</title>
     <!-- Include Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -51,7 +52,6 @@
             /*Multiplier = 5.5*/
             --space-13xl: clamp(72px, 53.2174px + 5.8696cqi, 126px);
             /*Multiplier = 6*/
-
             /* One-up pairs */
             --space-3xs-2xs: clamp(3px, 0.2174px + 0.8696cqi, 11px);
             --space-2xs-xs: clamp(6px, 2.5217px + 1.087cqi, 16px);
@@ -71,10 +71,8 @@
             --space-10xl-11xl: clamp(54px, 36.2609px + 5.5435cqi, 105px);
             --space-11xl-12xl: clamp(60px, 40.5217px + 6.087cqi, 116px);
             --space-12xl-13xl: clamp(66px, 45.1304px + 6.5217cqi, 126px);
-
             /* Custom pairs */
             --space-s-l: clamp(12px, 7.4783px + 1.413cqi, 25px);
-
             /* FLUID RESPONSIVE FONT SIZE BASE VALUE = 9px MIN WIDTH = 425px AND MAX VALUE = 14px MAX WIDTH = 1480px*/
             --step--6: clamp(0.1884rem, 0.1741rem + 0.0713vw, 0.2294rem);
             --step--5: clamp(0.2261rem, 0.205rem + 0.1055vw, 0.2867rem);
@@ -90,46 +88,39 @@
             --step-5: clamp(1.3997rem, 0.9577rem + 2.2098vw, 2.6703rem);
             --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
         }
-
         body {
             display: grid;
-            grid-template-columns: 60px 1fr;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto;
             margin: 0;
             height: 100vh;
             background-color: azure;
         }
-
         .container_menu {
             grid-area: 1 / 2 / -1 / -1;
             display: grid;
             grid-template-columns: 50% 50%;
-            grid-template-rows: auto 50% 50%;
+            grid-template-rows: auto;
             background-color: azure;
-            margin-top: 10px;
         }
-
         h2 {
             font-family: Verdana, sans-serif;
             text-align: center;
+            margin-block: 1%;
         }
-
         .container {
             grid-area: 2 / 1 / 2 / span 2;
-            width: 87.5%;
-            margin: 20px auto;
-            margin-top: 3%;
-            margin-left: 12%;
-            padding: 20px;
-            background-color: lemonchiffon;
+            width: 95%;
+            margin: auto;
+            padding: 4% 2%;
             border-radius: 15px;
+            background-color: lemonchiffon;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
-            /* Adjusts spacing equally */
+            justify-content: space-around;/* Adjusts spacing equally */
             align-items: center;
         }
-
         .chart-container {
             width: 50%;
             /* Adjust width to fit your desired size */
@@ -140,127 +131,233 @@
             justify-content: center;
             align-items: center;
         }
-
         canvas {
             width: 10%;
             height: 10%;
             /* Make sure the canvas takes full height */
         }
-
-
-
         h4 {
             text-align: center;
         }
-
-        .boxx div {
-            display: flex;
-            align-items: center;
-        }
-
         canvas {
             display: block;
             margin: 0 auto;
             margin-top: 20px;
             width: 100%;
-            height: 70%
+            height: 70%;
+            max-width: 30%;
         }
-
         .calendar {
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: lemonchiffon;
             border-radius: 20px;
-
             padding: 90px;
             width: 100%;
+            font-size: var(--step-0);
         }
-
         .calendar h4 {
-            margin-bottom: 10px;
+            margin-bottom: 2%;
         }
-
+        #calendar, #dateRange{
+            font-size: var(--step--1);
+        }
         .calendar input[type="date"] {
             width: 80%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-
         .input {
             grid-area: 3 / 1 / 3 / 1;
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            align-items: center;
-            align-content: center;
+            align-self: center;
+            margin: auto;
             flex-direction: column;
             background-color: lemonchiffon;
             border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             padding: 40px;
-            width: 70%;
-            height: 95%;
-            margin-left: 24%;
+            width: 90%;
+            height: 90%;
         }
-
         .input input[type="text"] {
             width: 80%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             box-sizing: border-box;
+            margin-block: 1%;
+            align-self: center;
         }
-
         .input button {
             width: 50%;
             padding: 10px;
+            margin-block: 1%;
             border: none;
             border-radius: 5px;
             background-color: #4CAF50;
             color: white;
             cursor: pointer;
-            font-size: 16px;
+            align-self: center;
+            font-size: var(--step-0);
         }
-
         .input button:hover {
             background-color: #45a049;
         }
-
+        .calendar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: mediumaquamarine;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            max-width: 500px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .calendar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
+        }
+        .calendar h4 {
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .calendar input[type="date"],
+        .calendar select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .calendar input[type="date"]:hover,
+        .calendar select:hover {
+            background-color: #f0f8ff;
+            border-color: #a0a0a0;
+        }
+        .calendar select:focus,
+        .calendar input[type="date"]:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+        }
+        .calendar select {
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5H7z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 15px;
+        }
         .testing-history {
             grid-area: 3 / 2 / 3 / 2;
-            width: 99%;
-            height: 95%;
-            margin-right: 70%;
+            width: 90%;
+            height: 90%;
+            margin: auto;
             background-color: lemonchiffon;
             border-radius: 20px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            /* Centers children vertically */
-            align-items: center;
-            /* Centers children horizontally */
         }
-
+        /* Default background colors */
+        #input1 {
+            background-color: #ff7878;
+            /* Solid light red for Ammonia */
+        }
+        #input2 {
+            background-color: #7e7efc;
+            /* Solid light violet for Nitrate */
+        }
+        #input3 {
+            background-color: #ffc65e;
+            /* Solid light blue for pH */
+        }
+        /* Hover effect with distinct colors */
+        #input1:hover {
+            background-color: #FF0000;
+            /* Darker red on hover for Ammonia */
+        }
+        #input2:hover {
+            background-color: #2e2ec9;
+            /* Darker violet on hover for Nitrate */
+        }
+        #input3:hover {
+            background-color: #FFA500;
+            /* Darker blue on hover for pH */
+        }
         .boxx {
-            width: 60%;
-            height: 60%;
-
-            padding: 20px;
-            border-radius: 20px;
+            width: auto;
+            color: white;
+            align-self: center;
+        }
+        .test-controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centers the buttons horizontally */
+            margin-top: 4%;
+            gap: 10px; /* Adjust the value as needed to create the desired space */
+        }
+        .test-controls button{
+            border-style: none;
+            border-radius: 3px;
+            padding: 8px 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+            font-size: var(--step--1);
             color: white;
         }
-
+        .test-controls button:active{
+            transform: scale(0.95); /* Scales down the button slightly */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Reduces shadow to make it look pressed */
+        }
+        .testAmonia_btn {
+            background-color: #FF0000;
+            width: calc(50% - 10px); /* Adjust to account for the gap */
+        }
+        .testAmonia_btn:hover{
+            background-color: #c91616;
+        }
+        .testNitrate_btn {
+            background-color: #0000FF;
+            width: calc(50% - 10px); /* Adjust to account for the gap */
+        }
+        .testNitrate_btn:hover{
+            background-color: #1a1ac9;
+        }
+        .testPh_btn {
+            background-color: #FFA500;
+            width: calc(50% - 10px); /* Adjust to account for the gap */
+        }
+        .testPh_btn:hover{
+            background-color: #d18f17;
+        }
+        .flushTube_btn {
+            background-color: #b651e8;
+            width: calc(50% - 10px); /* Adjust to account for the gap */
+        }
+        .flushTube_btn:hover{
+            background-color: #9436c2;
+        }
+        .openConfig_btn {
+            background-color: #4CAF50;
+            width: calc(100% - 10px); /* Adjust to account for the gap */
+        }
+        .openConfig_btn:hover{
+            background-color: #23a627;
+        }
         #pageTitle {
             grid-area: 1 / 1 / 1 / span 3;
-            height: 10px;
-            margin: 0;
+            font-size: var(--step-2);
+            justify-self: center;
+            align-self: center;
         }
-
         #activateButton,
         #activateButton1,
         #activateButton2 {
@@ -275,14 +372,34 @@
             cursor: pointer;
             font-size: 16px;
         }
-
         #activateButton:hover,
         #activateButton1:hover,
         #activateButton2:hover {
             background-color: #45a049;
         }
-
-
+        #activateButton3 {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: mediumaquamarine;
+            border: none;
+            font-size: var(--step-2);
+            display: block;
+            cursor: pointer;
+            text-align: center;
+            /* Adjust size based on button dimensions */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
+            /* Initial shadow for raised effect */
+            transition: all 0.2s ease;
+            /* Smooth transition for push effect */
+            justify-self: center;
+        }
+        #activateButton3:active {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+            /* Shadow gets closer to the button */
+            transform: translateY(2px);
+            /* Slightly moves button down */
+        }
         .gallery-container {
             width: 100%;
             max-height: 400px;
@@ -295,19 +412,16 @@
             flex-wrap: wrap;
             justify-content: flex-start;
         }
-
         .image-gallery img {
             max-width: 200px;
             margin: 10px;
             border-radius: 8px;
             transition: transform 0.3s ease;
         }
-
         .image-gallery img:hover {
             transform: scale(1.1);
             cursor: pointer;
         }
-
         .modal {
             display: none;
             position: fixed;
@@ -320,7 +434,6 @@
             background-color: rgba(0, 0, 0, 0.8);
             overflow: auto;
         }
-
         .modal-content {
             margin: auto;
             display: flex;
@@ -329,18 +442,15 @@
             width: 80%;
             max-width: 900px;
         }
-
         .modal-content img {
             max-width: 50%;
             border-radius: 10px;
             margin: 0 10px;
             /* Add spacing between images */
         }
-
         .modal-content img:hover {
             transform: scale(1.05);
         }
-
         .close {
             position: absolute;
             top: 15px;
@@ -351,51 +461,171 @@
             transition: 0.3s;
             cursor: pointer;
         }
-
         .close:hover,
         .close:focus {
             color: #bbb;
             text-decoration: none;
             cursor: pointer;
         }
-
+        .response {
+            color: green;
+        }
+        /* Config Modal styling */
+        .config_modal {
+            display: none;/* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent background */
+        }
+        .config_modal_content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        .config_close_btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
         @media (max-width: 1010px) {
-
             *,
             body {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
             }
-
             .container_menu {
                 display: block;
                 /* Stack menu items vertically */
             }
-
             .container,
-            .calendar,
+            .input,
             .testing-history {
                 width: 90%;
                 /* Ensure full width for each section */
-                margin-block: 30px;
+                margin: 3% auto;
                 /* Center elements and add spacing */
-                margin-inline: 20px;
                 height: auto;
                 /* Let height adjust based on content */
             }
-
-            .chart-container {
-                width: auto;
-                /* Make chart containers take full width */
+            .container{
+                display: flex;
+                flex-direction: column;
             }
-
-            canvas {
+            #lineChart{
+                max-width: 90%;
+                max-height: 300px;
+            }
+            .calendar{
+                width: 80%;
+            }
+            .input{
+                padding: 7px 4px;
+            }
+            .input input{
+                font-size: var(--step--1);
+            }
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 999;
+                padding-top: 100px;
+                left: 0;
+                top: 0;
                 width: 100%;
-                /* Ensure canvases fill their containers */
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                overflow: auto;
             }
-
-
+            .modal-content {
+                margin: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 80%;
+                max-width: 900px;
+            }
+            .modal-content img {
+                max-width: 50%;
+                border-radius: 10px;
+                margin: 0 10px;
+            }
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+            .close:hover,
+            .close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            /* Modal Overlay */
+            .modalActivateButton3 {
+                display: none;
+                /* Hidden by default */
+                position: fixed;
+                /* Stay in place */
+                z-index: 1;
+                /* Sit on top */
+                padding-top: 100px;
+                /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%;
+                /* Full width */
+                height: 100%;
+                /* Full height */
+                overflow: auto;
+                /* Enable scroll if needed */
+                background-color: rgba(0, 0, 0, 0.4);
+                /* Black w/ opacity */
+            }
+            /* Modal Content */
+            .modalContentActivateButton3 {
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+                max-width: 500px;
+                border-radius: 8px;
+            }
+            /* The Close Button */
+            .closeButtonActivateButton3 {
+                color: #aaaaaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .closeButtonActivateButton3:hover,
+            .closeButtonActivateButton3:focus {
+                color: #000;
+                text-decoration: none;
+            }
         }
     </style>
 </head>
@@ -417,7 +647,15 @@
                 </div>
             </div>
         </div>
-
+        <!-- The Config Modal -->
+        <div id="config_modal" class="config_modal">
+            <div class="config_modal_content">
+                <span class="config_close_btn" onclick="closeConfigModal()">&times;</span>
+                <div id="config_modal_body">
+                    <!-- Content from motor_config.php will be loaded here -->
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="gallery-container">
                 <div id="imageGallery" class="image-gallery">
@@ -426,12 +664,16 @@
             </div>
             <div class="calendar">
                 <h4>Calendar</h4>
-                <input type="date" id="calendar">
+                <input type="date" id="calendar" onchange="updateChart()">
+                <select id="dateRange" onchange="updateChart()">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
             </div>
             <canvas id="lineChart"></canvas>
-
         </div>
-
         <div class="input">
             <h4>Input Fields</h4>
             <input type="text" id="input1" placeholder="Enter Ammonia value">
@@ -439,12 +681,9 @@
             <input type="text" id="input3" placeholder="Enter pH value">
             <button id="insertButton">Insert</button>
         </div>
-
-
         <div class="testing-history">
             <!-- <h4>Testing History</h4> -->
             <div class="boxx">
-
                 <!-- <div>
                     <label class="label1">5/5/24</label>
                 </div>
@@ -454,36 +693,82 @@
                 <div>
                     <label class="label1">5/5/24</label>
                 </div> -->
-
-                <button id="activateButton" type="button">Test Ammonia</button>
+                <!-- Button to open the modal -->
+                <button id="activateButton3" type="button"><i class="fa-regular fa-calendar-days"></i></button>
+                <div id="modalActivateButton3" class="modalActivateButton3">
+                    <div class="modalContentActivateButton3">
+                        <!-- <span class="closeButtonActivateButton3">&times;</span>
+                        <h2>Modal Title</h2>
+                        <p>This is the content of the modal.</p> -->
+                    </div>
+                </div>
+                <div class="test-controls">
+                    <button onclick="startTest('test_ammonia')" class="testAmonia_btn">Test Ammonia</button>
+                    <button onclick="startTest('test_nitrate')" class="testNitrate_btn">Test Nitrate</button>
+                    <button onclick="startTest('test_ph')" class="testPh_btn">Test pH</button>
+                    <button onclick="startTest('flush_test_tube')" class="flushTube_btn">Flush Test Tube</button>
+                    <button onclick="openConfigModal()" class="openConfig_btn">Open Configuration</button> <!-- New button to open the modal -->
+                </div>
+                <!-- <button id="activateButton" type="button">Test Ammonia</button>
                 <button id="activateButton1" type="button">Test Nitrate</button>
-                <button id="activateButton2" type="button">Test pH</button>
-                <button id="activateButton2" onclick="captureImage()">Capture and Upload Image</button>
-                <p id="status"></p>
+                <button id="activateButton2" type="button">Test pH</button> -->
+                <!-- <button id="activateButton2" onclick="captureImage()">Capture and Upload Image</button>
+                <p id="status"></p> -->
             </div>
         </div>
     </div>
-
     <script>
+        // Open the config modal
+        function openConfigModal() {
+            document.getElementById("config_modal").style.display = "block";
+            // Fetch the motor configuration content from motor_config.php
+            fetch("watermotor_config.php")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("config_modal_body").innerHTML = data;
+                })
+                .catch(error => console.error("Error loading content:", error));
+        }
+        // Close the config modal
+        function closeConfigModal() {
+            document.getElementById("config_modal").style.display = "none";
+        }
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById("config_modal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        function startTest(testType) {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "motor_control.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    if (response.status === "test_started") {
+                        document.getElementById("status").innerText = testType + " test started in background.";
+                    }
+                }
+            };
+            xhr.send("test_type=" + testType);
+        }
         // Function to set the current date in the input field
         function setCurrentDate() {
             const today = new Date();
             const yyyy = today.getFullYear();
             const mm = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
             const dd = String(today.getDate()).padStart(2, '0');
-
             const formattedDate = `${yyyy}-${mm}-${dd}`;
             document.getElementById('calendar').value = formattedDate; // Set input field to current date
         }
-
         $(document).ready(function() {
             // Set the current date on page load
             setCurrentDate();
-
             // Load images when the date is selected
             $('#calendar').on('change', function() {
                 var selectedDate = $(this).val();
-
                 // AJAX request to fetch images from the selected date
                 $.ajax({
                     url: './water_settings_ajax/fetch_images.php',
@@ -493,7 +778,6 @@
                     },
                     success: function(response) {
                         $('#imageGallery').html(response); // Update the gallery with the response
-
                         // Add click event to gallery images to show them in modal
                         $('.gallery-image').on('click', function() {
                             var imageUrl = $(this).attr('src');
@@ -507,15 +791,12 @@
                     }
                 });
             });
-
             // Trigger the change event to load images for the current date on page load
             $('#calendar').trigger('change');
-
             // Close the modal when the close button is clicked
             $('.close').on('click', function() {
                 $('#imageModal').fadeOut();
             });
-
             // Close the modal if clicked outside the image
             $(window).on('click', function(e) {
                 if ($(e.target).is('#imageModal')) {
@@ -523,9 +804,6 @@
                 }
             });
         });
-
-
-
         // Function to send commands to the ESP32
         function sendCommand(command) {
             fetch(`http://esp32water.local/api?command=${command}`)
@@ -543,14 +821,11 @@
                     alert("Error: " + error.message);
                 });
         }
-
         function captureImage() {
             console.log("Attempting to capture image..."); // Log the start of the function
-
             fetch('http://esp32water.local/capture')
                 .then(response => {
                     console.log("Received response:", response); // Log the response object
-
                     // Check if the response is OK (status 200-299)
                     if (!response.ok) {
                         throw new Error("HTTP error! Status: " + response.status); // Throw an error for non-OK response
@@ -566,76 +841,22 @@
                     alert("Error: " + error.message); // Alert the user with the error message
                 });
         }
-
-
         $(document).ready(function() {
             // Updated buttons to send commands to the ESP32 API
             $('#activateButton').on('click', function() {
                 sendCommand('TITRATE_AMMONIA');
             });
-
             $('#activateButton1').on('click', function() {
                 sendCommand('TITRATE_PH');
             });
-
             //     $('#activateButton2').on('click', function() {
             //         sendCommand('TITRATE_NITRATE');
             //     });
-        });
-
-        document.addEventListener("DOMContentLoaded", function() {
-            var ctx = document.getElementById('lineChart').getContext('2d');
-            var lineChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['Ammonia 1', 'Ammonia 2', 'Ammonia 3', 'Ammonia 4', 'Ammonia 5'],
-                    datasets: [{
-                        label: 'Ammonia',
-                        data: [0, 10, 20, 30, 100],
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-
-            // var ctx2 = document.getElementById('lineChart2').getContext('2d');
-            // var lineChart2 = new Chart(ctx2, {
-            //     type: 'line',
-            //     data: {
-            //         labels: ['pH 1', 'pH 2', 'pH 3', 'pH 4', 'pH 5'],
-            //         datasets: [{
-            //             label: 'pH',
-            //             data: [0, 10, 20, 30, 40],
-            //             backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            //             borderColor: 'rgba(54, 162, 235, 1)',
-            //             borderWidth: 1
-            //         }]
-            //     },
-            //     options: {
-            //         scales: {
-            //             y: {
-            //                 beginAtZero: true
-            //             }
-            //         }
-            //     }
-            // });
-        });
-
-        document.getElementById('insertButton').addEventListener('click', function() {
+            document.getElementById('insertButton').addEventListener('click', function() {
             // Get values from input fields
             const ammonia = document.getElementById('input1').value;
             const nitrate = document.getElementById('input2').value;
             const pH = document.getElementById('input3').value;
-
             // Send data to the backend PHP script using fetch API
             fetch('insert_data.php', {
                     method: 'POST',
@@ -661,8 +882,130 @@
                 })
                 .catch(error => console.error('Error:', error));
         });
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            const ctx = document.getElementById('lineChart').getContext('2d');
+            let lineChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                            label: 'Ammonia',
+                            data: [],
+                            borderColor: '#ff0000',
+                            borderWidth: 3,
+                            tension: 0.4,
+                            pointRadius: 0,
+                            backgroundColor: 'rgba(255, 107, 107, 0.1)'
+                        },
+                        {
+                            label: 'Nitrate',
+                            data: [],
+                            borderColor: '#0000FF',
+                            borderWidth: 3,
+                            tension: 0.4,
+                            pointRadius: 0,
+                            backgroundColor: 'rgba(77, 150, 255, 0.1)'
+                        },
+                        {
+                            label: 'pH',
+                            data: [],
+                            borderColor: '#ffa500',
+                            borderWidth: 3,
+                            tension: 0.4,
+                            pointRadius: 0,
+                            backgroundColor: 'rgba(255, 217, 61, 0.1)'
+                        }
+                    ]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                }
+            });
+            function updateChart() {
+                const selectedDate = document.getElementById('calendar').value;
+                const dateRange = document.getElementById('dateRange').value;
+                fetch(`fetch_water_data.php?date=${selectedDate}&range=${dateRange}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const labels = [];
+                        const ammoniaData = [];
+                        const nitrateData = [];
+                        const pHData = [];
+                        data.forEach(entry => {
+                            const date = entry.Date_and_Time;
+                            const value = parseFloat(entry.Value);
+                            // Push unique dates to labels
+                            if (!labels.includes(date)) {
+                                labels.push(date);
+                            }
+                            // Populate data arrays based on the Name field
+                            if (entry.Name === "Ammonia") {
+                                ammoniaData.push(value);
+                            } else if (entry.Name === "Nitrate") {
+                                nitrateData.push(value);
+                            } else if (entry.Name === "pH") {
+                                pHData.push(value);
+                            }
+                        });
+                        // Update chart data
+                        lineChart.data.labels = labels;
+                        lineChart.data.datasets[0].data = ammoniaData;
+                        lineChart.data.datasets[1].data = nitrateData;
+                        lineChart.data.datasets[2].data = pHData;
+                        // Refresh the chart to show new data
+                        lineChart.update();
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
+            }
+        });
+        // Initialize with default values
+        document.addEventListener("DOMContentLoaded", function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('calendar').value = today;
+            updateChart();
+        });
+        // Trigger data fetching on date change
+        document.getElementById('calendar').addEventListener('change', function() {
+            const selectedDate = this.value;
+            fetchWaterData(selectedDate); // Update chart data based on the selected date
+        });
+        // Set default date and load initial data
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('calendar').value = today;
+        fetchWaterData(today);
+        // Get the modal
+        var modal = document.getElementById("modalActivateButton3");
+        // Get the button that opens the modal
+        var btn = document.getElementById("activateButton3");
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("closeButtonActivateButton3")[0];
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        };
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        };
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
     </script>
 </body>
-
 </html>
 <?php ob_end_flush(); ?>
