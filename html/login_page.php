@@ -77,6 +77,7 @@ include "session_handler.php";
         --step-5: clamp(1.3997rem, 0.9577rem + 2.2098vw, 2.6703rem);
         --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
 }
+
         body {
             background: #f6f7fb;
             font-family: 'Arial', sans-serif;
