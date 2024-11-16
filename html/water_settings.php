@@ -1,9 +1,8 @@
+<!-- j -->
 <?php ob_start(); ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,6 +54,7 @@
             /*Multiplier = 5.5*/
             --space-13xl: clamp(72px, 53.2174px + 5.8696cqi, 126px);
             /*Multiplier = 6*/
+
             /* One-up pairs */
             --space-3xs-2xs: clamp(3px, 0.2174px + 0.8696cqi, 11px);
             --space-2xs-xs: clamp(6px, 2.5217px + 1.087cqi, 16px);
@@ -74,8 +74,10 @@
             --space-10xl-11xl: clamp(54px, 36.2609px + 5.5435cqi, 105px);
             --space-11xl-12xl: clamp(60px, 40.5217px + 6.087cqi, 116px);
             --space-12xl-13xl: clamp(66px, 45.1304px + 6.5217cqi, 126px);
+
             /* Custom pairs */
             --space-s-l: clamp(12px, 7.4783px + 1.413cqi, 25px);
+
             /* FLUID RESPONSIVE FONT SIZE BASE VALUE = 9px MIN WIDTH = 425px AND MAX VALUE = 14px MAX WIDTH = 1480px*/
             --step--6: clamp(0.1884rem, 0.1741rem + 0.0713vw, 0.2294rem);
             --step--5: clamp(0.2261rem, 0.205rem + 0.1055vw, 0.2867rem);
@@ -91,6 +93,7 @@
             --step-5: clamp(1.3997rem, 0.9577rem + 2.2098vw, 2.6703rem);
             --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
         }
+
         body {
             display: grid;
             grid-template-columns: auto 1fr;
@@ -99,6 +102,7 @@
             height: 100vh;
             background-color: azure;
         }
+
         .container_menu {
             grid-area: 1 / 2 / -1 / -1;
             display: grid;
@@ -106,11 +110,13 @@
             grid-template-rows: auto;
             background-color: azure;
         }
+
         h2 {
             font-family: Verdana, sans-serif;
             text-align: center;
             margin-block: 1%;
         }
+
         .container {
             grid-area: 2 / 1 / 2 / span 2;
             width: 95%;
@@ -124,6 +130,7 @@
             justify-content: space-around;/* Adjusts spacing equally */
             align-items: center;
         }
+
         .chart-container {
             width: 50%;
             /* Adjust width to fit your desired size */
@@ -134,11 +141,15 @@
             justify-content: center;
             align-items: center;
         }
+
         canvas {
             width: 10%;
             height: 10%;
             /* Make sure the canvas takes full height */
         }
+
+
+
         h4 {
             text-align: center;
         }
@@ -150,6 +161,7 @@
             height: 70%;
             max-width: 30%;
         }
+
         .calendar {
             display: flex;
             flex-direction: column;
@@ -159,6 +171,7 @@
             width: 100%;
             font-size: var(--step-0);
         }
+
         .calendar h4 {
             margin-bottom: 2%;
         }
@@ -171,6 +184,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         .input {
             grid-area: 3 / 1 / 3 / 1;
             display: flex;
@@ -185,6 +199,7 @@
             width: 90%;
             height: 90%;
         }
+
         .input input[type="text"] {
             width: 100%;
             padding: 10px;
@@ -194,6 +209,7 @@
             margin-block: 1%;
             align-self: center;
         }
+
         .input button {
             width:100%;
             padding: 10px;
@@ -206,6 +222,7 @@
             align-self: center;
             font-size: var(--step-0);
         }
+
         .input button:hover {
             background-color: #45a049;
         }
@@ -268,6 +285,7 @@
             border-radius: 20px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+
             display: flex;
             flex-direction: column;
         }
@@ -291,27 +309,33 @@
             background-color: #ff7878;
             /* Solid light red for Ammonia */
         }
+
         #input2 {
             background-color: #7e7efc;
             /* Solid light violet for Nitrate */
         }
+
         #input3 {
             background-color: #ffc65e;
             /* Solid light blue for pH */
         }
+
         /* Hover effect with distinct colors */
         #input1:hover {
             background-color: #FF0000;
             /* Darker red on hover for Ammonia */
         }
+
         #input2:hover {
             background-color: #2e2ec9;
             /* Darker violet on hover for Nitrate */
         }
+
         #input3:hover {
             background-color: #FFA500;
             /* Darker blue on hover for pH */
         }
+
         .boxx {
             width: auto;
             color: white;
@@ -336,32 +360,32 @@
             transform: scale(0.95); /* Scales down the button slightly */
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Reduces shadow to make it look pressed */
         }
-        .testAmonia_btn {
+        #testAmonia_btn {
             background-color: #FF0000;
             width: calc(50% - 10px); /* Adjust to account for the gap */
         }
-        .testAmonia_btn:hover{
+        #testAmonia_btn:hover{
             background-color: #c91616;
         }
-        .testNitrate_btn {
+        #testNitrate_btn {
             background-color: #0000FF;
             width: calc(50% - 10px); /* Adjust to account for the gap */
         }
-        .testNitrate_btn:hover{
+        #testNitrate_btn:hover{
             background-color: #1a1ac9;
         }
-        .testPh_btn {
+        #testPh_btn {
             background-color: #FFA500;
             width: calc(50% - 10px); /* Adjust to account for the gap */
         }
-        .testPh_btn:hover{
+        #testPh_btn:hover{
             background-color: #d18f17;
         }
-        .flushTube_btn {
+        #flushTube_btn {
             background-color: #b651e8;
             width: calc(50% - 10px); /* Adjust to account for the gap */
         }
-        .flushTube_btn:hover{
+        #flushTube_btn:hover{
             background-color: #9436c2;
         }
         .openConfig_btn {
@@ -377,6 +401,7 @@
             justify-self: center;
             align-self: center;
         }
+
         #activateButton,
         #activateButton1,
         #activateButton2 {
@@ -391,34 +416,13 @@
             cursor: pointer;
             font-size: 16px;
         }
+
         #activateButton:hover,
         #activateButton1:hover,
         #activateButton2:hover {
             background-color: #45a049;
         }
-        #activateButton3 {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: mediumaquamarine;
-            border: none;
-            font-size: var(--step-2);
-            display: block;
-            cursor: pointer;
-            text-align: center;
-            /* Adjust size based on button dimensions */
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
-            /* Initial shadow for raised effect */
-            transition: all 0.2s ease;
-            /* Smooth transition for push effect */
-            justify-self: center;
-        }
-        #activateButton3:active {
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-            /* Shadow gets closer to the button */
-            transform: translateY(2px);
-            /* Slightly moves button down */
-        }
+
         .gallery-container {
             width: 100%;
             max-height: 400px;
@@ -431,16 +435,19 @@
             flex-wrap: wrap;
             justify-content: flex-start;
         }
+
         .image-gallery img {
             max-width: 200px;
             margin: 10px;
             border-radius: 8px;
             transition: transform 0.3s ease;
         }
+
         .image-gallery img:hover {
             transform: scale(1.1);
             cursor: pointer;
         }
+
         .modal {
             display: none;
             position: fixed;
@@ -453,6 +460,7 @@
             background-color: rgba(0, 0, 0, 0.8);
             overflow: auto;
         }
+
         .modal-content {
             margin: auto;
             display: flex;
@@ -461,15 +469,18 @@
             width: 80%;
             max-width: 900px;
         }
+
         .modal-content img {
             max-width: 50%;
             border-radius: 10px;
             margin: 0 10px;
             /* Add spacing between images */
         }
+
         .modal-content img:hover {
             transform: scale(1.05);
         }
+
         .close {
             position: absolute;
             top: 15px;
@@ -480,6 +491,7 @@
             transition: 0.3s;
             cursor: pointer;
         }
+
         .close:hover,
         .close:focus {
             color: #bbb;
@@ -489,9 +501,11 @@
         .response {
             color: green;
         }
+
         /* Config Modal styling */
         .config_modal {
-            display: none;/* Hidden by default */
+            display: none;
+            /* Hidden by default */
             position: fixed;
             z-index: 1000;
             left: 0;
@@ -502,6 +516,7 @@
             background-color: rgba(0, 0, 0, 0.5);
             /* Semi-transparent background */
         }
+
         .config_modal_content {
             background-color: #fff;
             margin: 10% auto;
@@ -513,6 +528,7 @@
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
             position: relative;
         }
+
         .config_close_btn {
             position: absolute;
             top: 10px;
@@ -522,17 +538,89 @@
             color: #333;
             cursor: pointer;
         }
+
+
+        .test-controls button.disabled {
+            cursor: not-allowed;
+            /* Change cursor */
+            opacity: 0.6;
+            /* Make button look 'greyed out' */
+        }
+
+        /* Water Scheduling Modal Styling */
+        .water-scheduling-modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .water-scheduling-modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .water-scheduling-modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .water-scheduling-modal-close:hover {
+            color: #000;
+        }
+
+        /* Button to Open Water Scheduling Modal */
+        .water-scheduling-trigger-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            background-size: 30px 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
+            margin: 10px auto;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .water-scheduling-trigger-button:active {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+            transform: translateY(2px);
+        }
+
+
+
         @media (max-width: 1010px) {
+
             *,
             body {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
             }
+
             .container_menu {
                 display: block;
                 /* Stack menu items vertically */
             }
+
             .container,
             .input,
             .testing-history {
@@ -572,6 +660,7 @@
                 background-color: rgba(0, 0, 0, 0.8);
                 overflow: auto;
             }
+
             .modal-content {
                 margin: auto;
                 display: flex;
@@ -580,11 +669,13 @@
                 width: 80%;
                 max-width: 900px;
             }
+
             .modal-content img {
                 max-width: 50%;
                 border-radius: 10px;
                 margin: 0 10px;
             }
+
             .close {
                 position: absolute;
                 top: 15px;
@@ -595,74 +686,20 @@
                 transition: 0.3s;
                 cursor: pointer;
             }
+
             .close:hover,
             .close:focus {
                 color: #bbb;
                 text-decoration: none;
                 cursor: pointer;
             }
-            /* Modal Overlay */
-            .modalActivateButton3 {
-                display: none;
-                /* Hidden by default */
-                position: fixed;
-                /* Stay in place */
-                z-index: 1;
-                /* Sit on top */
-                padding-top: 100px;
-                /* Location of the box */
-                left: 0;
-                top: 0;
-                width: 100%;
-                /* Full width */
-                height: 100%;
-                /* Full height */
-                overflow: auto;
-                /* Enable scroll if needed */
-                background-color: rgba(0, 0, 0, 0.4);
-                /* Black w/ opacity */
-            }
-            /* Modal Content */
-            .modalContentActivateButton3 {
-                background-color: #fefefe;
-                margin: auto;
-                padding: 20px;
-                border: 1px solid #888;
-                width: 80%;
-                max-width: 500px;
-                border-radius: 8px;
-            }
-            /* The Close Button */
-            .closeButtonActivateButton3 {
-                color: #aaaaaa;
-                float: right;
-                font-size: 28px;
-                font-weight: bold;
-                cursor: pointer;
-            }
-            .closeButtonActivateButton3:hover,
-            .closeButtonActivateButton3:focus {
-                color: #000;
-                text-decoration: none;
-            }
+
         }
     </style>
 </head>
-<?php
-   
-    include "user_menu.php";
+<?php include "logindbase.php";
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "db_equasmart";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['input1'] = $_POST['input1'] ?? '';
         $_SESSION['input2'] = $_POST['input2'] ?? '';
         $_SESSION['input3'] = $_POST['input3'] ?? '';
@@ -690,22 +727,52 @@
         $stmt->close();
     }
 
-    $conn->close();
-    ?>
+?>
 
 <body>
-    
+    <?php include "user_menu.php"; ?>
     <div class="container_menu">
         <h2 id="pageTitle">WATER SETTINGS</h2>
+        <!-- Modal for Enlarged Image -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <div class="modal-content">
+                <div style="display: flex; justify-content: center;">
+                    <!-- Selected Image -->
+                    <img id="modalImage" src="" alt="Enlarged Image" style="max-width: 50%; margin-right: 10px; transform:rotate(180deg);">
+                    <!-- Comparison Image -->
+                    <!-- <div id="comparisonLabel"><span>OPTIMAL</span><span>OKAY</span><span>NOT RECOMMENDED</span> </div> -->
+                    <!-- <img id="comparisonImage" src="/uploads/ammonia_comparison.jpg" alt="Comparison Image" style="max-width: 50%;"> -->
+                    <img id="comparisonImage" alt="Comparison Image" style="max-width: 50%;">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Water Testing Scheduling -->
+        <div id="water-scheduling-modal" class="water-scheduling-modal-overlay">
+            <div class="water-scheduling-modal-content">
+                <span id="water-scheduling-modal-close" class="water-scheduling-modal-close">&times;</span>
+                <h2>Water Testing Schedule</h2>
+                <p>Set up your water testing schedule here.</p>
+            </div>
+        </div>
+
+        <!-- The Config Modal -->
         <div id="config_modal" class="config_modal">
             <div class="config_modal_content">
                 <span class="config_close_btn" onclick="closeConfigModal()">&times;</span>
-                <div id="config_modal_body"></div>
+                <div id="config_modal_body">
+                    <!-- Content from motor_config.php will be loaded here -->
+                </div>
             </div>
         </div>
+
         <div class="container">
             <div class="gallery-container">
-                <div id="imageGallery" class="image-gallery"></div>
+                <div id="imageGallery" class="image-gallery">
+                    <!-- Images will be loaded here -->
+                </div>
             </div>
             <div class="calendar">
                 <h4>Calendar</h4>
@@ -718,7 +785,9 @@
                 </select>
             </div>
             <canvas id="lineChart"></canvas>
+
         </div>
+
         <div class="input">
         <form method="POST" action="">
             <h2>Input Fields</h2>
@@ -750,23 +819,62 @@
 </form>
 
         </div>
+
+
         <div class="testing-history">
+            <!-- <h4>Testing History</h4> -->
             <div class="boxx">
-                <button id="activateButton3" type="button"><i class="fa-regular fa-calendar-days"></i></button>
-                <div class="test-controls">
-                    <button onclick="startTest('test_ammonia')" class="testAmonia_btn">Test Ammonia</button>
-                    <button onclick="startTest('test_nitrate')" class="testNitrate_btn">Test Nitrate</button>
-                    <button onclick="startTest('test_ph')" class="testPh_btn">Test pH</button>
-                    <button onclick="startTest('flush_test_tube')" class="flushTube_btn">Flush Test Tube</button>
-                    <button onclick="openConfigModal()" class="openConfig_btn">Open Configuration</button>
+
+                <!-- <div>
+                    <label class="label1">5/5/24</label>
                 </div>
+                <div>
+                    <label class="label1">5/5/24</label>
+                </div>
+                <div>
+                    <label class="label1">5/5/24</label>
+                </div> -->
+
+
+                <!-- Button to open the water scheduling modal -->
+                <button id="open-water-scheduling-modal" class="water-scheduling-trigger-button" type="button"><i class="fa-regular fa-calendar-days"></i></button>
+
+
+
+                <!-- <div class="test-controls">
+                    <h2>Run Tests</h2>
+                    <button onclick="startTest('ammonia')">Test Ammonia</button>
+                    <button onclick="startTest('nitrate')">Test Nitrate</button>
+                    <button onclick="startTest('ph')">Test pH</button>
+                    <button onclick="startTest('flush_test_tube')">Flush Test Tube</button>
+                    <button onclick="openConfigModal()">Open Configuration</button> 
+                </div> -->
+
+                <div class="test-controls">
+                    <button class="test-button" onclick="startTest('ammonia')" id="testAmonia_btn">Test Ammonia</button>
+                    <button class="test-button" onclick="startTest('nitrate')" id="testNitrate_btn">Test Nitrate</button>
+                    <button class="test-button" onclick="startTest('ph')" id="testPh_btn">Test pH</button>
+                    <button class="test-button" onclick="startTest('flush_test_tube')" id="flushTube_btn">Flush Test Tube</button>
+                    <button onclick="openConfigModal()" class="openConfig_btn">Open Configuration</button> <!-- This button remains unaffected -->
+                </div>
+
+
+                <!-- <button id="activateButton" type="button">Test Ammonia</button>
+                <button id="activateButton1" type="button">Test Nitrate</button>
+                <button id="activateButton2" type="button">Test pH</button> -->
+                <!-- <button id="activateButton2" onclick="captureImage()">Capture and Upload Image</button> -->
+                <!-- <p id="status"></p> -->
             </div>
+
         </div>
     </div>
+
+
     <script>
         // Open the config modal
         function openConfigModal() {
             document.getElementById("config_modal").style.display = "block";
+
             // Fetch the motor configuration content from motor_config.php
             fetch("watermotor_config.php")
                 .then(response => response.text())
@@ -775,10 +883,12 @@
                 })
                 .catch(error => console.error("Error loading content:", error));
         }
+
         // Close the config modal
         function closeConfigModal() {
             document.getElementById("config_modal").style.display = "none";
         }
+
         // Close the modal when clicking outside of it
         window.onclick = function(event) {
             const modal = document.getElementById("config_modal");
@@ -786,35 +896,90 @@
                 modal.style.display = "none";
             }
         }
+
         function startTest(testType) {
-            const xhr = new XMLHttpRequest();
-            xhr.open("POST", "motor_control.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    const response = JSON.parse(xhr.responseText);
-                    if (response.status === "test_started") {
-                        document.getElementById("status").innerText = testType + " test started in background.";
+            // Select all test buttons within the 'test-controls' div
+            const testButtons = document.querySelectorAll('.test-controls button');
+
+            // Disable all test buttons
+            testButtons.forEach(button => {
+                button.disabled = true;
+                button.classList.add('disabled'); // Add custom class for styling
+                button.title = "A test is already running. Please wait until it's complete."; // Add tooltip
+            });
+
+            // Make AJAX request to start the test
+            $.ajax({
+                url: './motor_control.php',
+                type: 'POST',
+                data: {
+                    testType: testType
+                },
+                success: function(response) {
+                    // Handle test completion
+                    const result = JSON.parse(response);
+                    if (result.status === "test_completed") {
+                        // Re-enable all test buttons after test completion
+                        testButtons.forEach(button => {
+                            button.disabled = false;
+                            button.classList.remove('disabled');
+                            button.removeAttribute('title');
+                        });
                     }
+                },
+                error: function() {
+                    alert('Error starting the test. Please try again.');
+                    // Re-enable buttons in case of error
+                    testButtons.forEach(button => {
+                        button.disabled = false;
+                        button.classList.remove('disabled');
+                        button.removeAttribute('title');
+                    });
                 }
-            };
-            xhr.send("test_type=" + testType);
+            });
         }
+
         // Function to set the current date in the input field
         function setCurrentDate() {
             const today = new Date();
             const yyyy = today.getFullYear();
             const mm = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
             const dd = String(today.getDate()).padStart(2, '0');
+
             const formattedDate = `${yyyy}-${mm}-${dd}`;
             document.getElementById('calendar').value = formattedDate; // Set input field to current date
         }
+
         $(document).ready(function() {
             // Set the current date on page load
             setCurrentDate();
+
+            $.ajax({
+                url: './water_settings_ajax/check_test_status.php',
+                type: 'POST',
+                dataType: 'json',
+                success: function(response) {
+                    if (response.isTestRunning) {
+                        // If a test is running, disable all test buttons
+                        const testButtons = document.querySelectorAll('.test-controls button');
+                        testButtons.forEach(button => {
+                            // Only disable test buttons
+                            button.disabled = true;
+                            button.classList.add('disabled'); // Add disabled styling
+                            button.title = "A test is already running. Please wait until it's complete.";
+
+                        });
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error checking test status:', error);
+                }
+            });
+
             // Load images when the date is selected
             $('#calendar').on('change', function() {
                 var selectedDate = $(this).val();
+
                 // AJAX request to fetch images from the selected date
                 $.ajax({
                     url: './water_settings_ajax/fetch_images.php',
@@ -824,11 +989,41 @@
                     },
                     success: function(response) {
                         $('#imageGallery').html(response); // Update the gallery with the response
+
                         // Add click event to gallery images to show them in modal
                         $('.gallery-image').on('click', function() {
                             var imageUrl = $(this).attr('src');
+
+                            // Extract the testType from the filename
+                            var filename = imageUrl.split('/').pop();
+                            var testType = '';
+
+                            if (filename.includes('testTypeammonia')) {
+                                testType = 'ammonia';
+                            } else if (filename.includes('testTypenitrate')) {
+                                testType = 'nitrate';
+                            } else if (filename.includes('testTypeph')) {
+                                testType = 'ph';
+                            }
+
+                            // Set the comparison image based on test type
+                            var comparisonSrc = '';
+                            switch (testType) {
+                                case 'ammonia':
+                                    comparisonSrc = './ammonia_comparison.jpg';
+                                    break;
+                                case 'nitrate':
+                                    comparisonSrc = './nitrate_comparison.jpg';
+                                    break;
+                                case 'ph':
+                                    comparisonSrc = './ph_comparison.jpg';
+                                    break;
+                                default:
+                                    comparisonSrc = ''; // Optional: set a default or empty if no match
+                            }
+
                             $('#modalImage').attr('src', imageUrl); // Set the clicked image
-                            $('#comparisonImage').attr('src', './ammonia_comparison.jpg'); // Set the comparison image
+                            $('#comparisonImage').attr('src', comparisonSrc); // Set the comparison image based on test type
                             $('#imageModal').fadeIn(); // Show the modal
                         });
                     },
@@ -837,19 +1032,40 @@
                     }
                 });
             });
+
             // Trigger the change event to load images for the current date on page load
             $('#calendar').trigger('change');
-            // Close the modal when the close button is clicked
-            $('.close').on('click', function() {
-                $('#imageModal').fadeOut();
-            });
-            // Close the modal if clicked outside the image
-            $(window).on('click', function(e) {
-                if ($(e.target).is('#imageModal')) {
-                    $('#imageModal').fadeOut();
-                }
-            });
+
+            // // Close the modal when the close button is clicked
+            // $('.close').on('click', function() {
+            //     $('#imageModal').fadeOut();
+            // });
+
+            // // Close the modal if clicked outside the image
+            // $(window).on('click', function(e) {
+            //     if ($(e.target).is('#imageModal')) {
+            //         $('#imageModal').fadeOut();
+            //     }
+            // });
         });
+
+
+
+
+        // Close the modal when the close button is clicked
+        $('.close').on('click', function() {
+            $('#imageModal').fadeOut();
+        });
+
+        // Close the modal if clicked outside the image
+        $(window).on('click', function(e) {
+            if ($(e.target).is('#imageModal')) {
+                $('#imageModal').fadeOut();
+            }
+        });
+
+
+
         // Function to send commands to the ESP32
         function sendCommand(command) {
             fetch(`http://esp32water.local/api?command=${command}`)
@@ -867,11 +1083,14 @@
                     alert("Error: " + error.message);
                 });
         }
+
         function captureImage() {
             console.log("Attempting to capture image..."); // Log the start of the function
-            fetch('http://esp32water.local/capture')
+
+            fetch('http://esp32water.local/capture_image')
                 .then(response => {
                     console.log("Received response:", response); // Log the response object
+
                     // Check if the response is OK (status 200-299)
                     if (!response.ok) {
                         throw new Error("HTTP error! Status: " + response.status); // Throw an error for non-OK response
@@ -887,148 +1106,173 @@
                     alert("Error: " + error.message); // Alert the user with the error message
                 });
         }
+
+
         $(document).ready(function() {
+
+            // Modal Interaction Logic
+            const waterSchedulingModal = document.getElementById("water-scheduling-modal");
+            const openModalButton = document.getElementById("open-water-scheduling-modal");
+            const closeModalButton = document.getElementById("water-scheduling-modal-close");
+
+            // Open modal
+            openModalButton.onclick = () => {
+                waterSchedulingModal.style.display = "block";
+            };
+
+            // Close modal
+            closeModalButton.onclick = () => {
+                waterSchedulingModal.style.display = "none";
+            };
+
+            // Close modal when clicking outside the content
+            window.onclick = (event) => {
+                if (event.target === waterSchedulingModal) {
+                    waterSchedulingModal.style.display = "none";
+                }
+            };
+
             // Updated buttons to send commands to the ESP32 API
             $('#activateButton').on('click', function() {
                 sendCommand('TITRATE_AMMONIA');
             });
+
             $('#activateButton1').on('click', function() {
                 sendCommand('TITRATE_PH');
             });
+
             //     $('#activateButton2').on('click', function() {
             //         sendCommand('TITRATE_NITRATE');
             //     });
+
             document.getElementById('insertButton').addEventListener('click', function() {
-            // Get values from input fields
-            const ammonia = document.getElementById('input1').value;
-            const nitrate = document.getElementById('input2').value;
-            const pH = document.getElementById('input3').value;
-            // Send data to the backend PHP script using fetch API
-            fetch('insert_data.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        ammonia: ammonia,
-                        nitrate: nitrate,
-                        pH: pH
+                // Get values from input fields
+                const ammonia = document.getElementById('input1').value;
+                const nitrate = document.getElementById('input2').value;
+                const pH = document.getElementById('input3').value;
+
+                // Send data to the backend PHP script using fetch API
+                fetch('insert_data.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            ammonia: ammonia,
+                            nitrate: nitrate,
+                            pH: pH
+                        })
                     })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        // Clear the input fields
-                        document.getElementById('input1').value = '';
-                        document.getElementById('input2').value = '';
-                        document.getElementById('input3').value = '';
-                    } else {
-                        console.error("Failed to insert data.");
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-        });
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Clear the input fields
+                            document.getElementById('input1').value = '';
+                            document.getElementById('input2').value = '';
+                            document.getElementById('input3').value = '';
+                        } else {
+                            console.error("Failed to insert data.");
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            });
+
         });
 
-        document.addEventListener("DOMContentLoaded", function () {
-    // Get the canvas context
-    const ctx = document.getElementById('lineChart').getContext('2d');
-    
-    // Initialize the Chart.js chart
-    const lineChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: [], // Initialize with empty labels
-            datasets: [
-                {
-                    label: 'Ammonia',
-                    data: [],
+        document.addEventListener("DOMContentLoaded", function() {
+            const ctx = document.getElementById('lineChart').getContext('2d');
+            const lineChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                            label: 'Ammonia',
+                            data: [],
                     borderColor: '#ff0000',
-                    borderWidth: 3,
-                    tension: 0.4,
-                    pointRadius: 0,
+                            borderWidth: 3,
+                            tension: 0.4,
+                            pointRadius: 0,
                     backgroundColor: 'rgba(255, 107, 107, 0.1)',
-                },
-                {
-                    label: 'Nitrate',
-                    data: [],
+                        },
+                        {
+                            label: 'Nitrate',
+                            data: [],
                     borderColor: '#0000FF',
-                    borderWidth: 3,
-                    tension: 0.4,
-                    pointRadius: 0,
+                            borderWidth: 3,
+                            tension: 0.4,
+                            pointRadius: 0,
                     backgroundColor: 'rgba(77, 150, 255, 0.1)',
-                },
-                {
-                    label: 'pH',
-                    data: [],
+                        },
+                        {
+                            label: 'pH',
+                            data: [],
                     borderColor: '#ffa500',
-                    borderWidth: 3,
-                    tension: 0.4,
-                    pointRadius: 0,
+                            borderWidth: 3,
+                            tension: 0.4,
+                            pointRadius: 0,
                     backgroundColor: 'rgba(255, 217, 61, 0.1)',
                 },
             ],
-        },
-        options: {
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true,
                 },
-                x: {
-                    grid: {
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                        },
+                        x: {
+                            grid: {
                         display: false,
                     },
                 },
             },
         },
-    });
+            });
 
-    // Function to update the chart with fetched data
-    function updateChart() {
-        const selectedDate = document.getElementById('calendar').value;
-        const dateRange = document.getElementById('dateRange').value;
 
-        // Fetch data based on selected date and range
-        fetch(`fetch_water_data.php?date=${selectedDate}&range=${dateRange}`)
+            function updateChart() {
+                const selectedDate = document.getElementById('calendar').value;
+                const dateRange = document.getElementById('dateRange').value;
+
+                fetch(`fetch_water_data.php?date=${selectedDate}&range=${dateRange}`)
             .then((response) => response.json())
             .then((data) => {
-                const labels = [];
-                const ammoniaData = [];
-                const nitrateData = [];
-                const pHData = [];
+                        const labels = [];
+                        const ammoniaData = [];
+                        const nitrateData = [];
+                        const pHData = [];
 
                 // Process fetched data
                 data.forEach((entry) => {
-                    const date = entry.Date_and_Time;
-                    const value = parseFloat(entry.Value);
+                            const date = entry.Date_and_Time;
+                            const value = parseFloat(entry.Value);
 
-                    // Add unique dates to labels
-                    if (!labels.includes(date)) {
-                        labels.push(date);
-                    }
+                            // Push unique dates to labels
+                            if (!labels.includes(date)) {
+                                labels.push(date);
+                            }
 
-                    // Populate data arrays based on the Name field
+                            // Populate data arrays based on the Name field
                     if (entry.Name === 'Ammonia') {
-                        ammoniaData.push(value);
+                                ammoniaData.push(value);
                     } else if (entry.Name === 'Nitrate') {
-                        nitrateData.push(value);
+                                nitrateData.push(value);
                     } else if (entry.Name === 'pH') {
-                        pHData.push(value);
-                    }
-                });
+                                pHData.push(value);
+                            }
+                        });
 
-                // Update chart datasets
-                lineChart.data.labels = labels;
-                lineChart.data.datasets[0].data = ammoniaData;
-                lineChart.data.datasets[1].data = nitrateData;
-                lineChart.data.datasets[2].data = pHData;
+                        // Update chart data
+                        lineChart.data.labels = labels;
+                        lineChart.data.datasets[0].data = ammoniaData;
+                        lineChart.data.datasets[1].data = nitrateData;
+                        lineChart.data.datasets[2].data = pHData;
 
-                // Refresh the chart
-                lineChart.update();
-            })
+                        // Refresh the chart to show new data
+                        lineChart.update();
+                    })
             .catch((error) => console.error('Error fetching data:', error));
-    }
+            }
 
     // Set default date and load initial data
     const today = new Date().toISOString().split('T')[0];
@@ -1038,44 +1282,84 @@
     // Trigger chart update when date or range changes
     document.getElementById('calendar').addEventListener('change', updateChart);
     document.getElementById('dateRange').addEventListener('change', updateChart);
-});
+        });
+
         // Initialize with default values
         document.addEventListener("DOMContentLoaded", function() {
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('calendar').value = today;
             updateChart();
         });
+
+
         // Trigger data fetching on date change
         document.getElementById('calendar').addEventListener('change', function() {
             const selectedDate = this.value;
             fetchWaterData(selectedDate); // Update chart data based on the selected date
         });
+
         // Set default date and load initial data
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('calendar').value = today;
         fetchWaterData(today);
-        // Get the modal
-        var modal = document.getElementById("modalActivateButton3");
-        // Get the button that opens the modal
-        var btn = document.getElementById("activateButton3");
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("closeButtonActivateButton3")[0];
-        // When the user clicks the button, open the modal
-        btn.onclick = function() {
-            modal.style.display = "block";
-        };
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        };
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        };
 
-            // Load saved values from localStorage
+
+        // Function to handle the form submission using fetch
+        function saveMotorTime(event, motor) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get form data
+            const form = document.getElementById("motorForm_" + motor);
+            const formData = new FormData(form);
+
+            // Send the data to the server using fetch
+            fetch("watermotor_config.php", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    // Display response message in the modal
+                    const responseMessage = document.getElementById("responseMessage");
+                    responseMessage.innerText = data;
+                    responseMessage.className = data.includes("Error") ? "error" : "response";
+                })
+                .catch(error => {
+                    console.error("Error saving motor time:", error);
+                    const responseMessage = document.getElementById("responseMessage");
+                    responseMessage.innerText = "An error occurred.";
+                    responseMessage.className = "error";
+                });
+        }
+
+
+
+        // // Get the modal
+        // var modal = document.getElementById("modalActivateButton3");
+
+        // // Get the button that opens the modal
+        // var btn = document.getElementById("activateButton3");
+
+        // // Get the <span> element that closes the modal
+        // var span = document.getElementsByClassName("closeButtonActivateButton3")[0];
+
+        // // When the user clicks the button, open the modal
+        // btn.onclick = function() {
+        //     modal.style.display = "block";
+        // };
+
+        // // When the user clicks on <span> (x), close the modal
+        // span.onclick = function() {
+        //     modal.style.display = "none";
+        // };
+
+        // // When the user clicks anywhere outside of the modal, close it
+        // window.onclick = function(event) {
+        //     if (event.target == modal) {
+        //         modal.style.display = "none";
+        //     }
+        // };
+             // Load saved values from localStorage
     window.onload = function() {
         if (localStorage.getItem("input1")) {
             document.getElementById("input1").value = localStorage.getItem("input1");
@@ -1104,5 +1388,6 @@
         
     </script>
 </body>
+
 </html>
 <?php ob_end_flush(); ?>
