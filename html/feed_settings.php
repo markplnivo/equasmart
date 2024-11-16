@@ -1,3 +1,4 @@
+<!-- j -->
 <?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="shortcut icon" href="images/equasmartlogo_croppedlogo.png" type="image/svg+xml">
+    <link rel="stylesheet" href="css/css/all.min.css">
+    <link rel="stylesheet" href="css/css/fontawesome.min.css">
 
     <title>Feed Settings</title>
     <style>
@@ -126,6 +129,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             /* vertical-align: top; */
             width: 66%;
+            font-size: var(--step-0);
         }
 
         .date_container input {
@@ -135,17 +139,16 @@
             border-radius: 5px;
             border: 1px solid #ccc;
             display: block;
-            font-size: var(--step-1);
+            font-size: var(--step--1);
+            width: 70%;
         }
 
         .chart_container {
             display: grid;
             grid-template-columns: 40% 1fr;
             grid-area: 1/1/2/span 2;
-            width: 100%;
-            /* Increase width */
-            height: 120%;
-            /* Increase height */
+            width: 100%; /* Increase width */
+            height: 120%; /* Increase height */
             padding-block: 1%;
             padding-inline: 2%;
             background-color: lemonchiffon;
@@ -155,10 +158,8 @@
         }
 
         #lineChart {
-            width: 100%;
-            /* Make canvas width 100% of container */
-            height: 100%;
-            /* Make canvas height 100% of container */
+            width: 100%; /* Make canvas width 100% of container */
+            height: 100%; /* Make canvas height 100% of container */
         }
 
         label {
@@ -166,7 +167,25 @@
             margin-bottom: 8px;
             text-align: center;
         }
-
+        .view-buttons{
+            display: flex;
+            flex-direction: column;
+        }
+        #feedLogs{ /* view feed logs button */
+            font-size: var(--step-0) ;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: lightsalmon;
+            color: #000;
+            height: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+            width: 65%;
+            margin: 5px auto;
+        }
+        #feedLogs:hover{
+            background-color: #ff8554;
+        }
         .button-container {
             text-align: center;
             margin-top: 20px;
@@ -387,7 +406,7 @@
         }
 
         #feedingTimesContainer {
-            max-height: 500px;
+            height: auto;
             /* Set the desired height */
             overflow-y: auto;
             /* Enable vertical scrolling */
@@ -468,8 +487,7 @@
         /* Modal Content */
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto;
-            /* 15% from the top and centered */
+            margin: 5% auto;/* 5% from the top and centered */
             padding: var(--space-m-l);
             font-size: var(--step-1);
             border: 1px solid #888;
@@ -565,7 +583,14 @@
                 grid-template-columns: auto;
                 overflow-y: scroll;
             }
-
+            .view-buttons{
+                display: flex;
+                flex-direction: column;
+            }
+            #feedLogs{
+                width: 65%;
+                align-self: center;
+            }
             .date_container {
                 grid-area: auto;
                 margin: 2% auto;
@@ -587,6 +612,7 @@
                 grid-template-rows: auto;
                 padding: 0px;
                 justify-items: center;
+                gap: 0;
             }
 
             #feedingTimesContainer {
@@ -600,10 +626,11 @@
                 /* Use flexbox for better layout management */
                 flex-direction: column;
                 /* Stack children vertically */
-                gap: 2%;
+                gap: 0;
                 /* Add space between child elements */
                 justify-content: center;
                 box-sizing: border-box;
+                height: 400px;
             }
 
             #feedingTimesContainer .boxx {
@@ -646,7 +673,7 @@
                 /* Use flexbox to simplify vertical stacking */
                 flex-direction: column;
                 /* Stack children vertically */
-                gap: 2%;
+                gap: 0;
                 /* Add spacing between boxes */
                 width: 100%;
                 /* Ensure the boxSettings container takes full width */
@@ -687,6 +714,62 @@
         .view-buttons button:hover {
             background-color: peru;
         }
+        /* Styling for the log table */
+#feedLogTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: var(--step-0);
+    text-align: left;
+}
+
+#feedLogTable th, #feedLogTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#feedLogTable th {
+    background-color: mediumaquamarine;
+    font-weight: bold;
+}
+
+#feedLogTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#feedLogTable tr:hover {
+    background-color: #f1f1f1;
+}   
+
+/* Search bar styling */
+#logSearch {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: var(--step-0);
+}
+
+/* Pagination container */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: lightsalmon;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+            background-color: peru;
+        }
     </style>
 </head>
 
@@ -702,13 +785,19 @@
         <div id="logModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeLogModal()">&times;</span>
-                <h3>Feed History Logs</h3>
+                <h3 style="text-align: center;">Feed History Logs</h3>
+
+                <div id="logControls" style="margin: 20px 0;">
+                    <input type="text" id="logSearch" placeholder="Search logs...">
+                    <div class="pagination" id="paginationControls">
+                        <!-- Pagination buttons will be dynamically added here -->
+                    </div>
+                </div>
                 <table id="feedLogTable">
                     <thead>
                         <tr>
-                            <th>Time</th>
-                            <th>Amount</th>
-                            <th>Notes</th>
+                            <th><i class="fa-regular fa-clock"></i> Time</th>
+                            <th><i class="fa-regular fa-weight-scale"></i> Amount</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -756,7 +845,7 @@
         <!-- Left Container -->
         <div class="chart_container">
             <div class="view-buttons">
-                <button id="feedLogs">View Feed Logs</button>
+                <button id="feedLogs"><i class="fas fa-history"></i> View Logs</button>
                 <div class="date_container">
                     <h2>Select Date</h2>
                     <input id="date" type="date" value="2021-07-22">
@@ -865,7 +954,6 @@
                     row.innerHTML = `
                     <td>${formatTimeTo12Hour(log.feed_time)}</td>
                     <td>${log.amount}</td>
-                    <td>${log.motor_runtime}</td>
                 `;
                     tableBody.appendChild(row);
                 });
@@ -966,17 +1054,19 @@
 
     // Function to update the chart with new feed history data
     function updateChart(feedData) {
-        // Extract labels (feed_time) and data (amount) from the response
-        var labels = [];
-        var data = [];
+    // Check if feedData is empty or undefined
+    if (!feedData || feedData.length === 0) {
+        console.warn("No data available to update the chart.");
+        lineChart.data.labels = []; // Clear labels
+        lineChart.data.datasets[0].data = []; // Clear dataset
+        lineChart.update();
+        return;
+    }
 
-        feedData.forEach(function(feedEntry) {
-            // Format feed_time to 12-hour time
-            labels.push(formatTimeTo12Hour(feedEntry.feed_time)); // Use formatted feed_time for chart labels
-            data.push(feedEntry.amount); // Use amount for chart data
-        });
+    // Proceed with populating the chart if data is available
+    var labels = feedData.map(entry => formatTimeTo12Hour(entry.feed_time));
+    var data = feedData.map(entry => entry.amount);
 
-        // Update the chart data
         lineChart.data.labels = labels;
         lineChart.data.datasets[0].data = data;
 
@@ -997,8 +1087,8 @@
             datasets: [{
                 label: 'Total Daily Feed History',
                 data: [], // Initially empty
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1
             }]
         },
@@ -1032,20 +1122,37 @@
     // Fetch feed history for the selected date
     function fetchFeedHistory() {
         var selectedDate = document.getElementById('date').value;
+    console.log('Fetching feed history for date:', selectedDate);
 
         $.ajax({
-            url: '../feed_settings_ajax/get_feed_history.php', // PHP file to fetch data
+        url: '/feed_settings_ajax/get_feed_history.php',
             type: 'POST',
             dataType: 'json',
             data: {
                 selectedDate: selectedDate
             }, // Send selected date to the server
             success: function(response) {
-                // Update the chart with the new data
+            console.log('Server response:', response);
+
+            if (response.message) {
+                console.warn(response.message);
+                alert(response.message);
+                lineChart.data.labels = [];
+                lineChart.data.datasets[0].data = [];
+                lineChart.update();
+                return;
+            }
+
+            if (response && Array.isArray(response)) {
                 updateChart(response);
+            } else {
+                console.error("Invalid data format received from the server:", response);
+            }
             },
-            error: function(error) {
-                console.error('Error fetching feed history:', error);
+        error: function(xhr, status, error) {
+            console.error('Error fetching feed history:', xhr);
+            console.error('Status:', status);
+            console.error('Error:', error);
             }
         });
     }
