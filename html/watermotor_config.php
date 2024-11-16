@@ -56,11 +56,107 @@ $conn->close();
 <head>
     <title>Motor Configuration</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .motor-control { border: 1px solid #ccc; padding: 20px; margin: 20px; }
-        .motor-control h2 { text-transform: capitalize; }
-        .response { color: green; }
-        .error { color: red; }
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f9f0;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+/* Response Message Styling */
+.response {
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.error {
+    color: #FF0000;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Motor Control Section */
+.motor-control {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.motor-control h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.motor-control label {
+    font-size: 1rem;
+    color: #555;
+}
+
+.motor-control input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Button Styling */
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .motor-control {
+        padding: 15px;
+    }
+
+    .motor-control h2 {
+        font-size: 1.2rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+        
+         
     </style>
 </head>
 <body>
