@@ -1,3 +1,4 @@
+<!-- j -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,7 +86,7 @@ table {
 .preloader .item img {
   width: 500px; /* Adjust size of the loading icon */
   height: auto;
-}
+} 
 
 
 html, body{
@@ -966,7 +967,7 @@ h1 span{
     .about-us .column-two,
     .about-us .column-three {
         padding: 10px; /* Reduce padding for compact layout */
-    }
+}
 
 
 h1 {
@@ -1023,7 +1024,7 @@ margin-top: 20px; /* Adjust spacing */
 .about-us .subtitle {
         font-size: 12px; /* Smaller text size for very small screens */
         margin-top: -8px; /* Adjust spacing if necessary */
-}
+ }
 
 .portfolio .portfolio-margin{
   width:300px;
@@ -1137,7 +1138,7 @@ textarea{
 .about-us p {
     font-size: 13px; /* Slightly smaller text */
     margin: 10px 20px; /* Add horizontal padding */
-    }
+}
 
 .start-page, .start-page .opacity{
   height:100%;
@@ -1369,19 +1370,19 @@ textarea{
 }
 
 .video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
 }
 
 video#coverVideo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Additional styles for the map */
@@ -1478,9 +1479,9 @@ video#coverVideo {
 <body>
 
 <div class="preloader">
-  <div class="item">
+    <div class="item">
     <img src="img/icons/loading.gif" alt="Loading">
-  </div>
+    </div>
 </div>
 
 <div class="container">
@@ -1490,8 +1491,8 @@ video#coverVideo {
     <div class="video-background">
       <video id="backgroundVideo" autoplay muted loop style="width: 100%; height: auto;">
         <source src="./video/landscape.mp4" type="video/mp4" id="videoSource">
-        Your browser does not support the video tag.
-      </video>
+    Your browser does not support the video tag.
+</video>
     </div>
     <div class="opacity"></div> <!-- Opacity color -->
     <div class="content">
