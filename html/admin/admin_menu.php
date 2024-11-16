@@ -1,3 +1,4 @@
+<!-- j -->
 <?php ob_start(); ?>
 <?php
 include "../session_handler.php";
@@ -82,7 +83,7 @@ if ($_SESSION['position'] != 'admin') {
   }
 
 #menuLogo {
-    margin-top: 15px;
+    margin-top: 5%;
     align-self: center;
     width: 50%;
 }
