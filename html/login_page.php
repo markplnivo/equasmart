@@ -1,4 +1,3 @@
-
 <?php ob_start(); ?>
 <?php 
 include "logindbase.php"; 
@@ -17,17 +16,6 @@ include "session_handler.php";
     <link rel="stylesheet" href="css/css/fontawesome.min.css">
     <title>Login</title>
 
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('service_worker.js').then(function(registration) {
-                    console.log('Service Worker registered with scope:', registration.scope);
-                }, function(error) {
-                    console.log('Service Worker registration failed:', error);
-                });
-            });
-        }
-    </script>
     <style>
         :root {
     /* FLUID RESPONSIVE PADDING/MARGIN SPACE BASE VALUE = 12px, MIN WIDTH = 320px, AND MAX VALUE = 21px, MAX WIDTH = 1240px (added by mark romualdo)*/

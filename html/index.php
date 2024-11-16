@@ -1480,7 +1480,7 @@ video#coverVideo {
 
 <div class="preloader">
     <div class="item">
-    <img src="img/icons/loading.gif" alt="Loading">
+    <img src="/img/icons/loading.gif" alt="Loading">
     </div>
 </div>
 

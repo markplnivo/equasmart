@@ -163,10 +163,10 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        height: 400px;
+        height: 100%;
     }
     .liveImage #video1{
-        width: 400px;
+        width:40%;
         transform: rotate(90deg);
         border: 5px solid #333;          /* Creates a solid border around the image */
         border-radius: 15px;               /* Adds rounded corners for a frame effect */
@@ -233,12 +233,23 @@
 <?php
 include "logindbase.php";
 
-$sql = "SELECT SUM(distance) as total_distance FROM measurements";
+
+// Get the current date
+$current_date = date('Y-m-d');
+
+// Modify the SQL query to filter for the current day
+$sql = "SELECT distance
+        FROM measurements 
+        WHERE DATE(timestamp) = '$current_date'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    $calculated_value = round(($row['total_distance'] / 28) * 100); // Round to the nearest integer
+    $calculated_value = 100 - round(($row['distance'] / 25) * 100); // Round to the nearest integer
+
+    if ($calculated_value < 0) {
+        $calculated_value = 0;
+    }
 
 } else {
     echo json_encode(['calculated_value' => 0]);
@@ -257,7 +268,7 @@ $conn->close();
                 <span class="icon fa fa-fish"></span><span class="feedAmount">0 grams fed</span>
             </div>
             <div id="waterQuick">
-            <div id="calculated_value">Calculated Distance: <?php echo isset($calculated_value) ? round($calculated_value) : 0; ?> <i class="fa-solid fa-percent"></i></div>
+            <div id="calculated_value">Feed Remaining: <?php echo isset($calculated_value) ? round($calculated_value) : 0; ?> <i class="fa-solid fa-percent"></i></div>
 
 
 
@@ -318,24 +329,24 @@ $conn->close();
     setInterval(fetchFeedAmount, 60000);
     fetchFeedAmount();
 
-    function fetchCalculatedDistance() {
-    $.ajax({
-        url: './user_dashboard_ajax/fetch_total_distance.php', // Path to your PHP script
-        method: 'GET',
-        dataType: 'json',
-        success: function(data) {
-            const distanceDisplay = document.querySelector('#distanceDisplay');
-            distanceDisplay.textContent = `Calculated Distance: ${data.calculated_value.toFixed(2)}`;
-        },
-        error: function(xhr, status, error) {
-            console.error('Error fetching calculated distance:', error);
-        }
-    });
-}
+//     function fetchCalculatedDistance() {
+//     $.ajax({
+//         url: './user_dashboard_ajax/fetch_total_distance.php', // Path to your PHP script
+//         method: 'GET',
+//         dataType: 'json',
+//         success: function(data) {
+//             const distanceDisplay = document.querySelector('#distanceDisplay');
+//             distanceDisplay.textContent = `Calculated Distance: ${data.calculated_value.toFixed(2)}`;
+//         },
+//         error: function(xhr, status, error) {
+//             console.error('Error fetching calculated distance:', error);
+//         }
+//     });
+// }
 
-// Fetch and update the calculated distance on page load and periodically
-setInterval(fetchCalculatedDistance, 60000); // Fetch every 60 seconds
-fetchCalculatedDistance();
+// // Fetch and update the calculated distance on page load and periodically
+// setInterval(fetchCalculatedDistance, 60000); // Fetch every 60 seconds
+// fetchCalculatedDistance();
 
 </script>
 

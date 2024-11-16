@@ -1,3 +1,4 @@
+<!-- j -->
 <?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -6,6 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/equasmartlogo_croppedlogo.png" type="image/svg+xml">
+    <link rel="stylesheet" href="css/css/all.min.css">
+    <link rel="stylesheet" href="css/css/fontawesome.min.css">
     <title>Water Settings</title>
     <!-- Include Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -93,7 +96,8 @@
 
         body {
             display: grid;
-            grid-template-columns: 60px 1fr;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto;
             margin: 0;
             height: 100vh;
             background-color: azure;
@@ -103,30 +107,27 @@
             grid-area: 1 / 2 / -1 / -1;
             display: grid;
             grid-template-columns: 50% 50%;
-            grid-template-rows: auto 50% 50%;
+            grid-template-rows: auto;
             background-color: azure;
-            margin-top: 10px;
         }
 
         h2 {
             font-family: Verdana, sans-serif;
             text-align: center;
+            margin-block: 1%;
         }
 
         .container {
             grid-area: 2 / 1 / 2 / span 2;
-            width: 87.5%;
-            margin: 20px auto;
-            margin-top: 3%;
-            margin-left: 12%;
-            padding: 20px;
-            background-color: lemonchiffon;
+            width: 95%;
+            margin: auto;
+            padding: 4% 2%;
             border-radius: 15px;
+            background-color: lemonchiffon;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
-            /* Adjusts spacing equally */
+            justify-content: space-around;/* Adjusts spacing equally */
             align-items: center;
         }
 
@@ -152,12 +153,6 @@
         h4 {
             text-align: center;
         }
-
-        .boxx div {
-            display: flex;
-            align-items: center;
-        }
-
         canvas {
             display: block;
             margin: 0 auto;
@@ -171,17 +166,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: lemonchiffon;
             border-radius: 20px;
-
             padding: 90px;
             width: 100%;
+            font-size: var(--step-0);
         }
 
         .calendar h4 {
-            margin-bottom: 10px;
+            margin-bottom: 2%;
         }
-
+        #calendar, #dateRange{
+            font-size: var(--step--1);
+        }
         .calendar input[type="date"] {
             width: 80%;
             padding: 10px;
@@ -192,48 +188,99 @@
         .input {
             grid-area: 3 / 1 / 3 / 1;
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            align-items: center;
-            align-content: center;
+            justify-content: center; /* Centers content vertically */
+            align-items: center; /* Centers content horizontally */
+            margin: auto;
             flex-direction: column;
             background-color: lemonchiffon;
             border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             padding: 40px;
-            width: 70%;
-            height: 95%;
-            margin-left: 24%;
+            width: 90%;
+            height: 90%;
         }
 
         .input input[type="text"] {
-            width: 80%;
+            width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             box-sizing: border-box;
+            margin-block: 1%;
+            align-self: center;
         }
 
         .input button {
-            width: 50%;
+            width:100%;
             padding: 10px;
+            margin-block: 1%;
             border: none;
             border-radius: 5px;
             background-color: #4CAF50;
             color: white;
             cursor: pointer;
-            font-size: 16px;
+            align-self: center;
+            font-size: var(--step-0);
         }
 
         .input button:hover {
             background-color: #45a049;
         }
-
+        .calendar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: mediumaquamarine;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            max-width: 500px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .calendar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
+        }
+        .calendar h4 {
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .calendar input[type="date"],
+        .calendar select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .calendar input[type="date"]:hover,
+        .calendar select:hover {
+            background-color: #f0f8ff;
+            border-color: #a0a0a0;
+        }
+        .calendar select:focus,
+        .calendar input[type="date"]:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+        }
+        .calendar select {
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5H7z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 15px;
+        }
         .testing-history {
             grid-area: 3 / 2 / 3 / 2;
-            width: 99%;
-            height: 95%;
-            margin-right: 70%;
+            width: 90%;
+            height: 90%;
+            margin: auto;
             background-color: lemonchiffon;
             border-radius: 20px;
             padding: 20px;
@@ -241,57 +288,120 @@
 
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            /* Centers children vertically */
-            align-items: center;
-            /* Centers children horizontally */
+        }
+
+        label {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #333;
+            padding-bottom: 2px;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.4s ease-in-out;
+            font-weight: bold;
+        }
+
+        label:hover {
+            border-bottom: 5px solid #333;
         }
 
         /* Default background colors */
         #input1 {
-            background-color: #ffe6e6;
+            background-color: #ff7878;
             /* Solid light red for Ammonia */
         }
 
         #input2 {
-            background-color: #f0e6ff;
+            background-color: #7e7efc;
             /* Solid light violet for Nitrate */
         }
 
         #input3 {
-            background-color: #e6f2ff;
+            background-color: #ffc65e;
             /* Solid light blue for pH */
         }
 
         /* Hover effect with distinct colors */
         #input1:hover {
-            background-color: #fc9680;
+            background-color: #FF0000;
             /* Darker red on hover for Ammonia */
         }
 
         #input2:hover {
-            background-color: #de9df6;
+            background-color: #2e2ec9;
             /* Darker violet on hover for Nitrate */
         }
 
         #input3:hover {
-            background-color: #c1d1ff;
+            background-color: #FFA500;
             /* Darker blue on hover for pH */
         }
 
         .boxx {
-            width: 60%;
-            height: 60%;
-
-            padding: 20px;
-            border-radius: 20px;
+            width: auto;
+            color: white;
+            align-self: center;
+        }
+        .test-controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centers the buttons horizontally */
+            margin-top: 4%;
+            gap: 10px; /* Adjust the value as needed to create the desired space */
+            height: 50%;
+        }
+        
+        .test-controls button{
+            border-style: none;
+            border-radius: 3px;
+            padding: 8px 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+            font-size: var(--step--1);
             color: white;
         }
-
+        .test-controls button:active{
+            transform: scale(0.95); /* Scales down the button slightly */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Reduces shadow to make it look pressed */
+        }
+        #testAmonia_btn {
+            background-color: #FF0000;
+            width: calc(50% - 10px); /* Adjust to account for the gap */
+        }
+        #testAmonia_btn:hover{
+            background-color: #c91616;
+        }
+        #testNitrate_btn {
+            background-color: #0000FF;
+            width: calc(50% - 10px); /* Adjust to account for the gap */
+        }
+        #testNitrate_btn:hover{
+            background-color: #1a1ac9;
+        }
+        #testPh_btn {
+            background-color: #FFA500;
+            width: calc(50% - 10px); /* Adjust to account for the gap */
+        }
+        #testPh_btn:hover{
+            background-color: #d18f17;
+        }
+        #flushTube_btn {
+            background-color: #b651e8;
+            width: calc(50% - 10px); /* Adjust to account for the gap */
+        }
+        #flushTube_btn:hover{
+            background-color: #9436c2;
+        }
+        .openConfig_btn {
+            background-color: #4CAF50;
+            width: calc(100% - 10px); /* Adjust to account for the gap */
+        }
+        .openConfig_btn:hover{
+            background-color: #23a627;
+        }
         #pageTitle {
             grid-area: 1 / 1 / 1 / span 3;
-            height: 10px;
-            margin: 0;
+            font-size: var(--step-2);
+            justify-self: center;
+            align-self: center;
         }
 
         #activateButton,
@@ -390,13 +500,6 @@
             text-decoration: none;
             cursor: pointer;
         }
-
-        .test-controls {
-            border: 1px solid #ccc;
-            padding: 20px;
-            margin: 20px;
-        }
-
         .response {
             color: green;
         }
@@ -438,63 +541,6 @@
             cursor: pointer;
         }
 
-        .calendar {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: mediumaquamarine;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 50%;
-            max-width: 500px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-        }
-
-        .calendar:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
-        }
-
-        .calendar h4 {
-            margin-bottom: 10px;
-            font-family: Arial, sans-serif;
-            color: #333;
-        }
-
-        .calendar input[type="date"],
-        .calendar select {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            color: #333;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
-        }
-
-        .calendar input[type="date"]:hover,
-        .calendar select:hover {
-            background-color: #f0f8ff;
-            border-color: #a0a0a0;
-        }
-
-        .calendar select:focus,
-        .calendar input[type="date"]:focus {
-            outline: none;
-            border-color: #4a90e2;
-            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
-        }
-
-        .calendar select {
-            appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5H7z"/></svg>');
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            background-size: 15px;
-        }
 
         .test-controls button.disabled {
             cursor: not-allowed;
@@ -547,7 +593,6 @@
             height: 60px;
             border-radius: 50%;
             background-color: white;
-            background-image: url('./img/icons/sched.png');
             background-size: 30px 30px;
             background-repeat: no-repeat;
             background-position: center;
@@ -561,6 +606,7 @@
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
             transform: translateY(2px);
         }
+
 
 
         @media (max-width: 1010px) {
@@ -578,27 +624,32 @@
             }
 
             .container,
-            .calendar,
+            .input,
             .testing-history {
                 width: 90%;
                 /* Ensure full width for each section */
-                margin-block: 30px;
+                margin: 3% auto;
                 /* Center elements and add spacing */
-                margin-inline: 20px;
                 height: auto;
                 /* Let height adjust based on content */
             }
-
-            .chart-container {
-                width: auto;
-                /* Make chart containers take full width */
+            .container{
+                display: flex;
+                flex-direction: column;
             }
-
-            canvas {
-                width: 100%;
-                /* Ensure canvases fill their containers */
+            #lineChart{
+                max-width: 90%;
+                max-height: 300px;
             }
-
+            .calendar{
+                width: 80%;
+            }
+            .input{
+                padding: 7px 4px;
+            }
+            .input input{
+                font-size: var(--step--1);
+            }
             .modal {
                 display: none;
                 position: fixed;
@@ -648,6 +699,37 @@
         }
     </style>
 </head>
+<?php include "logindbase.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $_SESSION['input1'] = $_POST['input1'] ?? '';
+        $_SESSION['input2'] = $_POST['input2'] ?? '';
+        $_SESSION['input3'] = $_POST['input3'] ?? '';
+
+        $ammonia = $_SESSION['input1'];
+        $nitrate = $_SESSION['input2'];
+        $pH = $_SESSION['input3'];
+
+        $sql = "INSERT INTO water_test_input (Value, Date_and_Time, Name) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+
+        $dateTime = date("Y-m-d H:i:s");
+        $name = "Ammonia";
+        $stmt->bind_param("sss", $ammonia, $dateTime, $name);
+        $stmt->execute();
+
+        $name = "Nitrate";
+        $stmt->bind_param("sss", $nitrate, $dateTime, $name);
+        $stmt->execute();
+
+        $name = "pH";
+        $stmt->bind_param("sss", $pH, $dateTime, $name);
+        $stmt->execute();
+
+        $stmt->close();
+    }
+
+?>
 
 <body>
     <?php include "user_menu.php"; ?>
@@ -709,17 +791,40 @@
         </div>
 
         <div class="input">
-            <h4>Input Fields</h4>
-            <input type="text" id="input1" placeholder="Enter Ammonia value">
-            <input type="text" id="input2" placeholder="Enter Nitrate value">
-            <input type="text" id="input3" placeholder="Enter pH value">
-            <button id="insertButton">Insert</button>
+        <form method="POST" action="">
+            <h2>Input Fields</h2>
+    <label for="input1" class="label">Ammonia:</label>
+    <input 
+        type="text" 
+        id="input1" 
+        name="input1" 
+        value="<?php echo isset($_SESSION['input1']) ? htmlspecialchars($_SESSION['input1']) : ''; ?>" 
+        placeholder="Enter Ammonia value">
+    
+    <label for="input2" class="label">Nitrate:</label>
+    <input 
+        type="text" 
+        id="input2" 
+        name="input2" 
+        value="<?php echo isset($_SESSION['input2']) ? htmlspecialchars($_SESSION['input2']) : ''; ?>" 
+        placeholder="Enter Nitrate value">
+    
+    <label for="input3" class="label">pH:</label>
+    <input 
+        type="text" 
+        id="input3" 
+        name="input3" 
+        value="<?php echo isset($_SESSION['input3']) ? htmlspecialchars($_SESSION['input3']) : ''; ?>" 
+        placeholder="Enter pH value">
+    
+    <button type="submit">Save</button>
+</form>
+
         </div>
 
 
         <div class="testing-history">
             <!-- <h4>Testing History</h4> -->
-            <div class="boxx">
 
                 <!-- <div>
                     <label class="label1">5/5/24</label>
@@ -733,7 +838,7 @@
 
 
                 <!-- Button to open the water scheduling modal -->
-                <button id="open-water-scheduling-modal" class="water-scheduling-trigger-button" type="button"></button>
+                <button id="open-water-scheduling-modal" class="water-scheduling-trigger-button" type="button"><i class="fa-regular fa-calendar-days"></i></button>
 
 
 
@@ -747,21 +852,20 @@
                 </div> -->
 
                 <div class="test-controls">
-                    <h2>Run Tests</h2>
-                    <button class="test-button" onclick="startTest('ammonia')">Test Ammonia</button>
-                    <button class="test-button" onclick="startTest('nitrate')">Test Nitrate</button>
-                    <button class="test-button" onclick="startTest('ph')">Test pH</button>
-                    <button class="test-button" onclick="startTest('flush_test_tube')">Flush Test Tube</button>
-                    <button onclick="openConfigModal()">Open Configuration</button> <!-- This button remains unaffected -->
+                    <button class="test-button" onclick="startTest('ammonia')" id="testAmonia_btn">Test Ammonia</button>
+                    <button class="test-button" onclick="startTest('nitrate')" id="testNitrate_btn">Test Nitrate</button>
+                    <button class="test-button" onclick="startTest('ph')" id="testPh_btn">Test pH</button>
+                    <button class="test-button" onclick="startTest('flush_test_tube')" id="flushTube_btn">Flush Test Tube</button>
+                    <button onclick="openConfigModal()" class="openConfig_btn">Open Configuration</button> <!-- This button remains unaffected -->
                 </div>
 
 
                 <!-- <button id="activateButton" type="button">Test Ammonia</button>
                 <button id="activateButton1" type="button">Test Nitrate</button>
                 <button id="activateButton2" type="button">Test pH</button> -->
-                <button id="activateButton2" onclick="captureImage()">Capture and Upload Image</button>
-                <p id="status"></p>
-            </div>
+                <!-- <button id="activateButton2" onclick="captureImage()">Capture and Upload Image</button> -->
+                <!-- <p id="status"></p> -->
+          
 
         </div>
     </div>
@@ -1078,53 +1182,52 @@
 
         document.addEventListener("DOMContentLoaded", function() {
             const ctx = document.getElementById('lineChart').getContext('2d');
-            let lineChart = new Chart(ctx, {
+            const lineChart = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: [],
                     datasets: [{
                             label: 'Ammonia',
                             data: [],
-                            borderColor: '#ff6b6b',
+                    borderColor: '#ff0000',
                             borderWidth: 3,
                             tension: 0.4,
                             pointRadius: 0,
-                            backgroundColor: 'rgba(255, 107, 107, 0.1)'
+                    backgroundColor: 'rgba(255, 107, 107, 0.1)',
                         },
                         {
                             label: 'Nitrate',
                             data: [],
-                            borderColor: '#4d96ff',
+                    borderColor: '#0000FF',
                             borderWidth: 3,
                             tension: 0.4,
                             pointRadius: 0,
-                            backgroundColor: 'rgba(77, 150, 255, 0.1)'
+                    backgroundColor: 'rgba(77, 150, 255, 0.1)',
                         },
                         {
                             label: 'pH',
                             data: [],
-                            borderColor: '#ffd93d',
+                    borderColor: '#ffa500',
                             borderWidth: 3,
                             tension: 0.4,
                             pointRadius: 0,
-                            backgroundColor: 'rgba(255, 217, 61, 0.1)'
-                        }
-                    ]
+                    backgroundColor: 'rgba(255, 217, 61, 0.1)',
+                },
+            ],
                 },
                 options: {
                     maintainAspectRatio: false,
                     scales: {
                         y: {
                             beginAtZero: true,
-                            max: 100
                         },
                         x: {
                             grid: {
-                                display: false
-                            }
-                        }
+                        display: false,
                     },
-                }
+                },
+            },
+        },
             });
 
 
@@ -1133,14 +1236,15 @@
                 const dateRange = document.getElementById('dateRange').value;
 
                 fetch(`fetch_water_data.php?date=${selectedDate}&range=${dateRange}`)
-                    .then(response => response.json())
-                    .then(data => {
+            .then((response) => response.json())
+            .then((data) => {
                         const labels = [];
                         const ammoniaData = [];
                         const nitrateData = [];
                         const pHData = [];
 
-                        data.forEach(entry => {
+                // Process fetched data
+                data.forEach((entry) => {
                             const date = entry.Date_and_Time;
                             const value = parseFloat(entry.Value);
 
@@ -1150,11 +1254,11 @@
                             }
 
                             // Populate data arrays based on the Name field
-                            if (entry.Name === "Ammonia") {
+                    if (entry.Name === 'Ammonia') {
                                 ammoniaData.push(value);
-                            } else if (entry.Name === "Nitrate") {
+                    } else if (entry.Name === 'Nitrate') {
                                 nitrateData.push(value);
-                            } else if (entry.Name === "pH") {
+                    } else if (entry.Name === 'pH') {
                                 pHData.push(value);
                             }
                         });
@@ -1168,8 +1272,17 @@
                         // Refresh the chart to show new data
                         lineChart.update();
                     })
-                    .catch(error => console.error('Error fetching data:', error));
+            .catch((error) => console.error('Error fetching data:', error));
             }
+
+    // Set default date and load initial data
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('calendar').value = today;
+    updateChart();
+
+    // Trigger chart update when date or range changes
+    document.getElementById('calendar').addEventListener('change', updateChart);
+    document.getElementById('dateRange').addEventListener('change', updateChart);
         });
 
         // Initialize with default values
@@ -1247,6 +1360,33 @@
         //         modal.style.display = "none";
         //     }
         // };
+             // Load saved values from localStorage
+    window.onload = function() {
+        if (localStorage.getItem("input1")) {
+            document.getElementById("input1").value = localStorage.getItem("input1");
+        }
+        if (localStorage.getItem("input2")) {
+            document.getElementById("input2").value = localStorage.getItem("input2");
+        }
+        if (localStorage.getItem("input3")) {
+            document.getElementById("input3").value = localStorage.getItem("input3");
+        }
+    };
+
+    // Save values to localStorage on input
+    document.getElementById("input1").addEventListener("input", function() {
+        localStorage.setItem("input1", this.value);
+    });
+
+    document.getElementById("input2").addEventListener("input", function() {
+        localStorage.setItem("input2", this.value);
+    });
+
+    document.getElementById("input3").addEventListener("input", function() {
+        localStorage.setItem("input3", this.value);
+    });
+
+        
     </script>
 </body>
 
