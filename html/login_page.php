@@ -10,9 +10,12 @@ include "session_handler.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="images/equasmartlogo_croppedlogo.png" type="image/svg+xml">
+    <link rel="stylesheet" href="css/css/all.min.css">
+    <link rel="stylesheet" href="css/css/fontawesome.min.css">
+    <title>Login</title>
 
     <script>
         if ('serviceWorker' in navigator) {
@@ -86,6 +89,7 @@ include "session_handler.php";
         --step-5: clamp(1.3997rem, 0.9577rem + 2.2098vw, 2.6703rem);
         --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
 }
+
         body {
             background: #f6f7fb;
             font-family: 'Arial', sans-serif;
@@ -95,7 +99,6 @@ include "session_handler.php";
             height: 100vh;
             margin: 0;
         }
-
         .container {
             display: flex;
             width: 900px;
@@ -105,21 +108,17 @@ include "session_handler.php";
             border-radius: 10px;
             overflow: hidden;
         }
-
         .image-section {
             width: 50%;
-       
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
         }
-
         .image-section img {
             width: 200px;
             height: 200px;
         }
-
         .login-section {
             width: 50%;
             padding: 40px;
@@ -127,45 +126,39 @@ include "session_handler.php";
             flex-direction: column;
             justify-content: center;
         }
-
         .login-section h2 {
             margin-bottom: 30px;
-            font-size: 24px;
+            font-size: var(--step-2);
             color: #333;
         }
-
         .form-field {
             margin-bottom: 20px;
             position: relative;
         }
-
         .form-field input[type="text"],
         .form-field input[type="password"] {
             width: 100%;
             padding: 15px;
             border: 1px solid #ddd;
             border-radius: 50px;
-            font-size: 16px;
+            font-size: var(--step-0);
             color: #333;
             padding-left: 50px;
             background: #f1f1f1;
             box-sizing: border-box;
         }
-
         .form-field input[type="text"]::placeholder,
         .form-field input[type="password"]::placeholder {
             color: #aaa;
         }
-
         .form-field i {
             position: absolute;
             top: 50%;
             left: 20px;
             transform: translateY(-50%);
             color: #bbb;
-            font-size: 18px;
+            font-size: var(--step-1);
         }
-
         .form-field input[type="submit"] {
             width: 100%;
             padding: 15px;
@@ -173,32 +166,27 @@ include "session_handler.php";
             border-radius: 50px;
             background-color: #28a745;
             color: white;
-            font-size: 18px;
+            font-size: var(--step-1);
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         .form-field input[type="submit"]:hover {
             background-color: #218838;
         }
-
         .form-options {
             display: flex;
             justify-content: space-between;
             margin-top: 10px;
         }
-
         .form-options a {
             color: #007BFF;
             text-decoration: none;
-            font-size: 14px;
+            font-size: var(--step-0);
         }
-
         .form-options a:hover {
             color: #0056b3;
         }
-
         @media (max-width: 1010px) {
     .container {
         flex-direction: column;
@@ -206,12 +194,10 @@ include "session_handler.php";
         height: 100%; /* Adjust height */
         font-size: var(--step-4);
     }
-
     .chart_header, .container {
         width: 100%; /* Full width for each element */
         
     }
-
     .image-section {
             width: 100%;
             margin-top: 20px;
@@ -220,7 +206,6 @@ include "session_handler.php";
             align-items: center;
             position: relative;
         }
-
         .login-section {
             width: 80%;
             padding: 40px;
@@ -229,22 +214,18 @@ include "session_handler.php";
             justify-content: center;
             font-size: var(--step-4);
         }
-
         .login-section h2 {
             margin-bottom: 30px;
             font-size: 24px;
             color: #333;
         }
-
         }
     </style>
 </head>
-
 <?php
 if (isset($_POST['loginSubmit'])) {
     $username = $conn->real_escape_string($_POST['username']);
     $password = $_POST['password']; 
-
     // Use BINARY to enforce case-sensitive username search
     $sql = $conn->prepare("SELECT UserID, Username, PasswordHash, position FROM users WHERE BINARY Username = ?");
     $sql->bind_param("s", $username);
@@ -257,7 +238,6 @@ if (isset($_POST['loginSubmit'])) {
         if (password_verify($password, $passwordHash)) {
             loginUser($username, $position, $userID);
             session_regenerate_id(true);
-
             switch ($position) {
                 case 'admin':
                     header("Location: ./admin/admin_home.php");
@@ -274,12 +254,10 @@ if (isset($_POST['loginSubmit'])) {
         // If username doesn't exist, show alert
         echo "<script>alert('Your account and/or password is incorrect, please try again.');</script>";
     }
-
     $sql->close();
 }
 $conn->close();
 ?>
-
 <body>
     <div class="container">
         <div class="image-section">
@@ -307,6 +285,5 @@ $conn->close();
         </div>
     </div>
 </body>
-
 </html>
 <?php ob_end_flush(); ?>
