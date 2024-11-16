@@ -1,3 +1,4 @@
+<!-- j -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +12,7 @@
     <meta name="keywords" content="responsive, html5, onepage, themes, template, clean layout, free web"/>
     <meta name="author" content="Thomsoon.com"/>
     
-    <link rel="shortcut icon" href="img/logos.png"> 
+    <link rel="shortcut icon" href="img/logos.png" class="logo"> 
     <link rel="stylesheet" type="text/css" href="equasmart-main/css/style-responsive.css" />  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">              
 
@@ -66,22 +67,25 @@ table {
 @import url(http://fonts.googleapis.com/css?family=Lato:400,300,100,700,900&subset=latin,latin-ext);
 
 
-.preloader{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:white;
-  z-index:99999;
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 5s ease; /* 1-second transition */
 }
- 
-.preloader .item{
-  position:absolute;
-  width:100px;
-  height:100px;
-  left:50%;
-  top:50%;
-  margin-left:-50px;
-  margin-top:-50px;
+
+.preloader .item img {
+  width: 500px; /* Adjust size of the loading icon */
+  height: auto;
 } 
 
 
@@ -631,6 +635,7 @@ h1 span{
   position:relative;
   margin-bottom:70px;
   overflow:hidden;
+  gap: 10px;
 }
 
 .grid li{
@@ -921,6 +926,49 @@ h1 span{
   width:300px;
 }
 
+.start-page .content .text .read-more {
+  width: 120px; /* Further reduce width for smaller screens */
+  height: 35px; /* Adjust height */
+  line-height: 35px; /* Matches height */
+  font-size: 10px; /* Smaller font size for mobile */
+  margin-top: 50px;
+}
+
+.start-page .content .text .read-more {
+  width: 100px; /* Even smaller for very small devices */
+  height: 30px; /* Adjust height */
+  line-height: 30px; /* Matches height */
+  font-size: 9px; /* Reduce font size */
+  margin-top: 30px;
+}
+
+.grid li {
+  width: 90%; /* Full width for very small screens */
+  margin: 10px auto; /* Center the items */
+    }
+
+.about-us h1 {
+        font-size: 24px; /* Further reduce heading size */
+        margin-top: 50px;
+    }
+
+    .about-us h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .about-us p {
+        font-size: 12px; /* Smaller text */
+        line-height: 1.4;
+        margin: 10px; /* Reduce overall margins */
+    }
+
+    .about-us .column-one,
+    .about-us .column-two,
+    .about-us .column-three {
+        padding: 10px; /* Reduce padding for compact layout */
+}
+
 
 h1 {
   font-size:36px;
@@ -946,6 +994,36 @@ h1 {
  .about-us .content .column-three{
   width:300px;
   margin-bottom:70px;
+ }
+
+ .about-us .content {
+  max-width: 90%; /* Almost full width on mobile */
+  padding: 10px; /* Reduce padding further */
+}
+
+.about-us h1 {
+  font-size: 24px; /* Further reduce heading size */
+}
+
+.about-us h2 {
+font-size: 20px; /* Further reduce subheading size */
+margin-top: 20px; /* Adjust spacing */
+}
+
+.about-us p {
+  font-size: 12px; /* Smaller font size */
+  line-height: 1.7; /* Adjust line height */
+}
+
+.about-us hr {
+  width: 80px; /* Further reduce line width for very small screens */
+  margin: 15px auto;
+
+}
+
+.about-us .subtitle {
+        font-size: 12px; /* Smaller text size for very small screens */
+        margin-top: -8px; /* Adjust spacing if necessary */
  }
 
 .portfolio .portfolio-margin{
@@ -1037,6 +1115,31 @@ textarea{
   height:100%;
 }
 
+.about-us h1 {
+    font-size: 28px; /* Reduce heading size */
+    margin-top: 80px;
+    }
+
+.about-us h2 {
+    font-size: 22px; /* Smaller subheadings */
+    margin-bottom: 15px;
+    }
+
+.about-us .column-one,
+.about-us .column-two,
+.about-us .column-three {
+  width: 100%; /* Full width for columns */
+  margin-bottom: 40px; /* Reduce bottom margin */
+  float: none; /* Remove floating for stacking */
+  text-align: center; /* Center-align text */
+  margin: 0 auto;
+  }
+
+.about-us p {
+    font-size: 13px; /* Slightly smaller text */
+    margin: 10px 20px; /* Add horizontal padding */
+}
+
 .start-page, .start-page .opacity{
   height:100%;
 }
@@ -1051,6 +1154,46 @@ h1 {
 
 .about-us h1 {
   margin-top:0;
+}
+
+.grid li {
+  width: 45%; /* Adjust the width for smaller screens */
+  margin: 10px 5%; /* Add space between items */
+}
+
+.about-us .content {
+  max-width: 600px; /* Narrower width for tablets */
+  padding: 15px; /* Reduce padding */
+}
+
+.about-us h1 {
+  font-size: 28px; /* Reduce heading size */
+}
+
+.about-us h2 {
+  font-size: 22px; /* Reduce subheading size */
+}
+
+.about-us p {
+  font-size: 13px; /* Slightly smaller text */
+}
+
+.about-us hr {
+        width: 106px; /* Keep the line width smaller for smaller screens */
+        margin: 20px auto; /* Center the line horizontally */
+        background-color: black;
+        height: 1px;
+        border: none;
+        position: relative;
+}
+
+.about-us .subtitle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -10px; /* Adjust this value to move the text onto the line */
+        font-size: 14px;
+        color: #a4a4a4;
 }
 
 .about-us .content{
@@ -1097,6 +1240,12 @@ h1 {
   width:300px;
   text-align:center;
   margin-top:60px;
+}
+
+.video-background{
+  height: 100%;
+  width: auto;
+  object-fit: cover;
 }
 
 .contact .content .contact-text {
@@ -1286,7 +1435,7 @@ video#coverVideo {
 }
 
 .app-promo .buttons {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .app-promo .btn-download-android,
@@ -1329,9 +1478,9 @@ video#coverVideo {
 
 <body>
 
-<div class="preloader" id="preloader">
+<div class="preloader">
     <div class="item">
-      <img src="img/loading.gif">
+    <img src="img/icons/loading.gif" alt="Loading">
     </div>
 </div>
 
@@ -1340,15 +1489,15 @@ video#coverVideo {
     <!-- section start-page -->
     <section class="start-page parallax-background" id="home">
     <div class="video-background">
-    <video autoplay muted loop style="width: 100%; height: auto;">
-    <source src="./video/background.mp4" type="video/mp4">
+      <video id="backgroundVideo" autoplay muted loop style="width: 100%; height: auto;">
+        <source src="./video/landscape.mp4" type="video/mp4" id="videoSource">
     Your browser does not support the video tag.
 </video>
     </div>
     <div class="opacity"></div> <!-- Opacity color -->
     <div class="content">
         <div class="text">
-            <div><img src="images/equasmartlogo_croppedlogo.png" alt="" style="width: 10%;"></div>
+            <div class="logocontainer"><img src="images/equasmartlogo_croppedlogo.png" alt="" style="width: 30%;"></div>
             <div style="display: flex; justify-content: center; gap: 20px;">
                 <a href="#about-us"><div class="read-more">View more</div></a>
                 <a href="login_page.php"><div class="read-more">Login</div></a>
@@ -1362,7 +1511,7 @@ video#coverVideo {
     <!-- section menu mobile -->
     <section class="menu-media">
         <div class="menu-content">
-            <div><img src="imag/logos.png" alt="" style="width: 20%;"></div>
+            <div><img src="imag/logos.png" alt="" style="width: 50%; align-items: center;"></div>
             <div class="icon"><a href="#"><img src="img/icons/menu-media.png"/></a></div>
         </div>
     </section>
@@ -1458,6 +1607,42 @@ video#coverVideo {
 </script>
 <script src="js/jquery.parallax.js"></script> <!-- jQuery Parallax -->    
 <script src="js/script.js"></script> <!-- All script -->
+
+<script>
+  // JavaScript to randomize the transition time
+  window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    // Random transition time between 1 and 5 seconds
+    const randomTransitionTime = (Math.random() * 4 + 1).toFixed(2); // 1-5 seconds
+    preloader.style.transition = `opacity ${randomTransitionTime}s ease`;
+    
+    preloader.style.opacity = '0';
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, randomTransitionTime * 1000); // convert to milliseconds
+  });
+
+  function updateVideoSource() {
+    const videoElement = document.getElementById('backgroundVideo');
+    const videoSource = document.getElementById('videoSource');
+    
+    // Check if the viewport width is less than or equal to 768px (mobile)
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      videoSource.src = './video/portrait.mp4'; // Mobile video
+    } else {
+      videoSource.src = './video/landscape.mp4'; // Desktop video
+    }
+    
+    // Reload the video with the new source
+    videoElement.load();
+  }
+
+  // Initial setup
+  updateVideoSource();
+
+  // Update video source on window resize
+  window.addEventListener('resize', updateVideoSource);
+</script>
 
 </body>
 </html>
