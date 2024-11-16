@@ -3,231 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water Testing Report</title>
+    <title>Phase 4 - Fish Sampling and Water Testing</title>
     <style>
-        /* Base Styles */
         body {
-            font-family: "arial", sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f4f4f4;
             color: #333;
         }
         .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 40px;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
             background: #fff;
-            border: 1px solid #ddd;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .header {
-            text-align: center;
-            border-bottom: 2px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid mediumaquamarine;
             padding-bottom: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
         .header h1 {
-            font-size: 24px;
+            font-size: 28px;
             margin: 0;
             text-transform: uppercase;
-            color: mediumaquamarine;
+            font-weight: bold;
+            color: black
         }
-        .header .logo {
-            margin-top: 15px;
-            max-height: 100px;
+        .header img {
+            max-height: 80px;
+            border-radius: 4px;
         }
-        .date-section {
-            text-align: right;
+        .header p {
+            margin: 0;
             font-size: 14px;
-            color: #777;
-            margin-bottom: 30px;
+            color: #666;
         }
-        .content-section {
-            margin-bottom: 30px;
+        .section {
+            margin-bottom: 20px;
         }
-        .content-section h2 {
-            font-size: 20px;
-            color: #333;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
+        .section h2 {
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid mediumaquamarine;
+            position: relative;
         }
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        .data-table th, .data-table td {
-            padding: 12px;
-            border: 1px solid #ddd;
-            text-align: left;
-            font-size: 16px;
-        }
-        .data-table th {
-            background-color: mediumaquamarine;
-            color: #333;
-        }
-        .checkbox-group {
+        .section h2 .completed {
+            position: absolute;
+            right: 0;
+            top: 0;
             display: flex;
             align-items: center;
-            margin-top: 10px;
-            font-size: 16px;
+            font-size: 14px;
+            color: mediumaquamarine
+            ;
         }
-        .checkbox-group label {
-            margin-right: 10px;
+        .section .content {
+            margin-top: 15px;
+        }
+        .section .content p {
+            margin: 10px 0;
+        }
+        .section .content input[type="text"] {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 5px;
+            width: 200px;
+            font-family: inherit;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .section .content em {
+            display: block;
+            margin-top: 5px;
+            color: #555;
+        }
+        .notes {
+            border-top: 2px solid mediumaquamarine;
+            padding-top: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
         }
     </style>
 </head>
 <body>
 
-
-<?php
-    $selectedDate = isset($_POST['date']) ? $_POST['date'] : date('Y-m-d');
-    $interval = isset($_POST['interval']) ? $_POST['interval'] : 'daily';
-
-    // Database connection
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "db_equasmart";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Set conditions and parameters based on interval
-    switch ($interval) {
-        case 'daily':
-            $condition = "DATE(Date_and_Time) = ?";
-            $params = [$selectedDate];
-            break;
-
-        case 'weekly':
-            $condition = "Date_and_Time BETWEEN DATE_SUB(?, INTERVAL 6 DAY) AND ?";
-            $params = [$selectedDate, $selectedDate];
-            break;
-
-        case 'monthly':
-            $condition = "Date_and_Time BETWEEN DATE_SUB(?, INTERVAL 1 MONTH) AND ?";
-            $params = [$selectedDate, $selectedDate];
-            break;
-
-        case 'yearly':
-            $condition = "Date_and_Time BETWEEN DATE_SUB(?, INTERVAL 1 YEAR) AND ?";
-            $params = [$selectedDate, $selectedDate];
-            break;
-
-        default:
-            $condition = "DATE(Date_and_Time) = ?";
-            $params = [$selectedDate];
-            break;
-    }
-
-    $param_type = str_repeat("s", count($params)); // Determine parameter types
-
-    // Initialize variables
-    $ph = "No data";
-    $ammonia = "No data";
-    $nitrate = "No data";
-
-    // Query for average values
-    $query = "SELECT Name, ROUND(AVG(Value), 2) AS AvgValue 
-              FROM water_test_input 
-              WHERE Name IN ('pH', 'Ammonia', 'Nitrate') AND $condition 
-              GROUP BY Name";
-
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param($param_type, ...$params);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            if ($row['Name'] == 'pH') {
-                $ph = $row['AvgValue'];
-            } elseif ($row['Name'] == 'Ammonia') {
-                $ammonia = $row['AvgValue'];
-            } elseif ($row['Name'] == 'Nitrate') {
-                $nitrate = $row['AvgValue'];
-            }
-        }
-    }
-    $stmt->close();
-    $conn->close();
-?>
-
-<div class="container">
-    <div class="header">
-        <h1>Water Testing Report</h1>
-        <img src="images/equasmartlogo_croppedlogo.png" alt="Logo" class="logo">
-    </div>
-
-    <div class="date-section">
-    Date: <?php echo htmlspecialchars($selectedDate); ?>
-    </div>
-
-    <div class="content-section">
-        <h2>Water Quality Data</h2>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Parameter</th>
-                    <th>Average Value</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>pH</td>
-                    <td><?php echo $ph; ?></td>
-                </tr>
-                <tr>
-                    <td>Ammonia</td>
-                    <td><?php echo $ammonia; ?></td>
-                </tr>
-                <tr>
-                    <td>Nitrate</td>
-                    <td><?php echo $nitrate; ?></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="content-section">
-        <h2>Inspection and Management</h2>
-        <div class="checkbox-group">
-            <label for="waste-management-completed">Waste Management Completed</label>
-            <input type="checkbox" id="waste-management-completed">
+    <div class="container">
+        <div class="header">
+            <h1>Phase 4<br>Fish Sampling and Water Testing</h1>
+            <div>
+                <img src="images/logo.png" alt="Description of the image" title="Image Tooltip">
+                <p>Date: __________________</p>
+            </div>
         </div>
-        <div class="checkbox-group">
-            <label for="algae-inspection-completed">Algae Inspection Completed</label>
-            <input type="checkbox" id="algae-inspection-completed">
+
+        <div class="section">
+            <h2>Fish Sampling
+                <div class="completed">
+                    <label for="fish-sampling-completed">Completed</label>
+                    <input type="checkbox" id="fish-sampling-completed">
+                </div>
+            </h2>
+            <div class="content">
+                <p>- Sample Tank 1, 2 or 3 (rotate weekly). Tank sampled:<input type="text"></p>
+                <p>- Record sample on Fish Sample Log. Transfer mean average weight to Cohort Log.</p>
+                <p>- Complete Cohort Log.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Water Testing
+                <div class="completed">
+                    <label for="water-testing-completed">Completed</label>
+                    <input type="checkbox" id="water-testing-completed">
+                </div>
+            </h2>
+            <div class="content">
+                <p>pH:<input type="text"></p>
+                <p>Ammonia:<input type="text"></p>
+                <p>Nitrites:<input type="text"></p>
+                <p>Dissolved oxygen:<input type="text"> <em>Take samples from a tank inlet spout.</em></p>
+                <p>Nitrates:<input type="text"></p>
+                <p>Calcium:<input type="text"></p>
+                <p>Potassium:<input type="text"></p>
+                <p>Iron:<input type="text"> <em>Take samples from a trough inlet spout.</em></p>
+                <p>Source water pH:<input type="text"></p>
+                <p>Source water hardness:<input type="text"> <em>Take samples from source water (before it enters system).</em></p>
+                <p><em>Confirm chemical pH is the same as digital pH.</em></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Waste Management
+                <div class="completed">
+                    <label for="waste-management-completed">Completed</label>
+                    <input type="checkbox" id="waste-management-completed">
+                </div>
+            </h2>
+            <div class="content">
+                <p>- Draw solids from settling tank to fermentation tank.</p>
+                <p>- Drain supernatant from settling tank.</p>
+                <p>- Refill settling tank from Waste Tanks.</p>
+                <p>- If fermentation complete in fermentation tank, bottle for use.</p>
+                <p>- Recycle fertilizer back into system (optional). Amount added:<input type="text"></p>
+            </div>
+        </div>
+
+        <div class="notes">
+            <p>Notes:</p>
         </div>
     </div>
-</div>
-
-<script>
-    function showLog(logFile) {
-    var selectedDate = document.getElementById('date').value || currentDate;
-    var selectedInterval = document.getElementById('interval').value;
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', logFile, true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            document.getElementById('log').innerHTML = xhr.responseText;
-        }
-    };
-
-    xhr.send("date=" + encodeURIComponent(selectedDate) + "&interval=" + encodeURIComponent(selectedInterval));
-}
-
-</script>
 
 </body>
 </html>

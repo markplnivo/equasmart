@@ -4,8 +4,8 @@ header("Content-Type: application/json");
 // Database connection details
 $host = 'localhost';
 $dbname = 'db_equasmart';
-$username = 'root';
-$password = '';
+$username = 'admin';
+$password = '123';
 
 try {
     // Create a new PDO instance
