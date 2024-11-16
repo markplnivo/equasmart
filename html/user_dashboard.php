@@ -1,3 +1,4 @@
+<!-- j -->
 <?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,9 +73,9 @@
         --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
 }
     *, body{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
     }
     body {
         display: grid;
@@ -82,13 +83,16 @@
         grid-template-rows: auto;
         height: 100vh;
     }
+
     .container_menu {
         grid-area: 1 / 2 / -1 / -1;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto 1fr 1fr;
         background-color: azure;
+        /* margin-top: var(--space-s); */
     }
+
     .chart_header {
         grid-area: 1 / 1 / 2 / span 3;
         display: flex;
@@ -97,11 +101,13 @@
         align-items: center;
         margin-block: 2%;
     }
+
     #feedQuick:hover,
     #waterQuick:hover,
     #tempQuick:hover {
         font-size: var(--step-2);
     }
+
     #feedQuick,
     #waterQuick,
     #tempQuick {
@@ -134,12 +140,14 @@
         color: whitesmoke;
         margin-right: var(--space-9xl);
     }
+
     #feedQuick .icon,
     #waterQuick .icon,
     #tempQuick .icon {
         font-size: var(--step-5);
         margin-right: var(--space-xs);
     }
+
     .liveImage {
         grid-row: 2 / span 2;
         grid-column: 1 / span 3;
@@ -180,6 +188,7 @@
         grid-template-rows: auto; /* Adjust rows to fit the content */
         padding: 0px; /* Add padding to the container */
     }
+
     .chart_header {
         flex-direction: column; /* Stack the elements vertically */
         align-items: flex-start; /* Align items to the start of the container */
@@ -198,6 +207,7 @@
         width: 100%; /* Ensure full width */
         height: auto; /* Allow height to adjust */
     }
+
     .videoWrapper {
         overflow:hidden;
         margin-bottom: 5%;
@@ -238,8 +248,7 @@ $conn->close();
 ?>
 
 <body>
-    <?php include "user_menu.php"; 
-    ?>
+    <?php include "user_menu.php"; ?>
     <div class="container_menu">
 
         <!-- Header Section -->
@@ -268,7 +277,7 @@ $conn->close();
                 <!-- <video id="video1" autoplay controls> -->
                     <!-- <source src="./video/fish_swimming.mp4" type="video/mp4"> -->
                     <!-- <img id="video1" src="http://esp32feeder.local:81/stream" alt="ESP32 Cam Stream" style="transform: rotate(90deg);margin-top:10%; margin-right:2%;"> -->
-                    <img id="video1" src="http://esp32feeder.local:81/stream" alt="ESP32 Cam Stream">
+                    <img id="video1" src="https://equasmart.local/esp32-feederstream" alt="ESP32 Cam Stream">
 
                 <!-- </video> -->
                 <!-- <video id="video2" autoplay controls>
