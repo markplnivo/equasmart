@@ -1,4 +1,4 @@
-<!-- gitHUB by Jayson -->
+<!-- j -->
 <?php ob_start();
 include "../logindbase.php";
 ?>
@@ -111,6 +111,7 @@ include "../logindbase.php";
         height: 5%;
         margin-top: 2%;
         }
+
         #maintable {
         width: 92%;
         height: auto;
@@ -120,6 +121,7 @@ include "../logindbase.php";
             padding: 20px;
         margin-left: 2%;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -155,6 +157,7 @@ include "../logindbase.php";
             grid-column: 2 / 3;
             grid-row: 3 / 4;
         }
+
         #pageNumbers a {
             color: #0073e6;
             padding: 8px 16px;
@@ -165,10 +168,12 @@ include "../logindbase.php";
             transition: background-color 0.3s ease;
         font-size: var(--step-0);
         }
+
         #pageNumbers a:hover {
             background-color: #0073e6;
             color: white;
         }
+
         #addSelect,
         #removeSelect {
             background-color: #0073e6;
@@ -181,15 +186,19 @@ include "../logindbase.php";
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
         #addSelect:hover {
             background-color: #005bb5;
         }
+
         #removeSelect {
             background-color: #dc3545; /* Warning color (Bootstrap's danger color) */
         }
+
         #removeSelect:hover {
             background-color: #c82333; /* Darker shade for hover effect */
         }
+
         #searchInput {
             padding: 10px;
             width: 50%;
@@ -201,12 +210,14 @@ include "../logindbase.php";
         margin-bottom: 1%;
         font-size: var(--step--2);
         }
+
         input[type="checkbox"] {
             cursor: pointer;
             accent-color: #0073e6;
             border: 1px solid #ddd;
             border-radius: 4px;
         }
+
         select {
             padding: 8px;
             border: 1px solid #ddd;
@@ -215,9 +226,11 @@ include "../logindbase.php";
             cursor: pointer;
             transition: border-color 0.3s ease;
         }
+
         select:hover {
             border-color: #0073e6;
         }
+
     /* Mobile responsiveness */
     @media (max-width: 1010px) {
         *, body{
@@ -623,7 +636,7 @@ if (isset($_POST['add_selected'])) {
             // Prepare the SQL statement to insert the record into the tbl_userlist table
             $insertSql = "INSERT INTO users (Username, PasswordHash, EmailAddress, ContactNumber, firstname, lastname, account_creation) 
                 SELECT username, user_password, email, contact_number, firstname, lastname, NOW()
-                FROM account_request 
+                FROM recyclebin_account_request 
                 WHERE email = ?";
 
             // Create a prepared statement

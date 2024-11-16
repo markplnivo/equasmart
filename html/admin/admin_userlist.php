@@ -1,4 +1,4 @@
-<!-- GitHUB by Jayson -->
+<!-- j -->
 <?php ob_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -87,7 +87,6 @@ include "../logindbase.php";
             --step-5: clamp(1.3997rem, 0.9577rem + 2.2098vw, 2.6703rem);
             --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
     }
-
     /* Global styles */
     *, html{
         margin: 0;
@@ -96,33 +95,36 @@ include "../logindbase.php";
     }
     body {
         display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto;
-        margin: 0;
-        height: 100vh;
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto;
+                margin: 0;
+                height: 100vh;
         font-family: 'Poppins', 'Arial', sans-serif;
-    }
-    .container_menu {
-        grid-area: 1 / 2 / -1 / -1;
-        grid-template-columns: 1fr;
-        background-color: azure;
-    }
-    h2 {
+            }
+            .container_menu {
+                grid-area: 1 / 2 / -1 / -1;
+                grid-template-columns: 1fr;
+                background-color: azure;
+                
+            }
+            h2 {
         font-size: var(--step-1);
-        font-family: verdana;
+                font-family: verdana;
         text-align: center;
-        height: 5%;
+                height: 5%;
         margin-top: 2%;
     }
+
     #maintable {
-        width: 92%;
-        height: auto;
-        background-color: lemonchiffon;
+                width: 92%;
+                height: auto;
+                background-color: lemonchiffon;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
-        border-radius: 15px;
+                border-radius: 15px;
         padding: 20px;
-        margin-left: 2%;
+                margin-left: 2%;
     }
+
     table {
         width: 100%;
         border-collapse: collapse;
@@ -139,26 +141,28 @@ include "../logindbase.php";
         font-size: var(--step--1);
         padding-inline: var(--space-2xs);
         padding-block: var(--space-xs);
-        text-align: center;
+                text-align: center;
         border-bottom: 1px solid #ddd;
     }
+
     th {
         background-color: mediumaquamarine;
         color: white;
         font-weight: bold;
     }
-    tr{
+            tr{
         background-color: #f1f1f1;
     }
     .show-more-toggle {
-        display: none;
-    }
+                display: none;
+            }
     #pageNumbers {
         margin-top: 20px;
         text-align: center;
         grid-column: 2 / 3;
         grid-row: 3 / 4;
     }
+
     #pageNumbers a {
         color: #0073e6;
         padding: 8px 16px;
@@ -169,11 +173,12 @@ include "../logindbase.php";
         transition: background-color 0.3s ease;
         font-size: var(--step-0);
     }
+
     #pageNumbers a:hover {
         background-color: #0073e6;
         color: white;
     }
-    #addSelect,
+            #addSelect,
     #removeSelect {
         background-color: #0073e6;
         color: white;
@@ -185,17 +190,20 @@ include "../logindbase.php";
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
-    #addSelect:hover {
+            #addSelect:hover {
         background-color: #005bb5;
     }
+
     #removeSelect {
         background-color: #dc3545;
         /* Warning color (Bootstrap's danger color) */
     }
+
     #removeSelect:hover {
         background-color: #c82333;
         /* Darker shade for hover effect */
     }
+
     #searchInput {
         padding: 10px;
         width: 50%;
@@ -203,16 +211,18 @@ include "../logindbase.php";
         box-sizing: border-box;
         border: 1px solid #ddd;
         border-radius: 4px;
-        float: right;
-        margin-bottom: 1%;
+                float: right;
+                margin-bottom: 1%;
         font-size: var(--step--2);
     }
+
     input[type="checkbox"] {
         cursor: pointer;
         accent-color: #0073e6;
         border: 1px solid #ddd;
         border-radius: 4px;
     }
+
     select {
         padding: 8px;
         border: 1px solid #ddd;
@@ -221,9 +231,11 @@ include "../logindbase.php";
         cursor: pointer;
         transition: border-color 0.3s ease;
     }
+
     select:hover {
         border-color: #0073e6;
     }
+
 /* Mobile responsiveness */
 @media (max-width: 1010px) {
         *, body{
@@ -234,8 +246,8 @@ include "../logindbase.php";
         }
     .container_menu {
             background-color: azure;
-            grid-template-columns: auto;
-            grid-template-rows: auto;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
             padding: 5%;
     }
     #maintable {
@@ -282,7 +294,7 @@ include "../logindbase.php";
         tr:nth-of-type(2n) {
         background-color: #d1d1d1;
     }
-        /* align table data cells information of (select, change role, user id, username) */
+
     td {
         text-align: left;
             padding-left: 31%;
@@ -304,7 +316,8 @@ include "../logindbase.php";
         td:last-child {
         margin-bottom: 5%;
     }
-        /* table row Toggle content */
+    
+    /* Toggle content */
     .toggle-content {
             display: none;
             /* Hidden by default */
@@ -333,6 +346,7 @@ include "../logindbase.php";
         font-size: var(--step--2);
         display: block;
     }
+
     /* Adjust show-less styling */
     .show-more-toggle.show-less {
             color: #f44336;
@@ -355,12 +369,12 @@ include "../logindbase.php";
             display: inline;
     }
     #addSelect,
-        #removeSelect {
+    #removeSelect{
         padding-block: 2%;
         margin-bottom: 2%;
         margin-inline: 0;
             font-size: var(--step-0);
-        }
+}
     }
         @media (max-width: 360px){
                 *, body{
@@ -511,6 +525,7 @@ include "../logindbase.php";
     }
 }
 </style>
+
 <body>
     <?php
     include "admin_menu.php";
@@ -522,6 +537,7 @@ include "../logindbase.php";
     } else {
         $pn = 1;
     };
+
     $start_from = ($pn - 1) * $limit;
 
     $sql = "SELECT UserID, Username, EmailAddress, ContactNumber, position, firstname, lastname, account_creation FROM users";
@@ -567,6 +583,7 @@ include "../logindbase.php";
                     while ($permissionRow = $permissionsResult->fetch_assoc()) {
                         $userPermissions[] = $permissionRow['permission_name'];
                     }
+
                     $permissionsStmt->close();
                 ?>
                     <tr class=>

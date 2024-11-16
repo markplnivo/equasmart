@@ -1,4 +1,4 @@
-<!--github by jayson -->
+<!-- j -->
 <?php ob_start(); ?>
 <?php
 include "../session_handler.php";
@@ -40,18 +40,22 @@ if ($_SESSION['position'] != 'admin') {
     display: flex;
     flex-direction: column;
 }
+
 .custom-menu ul {
     list-style-type: none;
     padding: 0;
     margin: 7px 0;
   }
+
 .custom-menu ul.logout {
     margin-bottom: 30%;
   }
+
 .custom-menu li {
     width: 100%;
     color: white;
 }
+
 .custom-menu li a {
     display: flex;
     align-items: center;
@@ -60,6 +64,7 @@ if ($_SESSION['position'] != 'admin') {
     padding: 15px;
     background-color: mediumaquamarine;
   }
+
 .custom-menu li:hover a {
     background-color: mediumseagreen;
     color: white;
@@ -173,14 +178,17 @@ if ($_SESSION['position'] != 'admin') {
         background: mediumaquamarine;
         overflow: visible;
     }
+
     .custom-menu .nav-text {
         display: none;
     }
+
     .custom-menu:hover .nav-text {
         display: flex;
         margin-left: 15px;
         font-size: 1em;
   }
+
   /* Updated Toggle switch style for smaller screens */
   .custom-menu div{
         margin: 2% auto;
@@ -214,6 +222,7 @@ if ($_SESSION['position'] != 'admin') {
   }
 }
 </style>
+
 <body>
 <div class="custom-menu">
 <img src="../images/equasmartlogo_croppedlogo.png" alt="Logo" id="menuLogo">

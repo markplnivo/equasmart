@@ -1,4 +1,4 @@
-<!-- gitHUB by Jayson -->
+<!-- j -->
 <?php ob_start();
 include "../logindbase.php";
 ?>
@@ -84,6 +84,7 @@ include "../logindbase.php";
             grid-area: 1 / 2 / -1 / -1;
             grid-template-columns: 1fr;
             background-color: azure;
+            
         }
         h2 {
         font-size: var(--step-1);
@@ -92,6 +93,7 @@ include "../logindbase.php";
             height: 5%;
         margin-top: 2%;
     }
+
     #maintable {
             width: 92%;
             height: auto;
@@ -101,6 +103,7 @@ include "../logindbase.php";
         padding: 20px;
             margin-left: 2%;
     }
+
     table {
         width: 100%;
         border-collapse: collapse;
@@ -120,6 +123,7 @@ include "../logindbase.php";
             text-align: center;
         border-bottom: 1px solid #ddd;
     }
+
     th {
         background-color: mediumaquamarine;
         color: white;
@@ -136,6 +140,7 @@ include "../logindbase.php";
         grid-column: 2 / 3;
         grid-row: 3 / 4;
     }
+
     #pageNumbers a {
         color: #0073e6;
         padding: 8px 16px;
@@ -146,6 +151,7 @@ include "../logindbase.php";
         transition: background-color 0.3s ease;
         font-size: var(--step-0);
     }
+
     #pageNumbers a:hover {
         background-color: #0073e6;
         color: white;
@@ -163,17 +169,21 @@ include "../logindbase.php";
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
+
     #addSelect:hover {
         background-color: #005bb5;
     }
+
     #removeSelect {
         background-color: #dc3545;
         /* Warning color (Bootstrap's danger color) */
     }
+
     #removeSelect:hover {
         background-color: #c82333;
         /* Darker shade for hover effect */
     }
+
     #searchInput {
         padding: 10px;
         width: 50%;
@@ -185,12 +195,14 @@ include "../logindbase.php";
         margin-bottom: 1%;
         font-size: var(--step--2);
     }
+
     input[type="checkbox"] {
         cursor: pointer;
         accent-color: #0073e6;
         border: 1px solid #ddd;
         border-radius: 4px;
     }
+
     select {
         padding: 8px;
         border: 1px solid #ddd;
@@ -199,9 +211,11 @@ include "../logindbase.php";
         cursor: pointer;
         transition: border-color 0.3s ease;
     }
+
     select:hover {
         border-color: #0073e6;
     }
+
 /* Mobile responsiveness */
 @media (max-width: 1010px) {
         *, body{
@@ -479,7 +493,7 @@ include "../logindbase.php";
             }
             .pagination{
                 display: inline;
-            }
+    }
     #addSelect,
             #removeSelect {
         padding-block: 2%;
@@ -489,6 +503,8 @@ include "../logindbase.php";
     }
     }
 </style>
+
+
 <body>
     <?php
     include "admin_menu.php";
@@ -507,7 +523,7 @@ include "../logindbase.php";
     $rs_result = mysqli_query($conn, $sql);
     ?>
     <div class="container_menu">
-        <h2>Account Requests</h2>
+        <h2>eQuaSmart Account Requests</h2>
         <div class="container">
     <form method="post" action="admin_home.php">
         <div id="maintable">
@@ -549,7 +565,9 @@ include "../logindbase.php";
             </div>
             <input id="addSelect" type="submit" name="add_selected" value="Add Selected">
             <input id="removeSelect" type="submit" name="remove_selected" value="Remove Selected">
+                </div>
     </form>
+
     <div id="pageNumbers">
         <?php
         $sql = "SELECT COUNT(*) FROM account_request";
@@ -580,6 +598,7 @@ if (isset($_POST['remove_selected'])) {
                   SELECT firstname, lastname, email, contact_number, request_datetime, username, user_password
                   FROM account_request 
                   WHERE email IN ($placeholders)";
+
         // Create a prepared statement
         if ($stmt = $conn->prepare($insertSql)) {
             // Bind each email to its own placeholder
@@ -588,17 +607,22 @@ if (isset($_POST['remove_selected'])) {
             // Execute the statement to insert the selected rows into the recyclebin table
             $stmt->execute();
         }
+
         // Prepare the SQL statement to delete the records from the original table
         $deleteSql = "DELETE FROM account_request WHERE email IN ($placeholders)";
+
         // Create a prepared statement
         if ($stmt = $conn->prepare($deleteSql)) {
             // Bind each email to its own placeholder
             $stmt->bind_param(str_repeat('s', count($_POST['selected_rows'])), ...$_POST['selected_rows']);
+
             // Execute the statement to delete the selected rows from the original table
             $stmt->execute();
+
             // Close the prepared statement
             $stmt->close();
         }
+
         $_POST['selected_rows'] = array(); // Clear the selected rows array
         header("Location: admin_home.php");
         exit(); // Terminate script execution after redirection
