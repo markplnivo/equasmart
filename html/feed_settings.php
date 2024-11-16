@@ -1,3 +1,4 @@
+<!-- j -->
 <?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,11 +89,13 @@
             --step-5: clamp(1.3997rem, 0.9577rem + 2.2098vw, 2.6703rem);
             --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
         }
+
         html {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             display: grid;
             grid-template-columns: auto 1fr;
@@ -100,6 +103,7 @@
             height: 100vh;
             background-color: azure;
         }
+
         .container_menu {
             grid-area: 1 / 2 / -1 / -1;
             display: grid;
@@ -108,20 +112,26 @@
             background-color: azure;
             padding: 1%;
         }
-        h2{
+
+        h2 {
             font-family: verdana;
             text-align: center;
             font-size: var(--step-1);
         }
+
         .date_container {
+            /* grid-area: 2/1/2/2; */
             margin: auto;
+            /* margin-left: 24%; */
             padding: 2%;
             background-color: lemonchiffon;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+            /* vertical-align: top; */
             width: 66%;
             font-size: var(--step-0);
         }
+
         .date_container input {
             /* width: 50%; */
             margin: 0 auto;
@@ -132,6 +142,7 @@
             font-size: var(--step--1);
             width: 70%;
         }
+
         .chart_container {
             display: grid;
             grid-template-columns: 40% 1fr;
@@ -145,10 +156,12 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             margin: auto;
         }
+
         #lineChart {
             width: 100%; /* Make canvas width 100% of container */
             height: 100%; /* Make canvas height 100% of container */
         }
+
         label {
             display: block;
             margin-bottom: 8px;
@@ -180,10 +193,12 @@
             justify-content: flex-end;
             /* Align items to the right */
         }
+
         .button-container button {
             width: 20%;
             /* Adjust width if needed */
         }
+
         /* Added styles for new containers */
         .feedset_container {
             /* grid-area: 2 / 1 / 3 / 2; */
@@ -198,6 +213,7 @@
             display: inline-block;
             vertical-align: top; */
         }
+
         .confmen_container {
             display: grid;
             margin: 3% auto;
@@ -216,9 +232,11 @@
             grid-template-rows: 1fr;
             gap: 2%;
         }
+
         h4 {
             text-align: center;
         }
+
         .boxSettings {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -234,6 +252,7 @@
             gap: var(--space-2xs);
             /* Added gap */
         }
+
         .button {
             display: inline-block;
             padding-block: var(--space-xs);
@@ -249,6 +268,7 @@
             cursor: pointer;
             margin: 10px;
         }
+
         /* Hover effect */
         .button:hover {
             background-color: mediumseagreen;
@@ -258,6 +278,7 @@
             grid-area: 1 / 1 / 1 / span 3;
             height: 10px;
         }
+
         .gear-icon {
             min-width: 10%;
             display: inline-block;
@@ -265,6 +286,7 @@
             margin: 1%;
             font-size: var(--step-1);
         }
+
         .overlay {
             position: fixed;
             top: 0;
@@ -277,6 +299,7 @@
             align-items: center;
             z-index: 1000;
         }
+
         .overlay-content {
             background-color: white;
             padding: 20px;
@@ -285,19 +308,23 @@
             max-width: 500px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .overlay-content h2 {
             text-align: center;
         }
+
         .overlay-content form {
             display: flex;
             flex-direction: column;
         }
+
         .overlay-content form input {
             margin-bottom: 15px;
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
         }
+
         .overlay-content form button {
             padding: 10px;
             border: none;
@@ -307,53 +334,64 @@
             font-size: 16px;
             cursor: pointer;
         }
+
         .overlay-content form button:hover {
             background-color: mediumseagreen;
         }
+
         #feedSettingsForm {
             font-size: 20px;
         }
+
         .boxSettings .icon {
             font-size: var(--step-1);
             margin: var(--space-3xs-2xs);
         }
+
         .boxSettings span {
             text-align: center;
             font-size: var(--step-2);
         }
+
         .boxSettings #amountbox {
             grid-area: 2 / 1;
             background-color: orange;
             padding: 20px;
             border-radius: 30px;
         }
+
         .boxSettings #sessionbox {
             grid-area: 2 / 2;
             background-color: moccasin;
             padding: 20px;
             border-radius: 30px;
         }
+
         .boxSettings #adjustbox {
             grid-area: 2 / 3;
             background-color: palegreen;
             padding: 20px;
             border-radius: 30px;
         }
+
         #changeSettings {
             grid-area: 1 / 1 / 1 / span 3;
             margin-block: 3%;
             margin-inline: 3%;
             font-size: var(--step-0);
         }
+
         .settingsdef {
             font-size: 16px;
         }
+
         .day-toggle {
             margin-bottom: 10px;
             display: flex;
             justify-content: center;
             column-gap: 15px;
         }
+
         .day-toggle button {
             padding: var(--space-2xs);
             border: none;
@@ -361,6 +399,7 @@
             cursor: pointer;
             font-size: var(--step-1);
         }
+
         .day-toggle button.active {
             background-color: mediumaquamarine;
             color: white;
@@ -378,6 +417,7 @@
             /* background-color: #f9f9f9; */
             display: grid;
         }
+
         .boxx {
             text-align: center;
         }
@@ -423,6 +463,7 @@
             background-color: #45a049;
             /* Darker green on hover */
         }
+
         /* The Modal (background) */
         .modal {
             display: none;
@@ -442,6 +483,7 @@
             overflow: auto;
             /* Enable scroll if needed */
         }
+
         /* Modal Content */
         .modal-content {
             background-color: #fefefe;
@@ -456,6 +498,7 @@
             font-family: 'Poppins', 'Arial', sans-serif;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
         }
+
         .modal-content input {
             padding-block: var(--space-xs);
             padding-inline: var(--space-2xl);
@@ -465,6 +508,7 @@
             border-radius: 8px;
             border-style: none;
         }
+
         .modal-content button {
             display: inline-block;
             padding-block: var(--space-xs);
@@ -481,9 +525,11 @@
             width: 100%;
             margin: 2% auto;
         }
+
         .modal-content button:active {
             background-color: mediumseagreen;
         }
+
         .modal-content label {
             text-decoration: none;
             font-weight: bold;
@@ -491,6 +537,7 @@
             margin: 2% auto;
             text-align: left;
         }
+
         /* Close button */
         .close {
             color: #aaa;
@@ -498,19 +545,23 @@
             font-size: var(--step-3);
             font-weight: bold;
         }
+
         .close:hover,
         .close:focus {
             color: black;
             text-decoration: none;
             cursor: pointer;
         }
+
         #debugMenu {
             grid-area: 1 / 1 / 1 / span 3;
         }
+
         #calibrateMotorBtn {
             grid-area: 3 / 1/ 4/ span 3;
             padding-block: var(--space-s);
         }
+
         @media (max-width: 1010px) {
             body {
                 display: grid;
@@ -519,11 +570,13 @@
                 height: 100vh;
                 background-color: azure;
             }
+
             #pageTitle,
             #debugMenu {
                 grid-area: unset;
                 margin: 2%;
             }
+
             .container_menu {
                 display: grid;
                 grid-template-rows: auto;
@@ -539,23 +592,29 @@
                 align-self: center;
             }
             .date_container {
+                grid-area: auto;
                 margin: 2% auto;
             }
+
             .chart_container {
                 grid-area: auto;
                 display: grid;
+                grid-template-rows: auto;
                 grid-template-columns: 1fr;
                 height: auto;
                 width: 90%;
             }
+
             .confmen_container {
                 grid-area: auto;
                 width: 90%;
                 grid-template-columns: auto;
+                grid-template-rows: auto;
                 padding: 0px;
                 justify-items: center;
                 gap: 0;
             }
+
             #feedingTimesContainer {
                 width: 80%;
                 /* Ensure it spans full width */
@@ -573,12 +632,14 @@
                 box-sizing: border-box;
                 height: 400px;
             }
+
             #feedingTimesContainer .boxx {
                 width: 100%;
                 /* Make input boxes and labels full-width */
                 margin: 2px auto;
                 height: auto;
             }
+
             #feedingTimesContainer input {
                 width: 100%;
                 /* Ensure input fields span the full container */
@@ -587,10 +648,14 @@
                 font-size: var(--step-0);
                 /* Adjust font size for readability */
             }
+
             #feedingTimesContainer button {
                 width: 100%;
+                /* Buttons span the full width */
                 margin: 2% auto;
+                /* Add margin between buttons */
             }
+
             .day-toggle {
                 flex-wrap: wrap;
                 /* Allow wrapping on smaller screens */
@@ -626,12 +691,14 @@
             }
 
         }
+
         .view-buttons {
             display: flex;
             justify-content: start;
             margin-bottom: 1%;
             margin-top: 1%;
         }
+
         .view-buttons button {
             margin: auto 0;
             padding: 10px 20px;
@@ -643,6 +710,7 @@
             color: #000;
             height: 50%;
         }
+
         .view-buttons button:hover {
             background-color: peru;
         }
@@ -700,8 +768,8 @@
 }
 
 .pagination button:hover {
-    background-color: peru;
-}
+            background-color: peru;
+        }
     </style>
 </head>
 
@@ -763,6 +831,8 @@
                 <br>
                 <button onclick="controlMotor('on')">Turn Auger ON</button>
                 <button onclick="controlMotor('off')">Turn Auger OFF</button>
+                <button id="requestButton">Get Distance</button>
+                <p id="response"></p>
                 <br><br>
                 <label for="gramsPerSecond">Input Grams per Second:</label>
                 <input type="number" id="gramsPerSecond" placeholder="Enter grams per second">
@@ -842,6 +912,15 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    document.getElementById("requestButton").addEventListener("click", function() {
+        fetch("send_distancerequest.php")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("response").textContent = data;
+            })
+            .catch(error => console.error("Error:", error));
+    });
+    
     // Fetch feed settings on page load
     $(document).ready(function() {
         fetchFeedSettings();
@@ -849,52 +928,52 @@
     });
 
     // Function to open the log modal
-function openLogModal() {
-    document.getElementById('logModal').style.display = 'block';
-    fetchFeedLogs(); // Fetch logs when opening the modal
-}
+    function openLogModal() {
+        document.getElementById('logModal').style.display = 'block';
+        fetchFeedLogs(); // Fetch logs when opening the modal
+    }
 
-// Function to close the log modal
-function closeLogModal() {
-    document.getElementById('logModal').style.display = 'none';
-}
+    // Function to close the log modal
+    function closeLogModal() {
+        document.getElementById('logModal').style.display = 'none';
+    }
 
-// Function to fetch feed logs and display them in the table
-function fetchFeedLogs() {
-    $.ajax({
-        url: './feed_settings_ajax/get_feed_logs.php', // Server endpoint for fetching logs
-        type: 'GET',
-        dataType: 'json',
-        success: function(response) {
-            const tableBody = document.getElementById('feedLogTable').querySelector('tbody');
-            tableBody.innerHTML = ''; // Clear any existing rows
+    // Function to fetch feed logs and display them in the table
+    function fetchFeedLogs() {
+        $.ajax({
+            url: './feed_settings_ajax/get_feed_logs.php', // Server endpoint for fetching logs
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                const tableBody = document.getElementById('feedLogTable').querySelector('tbody');
+                tableBody.innerHTML = ''; // Clear any existing rows
 
-            // Populate the table with logs
-            response.forEach(log => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
+                // Populate the table with logs
+                response.forEach(log => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
                     <td>${formatTimeTo12Hour(log.feed_time)}</td>
                     <td>${log.amount}</td>
                 `;
-                tableBody.appendChild(row);
-            });
-        },
-        error: function(error) {
-            console.error('Error fetching feed logs:', error);
-        }
-    });
-}
-
-// Event listener to open feed logs modal
-document.getElementById('feedLogs').addEventListener('click', openLogModal);
-
-// Close modal if the user clicks outside the modal content
-window.onclick = function(event) {
-    var modal = document.getElementById('logModal');
-    if (event.target == modal) {
-        modal.style.display = "none";
+                    tableBody.appendChild(row);
+                });
+            },
+            error: function(error) {
+                console.error('Error fetching feed logs:', error);
+            }
+        });
     }
-};
+
+    // Event listener to open feed logs modal
+    document.getElementById('feedLogs').addEventListener('click', openLogModal);
+
+    // Close modal if the user clicks outside the modal content
+    window.onclick = function(event) {
+        var modal = document.getElementById('logModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
 
 
     // Function to open the calibration modal
@@ -988,12 +1067,12 @@ window.onclick = function(event) {
     var labels = feedData.map(entry => formatTimeTo12Hour(entry.feed_time));
     var data = feedData.map(entry => entry.amount);
 
-    lineChart.data.labels = labels;
-    lineChart.data.datasets[0].data = data;
+        lineChart.data.labels = labels;
+        lineChart.data.datasets[0].data = data;
 
-    lineChart.update();
-}
-
+        // Re-render the chart
+        lineChart.update();
+    }
 
 
     // Event listener for date input
@@ -1001,23 +1080,23 @@ window.onclick = function(event) {
 
     // Initialize the chart
     var ctx = document.getElementById('lineChart').getContext('2d');
-var lineChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: [], // Initially empty
-        datasets: [{
-            label: 'Total Daily Feed History',
-            data: [], // Initially empty
+    var lineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [], // Initially empty
+            datasets: [{
+                label: 'Total Daily Feed History',
+                data: [], // Initially empty
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             },
             tooltips: {
                 callbacks: {
@@ -1042,17 +1121,17 @@ var lineChart = new Chart(ctx, {
 
     // Fetch feed history for the selected date
     function fetchFeedHistory() {
-    var selectedDate = document.getElementById('date').value;
+        var selectedDate = document.getElementById('date').value;
     console.log('Fetching feed history for date:', selectedDate);
 
-    $.ajax({
+        $.ajax({
         url: '/feed_settings_ajax/get_feed_history.php',
-        type: 'POST',
-        dataType: 'json',
-        data: {
-            selectedDate: selectedDate
-        },
-        success: function(response) {
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                selectedDate: selectedDate
+            }, // Send selected date to the server
+            success: function(response) {
             console.log('Server response:', response);
 
             if (response.message) {
@@ -1069,15 +1148,14 @@ var lineChart = new Chart(ctx, {
             } else {
                 console.error("Invalid data format received from the server:", response);
             }
-        },
+            },
         error: function(xhr, status, error) {
             console.error('Error fetching feed history:', xhr);
             console.error('Status:', status);
             console.error('Error:', error);
-        }
-    });
-}
-
+            }
+        });
+    }
 
 
 
