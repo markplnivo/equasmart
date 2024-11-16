@@ -281,7 +281,7 @@
                 <!-- <video id="video1" autoplay controls> -->
                     <!-- <source src="./video/fish_swimming.mp4" type="video/mp4"> -->
                     <!-- <img id="video1" src="http://esp32feeder.local:81/stream" alt="ESP32 Cam Stream" style="transform: rotate(90deg);margin-top:10%; margin-right:2%;"> -->
-                    <img id="video1" src="http://esp32feeder.local:81/stream" alt="ESP32 Cam Stream">
+                    <img id="video1" src="https://equasmart.local/esp32-feederstream" alt="ESP32 Cam Stream">
 
                 <!-- </video> -->
                 <!-- <video id="video2" autoplay controls>

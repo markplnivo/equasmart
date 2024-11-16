@@ -203,7 +203,7 @@
             <li>
                 <a href="print_logs.php">
                     <span class="icon fa fa-scroll"></span>
-                    <span class="nav-text">Print Logs</span>
+                    <span class="nav-text">Print Reports</span>
                 </a>
             </li>
             <li>

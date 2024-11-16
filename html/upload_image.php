@@ -1,13 +1,10 @@
 <?php
 ob_start();
-// Enable error reporting
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Debug: Log the start of the script
 error_log("Script started.");
 
-// Define the target directory for uploaded files
 $target_dir = "uploads/";
 
 // Ensure the 'uploads' directory exists
@@ -19,20 +16,29 @@ if (!file_exists($target_dir)) {
     }
 }
 
-// Check if the request method is POST and the 'imageFile' is set
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['imageFile'])) {
-    error_log("POST request received and 'imageFile' is set.");
+// Check if the request method is POST, 'imageFile' is set, and 'testType' is provided
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['imageFile']) && isset($_POST['testType'])) {
+    error_log("POST request received, 'imageFile' and 'testType' are set.");
 
-    // Generate a unique file name based on the current timestamp
-    $datum = mktime(date('H')+0, date('i'), date('s'), date('m'), date('d'), date('y'));
-    $target_file = $target_dir . date('Y.m.d_H:i:s_', $datum) . basename($_FILES["imageFile"]["name"]);
+    // Get the test type from the POST data
+    $testType = preg_replace("/[^a-zA-Z0-9-_]/", "", $_POST['testType']); // Sanitize $testType to avoid issues with file paths
+
+    // Generate a unique file name based on the current timestamp and test type
+    $datum = mktime(date('H'), date('i'), date('s'), date('m'), date('d'), date('Y'));
+    $timestamp = date('Y.m.d_H:i:s_', $datum);
+    $filename = $timestamp . "esp32-cam:" . $testType . "_" . basename($_FILES["imageFile"]["name"]);
+    $target_file = $target_dir . $filename;
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-    // Debug: Log the target file path
     error_log("Target file path: " . $target_file);
+    error_log("Timestamp: $timestamp");
+    error_log("Test Type: $testType");
+    error_log("Original Filename: " . basename($_FILES["imageFile"]["name"]));
+    error_log("Final Filename: $filename");
 
-    // Check if image file is an actual image or fake image
+
+    // Check if image file is an actual image
     $check = getimagesize($_FILES["imageFile"]["tmp_name"]);
     if ($check !== false) {
         error_log("File is an image - " . $check["mime"] . ".");
@@ -79,11 +85,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['imageFile'])) {
         }
     }
 } else {
-    error_log("No POST request or 'imageFile' not set.");
-    echo "No image data received.";
+    error_log("No POST request, 'imageFile', or 'testType' not set.");
+    echo "No image data or test type received.";
 }
 
-// Debug: Log the end of the script
 error_log("Script ended.");
 ob_end_flush();
 ?>
