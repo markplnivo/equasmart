@@ -120,14 +120,16 @@
         .container {
             grid-area: 2 / 1 / 2 / span 2;
             width: 95%;
-            margin: auto;
+            margin: 0 auto;
+            margin-top: 4%;
             padding: 4% 2%;
             border-radius: 15px;
             background-color: lemonchiffon;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             display: flex;
             flex-direction: row;
-            justify-content: space-around;/* Adjusts spacing equally */
+            justify-content: space-around;
+            /* Adjusts spacing equally */
             align-items: center;
         }
 
@@ -153,6 +155,7 @@
         h4 {
             text-align: center;
         }
+
         canvas {
             display: block;
             margin: 0 auto;
@@ -175,9 +178,12 @@
         .calendar h4 {
             margin-bottom: 2%;
         }
-        #calendar, #dateRange{
+
+        #calendar,
+        #dateRange {
             font-size: var(--step--1);
         }
+
         .calendar input[type="date"] {
             width: 80%;
             padding: 10px;
@@ -188,8 +194,10 @@
         .input {
             grid-area: 3 / 1 / 3 / 1;
             display: flex;
-            justify-content: center; /* Centers content vertically */
-            align-items: center; /* Centers content horizontally */
+            justify-content: center;
+            /* Centers content vertically */
+            align-items: center;
+            /* Centers content horizontally */
             margin: auto;
             flex-direction: column;
             background-color: lemonchiffon;
@@ -211,7 +219,7 @@
         }
 
         .input button {
-            width:100%;
+            width: 100%;
             padding: 10px;
             margin-block: 1%;
             border: none;
@@ -226,6 +234,7 @@
         .input button:hover {
             background-color: #45a049;
         }
+
         .calendar {
             display: flex;
             flex-direction: column;
@@ -238,15 +247,18 @@
             max-width: 500px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .calendar:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
         }
+
         .calendar h4 {
             margin-bottom: 10px;
             font-family: Arial, sans-serif;
             color: #333;
         }
+
         .calendar input[type="date"],
         .calendar select {
             width: 100%;
@@ -258,17 +270,20 @@
             color: #333;
             transition: background-color 0.3s ease, border-color 0.3s ease;
         }
+
         .calendar input[type="date"]:hover,
         .calendar select:hover {
             background-color: #f0f8ff;
             border-color: #a0a0a0;
         }
+
         .calendar select:focus,
         .calendar input[type="date"]:focus {
             outline: none;
             border-color: #4a90e2;
             box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
         }
+
         .calendar select {
             appearance: none;
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5H7z"/></svg>');
@@ -276,6 +291,7 @@
             background-position: right 10px center;
             background-size: 15px;
         }
+
         .testing-history {
             grid-area: 3 / 2 / 3 / 2;
             width: 90%;
@@ -341,16 +357,19 @@
             color: white;
             align-self: center;
         }
+
         .test-controls {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Centers the buttons horizontally */
+            justify-content: center;
+            /* Centers the buttons horizontally */
             margin-top: 4%;
-            gap: 10px; /* Adjust the value as needed to create the desired space */
+            gap: 10px;
+            /* Adjust the value as needed to create the desired space */
             height: 50%;
         }
-        
-        .test-controls button{
+
+        .test-controls button {
             border-style: none;
             border-radius: 3px;
             padding: 8px 5px;
@@ -358,45 +377,64 @@
             font-size: var(--step--1);
             color: white;
         }
-        .test-controls button:active{
-            transform: scale(0.95); /* Scales down the button slightly */
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Reduces shadow to make it look pressed */
+
+        .test-controls button:active {
+            transform: scale(0.95);
+            /* Scales down the button slightly */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            /* Reduces shadow to make it look pressed */
         }
+
         #testAmonia_btn {
             background-color: #FF0000;
-            width: calc(50% - 10px); /* Adjust to account for the gap */
+            width: calc(50% - 10px);
+            /* Adjust to account for the gap */
         }
-        #testAmonia_btn:hover{
+
+        #testAmonia_btn:hover {
             background-color: #c91616;
         }
+
         #testNitrate_btn {
             background-color: #0000FF;
-            width: calc(50% - 10px); /* Adjust to account for the gap */
+            width: calc(50% - 10px);
+            /* Adjust to account for the gap */
         }
-        #testNitrate_btn:hover{
+
+        #testNitrate_btn:hover {
             background-color: #1a1ac9;
         }
+
         #testPh_btn {
             background-color: #FFA500;
-            width: calc(50% - 10px); /* Adjust to account for the gap */
+            width: calc(50% - 10px);
+            /* Adjust to account for the gap */
         }
-        #testPh_btn:hover{
+
+        #testPh_btn:hover {
             background-color: #d18f17;
         }
+
         #flushTube_btn {
             background-color: #b651e8;
-            width: calc(50% - 10px); /* Adjust to account for the gap */
+            width: calc(50% - 10px);
+            /* Adjust to account for the gap */
         }
-        #flushTube_btn:hover{
+
+        #flushTube_btn:hover {
             background-color: #9436c2;
         }
+
         .openConfig_btn {
             background-color: #4CAF50;
-            width: calc(100% - 10px); /* Adjust to account for the gap */
+            width: calc(100% - 10px);
+            /* Adjust to account for the gap */
         }
-        .openConfig_btn:hover{
+
+        .openConfig_btn:hover {
             background-color: #23a627;
         }
+
         #pageTitle {
             grid-area: 1 / 1 / 1 / span 3;
             font-size: var(--step-2);
@@ -500,6 +538,7 @@
             text-decoration: none;
             cursor: pointer;
         }
+
         .response {
             color: green;
         }
@@ -561,25 +600,26 @@
             background-color: rgba(0, 0, 0, 0.5);
         }
 
+
         .water-scheduling-modal-content {
-            background-color: #fff;
+            /* background-color: #fff; */
             margin: 10% auto;
             padding: 20px;
-            border: 1px solid #ccc;
+            /* border: 1px solid #ccc; */
             width: 80%;
-            max-width: 500px;
+            max-width: 750px;
             border-radius: 8px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); */
             position: relative;
         }
 
         .water-scheduling-modal-close {
-            position: absolute;
+            /* position: relative; */
             top: 10px;
             right: 15px;
-            font-size: 24px;
+            font-size: 3em;
             font-weight: bold;
-            color: #333;
+            color: #FFD700;
             cursor: pointer;
         }
 
@@ -605,6 +645,112 @@
         .water-scheduling-trigger-button:active {
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
             transform: translateY(2px);
+        }
+
+        /* Scheduler Container */
+        #waterTestingScheduler {
+            background-color: #fff8dc;
+            /* Light cream color for container */
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* Day Toggle Buttons */
+        .day-toggle {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .day {
+            background-color: #e6e6e6;
+            /* Gray for inactive buttons */
+            color: #555;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .day:hover {
+            background-color: #d4d4d4;
+        }
+
+        .day.active {
+            background-color: #94d494;
+            /* Green for active days */
+            color: white;
+        }
+
+        /* Time Input Section */
+        .time-input {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .time-input label {
+            flex: 1;
+            font-size: 1em;
+            color: #555;
+        }
+
+        .time-input input {
+            flex: 2;
+            padding: 5px 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Add Time Button */
+        #addTimeInput {
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        #addTimeInput:hover {
+            background-color: #008ecc;
+        }
+
+        /* Select Test Type */
+        #testTypeSelector {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Save Button */
+        .save-schedule-btn {
+            background-color: #28a745;
+            /* Green button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .save-schedule-btn:hover {
+            background-color: #218838;
         }
 
 
@@ -633,23 +779,29 @@
                 height: auto;
                 /* Let height adjust based on content */
             }
-            .container{
+
+            .container {
                 display: flex;
                 flex-direction: column;
             }
-            #lineChart{
+
+            #lineChart {
                 max-width: 90%;
                 max-height: 300px;
             }
-            .calendar{
+
+            .calendar {
                 width: 80%;
             }
-            .input{
+
+            .input {
                 padding: 7px 4px;
             }
-            .input input{
+
+            .input input {
                 font-size: var(--step--1);
             }
+
             .modal {
                 display: none;
                 position: fixed;
@@ -702,39 +854,39 @@
 <?php include "logindbase.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $_SESSION['input1'] = $_POST['input1'] ?? '';
-        $_SESSION['input2'] = $_POST['input2'] ?? '';
-        $_SESSION['input3'] = $_POST['input3'] ?? '';
+    $_SESSION['input1'] = $_POST['input1'] ?? '';
+    $_SESSION['input2'] = $_POST['input2'] ?? '';
+    $_SESSION['input3'] = $_POST['input3'] ?? '';
 
-        $ammonia = $_SESSION['input1'];
-        $nitrate = $_SESSION['input2'];
-        $pH = $_SESSION['input3'];
+    $ammonia = $_SESSION['input1'];
+    $nitrate = $_SESSION['input2'];
+    $pH = $_SESSION['input3'];
 
-        $sql = "INSERT INTO water_test_input (Value, Date_and_Time, Name) VALUES (?, ?, ?)";
-        $stmt = $conn->prepare($sql);
+    $sql = "INSERT INTO water_test_input (Value, Date_and_Time, Name) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
 
-        $dateTime = date("Y-m-d H:i:s");
-        $name = "Ammonia";
-        $stmt->bind_param("sss", $ammonia, $dateTime, $name);
-        $stmt->execute();
+    $dateTime = date("Y-m-d H:i:s");
+    $name = "Ammonia";
+    $stmt->bind_param("sss", $ammonia, $dateTime, $name);
+    $stmt->execute();
 
-        $name = "Nitrate";
-        $stmt->bind_param("sss", $nitrate, $dateTime, $name);
-        $stmt->execute();
+    $name = "Nitrate";
+    $stmt->bind_param("sss", $nitrate, $dateTime, $name);
+    $stmt->execute();
 
-        $name = "pH";
-        $stmt->bind_param("sss", $pH, $dateTime, $name);
-        $stmt->execute();
+    $name = "pH";
+    $stmt->bind_param("sss", $pH, $dateTime, $name);
+    $stmt->execute();
 
-        $stmt->close();
-    }
+    $stmt->close();
+}
 
 ?>
 
 <body>
     <?php include "user_menu.php"; ?>
     <div class="container_menu">
-        <h2 id="pageTitle">WATER SETTINGS</h2>
+        <!-- <h2 id="pageTitle">WATER SETTINGS</h2> -->
         <!-- Modal for Enlarged Image -->
         <div id="imageModal" class="modal">
             <span class="close">&times;</span>
@@ -755,10 +907,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div id="water-scheduling-modal" class="water-scheduling-modal-overlay">
             <div class="water-scheduling-modal-content">
                 <span id="water-scheduling-modal-close" class="water-scheduling-modal-close">&times;</span>
-                <h2>Water Testing Schedule</h2>
-                <p>Set up your water testing schedule here.</p>
+                <div id="waterTestingScheduler">
+                    <h3>Select Days of the Week:</h3>
+                    <div class="day-toggle">
+                        <button type="button" class="day" data-day="Sunday">Sun</button>
+                        <button type="button" class="day" data-day="Monday">Mon</button>
+                        <button type="button" class="day" data-day="Tuesday">Tue</button>
+                        <button type="button" class="day" data-day="Wednesday">Wed</button>
+                        <button type="button" class="day" data-day="Thursday">Thu</button>
+                        <button type="button" class="day" data-day="Friday">Fri</button>
+                        <button type="button" class="day" data-day="Saturday">Sat</button>
+                    </div>
+
+                    <h3>Testing Times:</h3>
+                    <div id="timeInputsContainer">
+                        <!-- Dynamically added time inputs will go here -->
+                    </div>
+                    <button class="button" id="addTimeInput">Add Testing Time</button>
+
+                    <h3>Select Test Type:</h3>
+                    <select id="testTypeSelector">
+                        <option value="ammonia">Ammonia</option>
+                        <option value="nitrate">Nitrate</option>
+                        <option value="ph">pH</option>
+                    </select>
+
+                    <button class="button save-schedule-btn" id="saveWaterSchedule">Save Water Testing Schedule</button>
+                </div>
             </div>
         </div>
+
 
         <!-- The Config Modal -->
         <div id="config_modal" class="config_modal">
@@ -791,34 +969,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div class="input">
-        <form method="POST" action="">
-            <h2>Input Fields</h2>
-    <label for="input1" class="label">Ammonia:</label>
-    <input 
-        type="text" 
-        id="input1" 
-        name="input1" 
-        value="<?php echo isset($_SESSION['input1']) ? htmlspecialchars($_SESSION['input1']) : ''; ?>" 
-        placeholder="Enter Ammonia value">
-    
-    <label for="input2" class="label">Nitrate:</label>
-    <input 
-        type="text" 
-        id="input2" 
-        name="input2" 
-        value="<?php echo isset($_SESSION['input2']) ? htmlspecialchars($_SESSION['input2']) : ''; ?>" 
-        placeholder="Enter Nitrate value">
-    
-    <label for="input3" class="label">pH:</label>
-    <input 
-        type="text" 
-        id="input3" 
-        name="input3" 
-        value="<?php echo isset($_SESSION['input3']) ? htmlspecialchars($_SESSION['input3']) : ''; ?>" 
-        placeholder="Enter pH value">
-    
-    <button type="submit">Save</button>
-</form>
+            <form method="POST" action="">
+                <h2>Input Fields</h2>
+                <label for="input1" class="label">Ammonia:</label>
+                <input
+                    type="text"
+                    id="input1"
+                    name="input1"
+                    value="<?php echo isset($_SESSION['input1']) ? htmlspecialchars($_SESSION['input1']) : ''; ?>"
+                    placeholder="Enter Ammonia value">
+
+                <label for="input2" class="label">Nitrate:</label>
+                <input
+                    type="text"
+                    id="input2"
+                    name="input2"
+                    value="<?php echo isset($_SESSION['input2']) ? htmlspecialchars($_SESSION['input2']) : ''; ?>"
+                    placeholder="Enter Nitrate value">
+
+                <label for="input3" class="label">pH:</label>
+                <input
+                    type="text"
+                    id="input3"
+                    name="input3"
+                    value="<?php echo isset($_SESSION['input3']) ? htmlspecialchars($_SESSION['input3']) : ''; ?>"
+                    placeholder="Enter pH value">
+
+                <button type="submit">Save</button>
+            </form>
 
         </div>
 
@@ -826,7 +1004,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="testing-history">
             <!-- <h4>Testing History</h4> -->
 
-                <!-- <div>
+            <!-- <div>
                     <label class="label1">5/5/24</label>
                 </div>
                 <div>
@@ -837,12 +1015,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div> -->
 
 
-                <!-- Button to open the water scheduling modal -->
-                <button id="open-water-scheduling-modal" class="water-scheduling-trigger-button" type="button"><i class="fa-regular fa-calendar-days"></i></button>
+            <!-- Button to open the water scheduling modal -->
+            <button id="open-water-scheduling-modal" class="water-scheduling-trigger-button" type="button"><i class="fa-regular fa-calendar-days"></i></button>
 
 
 
-                <!-- <div class="test-controls">
+            <!-- <div class="test-controls">
                     <h2>Run Tests</h2>
                     <button onclick="startTest('ammonia')">Test Ammonia</button>
                     <button onclick="startTest('nitrate')">Test Nitrate</button>
@@ -851,21 +1029,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <button onclick="openConfigModal()">Open Configuration</button> 
                 </div> -->
 
-                <div class="test-controls">
-                    <button class="test-button" onclick="startTest('ammonia')" id="testAmonia_btn">Test Ammonia</button>
-                    <button class="test-button" onclick="startTest('nitrate')" id="testNitrate_btn">Test Nitrate</button>
-                    <button class="test-button" onclick="startTest('ph')" id="testPh_btn">Test pH</button>
-                    <button class="test-button" onclick="startTest('flush_test_tube')" id="flushTube_btn">Flush Test Tube</button>
-                    <button onclick="openConfigModal()" class="openConfig_btn">Open Configuration</button> <!-- This button remains unaffected -->
-                </div>
+            <div class="test-controls">
+                <button class="test-button" onclick="startTest('ammonia')" id="testAmonia_btn">Test Ammonia</button>
+                <button class="test-button" onclick="startTest('nitrate')" id="testNitrate_btn">Test Nitrate</button>
+                <button class="test-button" onclick="startTest('ph')" id="testPh_btn">Test pH</button>
+                <button class="test-button" onclick="startTest('flush_test_tube')" id="flushTube_btn">Flush Test Tube</button>
+                <button onclick="openConfigModal()" class="openConfig_btn">Open Configuration</button> <!-- This button remains unaffected -->
+            </div>
 
 
-                <!-- <button id="activateButton" type="button">Test Ammonia</button>
+            <!-- <button id="activateButton" type="button">Test Ammonia</button>
                 <button id="activateButton1" type="button">Test Nitrate</button>
                 <button id="activateButton2" type="button">Test pH</button> -->
-                <!-- <button id="activateButton2" onclick="captureImage()">Capture and Upload Image</button> -->
-                <!-- <p id="status"></p> -->
-          
+            <!-- <button id="activateButton2" onclick="captureImage()">Capture and Upload Image</button> -->
+            <!-- <p id="status"></p> -->
+
 
         </div>
     </div>
@@ -954,6 +1132,142 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $(document).ready(function() {
             // Set the current date on page load
             setCurrentDate();
+
+            // Code below is for water test scheduling
+            const timeInputsContainer = $('#timeInputsContainer');
+            const modalOverlay = $('#water-scheduling-modal');
+            const modalCloseButton = $('#water-scheduling-modal-close');
+
+            // Toggle active state for day buttons
+            $('.day').on('click', function() {
+                $(this).toggleClass('active'); // Toggle the "active" class
+            });
+
+            // Function to fetch and populate schedule for a specific test type
+            function fetchAndPopulateSchedule(testType) {
+                $.ajax({
+                    url: './water_settings_ajax/get_schedule.php',
+                    type: 'GET',
+                    data: {
+                        testType: testType
+                    },
+                    success: function(response) {
+                        const data = JSON.parse(response);
+
+                        if (data.status === 'success') {
+                            // Clear existing data
+                            timeInputsContainer.empty();
+                            $('.day').removeClass('active');
+
+                            // Populate days
+                            data.daysOfWeek.forEach(day => {
+                                $(`.day[data-day="${day}"]`).addClass('active');
+                            });
+
+                            // Populate testing times
+                            data.testingTimes.forEach((time, index) => {
+                                addTimeInput(time, index + 1);
+                            });
+                        } else {
+                            alert('Error fetching schedule: ' + data.message);
+                        }
+                    },
+                    error: function(error) {
+                        console.error('Error fetching schedule:', error);
+                    },
+                });
+            }
+
+            // Add a new time input dynamically
+            function addTimeInput(value = '', index = null) {
+                const inputIndex = index || timeInputsContainer.children().length + 1;
+                const timeInputHtml = `
+            <div class="time-input" data-index="${inputIndex}">
+                <label for="time${inputIndex}">Testing Time ${inputIndex}:</label>
+                <input type="time" id="time${inputIndex}" name="time${inputIndex}" value="${value}">
+                <button class="remove-time" data-index="${inputIndex}">X</button>
+            </div>`;
+                timeInputsContainer.append(timeInputHtml);
+            }
+
+            // Handle "Add Testing Time" button
+            $('#addTimeInput').on('click', function() {
+                addTimeInput();
+            });
+
+            // Remove a time input
+            timeInputsContainer.on('click', '.remove-time', function() {
+                $(this).closest('.time-input').remove(); // Remove the field
+            });
+
+            $('#saveWaterSchedule').on('click', function() {
+                const selectedDays = [];
+                const testingTimes = [];
+                const testType = $('#testTypeSelector').val();
+
+                // Collect active days
+                $('.day.active').each(function() {
+                    selectedDays.push($(this).data('day')); // Add active days to the array
+                });
+
+                // Collect time inputs
+                timeInputsContainer.find('input[type="time"]').each(function() {
+                    const timeValue = $(this).val();
+                    if (timeValue) {
+                        testingTimes.push(timeValue);
+                    }
+                });
+
+                // Save data via AJAX
+                $.ajax({
+                    url: './water_settings_ajax/save_water_schedule.php',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        testType: testType,
+                        daysOfWeek: selectedDays, // Can be empty
+                        testingTimes: testingTimes, // Can be empty
+                    }),
+                    success: function() {
+                        alert('Schedule saved successfully.');
+                        modalOverlay.hide(); // Close the modal
+                    },
+                    error: function(error) {
+                        console.error('Error saving schedule:', error);
+                    },
+                });
+            });
+
+
+            // Open modal and load schedules for default test type
+            $('#openSchedulerButton').on('click', function() {
+                const defaultTestType = $('#testTypeSelector').val();
+                fetchSchedulesForTestType(defaultTestType);
+                modalOverlay.show(); // Open the modal
+            });
+
+            // Close modal
+            modalCloseButton.on('click', function() {
+                modalOverlay.hide();
+            });
+
+            // Update schedules when test type is changed
+            $('#testTypeSelector').on('change', function() {
+                const testType = $(this).val();
+                fetchAndPopulateSchedule(testType); // Fetch and display the schedule
+            });
+
+            // Initial population for the default test type
+            const defaultTestType = $('#testTypeSelector').val();
+            fetchAndPopulateSchedule(defaultTestType);
+
+            // Close modal if the user clicks outside the modal content
+            modalOverlay.on('click', function(e) {
+                if ($(e.target).is('.water-scheduling-modal-overlay')) {
+                    modalOverlay.hide();
+                }
+            });
+            // End of water test scheduling code
 
             $.ajax({
                 url: './water_settings_ajax/check_test_status.php',
@@ -1189,31 +1503,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     datasets: [{
                             label: 'Ammonia',
                             data: [],
-                    borderColor: '#ff0000',
+                            borderColor: '#ff0000',
                             borderWidth: 3,
                             tension: 0.4,
                             pointRadius: 0,
-                    backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                            backgroundColor: 'rgba(255, 107, 107, 0.1)',
                         },
                         {
                             label: 'Nitrate',
                             data: [],
-                    borderColor: '#0000FF',
+                            borderColor: '#0000FF',
                             borderWidth: 3,
                             tension: 0.4,
                             pointRadius: 0,
-                    backgroundColor: 'rgba(77, 150, 255, 0.1)',
+                            backgroundColor: 'rgba(77, 150, 255, 0.1)',
                         },
                         {
                             label: 'pH',
                             data: [],
-                    borderColor: '#ffa500',
+                            borderColor: '#ffa500',
                             borderWidth: 3,
                             tension: 0.4,
                             pointRadius: 0,
-                    backgroundColor: 'rgba(255, 217, 61, 0.1)',
-                },
-            ],
+                            backgroundColor: 'rgba(255, 217, 61, 0.1)',
+                        },
+                    ],
                 },
                 options: {
                     maintainAspectRatio: false,
@@ -1223,11 +1537,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         },
                         x: {
                             grid: {
-                        display: false,
+                                display: false,
+                            },
+                        },
                     },
                 },
-            },
-        },
             });
 
 
@@ -1236,15 +1550,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 const dateRange = document.getElementById('dateRange').value;
 
                 fetch(`fetch_water_data.php?date=${selectedDate}&range=${dateRange}`)
-            .then((response) => response.json())
-            .then((data) => {
+                    .then((response) => response.json())
+                    .then((data) => {
                         const labels = [];
                         const ammoniaData = [];
                         const nitrateData = [];
                         const pHData = [];
 
-                // Process fetched data
-                data.forEach((entry) => {
+                        // Process fetched data
+                        data.forEach((entry) => {
                             const date = entry.Date_and_Time;
                             const value = parseFloat(entry.Value);
 
@@ -1254,11 +1568,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             }
 
                             // Populate data arrays based on the Name field
-                    if (entry.Name === 'Ammonia') {
+                            if (entry.Name === 'Ammonia') {
                                 ammoniaData.push(value);
-                    } else if (entry.Name === 'Nitrate') {
+                            } else if (entry.Name === 'Nitrate') {
                                 nitrateData.push(value);
-                    } else if (entry.Name === 'pH') {
+                            } else if (entry.Name === 'pH') {
                                 pHData.push(value);
                             }
                         });
@@ -1272,17 +1586,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         // Refresh the chart to show new data
                         lineChart.update();
                     })
-            .catch((error) => console.error('Error fetching data:', error));
+                    .catch((error) => console.error('Error fetching data:', error));
             }
 
-    // Set default date and load initial data
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('calendar').value = today;
-    updateChart();
+            // Set default date and load initial data
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('calendar').value = today;
+            updateChart();
 
-    // Trigger chart update when date or range changes
-    document.getElementById('calendar').addEventListener('change', updateChart);
-    document.getElementById('dateRange').addEventListener('change', updateChart);
+            // Trigger chart update when date or range changes
+            document.getElementById('calendar').addEventListener('change', updateChart);
+            document.getElementById('dateRange').addEventListener('change', updateChart);
         });
 
         // Initialize with default values
@@ -1360,33 +1674,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //         modal.style.display = "none";
         //     }
         // };
-             // Load saved values from localStorage
-    window.onload = function() {
-        if (localStorage.getItem("input1")) {
-            document.getElementById("input1").value = localStorage.getItem("input1");
-        }
-        if (localStorage.getItem("input2")) {
-            document.getElementById("input2").value = localStorage.getItem("input2");
-        }
-        if (localStorage.getItem("input3")) {
-            document.getElementById("input3").value = localStorage.getItem("input3");
-        }
-    };
+        // Load saved values from localStorage
+        window.onload = function() {
+            if (localStorage.getItem("input1")) {
+                document.getElementById("input1").value = localStorage.getItem("input1");
+            }
+            if (localStorage.getItem("input2")) {
+                document.getElementById("input2").value = localStorage.getItem("input2");
+            }
+            if (localStorage.getItem("input3")) {
+                document.getElementById("input3").value = localStorage.getItem("input3");
+            }
+        };
 
-    // Save values to localStorage on input
-    document.getElementById("input1").addEventListener("input", function() {
-        localStorage.setItem("input1", this.value);
-    });
+        // Save values to localStorage on input
+        document.getElementById("input1").addEventListener("input", function() {
+            localStorage.setItem("input1", this.value);
+        });
 
-    document.getElementById("input2").addEventListener("input", function() {
-        localStorage.setItem("input2", this.value);
-    });
+        document.getElementById("input2").addEventListener("input", function() {
+            localStorage.setItem("input2", this.value);
+        });
 
-    document.getElementById("input3").addEventListener("input", function() {
-        localStorage.setItem("input3", this.value);
-    });
-
-        
+        document.getElementById("input3").addEventListener("input", function() {
+            localStorage.setItem("input3", this.value);
+        });
     </script>
 </body>
 

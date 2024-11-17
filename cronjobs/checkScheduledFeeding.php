@@ -5,10 +5,12 @@ error_reporting(E_ALL);
 
 // Remove database connection, no scheduled feeding found, cron job completed, and cron jobo checkScheduledFeeding.php started.
 // Include the SMS and Email notification files
-require_once '/var/www/cronjobs/send_sms.php';
-require_once '/var/www/cronjobs/send_email.php';
-require_once '/var/www/cronjobs/log.php';
-
+// include "/var/www/cronjobs/send_sms.php";
+// include "/var/www/cronjobs/send_email.php";
+// include "/var/www/cronjobs/log.php";
+// include(__DIR__ . '/send_email.php');
+// include(__DIR__ . '/send_sms.php');
+include(__DIR__ . '/log.php');
 // Log script start
 // logMessage("Cron job checkScheduledFeeding.php started.");
 
@@ -76,13 +78,14 @@ if ($result_schedule && $result_schedule->num_rows > 0) {
         logMessage("Scheduled feeding found: ID = $schedule_id, Time = $feeding_time.");
 
         // Fetch feed settings to get the amount of feed in grams
-        $sql_feed_settings = "SELECT amount_per_feeding FROM feed_settings LIMIT 1";
+        $sql_feed_settings = "SELECT amount_per_feeding, adjust_amount_by FROM feed_settings LIMIT 1";
         $result_feed_settings = $conn->query($sql_feed_settings);
 
         if ($result_feed_settings && $result_feed_settings->num_rows > 0) {
             $feed_settings = $result_feed_settings->fetch_assoc();
             $grams_to_feed = floatval($feed_settings['amount_per_feeding']);
-            logMessage("Amount to feed: $grams_to_feed grams.");
+            $adjust_amount_by = floatval($feed_settings['adjust_amount_by']);
+            logMessage("Amount to feed: $grams_to_feed grams. Adjustment value: $adjust_amount_by grams.");
 
             // Fetch motor calibration (grams per second)
             $sql_motor_calibration = "SELECT grams_per_second FROM feedmotor_calibration ORDER BY calibration_time DESC LIMIT 1";
@@ -115,8 +118,21 @@ if ($result_schedule && $result_schedule->num_rows > 0) {
                 $stmt_insert_history->execute();
                 logMessage("Feed history logged with time: $feeding_time, duration: $motor_runtime_seconds, amount: $grams_to_feed grams.");
 
+                // Update the amount_per_feeding in the feed_settings table
+                $new_amount_per_feeding = $grams_to_feed + $adjust_amount_by;
+                $sql_update_feed_settings = "UPDATE feed_settings SET amount_per_feeding = ? ORDER BY updated_at DESC LIMIT 1";
+
+                $stmt_update_feed_settings = $conn->prepare($sql_update_feed_settings);
+                if (!$stmt_update_feed_settings) {
+                    logMessage("Failed to prepare feed settings update: " . $conn->error);
+                    die("Update query failed.");
+                }
+                $stmt_update_feed_settings->bind_param("d", $new_amount_per_feeding);
+                $stmt_update_feed_settings->execute();
+                logMessage("Updated amount_per_feeding to $new_amount_per_feeding grams.");
+
                 // Notify the user via SMS and Email
-                $message = "A scheduled feeding occurred at $current_time. The motor ran for $motor_runtime_seconds seconds.";
+                $message = "A scheduled feeding occurred at " . $current_time->format('Y-m-d H:i:s') . ". The motor ran for $motor_runtime_seconds seconds.";
                 $subject = "Scheduled Feeding Alert";
 
                 // Send SMS
@@ -147,14 +163,14 @@ $conn->close();
  * @param string $action 'on' or 'off' to control the motor
  */
 function controlMotor($action) {
-    $esp32Ip = "http://esp32feeder.local";  // Replace with the actual IP of your ESP32
-    $url = "$esp32Ip/motor/$action";
+    $esp32Ip = "https://equasmart.local";  // Replace with the actual IP of your ESP32
+    $url = "$esp32Ip/feeder/$action";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_TIMEOUT, 10);  // Set a 10-second timeout for the request
-
+    logInfo("Sending motor control request ($action) to $url.");
     $response = curl_exec($ch);
     if (curl_errno($ch)) {
         $error_message = curl_error($ch);

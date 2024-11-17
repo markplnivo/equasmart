@@ -8,11 +8,9 @@ error_reporting(E_ALL);
 
 // require 'phpmailer/src/Exception.php';
 // require 'phpmailer/src/PHPMailer.php';
-// require 'phpmailer/src/SMTP.php';
-require_once __DIR__ . '/config.php';
-require_once '/var/www/cronjobs/log.php';
+// require 'phpmailer/src/SMTP.php'
+include  __DIR__ . '/config.php';
 require_once __DIR__ . '/log.php';
-
 /**
  * Function to send an email using PHPMailer
  * @param string $emailAddress The recipient's email address

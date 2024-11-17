@@ -97,6 +97,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             margin: 0 auto; /* Center and add margin-bottom */
+            margin-top: 3%
         }
         .log-container button{
             margin-top: 0px;
@@ -172,6 +173,7 @@
             grid-row: 1 / 2;
             text-align: center;
             padding-bottom: 20px;
+            display:none;
         }
         @media (max-width: 1010px) {
             *, body {

@@ -868,7 +868,7 @@
                 <h4>Configuration Menu for Feeding Times</h4>
                 <!-- Feeding times will be dynamically inserted here -->
                 <button class="button" id="saveFeedingTimes">Save Feeding Times</button>
-                <button class="button" id="resetFeedingTimes">Reset to Default</button> <!-- New Reset Button -->
+                <!-- <button class="button" id="resetFeedingTimes">Reset to Default</button>  -->
             </div>
 
 
@@ -1320,7 +1320,7 @@
         }
 
         container.append('<button class="button" id="saveFeedingTimes">Save Feeding Times</button>');
-        container.append('<button class="button" id="resetFeedingTimes">Reset to Default</button>'); // New Reset Button
+        // container.append('<button class="button" id="resetFeedingTimes">Reset to Default</button>'); // New Reset Button
 
         // Add event listener for day buttons
         $('.day').on('click', function() {

@@ -1,0 +1,31 @@
+PHP Warning:  file_put_contents(./water_settings_ajax/test_running.lock): failed to open stream: No such file or directory in /var/www/html/water_settings_ajax/check_and_run_schedule.php on line 24
+2024-11-18 01:40:52 - Ran ammonia with result: 0
+Schedule check completed.Schedule check completed.Schedule check completed.
+ Schedule check completed.
+ Schedule check completed.A test is already in progress. Skipping schedule check.
+ Schedule check completed.
+ Schedule check completed.
+ Schedule check completed.A test is already in progress. Skipping schedule check.
+ Schedule check completed.A test is already in progress. Skipping schedule check.
+ Schedule check completed.
+ Schedule check completed.
+ Schedule check completed.
+ Schedule check completed.
+ Schedule check completed.
+ Schedule check completed.
+ Schedule check completed.
+ Schedule check completed.
+ Schedule check completed.
+ Schedule check completed.
+ Schedule check completed.2024-11-18 02:03:57 - Ran nitrate with result: 0
+A test is already in progress. Skipping schedule check.
+ Schedule check completed.
+ Schedule check completed.A test is already in progress. Skipping schedule check.A test is already in progress. Skipping schedule check.PHP Warning:  file_get_contents(http://esp32water.local/capture_image): failed to open stream: HTTP request failed!  in /var/www/html/run_sequence.php on line 75
+2024-11-18 02:08:55 - Ran ph with result: 0
+
+A test is already in progress. Skipping schedule check.
+ Schedule check completed.
+ Schedule check completed.
+ Schedule check completed.
+ Schedule check completed.
+ Schedule check completed.

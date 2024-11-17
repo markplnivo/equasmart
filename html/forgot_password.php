@@ -57,7 +57,6 @@ if (isset($_POST['resetSubmit'])) {
                 // User clicked Cancel
             }
             </script>';
-
         } catch (Exception $e) {
             echo '<script>alert("Message could not be sent. Mailer Error: ' . $mail->ErrorInfo . '");</script>';
         }
@@ -143,6 +142,50 @@ if (isset($_POST['resetSubmit'])) {
             color: white;
             cursor: pointer;
             width: 10%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 50vw;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #backButton {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: darkslategray;
+            color: white;
+            cursor: pointer;
+            width: 40%;
+        }
+
+        @media (max-width: 1010px) {
+            form {
+                display: flex;
+                flex-direction: column;
+                width: 50vw;
+                padding: 20px;
+                background-color: #f4f4f4;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            #backButton {
+                margin-top: 10px;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: darkslategray;
+                color: white;
+                cursor: pointer;
+                width: 40%;
+            }
         }
     </style>
 </head>
