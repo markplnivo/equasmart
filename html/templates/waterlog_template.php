@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Water Testing Report</title>
     <style>
-        /* Base Styles */
         body {
-            font-family: "arial", sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
@@ -89,8 +88,8 @@
 
     // Database connection
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "admin";
+    $password = "123";
     $dbname = "db_equasmart";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -160,15 +159,15 @@
     $conn->close();
 ?>
 
-<div class="container">
-    <div class="header">
+    <div class="container">
+        <div class="header">
         <h1>Water Testing Report</h1>
         <img src="images/equasmartlogo_croppedlogo.png" alt="Logo" class="logo">
-    </div>
+        </div>
 
     <div class="date-section">
     Date: <?php echo htmlspecialchars($selectedDate); ?>
-    </div>
+        </div>
 
     <div class="content-section">
         <h2>Water Quality Data</h2>
@@ -194,14 +193,14 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+        </div>
 
     <div class="content-section">
         <h2>Inspection and Management</h2>
         <div class="checkbox-group">
             <label for="waste-management-completed">Waste Management Completed</label>
-            <input type="checkbox" id="waste-management-completed">
-        </div>
+                    <input type="checkbox" id="waste-management-completed">
+                </div>
         <div class="checkbox-group">
             <label for="algae-inspection-completed">Algae Inspection Completed</label>
             <input type="checkbox" id="algae-inspection-completed">

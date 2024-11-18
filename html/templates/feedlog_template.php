@@ -1,9 +1,8 @@
-<?php
+<?php 
 include "../logindbase.php";  // Ensure the path is correct
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +14,6 @@ include "../logindbase.php";  // Ensure the path is correct
             padding: 0;
             background-color: #f5f5f5;
         }
-
         .container {
             width: 85%;
             margin: 20px auto;
@@ -24,7 +22,6 @@ include "../logindbase.php";  // Ensure the path is correct
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-
         .header {
             display: flex;
             justify-content: space-between;
@@ -33,20 +30,17 @@ include "../logindbase.php";  // Ensure the path is correct
             padding-bottom: 15px;
             margin-bottom: 20px;
         }
-
         .log-title {
             font-size: 26px;
             color: black;
             margin: 0;
             padding: 0;
         }
-
         .logo img {
             max-width: 200px;
             height: auto;
             border-radius: 4px;
         }
-
         .info {
             display: flex;
             justify-content: space-between;
@@ -65,13 +59,11 @@ include "../logindbase.php";  // Ensure the path is correct
             font-weight: bold;
             color: #333;
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
         }
-
         thead th {
             background-color: mediumaquamarine;
             color: white;
@@ -79,24 +71,20 @@ include "../logindbase.php";  // Ensure the path is correct
             text-align: center;
             font-size: 16px;
         }
-
         tbody td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
             font-size: 14px;
         }
-
         tbody td:first-child {
             text-align: left;
             font-weight: bold;
             background-color: #f9f9f9;
         }
-
         tbody tr:nth-child(odd) {
             background-color: #f2f2f2;
         }
-
         tbody td span {
             font-weight: bold;
             color: mediumaquamarine;
@@ -107,11 +95,9 @@ include "../logindbase.php";  // Ensure the path is correct
         tbody td:nth-child(4) {
             text-align: center;
         }
-
         td p {
             margin: 0;
         }
-
         .notes {
             padding-top: 10px;
             font-size: 14px;
@@ -120,7 +106,6 @@ include "../logindbase.php";  // Ensure the path is correct
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <div class="header">
@@ -133,7 +118,7 @@ include "../logindbase.php";  // Ensure the path is correct
         </div>
 
         <div class="info">
-            <?php
+        <?php
             $current_date = date('Y-m-d');
             $average_amount = "N/A";
             $average_ph = "N/A";
@@ -193,11 +178,9 @@ include "../logindbase.php";  // Ensure the path is correct
                 $stmt2->close();
             }
             ?>
-
             <div class="date">
                 <p>Date: <span><?php echo htmlspecialchars($date); ?></span></p>
             </div>
-
         </div>
 
         <table>
@@ -241,5 +224,4 @@ include "../logindbase.php";  // Ensure the path is correct
         }
     </script>
 </body>
-
 </html>
