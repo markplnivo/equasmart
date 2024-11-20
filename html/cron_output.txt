@@ -38,3 +38,31 @@
 [2024-11-17 21:58:06] ERROR: Motor control request (on) failed with HTTP status 502.
 [2024-11-17 21:58:16] INFO: Sending motor control request (off) to https://equasmart.local/feeder/off.
 [2024-11-17 21:58:19] ERROR: Motor control request (off) failed with HTTP status 503.
+[2024-11-18 18:19:01] INFO: Sending motor control request (on) to https://equasmart.local/feeder/on.
+[2024-11-18 18:19:01] INFO: Motor control request (on) sent successfully.
+[2024-11-18 18:19:11] INFO: Sending motor control request (off) to https://equasmart.local/feeder/off.
+[2024-11-18 18:19:11] INFO: Motor control request (off) sent successfully.
+[2024-11-18 18:21:01] INFO: Sending motor control request (on) to https://equasmart.local/feeder/on.
+[2024-11-18 18:21:02] INFO: Motor control request (on) sent successfully.
+[2024-11-18 18:21:12] INFO: Sending motor control request (off) to https://equasmart.local/feeder/off.
+[2024-11-18 18:21:12] INFO: Motor control request (off) sent successfully.
+[2024-11-19 11:59:01] INFO: Sending motor control request (on) to https://equasmart.local/feeder/on.
+[2024-11-19 11:59:01] INFO: Motor control request (on) sent successfully.
+[2024-11-19 11:59:12] INFO: Sending motor control request (off) to https://equasmart.local/feeder/off.
+[2024-11-19 11:59:13] INFO: Motor control request (off) sent successfully.
+[2024-11-19 16:59:01] INFO: Sending motor control request (on) to https://equasmart.local/feeder/on.
+[2024-11-19 16:59:01] INFO: Motor control request (on) sent successfully.
+[2024-11-19 16:59:13] INFO: Sending motor control request (off) to https://equasmart.local/feeder/off.
+[2024-11-19 16:59:13] INFO: Motor control request (off) sent successfully.
+[2024-11-20 05:59:02] INFO: Sending motor control request (on) to https://equasmart.local/feeder/on.
+[2024-11-20 05:59:02] INFO: Motor control request (on) sent successfully.
+[2024-11-20 05:59:12] INFO: Sending motor control request (off) to https://equasmart.local/feeder/off.
+[2024-11-20 05:59:12] INFO: Motor control request (off) sent successfully.
+[2024-11-20 11:59:01] INFO: Sending motor control request (on) to https://equasmart.local/feeder/on.
+[2024-11-20 11:59:01] INFO: Motor control request (on) sent successfully.
+[2024-11-20 11:59:11] INFO: Sending motor control request (off) to https://equasmart.local/feeder/off.
+[2024-11-20 11:59:11] INFO: Motor control request (off) sent successfully.
+[2024-11-20 16:59:01] INFO: Sending motor control request (on) to https://equasmart.local/feeder/on.
+[2024-11-20 16:59:01] INFO: Motor control request (on) sent successfully.
+[2024-11-20 16:59:11] INFO: Sending motor control request (off) to https://equasmart.local/feeder/off.
+[2024-11-20 16:59:12] INFO: Motor control request (off) sent successfully.

@@ -74,18 +74,11 @@
             grid-template-rows: auto;
             margin: 0;
             height: 100vh;
-            overflow-x: hidden;
-            /* Prevent horizontal overflow */
         }
         /* Container for the content next to the menu */
         .container_menu {
             grid-area: 1 / 2 / -1 / -1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-y: auto;
-            /* Enable vertical scrolling if content overflows */
-            padding: var(--space-m);
+            grid-template-columns: 1fr;
             background-color: azure;
         }
         /* General styles */
@@ -103,26 +96,14 @@
             background-color: lemonchiffon;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-            margin: 0 auto;
-            overflow-y: auto;
-            /* Prevent content overflow */
-            max-height: 400px;
+            margin: 0 auto; /* Center and add margin-bottom */
+            margin-top: 3%
         }
         .log-container button{
             margin-top: 0px;
             margin-bottom: 2%;
         }
-
-        .log {
-            border: 1px solid #ccc;
-            padding: 2%;
-            border-radius: 5px;
-            max-height: 325px;
-            overflow-y: auto;
-            /* Enable scrolling for overflow content */
-        }
-
-        .log-container h2 {
+        .log-container h2{
             font-size: var(--step-0);
             padding-top: 0px;
             padding-bottom: 5px;
@@ -154,74 +135,19 @@
         .side-by-side-wrapper {
             display: flex;
             justify-content: center;
-            width: 100%;
-            gap: var(--space-m);
-            /* Adds space between the containers */
-            margin-top: var(--space-m);
+            height: 25%;
+            gap: 2%; /* Adds space between the containers */
+            margin: 2%;
         }
         /* Adjust widths to fit side-by-side */
-        .date-picker,
-        .log-list-container {
-            width: 48%;
+        .date-picker, .log-list-container {
+            width: 50%; /* Set appropriate widths */
             padding: 20px;
             background-color: lemonchiffon;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
         }
-
-        /* Styling for the interval dropdown */
-        .interval-dropdown {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-top: 10px;
-            font-size: var(--step-0);
-            background-color: #fff;
-            color: #333;
-        }
-
-        /* Hover and focus styles for dropdown */
-        .interval-dropdown:hover,
-        .interval-dropdown:focus {
-            border-color: #007bff;
-            outline: none;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-
-        /* Styling for the label and date picker input to match the interval dropdown */
-        .date-picker label {
-            font-size: var(--step-0);
-            font-weight: bold;
-            color: #333;
-            margin-bottom: var(--space-xs);
-            display: inline-block;
-        }
-
-        .date-picker input[type="date"],
-        .date-picker .interval-dropdown {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-top: 10px;
-            font-size: var(--step-0);
-            background-color: #fff;
-            color: #333;
-        }
-
-        /* Hover and focus styles for date input and interval dropdown */
-        .date-picker input[type="date"]:hover,
-        .date-picker input[type="date"]:focus,
-        .date-picker .interval-dropdown:hover,
-        .date-picker .interval-dropdown:focus {
-            border-color: #007bff;
-            outline: none;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-
-        .date-picker h2,
-        .log-list-container h2 {
+        .date-picker h2, .log-list-container h2{
             padding: 0;
             font-size: var(--step-0);
         }
@@ -247,11 +173,10 @@
             grid-row: 1 / 2;
             text-align: center;
             padding-bottom: 20px;
+            display:none;
         }
         @media (max-width: 1010px) {
-
-            *,
-            body {
+            *, body {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
@@ -300,51 +225,6 @@
     </style>
 </head>
 
-<?php
-include "logindbase.php"; // Database connection file
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $interval = $_POST['interval'] ?? '';
-    $date = $_POST['date'] ?? '';
-    $table = (strpos($_SERVER['REQUEST_URI'], 'feedlog') !== false) ? 'feed_history' : 'water_test_input';
-    $dateColumn = ($table === 'feed_history') ? 'feed_time' : 'Date_and_Time';
-
-    $logs = [];
-    if ($interval) {
-        $query = "";
-
-        if ($interval === 'daily') {
-            $query = "SELECT AVG(Value) as average, $dateColumn as date_info FROM $table WHERE DATE($dateColumn) = ? GROUP BY $dateColumn";
-        } elseif ($interval === 'weekly') {
-            $query = "SELECT AVG(Value) as average, WEEK($dateColumn) as week FROM $table WHERE YEAR($dateColumn) = YEAR(?) GROUP BY WEEK($dateColumn)";
-        } elseif ($interval === 'monthly') {
-            $query = "SELECT AVG(Value) as average, MONTH($dateColumn) as month FROM $table WHERE YEAR($dateColumn) = YEAR(?) GROUP BY MONTH($dateColumn)";
-        } elseif ($interval === 'yearly') {
-            $query = "SELECT AVG(Value) as average, YEAR($dateColumn) as year FROM $table GROUP BY YEAR($dateColumn)";
-        }
-
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("s", $date);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        while ($row = $result->fetch_assoc()) {
-            $logs[] = $row;
-        }
-    }
-
-    if (!empty($logs)) {
-        foreach ($logs as $log) {
-            echo "<p>Average: " . htmlspecialchars($log['average']) . "</p>";
-            echo "<p>Date/Interval: " . htmlspecialchars($log['date_info'] ?? ($log['week'] ?? $log['month'] ?? $log['year'])) . "</p>";
-            echo "<hr>";
-        }
-    } else {
-        echo "<p>No logs found for the selected date and interval.</p>";
-    }
-}
-?>
-
 <body>
     <?php include "user_menu.php"; ?>
     <div class="container_menu">
@@ -353,9 +233,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- Right side: Log preview -->
         <div class="log-container">
             <h2>Log Preview</h2>
-    <button id="printLogButton" onclick="printLog()">Print Log</button>
-    <div class="log" id="log">
-    </div>
+            <button onclick="printLog()">Print Log</button>
+            <div class="log" id="log"></div>
         </div>
         <div class="side-by-side-wrapper">
         <!-- Left side: Date picker and Log list -->
@@ -363,16 +242,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h2>Select Date</h2>
             <label for="date">Pick a date:</label>
             <input type="date" id="date">
-
-                <!-- Dropdown for interval selection -->
-                <label for="interval">Select Interval:</label>
-                <select id="interval" class="interval-dropdown">
-                    <option value="daily">Daily</option>
-                    <option value="weekly">Weekly</option>
-                    <option value="monthly">Monthly</option>
-                    <option value="yearly">Yearly</option>
-                </select>
-
             <button onclick="logDate()">Log Date</button>
         </div>
         <div class="log-list-container">
@@ -387,121 +256,58 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <script>
-    var logs = []; // Declare logs array globally
+        var logs = [];
+        var selectedLogType = ''; // To store the selected log type
 
         function logDate() {
             var selectedDate = document.getElementById('date').value;
-        var selectedInterval = document.getElementById('interval').value;
-
-        if (selectedDate && selectedInterval === 'select') {
             logs.push(selectedDate);
-        } else if (selectedInterval !== 'select') {
-            logs.push(selectedInterval);
-        } else {
-            alert("Please select either a date or an interval.");
-        }
-    }
+            var logElement = document.createElement('p');
+            logElement.textContent = 'Selected date: ' + selectedDate;
+            document.getElementById('log').appendChild(logElement);
 
-    // Function to dynamically display the log based on selected date, interval, and log type
+            updateLogList();
+        }
+
         function showLog(logFile) {
-        var selectedDate = document.getElementById('date').value;
-        var selectedInterval = document.getElementById('interval').value;
+            // Set the selected log type
+            selectedLogType = logFile;
 
-        if (!selectedDate) {
-            alert("Please select a date first.");
-            return;
+            // Use AJAX to load the PHP file content dynamically into the log container
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', logFile, true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    document.getElementById('log').innerHTML = xhr.responseText;
+                } else {
+                    document.getElementById('log').innerHTML = 'Error loading log content';
+                }
+            };
+            xhr.send();
         }
 
-            var xhr = new XMLHttpRequest();
-        xhr.open('POST', logFile, true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        function printLog() {
+            // Trigger the print dialog
+            window.print();
+        }
 
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                    document.getElementById('log').innerHTML = xhr.responseText;
-            }
-        };
+        function updateLogList() {
+            var logListElement = document.getElementById('logList');
+            logListElement.innerHTML = '';
+            logs.forEach(function (log, index) {
+                var logItem = document.createElement('div');
+                logItem.textContent = 'Log ' + (index + 1) + ': ' + log;
+                logItem.classList.add('log-item');
+                logListElement.appendChild(logItem);
+            });
+        }
 
-        // Send both date and interval as parameters to the server
-        xhr.send("date=" + encodeURIComponent(selectedDate) + "&interval=" + encodeURIComponent(selectedInterval));
-    }
-
-  
-
-    // Function to update log title based on interval selection
-function updateLogTitle() {
-    var logTitleElement = document.getElementById("logTitle");
-    var selectedInterval = document.getElementById("interval").value;
-
-    const titleMap = {
-        'daily': 'Daily Feed Log',
-        'weekly': 'Weekly Feed Log',
-        'monthly': 'Monthly Feed Log',
-        'yearly': 'Yearly Feed Log'
-    };
-
-    // Update the log title based on the selected interval
-    logTitleElement.textContent = titleMap[selectedInterval] || 'Log Preview';
-    
-}
-
-// Initialize event listeners and other setups on document ready
-document.addEventListener("DOMContentLoaded", function() {
-    // Bind interval change event to update log title
-    document.getElementById("interval").addEventListener("change", updateLogTitle);
-    
-    // Trigger update on initial load to reflect the current selection
-    updateLogTitle();
-});
-
-function printLog() {
-    // Hide buttons or any unnecessary elements before printing
-    var logContainer = document.getElementById('log');
-    var printButton = document.getElementById('printLogButton');
-    if (printButton) printButton.style.display = 'none';
-
-    // Clone the log container to avoid affecting the original
-    var logClone = logContainer.cloneNode(true);
-
-    // Include the state of checkboxes in the clone
-    var checkboxes = logClone.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(function (checkbox) {
-        // Replace the checkbox element with a styled representation of its state
-        var checkboxState = checkbox.checked ? '☑️' : '☐';
-        var stateSpan = document.createElement('span');
-        stateSpan.textContent = checkboxState;
-        stateSpan.style.marginRight = '10px';
-
-        // Replace checkbox with its state representation
-        checkbox.replaceWith(stateSpan);
-    });
-
-    // Get the updated HTML content
-    var logContent = logClone.innerHTML || "<p>No log content available</p>";
-
-    // Create a new window for printing
-    var printWindow = window.open('', '_blank');
-
-    // Write the log content with styling to the new window
-    printWindow.document.write('<html><head><title>Log Preview</title>');
-    printWindow.document.write('<style>');
-    printWindow.document.write('body {font-family: "Arial", sans-serif; margin: 20px;}');
-    printWindow.document.write('.log-container {width: 100%; border: 1px solid #ccc; padding: 10px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}');
-    printWindow.document.write('.log p {margin: 5px 0; font-size: 14px;}');
-    printWindow.document.write('.log hr {border: none; border-top: 1px solid #ccc; margin: 10px 0;}');
-    printWindow.document.write('</style></head><body>');
-    printWindow.document.write('<div class="log-container">' + logContent + '</div>');
-    printWindow.document.write('</body></html>');
-
-    // Close the document, trigger the print dialog, and then close the window
-    printWindow.document.close();
-    printWindow.print();
-    printWindow.close();
-
-    // Show the buttons after printing
-    if (printButton) printButton.style.display = 'block';
+        function downloadLog() {
+            // Navigate to the 'download-log.html' page
+            window.location.href = 'water_test.php';
         }
     </script>
+</body>
 
-
+</html>
 <?php ob_end_flush(); ?>

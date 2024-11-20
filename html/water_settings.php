@@ -851,36 +851,66 @@
         }
     </style>
 </head>
-<?php include "logindbase.php";
+<?php
+include 'logindbase.php'; // Ensure database connection
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $_SESSION['input1'] = $_POST['input1'] ?? '';
-    $_SESSION['input2'] = $_POST['input2'] ?? '';
-    $_SESSION['input3'] = $_POST['input3'] ?? '';
-
-    $ammonia = $_SESSION['input1'];
-    $nitrate = $_SESSION['input2'];
-    $pH = $_SESSION['input3'];
-
-    $sql = "INSERT INTO water_test_input (Value, Date_and_Time, Name) VALUES (?, ?, ?)";
+// Function to fetch test values for the current day
+function fetchTestValues($conn)
+{
+    $currentDate = date('Y-m-d');
+    $sql = "SELECT Name, Value FROM water_test_input WHERE DATE(Date_and_Time) = ?";
     $stmt = $conn->prepare($sql);
-
-    $dateTime = date("Y-m-d H:i:s");
-    $name = "Ammonia";
-    $stmt->bind_param("sss", $ammonia, $dateTime, $name);
+    $stmt->bind_param('s', $currentDate);
     $stmt->execute();
+    $result = $stmt->get_result();
 
-    $name = "Nitrate";
-    $stmt->bind_param("sss", $nitrate, $dateTime, $name);
-    $stmt->execute();
+    $data = ['Ammonia' => 0, 'Nitrate' => 0, 'pH' => 0]; // Default values
+    while ($row = $result->fetch_assoc()) {
+        $data[$row['Name']] = $row['Value'];
+    }
 
-    $name = "pH";
-    $stmt->bind_param("sss", $pH, $dateTime, $name);
-    $stmt->execute();
-
-    $stmt->close();
+    return $data;
 }
 
+// Fetch and populate test values for the current day
+$testValues = fetchTestValues($conn);
+
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $ammonia = $_POST['input1'] ?? 0;
+    $nitrate = $_POST['input2'] ?? 0;
+    $pH = $_POST['input3'] ?? 0;
+
+    $currentDate = date('Y-m-d');
+    $tests = ['Ammonia' => $ammonia, 'Nitrate' => $nitrate, 'pH' => $pH];
+
+    foreach ($tests as $name => $value) {
+        // Check if a record exists for the current day and test
+        $sqlCheck = "SELECT Test_ID FROM water_test_input WHERE Name = ? AND DATE(Date_and_Time) = ?";
+        $stmtCheck = $conn->prepare($sqlCheck);
+        $stmtCheck->bind_param('ss', $name, $currentDate);
+        $stmtCheck->execute();
+        $resultCheck = $stmtCheck->get_result();
+
+        if ($resultCheck->num_rows > 0) {
+            // Update existing record
+            $sqlUpdate = "UPDATE water_test_input SET Value = ? WHERE Name = ? AND DATE(Date_and_Time) = ?";
+            $stmtUpdate = $conn->prepare($sqlUpdate);
+            $stmtUpdate->bind_param('dss', $value, $name, $currentDate);
+            $stmtUpdate->execute();
+        } else {
+            // Insert new record
+            $sqlInsert = "INSERT INTO water_test_input (Name, Value, Date_and_Time) VALUES (?, ?, NOW())";
+            $stmtInsert = $conn->prepare($sqlInsert);
+            $stmtInsert->bind_param('sd', $name, $value);
+            $stmtInsert->execute();
+        }
+    }
+
+    // Reload the page to reflect the updated values
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+}
 ?>
 
 <body>
@@ -969,14 +999,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div class="input">
-            <form method="POST" action="">
+            <form id="testResultsForm" method="POST" action="">
                 <h2>Input Fields</h2>
                 <label for="input1" class="label">Ammonia:</label>
                 <input
                     type="text"
                     id="input1"
                     name="input1"
-                    value="<?php echo isset($_SESSION['input1']) ? htmlspecialchars($_SESSION['input1']) : ''; ?>"
+                    value="<?php echo htmlspecialchars($testValues['Ammonia']); ?>"
                     placeholder="Enter Ammonia value">
 
                 <label for="input2" class="label">Nitrate:</label>
@@ -984,7 +1014,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     type="text"
                     id="input2"
                     name="input2"
-                    value="<?php echo isset($_SESSION['input2']) ? htmlspecialchars($_SESSION['input2']) : ''; ?>"
+                    value="<?php echo htmlspecialchars($testValues['Nitrate']); ?>"
                     placeholder="Enter Nitrate value">
 
                 <label for="input3" class="label">pH:</label>
@@ -992,10 +1022,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     type="text"
                     id="input3"
                     name="input3"
-                    value="<?php echo isset($_SESSION['input3']) ? htmlspecialchars($_SESSION['input3']) : ''; ?>"
+                    value="<?php echo htmlspecialchars($testValues['pH']); ?>"
                     placeholder="Enter pH value">
 
-                <button type="submit">Save</button>
+                <button type="button" id="saveTestResultsButton">Save</button>
             </form>
 
         </div>
@@ -1460,37 +1490,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //         sendCommand('TITRATE_NITRATE');
             //     });
 
-            document.getElementById('insertButton').addEventListener('click', function() {
-                // Get values from input fields
-                const ammonia = document.getElementById('input1').value;
-                const nitrate = document.getElementById('input2').value;
-                const pH = document.getElementById('input3').value;
+            document.getElementById('saveTestResultsButton').addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default button behavior if needed
 
-                // Send data to the backend PHP script using fetch API
-                fetch('insert_data.php', {
+                const ammonia = parseFloat(document.getElementById('input1').value) || 0;
+                const nitrate = parseFloat(document.getElementById('input2').value) || 0;
+                const pH = parseFloat(document.getElementById('input3').value) || 0;
+
+                fetch('save_test_results.php', {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
-                            ammonia: ammonia,
-                            nitrate: nitrate,
-                            pH: pH
-                        })
+                            ammonia,
+                            nitrate,
+                            ph: pH
+                        }),
                     })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
-                            // Clear the input fields
-                            document.getElementById('input1').value = '';
-                            document.getElementById('input2').value = '';
-                            document.getElementById('input3').value = '';
+                            alert("Test results saved successfully.");
                         } else {
-                            console.error("Failed to insert data.");
+                            console.error("Failed to save test results:", data.message);
                         }
                     })
-                    .catch(error => console.error('Error:', error));
+                    .catch(error => console.error("Error:", error));
             });
+
+
 
         });
 
@@ -1676,15 +1705,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // };
         // Load saved values from localStorage
         window.onload = function() {
-            if (localStorage.getItem("input1")) {
-                document.getElementById("input1").value = localStorage.getItem("input1");
-            }
-            if (localStorage.getItem("input2")) {
-                document.getElementById("input2").value = localStorage.getItem("input2");
-            }
-            if (localStorage.getItem("input3")) {
-                document.getElementById("input3").value = localStorage.getItem("input3");
-            }
+            fetch('fetch_test_results.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById("input1").value = data.ammonia || 0;
+                        document.getElementById("input2").value = data.nitrate || 0;
+                        document.getElementById("input3").value = data.ph || 0;
+                    } else {
+                        console.error("Failed to fetch test results:", data.message);
+                    }
+                })
+                .catch(error => console.error("Error:", error));
         };
 
         // Save values to localStorage on input

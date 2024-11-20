@@ -583,3 +583,257 @@
 2024-11-18 02:11:29 - Attempting to connect to server for image upload
 2024-11-18 02:11:29 - Connection to server successful for image upload
 2024-11-18 02:11:29 - Image uploaded successfully
+2024-11-18 12:37:04 - Motor control command sent: MOTOR,pond_water,forward,5000
+2024-11-18 12:37:10 - Motor control command sent: MOTOR,control_water,forward,10000
+2024-11-18 12:37:20 - Motor control command sent: MOTOR,ammonia1,forward,10000
+2024-11-18 12:37:30 - Motor control command sent: MOTOR,ammonia2,forward,10000
+2024-11-18 12:37:40 - Motor control command sent: MOTOR,nitrate1,forward,5000
+2024-11-18 12:37:46 - Motor control command sent: MOTOR,nitrate2,forward,5000
+2024-11-18 12:37:51 - Motor control command sent: MOTOR,ph,forward,5000
+2024-11-18 12:37:56 - Motor control command sent: MOTOR,air_pump,forward,5000
+2024-11-18 12:38:08 - Test type received!{"testType":"ammonia"}
+2024-11-18 12:38:08 - Attempting to connect to server for image upload
+2024-11-18 12:38:08 - Connection to server successful for image upload
+2024-11-18 12:38:08 - Image uploaded successfully
+2024-11-18 14:23:35 - Motor control command sent: MOTOR,pond_water,forward,5000
+2024-11-18 14:23:40 - Motor control command sent: MOTOR,control_water,forward,10000
+2024-11-18 14:23:51 - Motor control command sent: MOTOR,ammonia1,forward,10000
+2024-11-18 14:24:01 - Motor control command sent: MOTOR,ammonia2,forward,10000
+2024-11-18 14:24:11 - Motor control command sent: MOTOR,nitrate1,forward,5000
+2024-11-18 14:24:16 - Motor control command sent: MOTOR,nitrate2,forward,5000
+2024-11-18 14:24:22 - Motor control command sent: MOTOR,ph,forward,5000
+2024-11-18 14:24:27 - Motor control command sent: MOTOR,air_pump,forward,5000
+2024-11-18 14:24:39 - Test type received!{"testType":"ammonia"}
+2024-11-18 14:24:39 - Attempting to connect to server for image upload
+2024-11-18 14:24:39 - Connection to server successful for image upload
+2024-11-18 14:24:39 - Image uploaded successfully
+2024-11-18 15:46:29 - Motor control command sent: MOTOR,control_water,forward,10000
+2024-11-18 15:47:36 - Motor control command sent: MOTOR,control_water,forward,10000
+2024-11-18 15:48:30 - Motor control command sent: MOTOR,control_water,forward,10000
+2024-11-18 15:48:40 - Motor control command sent: MOTOR,air_pump,forward,5000
+2024-11-18 15:50:40 - Motor control command sent: MOTOR,control_water,forward,10000
+2024-11-18 15:50:51 - Motor control command sent: MOTOR,control_water,reverse,10000
+2024-11-18 15:51:02 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 15:51:03 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 15:51:04 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 15:54:00 - Motor control command sent: MOTOR,control_water,forward,10000
+2024-11-18 16:00:47 - Motor control command sent: MOTOR,control_water,forward,10000
+2024-11-18 16:00:59 - Motor control command sent: MOTOR,control_water,reverse,10000
+2024-11-18 16:01:10 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:01:11 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:01:11 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:05:25 - Motor control command sent: MOTOR,control_water,forward,2500
+2024-11-18 16:05:29 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:05:30 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:05:30 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:10:16 - Motor control command sent: MOTOR,control_water,forward,2500
+2024-11-18 16:10:20 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:10:21 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:10:22 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:11:29 - Motor control command sent: MOTOR,control_water,forward,2500
+2024-11-18 16:11:33 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:11:34 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:11:35 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:13:09 - Motor control command sent: MOTOR,control_water,forward,7000
+2024-11-18 16:13:17 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:13:18 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:13:19 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:14:08 - Motor control command sent: MOTOR,control_water,forward,5000
+2024-11-18 16:14:15 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:14:15 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:14:16 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:15:19 - Motor control command sent: MOTOR,air_pump,forward,2500
+2024-11-18 16:15:22 - Motor control command sent: MOTOR,control_water,forward,5000
+2024-11-18 16:15:28 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:15:29 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:15:30 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:17:34 - Motor control command sent: MOTOR,air_pump,forward,2500
+2024-11-18 16:17:39 - Motor control command sent: MOTOR,control_water,forward,5000
+2024-11-18 16:17:45 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:17:46 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:17:47 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:19:11 - Motor control command sent: MOTOR,air_pump,forward,2500
+2024-11-18 16:19:16 - Motor control command sent: MOTOR,control_water,forward,5000
+2024-11-18 16:19:22 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:19:23 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:19:24 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:20:39 - Motor control command sent: MOTOR,air_pump,forward,2500
+2024-11-18 16:20:44 - Motor control command sent: MOTOR,control_water,forward,5000
+2024-11-18 16:20:50 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:20:51 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:20:51 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:21:55 - Motor control command sent: MOTOR,air_pump,forward,2500
+2024-11-18 16:22:00 - Motor control command sent: MOTOR,control_water,forward,5000
+2024-11-18 16:22:06 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:22:07 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:22:08 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:22:48 - Motor control command sent: MOTOR,air_pump,forward,2500
+2024-11-18 16:22:53 - Motor control command sent: MOTOR,control_water,forward,5000
+2024-11-18 16:22:59 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:23:00 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:23:01 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:24:43 - Motor control command sent: MOTOR,air_pump,forward,2500
+2024-11-18 16:24:48 - Motor control command sent: MOTOR,control_water,forward,5000
+2024-11-18 16:24:54 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:24:55 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:24:55 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:26:21 - Motor control command sent: MOTOR,air_pump,forward,2500
+2024-11-18 16:26:26 - Motor control command sent: MOTOR,control_water,forward,5000
+2024-11-18 16:26:32 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:26:33 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:26:34 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:29:39 - Motor control command sent: MOTOR,air_pump,forward,2500
+2024-11-18 16:29:44 - Motor control command sent: MOTOR,control_water,forward,5000
+2024-11-18 16:29:50 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:29:51 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:29:52 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:29:56 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:30:45 - Motor control command sent: MOTOR,air_pump,forward,2500
+2024-11-18 16:30:59 - Motor control command sent: MOTOR,control_water,forward,5000
+2024-11-18 16:31:06 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:31:06 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:31:07 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:31:20 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:31:42 - Motor control command sent: MOTOR,air_pump,forward,2500
+2024-11-18 16:31:56 - Motor control command sent: MOTOR,control_water,forward,5000
+2024-11-18 16:32:02 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:32:03 - Motor control command sent: MOTOR,air_pump,forward,250
+2024-11-18 16:32:03 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:32:16 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:35:14 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 16:35:19 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:35:19 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:36:20 - Test type received!{"testType":"ammonia"}
+2024-11-18 16:36:20 - Attempting to connect to server for image upload
+2024-11-18 16:36:20 - Connection to server successful for image upload
+2024-11-18 16:36:20 - Image uploaded successfully
+2024-11-18 16:37:13 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:42:04 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 16:42:09 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:42:10 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:43:10 - Test type received!{"testType":"ammonia"}
+2024-11-18 16:43:10 - Attempting to connect to server for image upload
+2024-11-18 16:43:10 - Connection to server successful for image upload
+2024-11-18 16:43:10 - Image uploaded successfully
+2024-11-18 16:43:32 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:44:35 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 16:44:40 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:44:41 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:44:41 - Test type received!{"testType":"ammonia"}
+2024-11-18 16:44:41 - Attempting to connect to server for image upload
+2024-11-18 16:44:41 - Connection to server successful for image upload
+2024-11-18 16:44:41 - Image uploaded successfully
+2024-11-18 16:45:03 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:47:14 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 16:47:18 - Motor control command sent: MOTOR,ammonia1,forward,3500
+2024-11-18 16:47:22 - Motor control command sent: MOTOR,ammonia2,forward,3500
+2024-11-18 16:47:26 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:47:27 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:47:27 - Test type received!{"testType":"ammonia"}
+2024-11-18 16:47:27 - Attempting to connect to server for image upload
+2024-11-18 16:47:27 - Connection to server successful for image upload
+2024-11-18 16:47:27 - Image uploaded successfully
+2024-11-18 16:47:49 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:48:13 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 16:48:18 - Motor control command sent: MOTOR,ammonia1,forward,3500
+2024-11-18 16:48:22 - Motor control command sent: MOTOR,ammonia2,forward,3500
+2024-11-18 16:48:25 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:48:26 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:48:26 - Test type received!{"testType":"ammonia"}
+2024-11-18 16:48:26 - Attempting to connect to server for image upload
+2024-11-18 16:48:26 - Connection to server successful for image upload
+2024-11-18 16:48:27 - Image uploaded successfully
+2024-11-18 16:48:48 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:49:21 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 16:49:25 - Motor control command sent: MOTOR,ammonia1,forward,1000
+2024-11-18 16:49:27 - Motor control command sent: MOTOR,ammonia2,forward,1000
+2024-11-18 16:49:28 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:49:29 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:49:29 - Test type received!{"testType":"ammonia"}
+2024-11-18 16:49:29 - Attempting to connect to server for image upload
+2024-11-18 16:49:29 - Connection to server successful for image upload
+2024-11-18 16:49:29 - Image uploaded successfully
+2024-11-18 16:49:51 - Motor control command sent: MOTOR,air_pump,forward,1000
+2024-11-18 16:50:31 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 16:50:36 - Motor control command sent: MOTOR,ammonia1,forward,1000
+2024-11-18 16:50:39 - Motor control command sent: MOTOR,ammonia2,forward,1000
+2024-11-18 16:50:41 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:50:42 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:50:42 - Test type received!{"testType":"ammonia"}
+2024-11-18 16:50:42 - Attempting to connect to server for image upload
+2024-11-18 16:50:42 - Connection to server successful for image upload
+2024-11-18 16:50:43 - Image uploaded successfully
+2024-11-18 16:51:39 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 16:51:44 - Motor control command sent: MOTOR,ammonia1,forward,250
+2024-11-18 16:51:47 - Motor control command sent: MOTOR,ammonia2,forward,250
+2024-11-18 16:51:49 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:51:50 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:51:50 - Test type received!{"testType":"ammonia"}
+2024-11-18 16:51:50 - Attempting to connect to server for image upload
+2024-11-18 16:51:51 - Connection to server successful for image upload
+2024-11-18 16:51:51 - Image uploaded successfully
+2024-11-18 16:56:58 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 16:57:03 - Motor control command sent: MOTOR,nitrate1,forward,3500
+2024-11-18 16:57:06 - Motor control command sent: MOTOR,nitrate2,forward,3500
+2024-11-18 16:57:08 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:57:09 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:58:09 - Test type received!{"testType":"nitrate"}
+2024-11-18 16:58:09 - Attempting to connect to server for image upload
+2024-11-18 16:58:09 - Connection to server successful for image upload
+2024-11-18 16:58:10 - Image uploaded successfully
+2024-11-18 16:59:02 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 16:59:07 - Motor control command sent: MOTOR,nitrate1,forward,3500
+2024-11-18 16:59:10 - Motor control command sent: MOTOR,nitrate2,forward,3500
+2024-11-18 16:59:13 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:59:13 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 16:59:14 - Test type received!{"testType":"nitrate"}
+2024-11-18 16:59:14 - Attempting to connect to server for image upload
+2024-11-18 16:59:14 - Connection to server successful for image upload
+2024-11-18 16:59:14 - Image uploaded successfully
+2024-11-18 17:00:15 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 17:00:20 - Motor control command sent: MOTOR,nitrate1,forward,250
+2024-11-18 17:00:22 - Motor control command sent: MOTOR,nitrate2,forward,250
+2024-11-18 17:00:25 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 17:00:26 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 17:00:26 - Test type received!{"testType":"nitrate"}
+2024-11-18 17:00:26 - Attempting to connect to server for image upload
+2024-11-18 17:00:26 - Connection to server successful for image upload
+2024-11-18 17:00:26 - Image uploaded successfully
+2024-11-18 17:05:01 - Motor control command sent: MOTOR,pond_water,forward,5000
+2024-11-18 17:05:08 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 17:05:13 - Motor control command sent: MOTOR,ph,forward,5000
+2024-11-18 17:05:15 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 17:05:16 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 17:05:16 - Test type received!{"testType":"ph"}
+2024-11-18 17:05:16 - Attempting to connect to server for image upload
+2024-11-18 17:05:16 - Connection to server successful for image upload
+2024-11-18 17:05:17 - Image uploaded successfully
+2024-11-18 17:06:10 - Motor control command sent: MOTOR,pond_water,forward,5000
+2024-11-18 17:06:16 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 17:06:21 - Motor control command sent: MOTOR,ph,forward,1000
+2024-11-18 17:06:24 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 17:06:25 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 17:06:25 - Test type received!{"testType":"ph"}
+2024-11-18 17:06:25 - Attempting to connect to server for image upload
+2024-11-18 17:06:25 - Connection to server successful for image upload
+2024-11-18 17:06:25 - Image uploaded successfully
+2024-11-18 17:11:11 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 18:27:29 - Motor control command sent: MOTOR,pond_water,forward,5000
+2024-11-18 18:27:34 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 18:27:39 - Motor control command sent: MOTOR,ammonia1,forward,250
+2024-11-18 18:27:42 - Motor control command sent: MOTOR,ammonia2,forward,250
+2024-11-18 18:27:45 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 18:27:45 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 18:28:46 - Test type received!{"testType":"ammonia"}
+2024-11-18 18:28:46 - Attempting to connect to server for image upload
+2024-11-18 18:28:46 - Connection to server successful for image upload
+2024-11-18 18:28:46 - Image uploaded successfully
+2024-11-18 18:29:33 - Motor control command sent: MOTOR,control_water,forward,3500
+2024-11-18 18:29:38 - Motor control command sent: MOTOR,nitrate1,forward,250
+2024-11-18 18:29:41 - Motor control command sent: MOTOR,nitrate2,forward,250
+2024-11-18 18:29:43 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 18:29:44 - Motor control command sent: MOTOR,air_pump,forward,100
+2024-11-18 18:30:44 - Test type received!{"testType":"nitrate"}
+2024-11-18 18:30:44 - Attempting to connect to server for image upload
+2024-11-18 18:30:44 - Connection to server successful for image upload
+2024-11-18 18:30:45 - Image uploaded successfully

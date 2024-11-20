@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['testType'])) {
         $cmd = "php ./run_sequence.php testType=ph > /dev/null &";
     } elseif ($testType === "flush_test_tube") {
         // Flush the test tube
-        $cmd = '';
+        $cmd = "php ./run_sequence.php testType=flush_test_tube > /dev/null &";
     } else {
         // Invalid test type
         echo json_encode(["status" => "error", "message" => "Invalid test type"]);

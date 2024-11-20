@@ -97,7 +97,7 @@ try {
         }
     }
 
-    echo "\n Schedule check completed.";
+    // echo "\n Schedule check completed.";
 } catch (Exception $e) {
     // Ensure the test running lock file is cleared on error
     setTestRunning(false);

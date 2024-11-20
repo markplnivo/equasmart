@@ -25,3 +25,66 @@ Fatal error: Uncaught Error: Call to undefined function sendSMS() in /var/www/cr
 Stack trace:
 #0 {main}
   thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139
+PHP Fatal error:  Uncaught Error: Call to undefined function sendSMS() in /var/www/cronjobs/checkScheduledFeeding.php:139
+Stack trace:
+#0 {main}
+  thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139
+
+Fatal error: Uncaught Error: Call to undefined function sendSMS() in /var/www/cronjobs/checkScheduledFeeding.php:139
+Stack trace:
+#0 {main}
+  thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139
+PHP Fatal error:  Uncaught Error: Call to undefined function sendSMS() in /var/www/cronjobs/checkScheduledFeeding.php:139
+Stack trace:
+#0 {main}
+  thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139
+
+Fatal error: Uncaught Error: Call to undefined function sendSMS() in /var/www/cronjobs/checkScheduledFeeding.php:139
+Stack trace:
+#0 {main}
+  thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139
+PHP Fatal error:  Uncaught Error: Call to undefined function sendSMS() in /var/www/cronjobs/checkScheduledFeeding.php:139
+Stack trace:
+#0 {main}
+  thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139
+
+Fatal error: Uncaught Error: Call to undefined function sendSMS() in /var/www/cronjobs/checkScheduledFeeding.php:139
+Stack trace:
+#0 {main}
+  thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139
+PHP Fatal error:  Uncaught Error: Call to undefined function sendSMS() in /var/www/cronjobs/checkScheduledFeeding.php:139
+Stack trace:
+#0 {main}
+  thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139
+
+Fatal error: Uncaught Error: Call to undefined function sendSMS() in /var/www/cronjobs/checkScheduledFeeding.php:139
+Stack trace:
+#0 {main}
+  thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139
+PHP Fatal error:  Uncaught Error: Call to undefined function sendSMS() in /var/www/cronjobs/checkScheduledFeeding.php:139
+Stack trace:
+#0 {main}
+  thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139
+
+Fatal error: Uncaught Error: Call to undefined function sendSMS() in /var/www/cronjobs/checkScheduledFeeding.php:139
+Stack trace:
+#0 {main}
+  thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139
+PHP Fatal error:  Uncaught Error: Call to undefined function sendSMS() in /var/www/cronjobs/checkScheduledFeeding.php:139
+Stack trace:
+#0 {main}
+  thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139
+
+Fatal error: Uncaught Error: Call to undefined function sendSMS() in /var/www/cronjobs/checkScheduledFeeding.php:139
+Stack trace:
+#0 {main}
+  thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139
+PHP Fatal error:  Uncaught Error: Call to undefined function sendSMS() in /var/www/cronjobs/checkScheduledFeeding.php:139
+Stack trace:
+#0 {main}
+  thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139
+
+Fatal error: Uncaught Error: Call to undefined function sendSMS() in /var/www/cronjobs/checkScheduledFeeding.php:139
+Stack trace:
+#0 {main}
+  thrown in /var/www/cronjobs/checkScheduledFeeding.php on line 139

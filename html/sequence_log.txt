@@ -1,571 +1,516 @@
-[2024-11-17 13:41:54] Starting sequence for test type: ammonia
-[2024-11-17 13:41:54] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-17 13:41:54] Servo command: angle=0 - Command sent successfully
-[2024-11-17 13:41:55] Delay for 1000 ms
-[2024-11-17 13:41:56] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
-[2024-11-17 13:41:57] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 13:41:57] Delay for 5000 ms
-[2024-11-17 13:42:02] Executing motor command: {"motor":"control_water","direction":"forward","time":5000}
-[2024-11-17 13:42:02] Motor command: motor=control_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 13:42:02] Delay for 5000 ms
-[2024-11-17 13:42:07] Executing motor command: {"motor":"ammonia1","direction":"forward","time":5000}
-[2024-11-17 13:42:07] Motor command: motor=ammonia1, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 13:42:07] Delay for 5000 ms
-[2024-11-17 13:42:12] Executing motor command: {"motor":"ammonia2","direction":"forward","time":5000}
-[2024-11-17 13:42:12] Motor command: motor=ammonia2, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 13:42:12] Delay for 5000 ms
-[2024-11-17 13:42:17] Executing motor command: {"motor":"nitrate1","direction":"forward","time":5000}
-[2024-11-17 13:42:17] Motor command: motor=nitrate1, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 13:42:17] Delay for 5000 ms
-[2024-11-17 13:42:22] Executing motor command: {"motor":"nitrate2","direction":"forward","time":5000}
-[2024-11-17 13:42:23] Motor command: motor=nitrate2, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 13:42:23] Delay for 5000 ms
-[2024-11-17 13:42:28] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-17 13:42:28] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 13:42:28] Delay for 5000 ms
-[2024-11-17 13:42:33] Executing motor command: {"motor":"air_pump","direction":"forward","time":5000}
-[2024-11-17 13:42:33] Motor command: motor=air_pump, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 13:42:33] Delay for 5000 ms
-[2024-11-17 13:42:38] Executing servo command: {"servo":true,"angle":175,"duration":1000}
-[2024-11-17 13:42:38] Servo command: angle=175 - Command sent successfully
-[2024-11-17 13:42:39] Delay for 1000 ms
-[2024-11-17 13:42:40] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-17 13:42:41] Servo command: angle=0 - Command sent successfully
-[2024-11-17 13:42:42] Delay for 1000 ms
-[2024-11-17 13:42:43] Executing capture image action
-[2024-11-17 13:42:43] Capture image command - Image captured successfully
-[2024-11-17 13:42:43] Completed sequence for test type: ammonia
-[2024-11-17 16:15:10] Starting sequence for test type: ammonia
-[2024-11-17 16:15:10] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-17 16:15:11] Servo command: angle=0 - Command sent successfully
-[2024-11-17 16:15:12] Delay for 1000 ms
-[2024-11-17 16:15:13] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
-[2024-11-17 16:15:13] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 16:15:13] Delay for 5000 ms
-[2024-11-17 16:15:18] Executing motor command: {"motor":"control_water","direction":"forward","time":5000}
-[2024-11-17 16:15:18] Motor command: motor=control_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 16:15:18] Delay for 5000 ms
-[2024-11-17 16:15:23] Executing motor command: {"motor":"ammonia1","direction":"forward","time":5000}
-[2024-11-17 16:15:23] Motor command: motor=ammonia1, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 16:15:23] Delay for 5000 ms
-[2024-11-17 16:15:28] Executing motor command: {"motor":"ammonia2","direction":"forward","time":5000}
-[2024-11-17 16:15:29] Motor command: motor=ammonia2, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 16:15:29] Delay for 5000 ms
-[2024-11-17 16:15:34] Executing motor command: {"motor":"nitrate1","direction":"forward","time":5000}
-[2024-11-17 16:15:34] Motor command: motor=nitrate1, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 16:15:34] Delay for 5000 ms
-[2024-11-17 16:15:39] Executing motor command: {"motor":"nitrate2","direction":"forward","time":5000}
-[2024-11-17 16:15:39] Motor command: motor=nitrate2, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 16:15:39] Delay for 5000 ms
-[2024-11-17 16:15:44] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-17 16:15:44] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 16:15:44] Delay for 5000 ms
-[2024-11-17 16:15:49] Executing motor command: {"motor":"air_pump","direction":"forward","time":5000}
-[2024-11-17 16:15:50] Motor command: motor=air_pump, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 16:15:50] Delay for 5000 ms
-[2024-11-17 16:15:55] Executing servo command: {"servo":true,"angle":175,"duration":1000}
-[2024-11-17 16:15:55] Servo command: angle=175 - Command sent successfully
-[2024-11-17 16:15:56] Delay for 1000 ms
-[2024-11-17 16:15:57] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-17 16:15:57] Servo command: angle=0 - Command sent successfully
-[2024-11-17 16:15:58] Delay for 1000 ms
-[2024-11-17 16:15:59] Executing capture image action
-[2024-11-17 16:16:00] Capture image command - Image captured successfully
-[2024-11-17 16:16:00] Completed sequence for test type: ammonia
-[2024-11-17 22:29:25] Starting sequence for test type: ammonia
-[2024-11-17 22:29:25] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-17 22:29:25] Servo command: angle=0 - Command sent successfully
-[2024-11-17 22:29:26] Delay for 1000 ms
-[2024-11-17 22:29:27] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
-[2024-11-17 22:29:28] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:29:28] Delay for 5000 ms
-[2024-11-17 22:29:33] Executing motor command: {"motor":"control_water","direction":"forward","time":5000}
-[2024-11-17 22:29:33] Motor command: motor=control_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:29:33] Delay for 5000 ms
-[2024-11-17 22:29:38] Executing motor command: {"motor":"ammonia1","direction":"forward","time":5000}
-[2024-11-17 22:29:38] Motor command: motor=ammonia1, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:29:38] Delay for 5000 ms
-[2024-11-17 22:29:43] Executing motor command: {"motor":"ammonia2","direction":"forward","time":5000}
-[2024-11-17 22:29:43] Motor command: motor=ammonia2, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:29:43] Delay for 5000 ms
-[2024-11-17 22:29:48] Executing motor command: {"motor":"nitrate1","direction":"forward","time":5000}
-[2024-11-17 22:29:49] Motor command: motor=nitrate1, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:29:49] Delay for 5000 ms
-[2024-11-17 22:29:54] Executing motor command: {"motor":"nitrate2","direction":"forward","time":5000}
-[2024-11-17 22:29:54] Motor command: motor=nitrate2, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:29:54] Delay for 5000 ms
-[2024-11-17 22:29:59] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-17 22:29:59] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:29:59] Delay for 5000 ms
-[2024-11-17 22:30:04] Executing motor command: {"motor":"air_pump","direction":"forward","time":5000}
-[2024-11-17 22:30:04] Motor command: motor=air_pump, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:30:04] Delay for 5000 ms
-[2024-11-17 22:30:09] Executing servo command: {"servo":true,"angle":175,"duration":1000}
-[2024-11-17 22:30:10] Servo command: angle=175 - Command sent successfully
-[2024-11-17 22:30:11] Delay for 1000 ms
-[2024-11-17 22:30:12] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-17 22:30:12] Servo command: angle=0 - Command sent successfully
-[2024-11-17 22:30:13] Delay for 1000 ms
-[2024-11-17 22:30:14] Executing capture image action
-[2024-11-17 22:30:14] Capture image command - Image captured successfully
-[2024-11-17 22:30:14] Completed sequence for test type: ammonia
-[2024-11-17 22:31:31] Starting sequence for test type: ammonia
-[2024-11-17 22:31:31] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-17 22:31:32] Servo command: angle=0 - Command sent successfully
-[2024-11-17 22:31:33] Delay for 1000 ms
-[2024-11-17 22:31:34] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
-[2024-11-17 22:31:34] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:31:34] Delay for 5000 ms
-[2024-11-17 22:31:39] Executing motor command: {"motor":"control_water","direction":"forward","time":5000}
-[2024-11-17 22:31:39] Motor command: motor=control_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:31:39] Delay for 5000 ms
-[2024-11-17 22:31:44] Executing motor command: {"motor":"ammonia1","direction":"forward","time":5000}
-[2024-11-17 22:31:44] Motor command: motor=ammonia1, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:31:44] Delay for 5000 ms
-[2024-11-17 22:31:49] Executing motor command: {"motor":"ammonia2","direction":"forward","time":5000}
-[2024-11-17 22:31:50] Motor command: motor=ammonia2, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:31:50] Delay for 5000 ms
-[2024-11-17 22:31:55] Executing motor command: {"motor":"nitrate1","direction":"forward","time":5000}
-[2024-11-17 22:31:55] Motor command: motor=nitrate1, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:31:55] Delay for 5000 ms
-[2024-11-17 22:32:00] Executing motor command: {"motor":"nitrate2","direction":"forward","time":5000}
-[2024-11-17 22:32:00] Motor command: motor=nitrate2, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:32:00] Delay for 5000 ms
-[2024-11-17 22:32:05] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-17 22:32:05] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:32:05] Delay for 5000 ms
-[2024-11-17 22:32:10] Executing motor command: {"motor":"air_pump","direction":"forward","time":5000}
-[2024-11-17 22:32:11] Motor command: motor=air_pump, direction=forward, time=5000 - Command sent successfully
-[2024-11-17 22:32:11] Delay for 5000 ms
-[2024-11-17 22:32:16] Executing servo command: {"servo":true,"angle":175,"duration":1000}
-[2024-11-17 22:32:16] Servo command: angle=175 - Command sent successfully
-[2024-11-17 22:32:17] Delay for 1000 ms
-[2024-11-17 22:32:18] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-17 22:32:22] Servo command: angle=0 - Failed to send command
-[2024-11-17 22:32:23] Delay for 1000 ms
-[2024-11-17 22:32:24] Executing capture image action
-[2024-11-17 22:32:24] Capture image command - Image captured successfully
-[2024-11-17 22:32:24] Completed sequence for test type: ammonia
-[2024-11-18 01:02:33] Starting sequence for test type: ammonia
-[2024-11-18 01:02:33] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:02:33] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:02:34] Delay for 1000 ms
-[2024-11-18 01:02:35] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
-[2024-11-18 01:02:35] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:02:35] Delay for 5000 ms
-[2024-11-18 01:02:40] Executing motor command: {"motor":"control_water","direction":"forward","time":5000}
-[2024-11-18 01:02:40] Motor command: motor=control_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:02:40] Delay for 5000 ms
-[2024-11-18 01:02:45] Executing motor command: {"motor":"ammonia1","direction":"forward","time":5000}
-[2024-11-18 01:02:46] Motor command: motor=ammonia1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:02:46] Delay for 5000 ms
-[2024-11-18 01:02:51] Executing motor command: {"motor":"ammonia2","direction":"forward","time":5000}
-[2024-11-18 01:02:51] Motor command: motor=ammonia2, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:02:51] Delay for 5000 ms
-[2024-11-18 01:02:56] Executing motor command: {"motor":"nitrate1","direction":"forward","time":5000}
-[2024-11-18 01:02:56] Motor command: motor=nitrate1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:02:56] Delay for 5000 ms
-[2024-11-18 01:03:01] Executing motor command: {"motor":"nitrate2","direction":"forward","time":5000}
-[2024-11-18 01:03:01] Motor command: motor=nitrate2, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:03:01] Delay for 5000 ms
-[2024-11-18 01:03:06] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-18 01:03:07] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:03:07] Delay for 5000 ms
-[2024-11-18 01:03:12] Executing motor command: {"motor":"air_pump","direction":"forward","time":5000}
-[2024-11-18 01:03:12] Motor command: motor=air_pump, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:03:12] Delay for 5000 ms
-[2024-11-18 01:03:17] Executing servo command: {"servo":true,"angle":175,"duration":1000}
-[2024-11-18 01:03:17] Servo command: angle=175 - Command sent successfully
-[2024-11-18 01:03:18] Delay for 1000 ms
-[2024-11-18 01:03:19] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:03:19] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:03:20] Delay for 1000 ms
-[2024-11-18 01:03:21] Executing capture image action
-[2024-11-18 01:03:22] Capture image command - Image captured successfully
-[2024-11-18 01:03:22] Completed sequence for test type: ammonia
-[2024-11-18 01:17:02] Starting sequence for test type: ammonia
-[2024-11-18 01:17:02] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:17:02] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:17:03] Delay for 1000 ms
-[2024-11-18 01:17:04] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
-[2024-11-18 01:17:05] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:17:05] Delay for 5000 ms
-[2024-11-18 01:17:10] Executing motor command: {"motor":"control_water","direction":"forward","time":5000}
-[2024-11-18 01:17:10] Motor command: motor=control_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:17:10] Delay for 5000 ms
-[2024-11-18 01:17:15] Executing motor command: {"motor":"ammonia1","direction":"forward","time":5000}
-[2024-11-18 01:17:15] Motor command: motor=ammonia1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:17:15] Delay for 5000 ms
-[2024-11-18 01:17:20] Executing motor command: {"motor":"ammonia2","direction":"forward","time":5000}
-[2024-11-18 01:17:20] Motor command: motor=ammonia2, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:17:20] Delay for 5000 ms
-[2024-11-18 01:17:25] Executing motor command: {"motor":"nitrate1","direction":"forward","time":5000}
-[2024-11-18 01:17:26] Motor command: motor=nitrate1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:17:26] Delay for 5000 ms
-[2024-11-18 01:17:31] Executing motor command: {"motor":"nitrate2","direction":"forward","time":5000}
-[2024-11-18 01:17:31] Motor command: motor=nitrate2, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:17:31] Delay for 5000 ms
-[2024-11-18 01:17:36] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-18 01:17:36] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:17:36] Delay for 5000 ms
-[2024-11-18 01:17:41] Executing motor command: {"motor":"air_pump","direction":"forward","time":5000}
-[2024-11-18 01:17:41] Motor command: motor=air_pump, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:17:41] Delay for 5000 ms
-[2024-11-18 01:17:46] Executing servo command: {"servo":true,"angle":175,"duration":1000}
-[2024-11-18 01:17:47] Servo command: angle=175 - Command sent successfully
-[2024-11-18 01:17:48] Delay for 1000 ms
-[2024-11-18 01:17:49] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:17:59] Servo command: angle=0 - Failed to send command
-[2024-11-18 01:18:00] Delay for 1000 ms
-[2024-11-18 01:18:01] Executing capture image action
-[2024-11-18 01:18:18] Capture image command - Image captured successfully
-[2024-11-18 01:18:18] Completed sequence for test type: ammonia
-[2024-11-18 01:18:46] Starting sequence for test type: ammonia
-[2024-11-18 01:18:46] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:18:46] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:18:47] Delay for 1000 ms
-[2024-11-18 01:18:48] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
-[2024-11-18 01:18:48] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:18:48] Delay for 5000 ms
-[2024-11-18 01:18:53] Executing motor command: {"motor":"control_water","direction":"forward","time":5000}
-[2024-11-18 01:18:54] Motor command: motor=control_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:18:54] Delay for 5000 ms
-[2024-11-18 01:18:59] Executing motor command: {"motor":"ammonia1","direction":"forward","time":5000}
-[2024-11-18 01:18:59] Motor command: motor=ammonia1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:18:59] Delay for 5000 ms
-[2024-11-18 01:19:04] Executing motor command: {"motor":"ammonia2","direction":"forward","time":5000}
-[2024-11-18 01:19:04] Motor command: motor=ammonia2, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:19:04] Delay for 5000 ms
-[2024-11-18 01:19:09] Executing motor command: {"motor":"nitrate1","direction":"forward","time":5000}
-[2024-11-18 01:19:09] Motor command: motor=nitrate1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:19:09] Delay for 5000 ms
-[2024-11-18 01:19:14] Executing motor command: {"motor":"nitrate2","direction":"forward","time":5000}
-[2024-11-18 01:19:15] Motor command: motor=nitrate2, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:19:15] Delay for 5000 ms
-[2024-11-18 01:19:20] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-18 01:19:20] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:19:20] Delay for 5000 ms
-[2024-11-18 01:19:25] Executing motor command: {"motor":"air_pump","direction":"forward","time":5000}
-[2024-11-18 01:19:25] Motor command: motor=air_pump, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:19:25] Delay for 5000 ms
-[2024-11-18 01:19:30] Executing servo command: {"servo":true,"angle":175,"duration":1000}
-[2024-11-18 01:19:30] Servo command: angle=175 - Command sent successfully
-[2024-11-18 01:19:31] Delay for 1000 ms
-[2024-11-18 01:19:32] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:19:33] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:19:34] Delay for 1000 ms
-[2024-11-18 01:19:35] Executing capture image action
-[2024-11-18 01:19:35] Capture image command - Image captured successfully
-[2024-11-18 01:19:35] Completed sequence for test type: ammonia
-[2024-11-18 01:20:24] Starting sequence for test type: ammonia
-[2024-11-18 01:20:24] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:20:26] Servo command: angle=0 - Failed to send command
-[2024-11-18 01:20:27] Delay for 1000 ms
-[2024-11-18 01:20:28] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
-[2024-11-18 01:20:29] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:20:29] Delay for 5000 ms
-[2024-11-18 01:20:34] Executing motor command: {"motor":"control_water","direction":"forward","time":5000}
-[2024-11-18 01:20:34] Motor command: motor=control_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:20:34] Delay for 5000 ms
-[2024-11-18 01:20:39] Executing motor command: {"motor":"ammonia1","direction":"forward","time":5000}
-[2024-11-18 01:20:39] Motor command: motor=ammonia1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:20:39] Delay for 5000 ms
-[2024-11-18 01:20:44] Executing motor command: {"motor":"ammonia2","direction":"forward","time":5000}
-[2024-11-18 01:22:44] Motor command: motor=ammonia2, direction=forward, time=5000 - Failed to send command
-[2024-11-18 01:22:44] Delay for 5000 ms
-[2024-11-18 01:22:49] Executing motor command: {"motor":"nitrate1","direction":"forward","time":5000}
-[2024-11-18 01:22:54] Motor command: motor=nitrate1, direction=forward, time=5000 - Failed to send command
-[2024-11-18 01:22:54] Delay for 5000 ms
-[2024-11-18 01:22:59] Executing motor command: {"motor":"nitrate2","direction":"forward","time":5000}
-[2024-11-18 01:23:04] Motor command: motor=nitrate2, direction=forward, time=5000 - Failed to send command
-[2024-11-18 01:23:04] Delay for 5000 ms
-[2024-11-18 01:23:09] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-18 01:23:14] Motor command: motor=ph, direction=forward, time=5000 - Failed to send command
-[2024-11-18 01:23:14] Delay for 5000 ms
-[2024-11-18 01:23:19] Executing motor command: {"motor":"air_pump","direction":"forward","time":5000}
-[2024-11-18 01:23:24] Motor command: motor=air_pump, direction=forward, time=5000 - Failed to send command
-[2024-11-18 01:23:24] Delay for 5000 ms
-[2024-11-18 01:23:29] Executing servo command: {"servo":true,"angle":175,"duration":1000}
-[2024-11-18 01:23:34] Servo command: angle=175 - Failed to send command
-[2024-11-18 01:23:35] Delay for 1000 ms
-[2024-11-18 01:23:36] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:23:41] Servo command: angle=0 - Failed to send command
-[2024-11-18 01:23:42] Delay for 1000 ms
-[2024-11-18 01:23:43] Executing capture image action
-[2024-11-18 01:23:48] Capture image command - Failed to capture image
-[2024-11-18 01:23:48] Completed sequence for test type: ammonia
-[2024-11-18 01:40:02] Starting sequence for test type: ammonia
-[2024-11-18 01:40:02] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:40:02] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:40:03] Delay for 1000 ms
-[2024-11-18 01:40:04] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
-[2024-11-18 01:40:04] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:40:04] Delay for 5000 ms
-[2024-11-18 01:40:09] Executing motor command: {"motor":"control_water","direction":"forward","time":5000}
-[2024-11-18 01:40:10] Motor command: motor=control_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:40:10] Delay for 5000 ms
-[2024-11-18 01:40:15] Executing motor command: {"motor":"ammonia1","direction":"forward","time":5000}
-[2024-11-18 01:40:15] Motor command: motor=ammonia1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:40:15] Delay for 5000 ms
-[2024-11-18 01:40:20] Executing motor command: {"motor":"ammonia2","direction":"forward","time":5000}
-[2024-11-18 01:40:20] Motor command: motor=ammonia2, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:40:20] Delay for 5000 ms
-[2024-11-18 01:40:25] Executing motor command: {"motor":"nitrate1","direction":"forward","time":5000}
-[2024-11-18 01:40:25] Motor command: motor=nitrate1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:40:25] Delay for 5000 ms
-[2024-11-18 01:40:30] Executing motor command: {"motor":"nitrate2","direction":"forward","time":5000}
-[2024-11-18 01:40:31] Motor command: motor=nitrate2, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:40:31] Delay for 5000 ms
-[2024-11-18 01:40:36] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-18 01:40:36] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:40:36] Delay for 5000 ms
-[2024-11-18 01:40:41] Executing motor command: {"motor":"air_pump","direction":"forward","time":5000}
-[2024-11-18 01:40:41] Motor command: motor=air_pump, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:40:41] Delay for 5000 ms
-[2024-11-18 01:40:46] Executing servo command: {"servo":true,"angle":175,"duration":1000}
-[2024-11-18 01:40:47] Servo command: angle=175 - Command sent successfully
-[2024-11-18 01:40:48] Delay for 1000 ms
-[2024-11-18 01:40:49] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:40:49] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:40:50] Delay for 1000 ms
-[2024-11-18 01:40:51] Executing capture image action
-[2024-11-18 01:40:52] Capture image command - Image captured successfully
-[2024-11-18 01:40:52] Completed sequence for test type: ammonia
-[2024-11-18 01:44:39] Starting sequence for test type: ammonia
-[2024-11-18 01:44:39] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:44:40] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:44:41] Delay for 1000 ms
-[2024-11-18 01:44:42] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
-[2024-11-18 01:44:42] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:44:42] Delay for 5000 ms
-[2024-11-18 01:44:47] Executing motor command: {"motor":"control_water","direction":"forward","time":5000}
-[2024-11-18 01:44:47] Motor command: motor=control_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:44:47] Delay for 5000 ms
-[2024-11-18 01:44:52] Executing motor command: {"motor":"ammonia1","direction":"forward","time":5000}
-[2024-11-18 01:44:52] Motor command: motor=ammonia1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:44:52] Delay for 5000 ms
-[2024-11-18 01:44:57] Executing motor command: {"motor":"ammonia2","direction":"forward","time":5000}
-[2024-11-18 01:44:58] Motor command: motor=ammonia2, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:44:58] Delay for 5000 ms
-[2024-11-18 01:45:03] Executing motor command: {"motor":"nitrate1","direction":"forward","time":5000}
-[2024-11-18 01:45:03] Motor command: motor=nitrate1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:45:03] Delay for 5000 ms
-[2024-11-18 01:45:08] Executing motor command: {"motor":"nitrate2","direction":"forward","time":5000}
-[2024-11-18 01:45:08] Motor command: motor=nitrate2, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:45:08] Delay for 5000 ms
-[2024-11-18 01:45:13] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-18 01:45:13] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:45:13] Delay for 5000 ms
-[2024-11-18 01:45:18] Executing motor command: {"motor":"air_pump","direction":"forward","time":5000}
-[2024-11-18 01:45:19] Motor command: motor=air_pump, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:45:19] Delay for 5000 ms
-[2024-11-18 01:45:24] Executing servo command: {"servo":true,"angle":175,"duration":1000}
-[2024-11-18 01:45:24] Servo command: angle=175 - Command sent successfully
-[2024-11-18 01:45:25] Delay for 1000 ms
-[2024-11-18 01:45:26] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:45:26] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:45:27] Delay for 1000 ms
-[2024-11-18 01:45:28] Executing capture image action
-[2024-11-18 01:45:29] Capture image command - Image captured successfully
-[2024-11-18 01:45:29] Completed sequence for test type: ammonia
-[2024-11-18 01:46:06] Starting sequence for test type: ammonia
-[2024-11-18 01:46:06] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:46:06] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:46:07] Delay for 1000 ms
-[2024-11-18 01:46:08] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
-[2024-11-18 01:46:08] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:46:08] Delay for 5000 ms
-[2024-11-18 01:46:13] Executing motor command: {"motor":"control_water","direction":"forward","time":10000}
-[2024-11-18 01:46:13] Motor command: motor=control_water, direction=forward, time=10000 - Command sent successfully
-[2024-11-18 01:46:13] Delay for 10000 ms
-[2024-11-18 01:46:23] Executing motor command: {"motor":"ammonia1","direction":"forward","time":10000}
-[2024-11-18 01:46:24] Motor command: motor=ammonia1, direction=forward, time=10000 - Command sent successfully
-[2024-11-18 01:46:24] Delay for 10000 ms
-[2024-11-18 01:46:34] Executing motor command: {"motor":"ammonia2","direction":"forward","time":10000}
-[2024-11-18 01:46:34] Motor command: motor=ammonia2, direction=forward, time=10000 - Command sent successfully
-[2024-11-18 01:46:34] Delay for 10000 ms
-[2024-11-18 01:46:44] Executing motor command: {"motor":"nitrate1","direction":"forward","time":5000}
-[2024-11-18 01:46:44] Motor command: motor=nitrate1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:46:44] Delay for 5000 ms
-[2024-11-18 01:46:49] Executing motor command: {"motor":"nitrate2","direction":"forward","time":5000}
-[2024-11-18 01:46:50] Motor command: motor=nitrate2, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:46:50] Delay for 5000 ms
-[2024-11-18 01:46:55] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-18 01:46:55] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:46:55] Delay for 5000 ms
-[2024-11-18 01:47:00] Executing motor command: {"motor":"air_pump","direction":"forward","time":5000}
-[2024-11-18 01:47:00] Motor command: motor=air_pump, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:47:00] Delay for 5000 ms
-[2024-11-18 01:47:05] Executing servo command: {"servo":true,"angle":175,"duration":1000}
-[2024-11-18 01:47:05] Servo command: angle=175 - Command sent successfully
-[2024-11-18 01:47:06] Delay for 1000 ms
-[2024-11-18 01:47:07] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:47:08] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:47:09] Delay for 1000 ms
-[2024-11-18 01:47:10] Executing capture image action
-[2024-11-18 01:47:10] Capture image command - Image captured successfully
-[2024-11-18 01:47:10] Completed sequence for test type: ammonia
-[2024-11-18 01:48:59] Starting sequence for test type: ammonia
-[2024-11-18 01:48:59] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:49:00] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:49:01] Delay for 1000 ms
-[2024-11-18 01:49:02] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
-[2024-11-18 01:49:02] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:49:02] Delay for 5000 ms
-[2024-11-18 01:49:07] Executing motor command: {"motor":"control_water","direction":"forward","time":10000}
-[2024-11-18 01:49:07] Motor command: motor=control_water, direction=forward, time=10000 - Command sent successfully
-[2024-11-18 01:49:07] Delay for 10000 ms
-[2024-11-18 01:49:17] Executing motor command: {"motor":"ammonia1","direction":"forward","time":10000}
-[2024-11-18 01:49:17] Motor command: motor=ammonia1, direction=forward, time=10000 - Command sent successfully
-[2024-11-18 01:49:17] Delay for 10000 ms
-[2024-11-18 01:49:27] Executing motor command: {"motor":"ammonia2","direction":"forward","time":10000}
-[2024-11-18 01:49:28] Motor command: motor=ammonia2, direction=forward, time=10000 - Command sent successfully
-[2024-11-18 01:49:28] Delay for 10000 ms
-[2024-11-18 01:49:38] Executing motor command: {"motor":"nitrate1","direction":"forward","time":5000}
-[2024-11-18 01:49:38] Motor command: motor=nitrate1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:49:38] Delay for 5000 ms
-[2024-11-18 01:49:43] Executing motor command: {"motor":"nitrate2","direction":"forward","time":5000}
-[2024-11-18 01:49:43] Motor command: motor=nitrate2, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:49:43] Delay for 5000 ms
-[2024-11-18 01:49:48] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-18 01:49:48] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:49:48] Delay for 5000 ms
-[2024-11-18 01:49:53] Executing motor command: {"motor":"air_pump","direction":"forward","time":5000}
-[2024-11-18 01:49:54] Motor command: motor=air_pump, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:49:54] Delay for 5000 ms
-[2024-11-18 01:49:59] Executing servo command: {"servo":true,"angle":175,"duration":1000}
-[2024-11-18 01:49:59] Servo command: angle=175 - Command sent successfully
-[2024-11-18 01:50:00] Delay for 1000 ms
-[2024-11-18 01:50:01] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:50:01] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:50:02] Delay for 1000 ms
-[2024-11-18 01:50:03] Executing capture image action
-[2024-11-18 01:50:04] Capture image command - Image captured successfully
-[2024-11-18 01:50:04] Completed sequence for test type: ammonia
-[2024-11-18 01:50:59] Starting sequence for test type: ammonia
-[2024-11-18 01:50:59] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:50:59] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:51:00] Delay for 1000 ms
-[2024-11-18 01:51:01] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
-[2024-11-18 01:51:02] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:51:02] Delay for 5000 ms
-[2024-11-18 01:51:07] Executing motor command: {"motor":"control_water","direction":"forward","time":10000}
-[2024-11-18 01:51:07] Motor command: motor=control_water, direction=forward, time=10000 - Command sent successfully
-[2024-11-18 01:51:07] Delay for 10000 ms
-[2024-11-18 01:51:17] Executing motor command: {"motor":"ammonia1","direction":"forward","time":10000}
-[2024-11-18 01:51:17] Motor command: motor=ammonia1, direction=forward, time=10000 - Command sent successfully
-[2024-11-18 01:51:17] Delay for 10000 ms
-[2024-11-18 01:51:27] Executing motor command: {"motor":"ammonia2","direction":"forward","time":10000}
-[2024-11-18 01:51:27] Motor command: motor=ammonia2, direction=forward, time=10000 - Command sent successfully
-[2024-11-18 01:51:27] Delay for 10000 ms
-[2024-11-18 01:51:37] Executing motor command: {"motor":"nitrate1","direction":"forward","time":5000}
-[2024-11-18 01:51:38] Motor command: motor=nitrate1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:51:38] Delay for 5000 ms
-[2024-11-18 01:51:43] Executing motor command: {"motor":"nitrate2","direction":"forward","time":5000}
-[2024-11-18 01:51:43] Motor command: motor=nitrate2, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:51:43] Delay for 5000 ms
-[2024-11-18 01:51:48] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-18 01:51:48] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:51:48] Delay for 5000 ms
-[2024-11-18 01:51:53] Executing motor command: {"motor":"air_pump","direction":"forward","time":5000}
-[2024-11-18 01:51:53] Motor command: motor=air_pump, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 01:51:53] Delay for 5000 ms
-[2024-11-18 01:51:58] Executing servo command: {"servo":true,"angle":175,"duration":1000}
-[2024-11-18 01:51:58] Servo command: angle=175 - Command sent successfully
-[2024-11-18 01:51:59] Delay for 2000 ms
-[2024-11-18 01:52:01] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 01:52:02] Servo command: angle=0 - Command sent successfully
-[2024-11-18 01:52:03] Delay for 2000 ms
-[2024-11-18 01:52:05] Executing capture image action
-[2024-11-18 01:52:08] Capture image command - Image captured successfully
-[2024-11-18 01:52:08] Completed sequence for test type: ammonia
-[2024-11-18 02:03:01] Starting sequence for test type: nitrate
-[2024-11-18 02:03:01] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 02:03:01] Servo command: angle=0 - Command sent successfully
-[2024-11-18 02:03:02] Delay for 5000 ms
-[2024-11-18 02:03:07] Executing motor command: {"motor":"control_water","direction":"forward","time":10000}
-[2024-11-18 02:03:08] Motor command: motor=control_water, direction=forward, time=10000 - Command sent successfully
-[2024-11-18 02:03:08] Delay for 10000 ms
-[2024-11-18 02:03:18] Executing motor command: {"motor":"control_water","direction":"reverse","time":10000}
-[2024-11-18 02:03:18] Motor command: motor=control_water, direction=reverse, time=10000 - Command sent successfully
-[2024-11-18 02:03:18] Delay for 10000 ms
-[2024-11-18 02:03:28] Executing motor command: {"motor":"nitrate1","direction":"forward","time":5000}
-[2024-11-18 02:03:28] Motor command: motor=nitrate1, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 02:03:28] Delay for 5000 ms
-[2024-11-18 02:03:33] Executing motor command: {"motor":"nitrate1","direction":"reverse","time":5000}
-[2024-11-18 02:03:33] Motor command: motor=nitrate1, direction=reverse, time=5000 - Command sent successfully
-[2024-11-18 02:03:33] Delay for 5000 ms
-[2024-11-18 02:03:38] Executing motor command: {"motor":"nitrate2","direction":"forward","time":5000}
-[2024-11-18 02:03:39] Motor command: motor=nitrate2, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 02:03:39] Delay for 5000 ms
-[2024-11-18 02:03:44] Executing motor command: {"motor":"nitrate2","direction":"reverse","time":5000}
-[2024-11-18 02:03:44] Motor command: motor=nitrate2, direction=reverse, time=5000 - Command sent successfully
-[2024-11-18 02:03:44] Delay for 5000 ms
-[2024-11-18 02:03:49] Executing motor command: {"motor":"air_pump","direction":"reverse","time":2500}
-[2024-11-18 02:03:49] Motor command: motor=air_pump, direction=reverse, time=2500 - Command sent successfully
-[2024-11-18 02:03:49] Delay for 2500 ms
-[2024-11-18 02:03:52] Executing servo command: {"servo":true,"angle":90,"duration":1000}
-[2024-11-18 02:03:52] Servo command: angle=90 - Command sent successfully
-[2024-11-18 02:03:53] Delay for 1000 ms
-[2024-11-18 02:03:54] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 02:03:54] Servo command: angle=0 - Command sent successfully
-[2024-11-18 02:03:55] Delay for 1000 ms
-[2024-11-18 02:03:56] Executing capture image action
-[2024-11-18 02:03:57] Capture image command - Image captured successfully
-[2024-11-18 02:03:57] Completed sequence for test type: nitrate
-[2024-11-18 02:06:02] Starting sequence for test type: ph
-[2024-11-18 02:06:02] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 02:06:02] Servo command: angle=0 - Command sent successfully
-[2024-11-18 02:06:03] Delay for 5000 ms
-[2024-11-18 02:06:08] Executing motor command: {"motor":"control_water","direction":"forward","time":10000}
-[2024-11-18 02:06:08] Motor command: motor=control_water, direction=forward, time=10000 - Command sent successfully
-[2024-11-18 02:06:08] Delay for 10000 ms
-[2024-11-18 02:06:18] Executing motor command: {"motor":"control_water","direction":"reverse","time":10000}
-[2024-11-18 02:06:19] Motor command: motor=control_water, direction=reverse, time=10000 - Command sent successfully
-[2024-11-18 02:06:19] Delay for 10000 ms
-[2024-11-18 02:06:29] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-18 02:06:29] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 02:06:29] Delay for 5000 ms
-[2024-11-18 02:06:34] Executing motor command: {"motor":"ph","direction":"reverse","time":5000}
-[2024-11-18 02:06:34] Motor command: motor=ph, direction=reverse, time=5000 - Command sent successfully
-[2024-11-18 02:06:34] Delay for 5000 ms
-[2024-11-18 02:06:39] Executing motor command: {"motor":"air_pump","direction":"forward","time":2500}
-[2024-11-18 02:06:39] Motor command: motor=air_pump, direction=forward, time=2500 - Command sent successfully
-[2024-11-18 02:06:39] Delay for 2500 ms
-[2024-11-18 02:06:42] Executing servo command: {"servo":true,"angle":179,"duration":1000}
-[2024-11-18 02:06:42] Servo command: angle=179 - Command sent successfully
-[2024-11-18 02:06:43] Delay for 5000 ms
-[2024-11-18 02:06:48] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 02:06:48] Servo command: angle=0 - Command sent successfully
-[2024-11-18 02:06:49] Delay for 5000 ms
-[2024-11-18 02:06:54] Executing capture image action
-[2024-11-18 02:08:55] Capture image command - Failed to capture image
-[2024-11-18 02:08:55] Completed sequence for test type: ph
-[2024-11-18 02:10:25] Starting sequence for test type: ph
-[2024-11-18 02:10:25] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 02:10:30] Servo command: angle=0 - Failed to send command
-[2024-11-18 02:10:31] Delay for 5000 ms
-[2024-11-18 02:10:36] Executing motor command: {"motor":"control_water","direction":"forward","time":10000}
-[2024-11-18 02:10:43] Motor command: motor=control_water, direction=forward, time=10000 - Command sent successfully
-[2024-11-18 02:10:43] Delay for 10000 ms
-[2024-11-18 02:10:53] Executing motor command: {"motor":"control_water","direction":"reverse","time":10000}
-[2024-11-18 02:10:53] Motor command: motor=control_water, direction=reverse, time=10000 - Command sent successfully
-[2024-11-18 02:10:53] Delay for 10000 ms
-[2024-11-18 02:11:03] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
-[2024-11-18 02:11:03] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
-[2024-11-18 02:11:03] Delay for 5000 ms
-[2024-11-18 02:11:08] Executing motor command: {"motor":"ph","direction":"reverse","time":5000}
-[2024-11-18 02:11:09] Motor command: motor=ph, direction=reverse, time=5000 - Command sent successfully
-[2024-11-18 02:11:09] Delay for 5000 ms
-[2024-11-18 02:11:14] Executing motor command: {"motor":"air_pump","direction":"forward","time":2500}
-[2024-11-18 02:11:14] Motor command: motor=air_pump, direction=forward, time=2500 - Command sent successfully
-[2024-11-18 02:11:14] Delay for 2500 ms
-[2024-11-18 02:11:16] Executing servo command: {"servo":true,"angle":170,"duration":1000}
-[2024-11-18 02:11:17] Servo command: angle=170 - Command sent successfully
-[2024-11-18 02:11:18] Delay for 5000 ms
-[2024-11-18 02:11:23] Executing servo command: {"servo":true,"angle":0,"duration":1000}
-[2024-11-18 02:11:23] Servo command: angle=0 - Command sent successfully
-[2024-11-18 02:11:24] Delay for 5000 ms
-[2024-11-18 02:11:29] Executing capture image action
-[2024-11-18 02:11:29] Capture image command - Image captured successfully
-[2024-11-18 02:11:29] Completed sequence for test type: ph
+[2024-11-18 16:29:39] Starting sequence for test type: ammonia
+[2024-11-18 16:29:39] Executing motor command: {"motor":"air_pump","direction":"forward","time":2500}
+[2024-11-18 16:29:39] Motor command: motor=air_pump, direction=forward, time=2500 - Command sent successfully
+[2024-11-18 16:29:39] Delay for 2500 ms
+[2024-11-18 16:29:41] Executing servo command: {"servo":true,"angle":0,"duration":1000}
+[2024-11-18 16:29:42] Servo command: angle=0 - Command sent successfully
+[2024-11-18 16:29:43] Delay for 1000 ms
+[2024-11-18 16:29:44] Executing motor command: {"motor":"control_water","direction":"forward","time":5000}
+[2024-11-18 16:29:44] Motor command: motor=control_water, direction=forward, time=5000 - Command sent successfully
+[2024-11-18 16:29:44] Delay for 5000 ms
+[2024-11-18 16:29:49] Delay for 1000 ms
+[2024-11-18 16:29:50] Executing motor command: {"motor":"air_pump","direction":"forward","time":250}
+[2024-11-18 16:29:50] Motor command: motor=air_pump, direction=forward, time=250 - Command sent successfully
+[2024-11-18 16:29:50] Delay for 500 ms
+[2024-11-18 16:29:51] Executing motor command: {"motor":"air_pump","direction":"forward","time":250}
+[2024-11-18 16:29:51] Motor command: motor=air_pump, direction=forward, time=250 - Command sent successfully
+[2024-11-18 16:29:51] Delay for 500 ms
+[2024-11-18 16:29:51] Executing motor command: {"motor":"air_pump","direction":"forward","time":1000}
+[2024-11-18 16:29:52] Motor command: motor=air_pump, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:29:52] Delay for 1000 ms
+[2024-11-18 16:29:53] Executing servo command: {"servo":true,"angle":85,"duration":1500}
+[2024-11-18 16:29:53] Servo command: angle=85 - Command sent successfully
+[2024-11-18 16:29:54] Delay for 1000 ms
+[2024-11-18 16:29:55] Executing motor command: {"motor":"air_pump","direction":"forward","time":1000}
+[2024-11-18 16:29:56] Motor command: motor=air_pump, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:29:56] Delay for 1000 ms
+[2024-11-18 16:29:57] Completed sequence for test type: ammonia
+[2024-11-18 16:30:45] Starting sequence for test type: ammonia
+[2024-11-18 16:30:45] Executing motor command: {"motor":"air_pump","direction":"forward","time":2500}
+[2024-11-18 16:30:45] Motor command: motor=air_pump, direction=forward, time=2500 - Command sent successfully
+[2024-11-18 16:30:45] Delay for 2500 ms
+[2024-11-18 16:30:47] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 16:30:48] Servo command: angle=0 - Command sent successfully
+[2024-11-18 16:30:58] Delay for 1000 ms
+[2024-11-18 16:30:59] Executing motor command: {"motor":"control_water","direction":"forward","time":5000}
+[2024-11-18 16:30:59] Motor command: motor=control_water, direction=forward, time=5000 - Command sent successfully
+[2024-11-18 16:30:59] Delay for 5000 ms
+[2024-11-18 16:31:04] Delay for 1000 ms
+[2024-11-18 16:31:05] Executing motor command: {"motor":"air_pump","direction":"forward","time":250}
+[2024-11-18 16:31:06] Motor command: motor=air_pump, direction=forward, time=250 - Command sent successfully
+[2024-11-18 16:31:06] Delay for 500 ms
+[2024-11-18 16:31:06] Executing motor command: {"motor":"air_pump","direction":"forward","time":250}
+[2024-11-18 16:31:06] Motor command: motor=air_pump, direction=forward, time=250 - Command sent successfully
+[2024-11-18 16:31:06] Delay for 500 ms
+[2024-11-18 16:31:07] Executing motor command: {"motor":"air_pump","direction":"forward","time":1000}
+[2024-11-18 16:31:07] Motor command: motor=air_pump, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:31:07] Delay for 1000 ms
+[2024-11-18 16:31:08] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 16:31:08] Servo command: angle=170 - Command sent successfully
+[2024-11-18 16:31:18] Delay for 1000 ms
+[2024-11-18 16:31:19] Executing motor command: {"motor":"air_pump","direction":"forward","time":1000}
+[2024-11-18 16:31:20] Motor command: motor=air_pump, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:31:20] Delay for 1000 ms
+[2024-11-18 16:31:21] Completed sequence for test type: ammonia
+[2024-11-18 16:31:41] Starting sequence for test type: ammonia
+[2024-11-18 16:31:41] Executing motor command: {"motor":"air_pump","direction":"forward","time":2500}
+[2024-11-18 16:31:42] Motor command: motor=air_pump, direction=forward, time=2500 - Command sent successfully
+[2024-11-18 16:31:42] Delay for 2500 ms
+[2024-11-18 16:31:44] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 16:31:44] Servo command: angle=0 - Command sent successfully
+[2024-11-18 16:31:54] Delay for 1000 ms
+[2024-11-18 16:31:55] Executing motor command: {"motor":"control_water","direction":"forward","time":5000}
+[2024-11-18 16:31:56] Motor command: motor=control_water, direction=forward, time=5000 - Command sent successfully
+[2024-11-18 16:31:56] Delay for 5000 ms
+[2024-11-18 16:32:01] Delay for 1000 ms
+[2024-11-18 16:32:02] Executing motor command: {"motor":"air_pump","direction":"forward","time":250}
+[2024-11-18 16:32:02] Motor command: motor=air_pump, direction=forward, time=250 - Command sent successfully
+[2024-11-18 16:32:02] Delay for 500 ms
+[2024-11-18 16:32:02] Executing motor command: {"motor":"air_pump","direction":"forward","time":250}
+[2024-11-18 16:32:03] Motor command: motor=air_pump, direction=forward, time=250 - Command sent successfully
+[2024-11-18 16:32:03] Delay for 500 ms
+[2024-11-18 16:32:03] Executing motor command: {"motor":"air_pump","direction":"forward","time":1000}
+[2024-11-18 16:32:03] Motor command: motor=air_pump, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:32:03] Delay for 1000 ms
+[2024-11-18 16:32:04] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 16:32:05] Servo command: angle=170 - Command sent successfully
+[2024-11-18 16:32:15] Delay for 1000 ms
+[2024-11-18 16:32:16] Executing motor command: {"motor":"air_pump","direction":"forward","time":1000}
+[2024-11-18 16:32:16] Motor command: motor=air_pump, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:32:16] Delay for 1000 ms
+[2024-11-18 16:32:17] Completed sequence for test type: ammonia
+[2024-11-18 16:35:02] Starting sequence for test type: ammonia
+[2024-11-18 16:35:02] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 16:35:03] Servo command: angle=0 - Command sent successfully
+[2024-11-18 16:35:13] Delay for 1000 ms
+[2024-11-18 16:35:14] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 16:35:14] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:35:14] Delay for 3500 ms
+[2024-11-18 16:35:17] Delay for 1000 ms
+[2024-11-18 16:35:18] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:35:19] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:35:19] Delay for 500 ms
+[2024-11-18 16:35:19] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:35:19] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:35:19] Delay for 60000 ms
+[2024-11-18 16:36:19] Executing capture image action
+[2024-11-18 16:36:20] Capture image command - Image captured successfully
+[2024-11-18 16:36:20] Delay for 10000 ms
+[2024-11-18 16:36:30] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 16:36:30] Servo command: angle=170 - Command sent successfully
+[2024-11-18 16:36:40] Delay for 1000 ms
+[2024-11-18 16:36:41] Executing motor command: {"motor":"air_pump","direction":"forward","time":1000}
+[2024-11-18 16:37:13] Motor command: motor=air_pump, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:37:13] Completed sequence for test type: ammonia
+[2024-11-18 16:41:52] Starting sequence for test type: ammonia
+[2024-11-18 16:41:53] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 16:41:53] Servo command: angle=0 - Command sent successfully
+[2024-11-18 16:42:03] Delay for 1000 ms
+[2024-11-18 16:42:04] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 16:42:04] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:42:04] Delay for 3500 ms
+[2024-11-18 16:42:08] Delay for 1000 ms
+[2024-11-18 16:42:09] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:42:09] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:42:09] Delay for 500 ms
+[2024-11-18 16:42:09] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:42:10] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:42:10] Delay for 60000 ms
+[2024-11-18 16:43:10] Executing capture image action
+[2024-11-18 16:43:10] Capture image command - Image captured successfully
+[2024-11-18 16:43:10] Delay for 10000 ms
+[2024-11-18 16:43:20] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 16:43:21] Servo command: angle=170 - Command sent successfully
+[2024-11-18 16:43:31] Delay for 1000 ms
+[2024-11-18 16:43:32] Executing motor command: {"motor":"air_pump","direction":"forward","time":1000}
+[2024-11-18 16:43:32] Motor command: motor=air_pump, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:43:32] Completed sequence for test type: ammonia
+[2024-11-18 16:44:24] Starting sequence for test type: ammonia
+[2024-11-18 16:44:24] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 16:44:24] Servo command: angle=0 - Command sent successfully
+[2024-11-18 16:44:34] Delay for 1000 ms
+[2024-11-18 16:44:35] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 16:44:35] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:44:35] Delay for 3500 ms
+[2024-11-18 16:44:39] Delay for 1000 ms
+[2024-11-18 16:44:40] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:44:40] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:44:40] Delay for 500 ms
+[2024-11-18 16:44:40] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:44:41] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:44:41] Executing capture image action
+[2024-11-18 16:44:41] Capture image command - Image captured successfully
+[2024-11-18 16:44:41] Delay for 10000 ms
+[2024-11-18 16:44:51] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 16:44:51] Servo command: angle=170 - Command sent successfully
+[2024-11-18 16:45:01] Delay for 1000 ms
+[2024-11-18 16:45:02] Executing motor command: {"motor":"air_pump","direction":"forward","time":1000}
+[2024-11-18 16:45:03] Motor command: motor=air_pump, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:45:03] Completed sequence for test type: ammonia
+[2024-11-18 16:47:02] Starting sequence for test type: ammonia
+[2024-11-18 16:47:02] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 16:47:02] Servo command: angle=0 - Command sent successfully
+[2024-11-18 16:47:12] Delay for 1000 ms
+[2024-11-18 16:47:13] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 16:47:14] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:47:14] Delay for 3500 ms
+[2024-11-18 16:47:17] Delay for 1000 ms
+[2024-11-18 16:47:18] Executing motor command: {"motor":"ammonia1","direction":"forward","time":3500}
+[2024-11-18 16:47:18] Motor command: motor=ammonia1, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:47:18] Delay for 3500 ms
+[2024-11-18 16:47:22] Executing motor command: {"motor":"ammonia2","direction":"forward","time":3500}
+[2024-11-18 16:47:22] Motor command: motor=ammonia2, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:47:22] Delay for 3500 ms
+[2024-11-18 16:47:26] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:47:26] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:47:26] Delay for 500 ms
+[2024-11-18 16:47:26] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:47:27] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:47:27] Executing capture image action
+[2024-11-18 16:47:27] Capture image command - Image captured successfully
+[2024-11-18 16:47:27] Delay for 10000 ms
+[2024-11-18 16:47:37] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 16:47:37] Servo command: angle=170 - Command sent successfully
+[2024-11-18 16:47:47] Delay for 1000 ms
+[2024-11-18 16:47:48] Executing motor command: {"motor":"air_pump","direction":"forward","time":1000}
+[2024-11-18 16:47:49] Motor command: motor=air_pump, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:47:49] Completed sequence for test type: ammonia
+[2024-11-18 16:48:02] Starting sequence for test type: ammonia
+[2024-11-18 16:48:02] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 16:48:02] Servo command: angle=0 - Command sent successfully
+[2024-11-18 16:48:12] Delay for 1000 ms
+[2024-11-18 16:48:13] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 16:48:13] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:48:13] Delay for 3500 ms
+[2024-11-18 16:48:17] Delay for 1000 ms
+[2024-11-18 16:48:18] Executing motor command: {"motor":"ammonia1","direction":"forward","time":3500}
+[2024-11-18 16:48:18] Motor command: motor=ammonia1, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:48:18] Delay for 3500 ms
+[2024-11-18 16:48:21] Executing motor command: {"motor":"ammonia2","direction":"forward","time":3500}
+[2024-11-18 16:48:22] Motor command: motor=ammonia2, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:48:22] Delay for 3500 ms
+[2024-11-18 16:48:25] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:48:25] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:48:25] Delay for 500 ms
+[2024-11-18 16:48:26] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:48:26] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:48:26] Executing capture image action
+[2024-11-18 16:48:27] Capture image command - Image captured successfully
+[2024-11-18 16:48:27] Delay for 10000 ms
+[2024-11-18 16:48:37] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 16:48:37] Servo command: angle=170 - Command sent successfully
+[2024-11-18 16:48:47] Delay for 1000 ms
+[2024-11-18 16:48:48] Executing motor command: {"motor":"air_pump","direction":"forward","time":1000}
+[2024-11-18 16:48:48] Motor command: motor=air_pump, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:48:48] Completed sequence for test type: ammonia
+[2024-11-18 16:49:09] Starting sequence for test type: ammonia
+[2024-11-18 16:49:09] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 16:49:09] Servo command: angle=0 - Command sent successfully
+[2024-11-18 16:49:19] Delay for 1000 ms
+[2024-11-18 16:49:20] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 16:49:21] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:49:21] Delay for 3500 ms
+[2024-11-18 16:49:24] Delay for 1000 ms
+[2024-11-18 16:49:25] Executing motor command: {"motor":"ammonia1","direction":"forward","time":1000}
+[2024-11-18 16:49:25] Motor command: motor=ammonia1, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:49:25] Delay for 1000 ms
+[2024-11-18 16:49:26] Executing motor command: {"motor":"ammonia2","direction":"forward","time":1000}
+[2024-11-18 16:49:27] Motor command: motor=ammonia2, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:49:27] Delay for 1000 ms
+[2024-11-18 16:49:28] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:49:28] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:49:28] Delay for 500 ms
+[2024-11-18 16:49:28] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:49:29] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:49:29] Executing capture image action
+[2024-11-18 16:49:29] Capture image command - Image captured successfully
+[2024-11-18 16:49:29] Delay for 10000 ms
+[2024-11-18 16:49:39] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 16:49:39] Servo command: angle=170 - Command sent successfully
+[2024-11-18 16:49:49] Delay for 1000 ms
+[2024-11-18 16:49:50] Executing motor command: {"motor":"air_pump","direction":"forward","time":1000}
+[2024-11-18 16:49:51] Motor command: motor=air_pump, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:49:51] Completed sequence for test type: ammonia
+[2024-11-18 16:50:20] Starting sequence for test type: ammonia
+[2024-11-18 16:50:20] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 16:50:20] Servo command: angle=0 - Command sent successfully
+[2024-11-18 16:50:30] Delay for 1000 ms
+[2024-11-18 16:50:31] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 16:50:31] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:50:31] Delay for 3500 ms
+[2024-11-18 16:50:35] Delay for 1000 ms
+[2024-11-18 16:50:36] Executing motor command: {"motor":"ammonia1","direction":"forward","time":1000}
+[2024-11-18 16:50:36] Motor command: motor=ammonia1, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:50:36] Delay for 2500 ms
+[2024-11-18 16:50:38] Executing motor command: {"motor":"ammonia2","direction":"forward","time":1000}
+[2024-11-18 16:50:39] Motor command: motor=ammonia2, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 16:50:39] Delay for 2500 ms
+[2024-11-18 16:50:41] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:50:41] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:50:41] Delay for 500 ms
+[2024-11-18 16:50:42] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:50:42] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:50:42] Executing capture image action
+[2024-11-18 16:50:43] Capture image command - Image captured successfully
+[2024-11-18 16:50:43] Delay for 10000 ms
+[2024-11-18 16:50:53] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 16:50:53] Servo command: angle=170 - Command sent successfully
+[2024-11-18 16:51:03] Delay for 1000 ms
+[2024-11-18 16:51:04] Completed sequence for test type: ammonia
+[2024-11-18 16:51:28] Starting sequence for test type: ammonia
+[2024-11-18 16:51:28] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 16:51:28] Servo command: angle=0 - Command sent successfully
+[2024-11-18 16:51:38] Delay for 1000 ms
+[2024-11-18 16:51:39] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 16:51:39] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:51:39] Delay for 3500 ms
+[2024-11-18 16:51:43] Delay for 1000 ms
+[2024-11-18 16:51:44] Executing motor command: {"motor":"ammonia1","direction":"forward","time":250}
+[2024-11-18 16:51:44] Motor command: motor=ammonia1, direction=forward, time=250 - Command sent successfully
+[2024-11-18 16:51:44] Delay for 2500 ms
+[2024-11-18 16:51:46] Executing motor command: {"motor":"ammonia2","direction":"forward","time":250}
+[2024-11-18 16:51:47] Motor command: motor=ammonia2, direction=forward, time=250 - Command sent successfully
+[2024-11-18 16:51:47] Delay for 2500 ms
+[2024-11-18 16:51:49] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:51:49] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:51:49] Delay for 500 ms
+[2024-11-18 16:51:50] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:51:50] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:51:50] Executing capture image action
+[2024-11-18 16:51:51] Capture image command - Image captured successfully
+[2024-11-18 16:51:51] Delay for 10000 ms
+[2024-11-18 16:52:01] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 16:52:01] Servo command: angle=170 - Command sent successfully
+[2024-11-18 16:52:11] Delay for 1000 ms
+[2024-11-18 16:52:12] Completed sequence for test type: ammonia
+[2024-11-18 16:56:46] Starting sequence for test type: nitrate
+[2024-11-18 16:56:46] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 16:56:47] Servo command: angle=0 - Command sent successfully
+[2024-11-18 16:56:57] Delay for 1000 ms
+[2024-11-18 16:56:58] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 16:56:58] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:56:58] Delay for 3500 ms
+[2024-11-18 16:57:02] Delay for 1000 ms
+[2024-11-18 16:57:03] Executing motor command: {"motor":"nitrate1","direction":"forward","time":3500}
+[2024-11-18 16:57:03] Motor command: motor=nitrate1, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:57:03] Delay for 2500 ms
+[2024-11-18 16:57:05] Executing motor command: {"motor":"nitrate2","direction":"forward","time":3500}
+[2024-11-18 16:57:06] Motor command: motor=nitrate2, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:57:06] Delay for 2500 ms
+[2024-11-18 16:57:08] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:57:08] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:57:08] Delay for 500 ms
+[2024-11-18 16:57:09] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:57:09] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:57:09] Delay for 60000 ms
+[2024-11-18 16:58:09] Executing capture image action
+[2024-11-18 16:58:10] Capture image command - Image captured successfully
+[2024-11-18 16:58:10] Delay for 10000 ms
+[2024-11-18 16:58:20] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 16:58:20] Servo command: angle=170 - Command sent successfully
+[2024-11-18 16:58:30] Delay for 1000 ms
+[2024-11-18 16:58:31] Completed sequence for test type: nitrate
+[2024-11-18 16:58:50] Starting sequence for test type: nitrate
+[2024-11-18 16:58:50] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 16:58:51] Servo command: angle=0 - Command sent successfully
+[2024-11-18 16:59:01] Delay for 1000 ms
+[2024-11-18 16:59:02] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 16:59:02] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:59:02] Delay for 3500 ms
+[2024-11-18 16:59:06] Delay for 1000 ms
+[2024-11-18 16:59:07] Executing motor command: {"motor":"nitrate1","direction":"forward","time":3500}
+[2024-11-18 16:59:07] Motor command: motor=nitrate1, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:59:07] Delay for 2500 ms
+[2024-11-18 16:59:10] Executing motor command: {"motor":"nitrate2","direction":"forward","time":3500}
+[2024-11-18 16:59:10] Motor command: motor=nitrate2, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 16:59:10] Delay for 2500 ms
+[2024-11-18 16:59:12] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:59:13] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:59:13] Delay for 500 ms
+[2024-11-18 16:59:13] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 16:59:13] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 16:59:13] Executing capture image action
+[2024-11-18 16:59:14] Capture image command - Image captured successfully
+[2024-11-18 16:59:14] Delay for 10000 ms
+[2024-11-18 16:59:24] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 16:59:24] Servo command: angle=170 - Command sent successfully
+[2024-11-18 16:59:34] Delay for 1000 ms
+[2024-11-18 16:59:35] Completed sequence for test type: nitrate
+[2024-11-18 17:00:03] Starting sequence for test type: nitrate
+[2024-11-18 17:00:03] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 17:00:04] Servo command: angle=0 - Command sent successfully
+[2024-11-18 17:00:14] Delay for 1000 ms
+[2024-11-18 17:00:15] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 17:00:15] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 17:00:15] Delay for 3500 ms
+[2024-11-18 17:00:18] Delay for 1000 ms
+[2024-11-18 17:00:19] Executing motor command: {"motor":"nitrate1","direction":"forward","time":250}
+[2024-11-18 17:00:20] Motor command: motor=nitrate1, direction=forward, time=250 - Command sent successfully
+[2024-11-18 17:00:20] Delay for 2500 ms
+[2024-11-18 17:00:22] Executing motor command: {"motor":"nitrate2","direction":"forward","time":250}
+[2024-11-18 17:00:22] Motor command: motor=nitrate2, direction=forward, time=250 - Command sent successfully
+[2024-11-18 17:00:22] Delay for 2500 ms
+[2024-11-18 17:00:25] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 17:00:25] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 17:00:25] Delay for 500 ms
+[2024-11-18 17:00:26] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 17:00:26] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 17:00:26] Executing capture image action
+[2024-11-18 17:00:26] Capture image command - Image captured successfully
+[2024-11-18 17:00:26] Delay for 10000 ms
+[2024-11-18 17:00:36] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 17:00:37] Servo command: angle=170 - Command sent successfully
+[2024-11-18 17:00:47] Delay for 1000 ms
+[2024-11-18 17:00:48] Completed sequence for test type: nitrate
+[2024-11-18 17:04:50] Starting sequence for test type: ph
+[2024-11-18 17:04:50] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 17:04:50] Servo command: angle=0 - Command sent successfully
+[2024-11-18 17:05:00] Delay for 1000 ms
+[2024-11-18 17:05:01] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
+[2024-11-18 17:05:02] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
+[2024-11-18 17:05:02] Delay for 5000 ms
+[2024-11-18 17:05:07] Delay for 1000 ms
+[2024-11-18 17:05:08] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 17:05:08] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 17:05:08] Delay for 3500 ms
+[2024-11-18 17:05:11] Delay for 1000 ms
+[2024-11-18 17:05:12] Executing motor command: {"motor":"ph","direction":"forward","time":5000}
+[2024-11-18 17:05:13] Motor command: motor=ph, direction=forward, time=5000 - Command sent successfully
+[2024-11-18 17:05:13] Delay for 2500 ms
+[2024-11-18 17:05:15] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 17:05:15] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 17:05:15] Delay for 500 ms
+[2024-11-18 17:05:16] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 17:05:16] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 17:05:16] Executing capture image action
+[2024-11-18 17:05:17] Capture image command - Image captured successfully
+[2024-11-18 17:05:17] Delay for 10000 ms
+[2024-11-18 17:05:27] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 17:05:27] Servo command: angle=170 - Command sent successfully
+[2024-11-18 17:05:37] Delay for 1000 ms
+[2024-11-18 17:05:38] Completed sequence for test type: ph
+[2024-11-18 17:05:59] Starting sequence for test type: ph
+[2024-11-18 17:05:59] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 17:05:59] Servo command: angle=0 - Command sent successfully
+[2024-11-18 17:06:09] Delay for 1000 ms
+[2024-11-18 17:06:10] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
+[2024-11-18 17:06:10] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
+[2024-11-18 17:06:10] Delay for 5000 ms
+[2024-11-18 17:06:15] Delay for 1000 ms
+[2024-11-18 17:06:16] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 17:06:16] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 17:06:16] Delay for 3500 ms
+[2024-11-18 17:06:20] Delay for 1000 ms
+[2024-11-18 17:06:21] Executing motor command: {"motor":"ph","direction":"forward","time":1000}
+[2024-11-18 17:06:21] Motor command: motor=ph, direction=forward, time=1000 - Command sent successfully
+[2024-11-18 17:06:21] Delay for 2500 ms
+[2024-11-18 17:06:24] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 17:06:24] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 17:06:24] Delay for 500 ms
+[2024-11-18 17:06:24] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 17:06:25] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 17:06:25] Executing capture image action
+[2024-11-18 17:06:25] Capture image command - Image captured successfully
+[2024-11-18 17:06:25] Delay for 10000 ms
+[2024-11-18 17:06:35] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 17:06:35] Servo command: angle=170 - Command sent successfully
+[2024-11-18 17:06:45] Delay for 1000 ms
+[2024-11-18 17:06:46] Completed sequence for test type: ph
+[2024-11-18 17:10:59] Starting sequence for test type: flush_test_tube
+[2024-11-18 17:10:59] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 17:11:00] Servo command: angle=0 - Command sent successfully
+[2024-11-18 17:11:10] Delay for 1000 ms
+[2024-11-18 17:11:11] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 17:11:11] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 17:11:11] Delay for 1000 ms
+[2024-11-18 17:11:12] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 17:11:12] Servo command: angle=170 - Command sent successfully
+[2024-11-18 17:11:22] Delay for 1000 ms
+[2024-11-18 17:11:23] Completed sequence for test type: flush_test_tube
+[2024-11-18 18:27:17] Starting sequence for test type: ammonia
+[2024-11-18 18:27:17] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 18:27:18] Servo command: angle=0 - Command sent successfully
+[2024-11-18 18:27:28] Delay for 1000 ms
+[2024-11-18 18:27:29] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
+[2024-11-18 18:27:29] Motor command: motor=pond_water, direction=forward, time=5000 - Command sent successfully
+[2024-11-18 18:27:29] Delay for 5000 ms
+[2024-11-18 18:27:34] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 18:27:34] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 18:27:34] Delay for 3500 ms
+[2024-11-18 18:27:38] Delay for 1000 ms
+[2024-11-18 18:27:39] Executing motor command: {"motor":"ammonia1","direction":"forward","time":250}
+[2024-11-18 18:27:39] Motor command: motor=ammonia1, direction=forward, time=250 - Command sent successfully
+[2024-11-18 18:27:39] Delay for 2500 ms
+[2024-11-18 18:27:42] Executing motor command: {"motor":"ammonia2","direction":"forward","time":250}
+[2024-11-18 18:27:42] Motor command: motor=ammonia2, direction=forward, time=250 - Command sent successfully
+[2024-11-18 18:27:42] Delay for 2500 ms
+[2024-11-18 18:27:44] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 18:27:45] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 18:27:45] Delay for 500 ms
+[2024-11-18 18:27:45] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 18:27:45] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 18:27:45] Delay for 60000 ms
+[2024-11-18 18:28:45] Executing capture image action
+[2024-11-18 18:28:46] Capture image command - Image captured successfully
+[2024-11-18 18:28:46] Delay for 10000 ms
+[2024-11-18 18:28:56] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 18:28:57] Servo command: angle=170 - Command sent successfully
+[2024-11-18 18:29:07] Delay for 1000 ms
+[2024-11-18 18:29:08] Completed sequence for test type: ammonia
+[2024-11-18 18:29:21] Starting sequence for test type: nitrate
+[2024-11-18 18:29:21] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 18:29:22] Servo command: angle=0 - Command sent successfully
+[2024-11-18 18:29:32] Delay for 1000 ms
+[2024-11-18 18:29:33] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 18:29:33] Motor command: motor=control_water, direction=forward, time=3500 - Command sent successfully
+[2024-11-18 18:29:33] Delay for 3500 ms
+[2024-11-18 18:29:36] Delay for 1000 ms
+[2024-11-18 18:29:37] Executing motor command: {"motor":"nitrate1","direction":"forward","time":250}
+[2024-11-18 18:29:38] Motor command: motor=nitrate1, direction=forward, time=250 - Command sent successfully
+[2024-11-18 18:29:38] Delay for 2500 ms
+[2024-11-18 18:29:40] Executing motor command: {"motor":"nitrate2","direction":"forward","time":250}
+[2024-11-18 18:29:41] Motor command: motor=nitrate2, direction=forward, time=250 - Command sent successfully
+[2024-11-18 18:29:41] Delay for 2500 ms
+[2024-11-18 18:29:43] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 18:29:43] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 18:29:43] Delay for 500 ms
+[2024-11-18 18:29:44] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 18:29:44] Motor command: motor=air_pump, direction=forward, time=100 - Command sent successfully
+[2024-11-18 18:29:44] Delay for 60000 ms
+[2024-11-18 18:30:44] Executing capture image action
+[2024-11-18 18:30:45] Capture image command - Image captured successfully
+[2024-11-18 18:30:45] Delay for 10000 ms
+[2024-11-18 18:30:55] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 18:30:55] Servo command: angle=170 - Command sent successfully
+[2024-11-18 18:31:05] Delay for 1000 ms
+[2024-11-18 18:31:06] Completed sequence for test type: nitrate
+[2024-11-18 18:59:02] Starting sequence for test type: ammonia
+[2024-11-18 18:59:02] Executing servo command: {"servo":true,"angle":0,"duration":10000}
+[2024-11-18 18:59:07] Servo command: angle=0 - Failed to send command
+[2024-11-18 18:59:17] Delay for 1000 ms
+[2024-11-18 18:59:18] Executing motor command: {"motor":"pond_water","direction":"forward","time":5000}
+[2024-11-18 18:59:23] Motor command: motor=pond_water, direction=forward, time=5000 - Failed to send command
+[2024-11-18 18:59:23] Delay for 5000 ms
+[2024-11-18 18:59:28] Executing motor command: {"motor":"control_water","direction":"forward","time":3500}
+[2024-11-18 18:59:33] Motor command: motor=control_water, direction=forward, time=3500 - Failed to send command
+[2024-11-18 18:59:33] Delay for 3500 ms
+[2024-11-18 18:59:36] Delay for 1000 ms
+[2024-11-18 18:59:37] Executing motor command: {"motor":"ammonia1","direction":"forward","time":250}
+[2024-11-18 18:59:42] Motor command: motor=ammonia1, direction=forward, time=250 - Failed to send command
+[2024-11-18 18:59:42] Delay for 2500 ms
+[2024-11-18 18:59:45] Executing motor command: {"motor":"ammonia2","direction":"forward","time":250}
+[2024-11-18 18:59:50] Motor command: motor=ammonia2, direction=forward, time=250 - Failed to send command
+[2024-11-18 18:59:50] Delay for 2500 ms
+[2024-11-18 18:59:52] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 18:59:57] Motor command: motor=air_pump, direction=forward, time=100 - Failed to send command
+[2024-11-18 18:59:57] Delay for 500 ms
+[2024-11-18 18:59:58] Executing motor command: {"motor":"air_pump","direction":"forward","time":100}
+[2024-11-18 19:00:03] Motor command: motor=air_pump, direction=forward, time=100 - Failed to send command
+[2024-11-18 19:00:03] Delay for 60000 ms
+[2024-11-18 19:01:03] Executing capture image action
+[2024-11-18 19:01:08] Capture image command - Failed to capture image
+[2024-11-18 19:01:08] Delay for 10000 ms
+[2024-11-18 19:01:18] Executing servo command: {"servo":true,"angle":170,"duration":10000}
+[2024-11-18 19:01:23] Servo command: angle=170 - Failed to send command
+[2024-11-18 19:01:33] Delay for 1000 ms
+[2024-11-18 19:01:34] Completed sequence for test type: ammonia

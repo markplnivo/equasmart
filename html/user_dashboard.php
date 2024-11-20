@@ -214,11 +214,12 @@
         padding-inline: 5%;
     }
     .liveImage #video1 {
-        max-width: 400px; /* Adjust video width */
+        max-width: 800px; /* Adjust video width */
         height: auto; /* Maintain aspect ratio */
         transform: rotate(90deg);
         align-self: center;
         margin-block: 2%;
+        width: 100%;
     }
     @media (max-width: 370px){
         .liveImage #video1{

@@ -553,7 +553,7 @@ include "../logindbase.php";
             <table>
                 <tr>
                     <th>Select</th>
-                    <th>Change Role</th>
+                    <!-- <th>Change Role</th> -->
                     <th>User ID</th>
                     <th>Username</th>
                     <th>Position</th>
@@ -588,17 +588,6 @@ include "../logindbase.php";
                 ?>
                     <tr class=>
                         <td data-label="Select"><input type="checkbox" name="selected_rows[]" value="<?php echo $row["EmailAddress"]; ?>"></td>
-                        <td data-label="Change Role" id="roleCheckbox">
-                            <!-- Checkboxes with automatic checking based on user permissions -->
-                                    <span>
-                            <input type="checkbox" name="permissions[<?php echo $row["EmailAddress"]; ?>][]" value="view_only"
-                                <?php echo in_array('view_only', $userPermissions) ? 'checked' : ''; ?>> View Only
-                            <input type="checkbox" name="permissions[<?php echo $row["EmailAddress"]; ?>][]" value="control_motors"
-                                <?php echo in_array('control_motors', $userPermissions) ? 'checked' : ''; ?>> Control Motors
-                            <input type="checkbox" name="permissions[<?php echo $row["EmailAddress"]; ?>][]" value="set_schedules"
-                                <?php echo in_array('set_schedules', $userPermissions) ? 'checked' : ''; ?>> Set Schedules
-                                    </span>
-                        </td>
                         <td data-label="User ID"><?php echo $row["UserID"]; ?></td>
                         <td data-label="Username"><?php echo $row["Username"]; ?></td>
                                 <td data-label="Position" class="toggle-content"><span><?php echo $row["position"]; ?></span></td>

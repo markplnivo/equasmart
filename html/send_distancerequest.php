@@ -36,7 +36,7 @@ if ($stmt->num_rows > 0) {
     $updateStmt->bind_param("ds", $result, $currentDate);
     $updateStmt->execute();
     $updateStmt->close();
-    echo "Distance data updated successfully.";
+    echo "Feed levels updated successfully.";
 } else {
     // If no row exists, insert a new row
     $insertQuery = "INSERT INTO measurements (distance, timestamp) VALUES (?, NOW())";
@@ -44,7 +44,7 @@ if ($stmt->num_rows > 0) {
     $insertStmt->bind_param("d", $result);
     $insertStmt->execute();
     $insertStmt->close();
-    echo "Distance data saved successfully.";
+    echo "Feed levels saved successfully.";
 }
 
 // Close connections

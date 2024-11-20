@@ -47,11 +47,15 @@ include "../logindbase.php";  // Ensure the path is correct
             margin-bottom: 20px;
             font-size: 16px;
         }
-        .info .date, .info .temperature {
+
+        .info .date,
+        .info .temperature {
             flex: 1;
             padding: 0 10px;
         }
-        .info .date span, .info .temperature span {
+
+        .info .date span,
+        .info .temperature span {
             font-weight: bold;
             color: #333;
         }
@@ -85,7 +89,10 @@ include "../logindbase.php";  // Ensure the path is correct
             font-weight: bold;
             color: mediumaquamarine;
         }
-        tbody td:nth-child(2), tbody td:nth-child(3), tbody td:nth-child(4) {
+
+        tbody td:nth-child(2),
+        tbody td:nth-child(3),
+        tbody td:nth-child(4) {
             text-align: center;
         }
         td p {
@@ -103,127 +110,118 @@ include "../logindbase.php";  // Ensure the path is correct
     <div class="container">
         <div class="header">
             <div class="log-title">
-                <h1>Daily Log</h1>
+                <h1 id="logTitle">Daily Feed Log</h1>
             </div>
             <div class="logo">
-                <img src="images/logos.png" alt="Description of the image" title="Image Tooltip">
+                <img src="images/equasmartlogo_croppedlogo.png" alt="Description of the image" title="Image Tooltip">
             </div>
         </div>
 
         <div class="info">
         <?php
-            $feed_time = '';
-            $amount = '';
-            if (isset($conn)) {
-                $result = $conn->query("SELECT * FROM feed_history WHERE id = 1");
+            $current_date = date('Y-m-d');
+            $average_amount = "N/A";
+            $average_ph = "N/A";
 
-                if ($result && $result->num_rows > 0) {
-                    $row = $result->fetch_assoc();
-                    $feed_time = $row['feed_time'];
-                    $amount = $row['amount'];
-                } else {
-                    echo "No data found.";
+            // Get date and interval from POST request
+            $date = $_POST['date'] ?? $current_date;
+            $interval = $_POST['interval'] ?? 'daily';
+
+            if (isset($conn)) {
+                // Set conditions and parameters based on interval
+                switch ($interval) {
+                    case 'daily':
+                        $condition = "DATE(feed_time) = ?";
+                        $ph_condition = "DATE(Date_and_Time) = ?";
+                        $param_type = "s";
+                        $params = [$date];
+                        break;
+
+                    case 'weekly':
+                        $condition = "feed_time BETWEEN DATE_SUB(?, INTERVAL 6 DAY) AND ?";
+                        $ph_condition = "Date_and_Time BETWEEN DATE_SUB(?, INTERVAL 6 DAY) AND ?";
+                        $param_type = "ss";
+                        $params = [$date, $date];
+                        break;
+
+                    case 'monthly':
+                        $condition = "feed_time BETWEEN DATE_SUB(?, INTERVAL 1 MONTH) AND ?";
+                        $ph_condition = "Date_and_Time BETWEEN DATE_SUB(?, INTERVAL 1 MONTH) AND ?";
+                        $param_type = "ss";
+                        $params = [$date, $date];
+                        break;
+
+                    case 'yearly':
+                        $condition = "feed_time BETWEEN DATE_SUB(?, INTERVAL 1 YEAR) AND ?";
+                        $ph_condition = "Date_and_Time BETWEEN DATE_SUB(?, INTERVAL 1 YEAR) AND ?";
+                        $param_type = "ss";
+                        $params = [$date, $date];
+                        break;
                 }
-            } else {
-                echo "Database connection not established.";
+
+                // Query for average feed amount
+                $amount_query = "SELECT AVG(amount) AS average_amount FROM feed_history WHERE $condition";
+                $stmt1 = $conn->prepare($amount_query);
+                $stmt1->bind_param($param_type, ...$params);
+                $stmt1->execute();
+                $result1 = $stmt1->get_result();
+                $average_amount = $result1->fetch_assoc()['average_amount'] ?? "N/A";
+                $stmt1->close();
+
+                // Query for average pH value
+                $ph_query = "SELECT ROUND(AVG(Value), 2) AS average_ph FROM water_test_input WHERE Name = 'pH' AND $ph_condition";
+                $stmt2 = $conn->prepare($ph_query);
+                $stmt2->bind_param($param_type, ...$params);
+                $stmt2->execute();
+                $result2 = $stmt2->get_result();
+                $average_ph = $result2->fetch_assoc()['average_ph'] ?? "N/A";
+                $stmt2->close();
             }
             ?>
             <div class="date">
-                <p>Date: <span><?php echo htmlspecialchars($feed_time); ?></span></p>
-            </div>
-            <div class="temperature">
-                <p>Water Temp: <span>16°</span></p>
-                <p>Indoor Temp: <span>18° (high) / 7° (low)</span></p>
-                <p>Outdoor Temp: <span>10° (high) / 3° (low)</span></p>
+                <p>Date: <span><?php echo htmlspecialchars($date); ?></span></p>
             </div>
         </div>
 
         <table>
             <thead>
-                <tr>
-                    <th></th>
-                    <th>Morning</th>
-                    <th>Midday</th>
-                    <th>Evening</th>
-                </tr>
+                <!-- Add table headers here -->
             </thead>
             <tbody>
                 <tr>
-                    <td>Record pH (normal is 6.5–6.6)</td>
-                    <td>pH: <span>6.5</span></td>
-                    <td></td>
-                    <td>pH: <span>6.5</span></td>
+                    <td>Inspect Feed Machine</td>
+                    <td><input type="checkbox" checkebox></td>
                 </tr>
                 <tr>
                     <td>Plant observation</td>
-                    <td>&#10003;</td>
-                    <td></td>
-                    <td>&#10003;</td>
+                    <td><input type="checkbox" checkebox></td>
                 </tr>
                 <tr>
                     <td>Fish observation</td>
-                    <td>&#10003;</td>
-                    <td></td>
-                    <td>&#10003;</td>
+                    <td><input type="checkbox" checkebox></td>
                 </tr>
                 <tr>
-                    <td>
-                        Feed Fish:<br>
-                        - see Cohort Logs for daily feed rate<br>
-                        - spread daily feed rate across 2 or 3 feedings<br>
-                        - one scoop is <span>100</span> grams
-                    </td>
-                    <td>Tank 1 (grams)<br><span>250</span><br>Tank 2 (grams)<br><span>600</span><br>Tank 3 (grams)<br><span>1000</span></td>
-                    <td>Tank 1 (grams)<br><span>250</span><br>Tank 2 (grams)<br><span>600</span><br>Tank 3 (grams)<br><span>1000</span></td>
-                    <td>Tank 1 (grams)<br><span>250</span><br>Tank 2 (grams)<br><span>600</span><br>Tank 3 (grams)<br><span>1000</span></td>
-                </tr>
-                <tr>
-                    <td>Shake calcium sock (every 1-3 days)</td>
-                    <td>&#10003;</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Clean trough standpipe filters</td>
-                    <td></td>
-                    <td>&#10003;</td>
-                    <td>&#10003;</td>
-                </tr>
-                <tr>
-                    <td>Water seedlings</td>
-                    <td></td>
-                    <td>&#10003;</td>
-                    <td>&#10003;</td>
-                </tr>
-                <tr>
-                    <td>Flush (pop) SPAs for Tanks 1-3</td>
-                    <td></td>
-                    <td>&#10003;</td>
-                    <td>&#10003;</td>
-                </tr>
-                <tr>
-                    <td>Check sump level and fill as needed</td>
-                    <td></td>
-                    <td>&#10003;</td>
-                    <td>&#10003;</td>
-                </tr>
-                <tr>
-                    <td>Check CFB filters and clean as needed</td>
-                    <td></td>
-                    <td></td>
-                    <td>&#10003;</td>
-                </tr>
-                <tr>
-                    <td>Check pest traps</td>
-                    <td></td>
-                    <td></td>
-                    <td>&#10003;</td>
-                </tr>
-                <tr>
-                    <td colspan="4" class="notes">Amount: <?php echo htmlspecialchars($amount); ?></td>
+                    <!-- <td>Amount of Feed (grams):</td>
+                    <td><span>
+                        <?php # echo htmlspecialchars(number_format($average_amount, 2)); 
+                        ?></span></td> -->
+                    <td>Amount of Feed (grams):</td>
+                    <td><span><?php echo is_numeric($average_amount) ? htmlspecialchars(number_format($average_amount, 2)) : 'N/A'; ?></span></td>
+
                 </tr>
             </tbody>
         </table>
     </div>
+    <script>
+        function updateDateDisplay() {
+            // Get the selected date from the date input
+            var selectedDate = document.getElementById("date").value;
+
+            // Update the displayed date span with the selected date
+            document.getElementById("displayDate").textContent = selectedDate;
+
+            // Optionally, you can also send the selected date to the server using AJAX if needed
+        }
+    </script>
 </body>
 </html>

@@ -1,5 +1,9 @@
 <!-- j -->
-<?php ob_start(); ?>
+<?php ob_start();
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -147,8 +151,10 @@
             display: grid;
             grid-template-columns: 40% 1fr;
             grid-area: 1/1/2/span 2;
-            width: 100%; /* Increase width */
-            height: 120%; /* Increase height */
+            width: 100%;
+            /* Increase width */
+            height: 120%;
+            /* Increase height */
             padding-block: 1%;
             padding-inline: 2%;
             background-color: lemonchiffon;
@@ -158,8 +164,10 @@
         }
 
         #lineChart {
-            width: 100%; /* Make canvas width 100% of container */
-            height: 100%; /* Make canvas height 100% of container */
+            width: 100%;
+            /* Make canvas width 100% of container */
+            height: 100%;
+            /* Make canvas height 100% of container */
         }
 
         label {
@@ -167,12 +175,16 @@
             margin-bottom: 8px;
             text-align: center;
         }
-        .view-buttons{
+
+        .view-buttons {
             display: flex;
             flex-direction: column;
+            row-gap: 10px;
         }
-        #feedLogs{ /* view feed logs button */
-            font-size: var(--step-0) ;
+
+        #feedLogs {
+            /* view feed logs button */
+            font-size: var(--step-0);
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -183,9 +195,11 @@
             width: 65%;
             margin: 5px auto;
         }
-        #feedLogs:hover{
+
+        #feedLogs:hover {
             background-color: #ff8554;
         }
+
         .button-container {
             text-align: center;
             margin-top: 20px;
@@ -487,7 +501,8 @@
         /* Modal Content */
         .modal-content {
             background-color: #fefefe;
-            margin: 5% auto;/* 5% from the top and centered */
+            margin: 5% auto;
+            /* 5% from the top and centered */
             padding: var(--space-m-l);
             font-size: var(--step-1);
             border: 1px solid #888;
@@ -562,6 +577,155 @@
             padding-block: var(--space-s);
         }
 
+        .view-buttons {
+            display: flex;
+            justify-content: start;
+            margin-bottom: 1%;
+            margin-top: 1%;
+        }
+
+        .view-buttons button {
+            margin: auto 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: lightsalmon;
+            color: #000;
+            height: 50%;
+        }
+
+        .view-buttons button:hover {
+            background-color: peru;
+        }
+
+        /* Styling for the log table */
+        #feedLogTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: var(--step-0);
+            text-align: left;
+        }
+
+        #feedLogTable th,
+        #feedLogTable td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #feedLogTable th {
+            background-color: mediumaquamarine;
+            font-weight: bold;
+        }
+
+        #feedLogTable tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        #feedLogTable tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Search bar styling */
+        #logSearch {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: var(--step-0);
+        }
+
+        /* Pagination container */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .pagination button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
+
+        .pagination button:hover {
+            background-color: peru;
+        }
+
+        /* Scoped styles for the modal - specific to .chart_container */
+        .chart_container .img-modal {
+            position: fixed;
+            z-index: 1000;
+            /* High value to ensure it overlays other elements */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chart_container .img-modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart_container .img-modal-content img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .chart_container .img-modal .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .chart_container .img-modal .close:hover {
+            color: #ff0000;
+        }
+
+        /* Scoped button styles */
+        .chart_container .img-modal-button {
+
+            padding: 5px 10px;
+            background-color: #ff8554;
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+            width: 40%;
+            height: 20%;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .chart_container .img-modal-button:hover {
+            background-color: #0056b3;
+        }
+
         @media (max-width: 1010px) {
             body {
                 display: grid;
@@ -583,14 +747,17 @@
                 grid-template-columns: auto;
                 overflow-y: scroll;
             }
-            .view-buttons{
+
+            .view-buttons {
                 display: flex;
                 flex-direction: column;
             }
-            #feedLogs{
+
+            #feedLogs {
                 width: 65%;
                 align-self: center;
             }
+
             .date_container {
                 grid-area: auto;
                 margin: 2% auto;
@@ -690,86 +857,25 @@
                 font-size: var(--step-0);
             }
 
+            /* Scoped button styles */
+            .chart_container .img-modal-button {
+                padding: 5px 10px;
+                background-color: #ff8554;
+                color: #fff;
+                border: none;
+                border-radius: 15px;
+                cursor: pointer;
+                font-size: 0.6em;
+                transition: background-color 0.3s ease;
+                width: 40%;
+                height: 20%;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
         }
 
-        .view-buttons {
-            display: flex;
-            justify-content: start;
-            margin-bottom: 1%;
-            margin-top: 1%;
-        }
 
-        .view-buttons button {
-            margin: auto 0;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: lightsalmon;
-            color: #000;
-            height: 50%;
-        }
-
-        .view-buttons button:hover {
-            background-color: peru;
-        }
-        /* Styling for the log table */
-#feedLogTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: var(--step-0);
-    text-align: left;
-}
-
-#feedLogTable th, #feedLogTable td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-#feedLogTable th {
-    background-color: mediumaquamarine;
-    font-weight: bold;
-}
-
-#feedLogTable tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-#feedLogTable tr:hover {
-    background-color: #f1f1f1;
-}   
-
-/* Search bar styling */
-#logSearch {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: var(--step-0);
-}
-
-/* Pagination container */
-.pagination {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-}
-
-.pagination button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: lightsalmon;
-    cursor: pointer;
-}
-
-.pagination button:hover {
-            background-color: peru;
-        }
     </style>
 </head>
 
@@ -846,19 +952,32 @@
         <div class="chart_container">
             <div class="view-buttons">
                 <button id="feedLogs"><i class="fas fa-history"></i> View Logs</button>
+
+                <!-- Button to Open Modal for Image -->
+                <button id="openImageModal" class="img-modal-button"><i class="fas fa-image"></i>Feeding Information</button>
+
                 <div class="date_container">
                     <h2>Select Date</h2>
                     <input id="date" type="date" value="2021-07-22">
-                    <!-- <button onclick="controlMotor('off')">Turn Motor OFF</button>
-                <button id="cronToggleButton" onclick="toggleCronJob()">Toggle Cron Job</button>
-                <button onclick="captureImage()">Capture and Upload Image</button>
-                <p id="statusMessage"></p> -->
                 </div>
             </div>
 
             <canvas id="lineChart" style="justify-self:center;"></canvas>
 
+            <!-- Modal Structure -->
+            <div id="imageModal" class="img-modal">
+                <div class="img-modal-content">
+                    <span class="close">&times;</span>
+                    <img id="modalImage" src="images/feeding.png" alt="Captured Image">
+                </div>
+            </div>
         </div>
+
+        <!-- Link to the external CSS file -->
+        <link rel="stylesheet" href="styles.css">
+
+
+
 
         <!-- Additional containers -->
 
@@ -920,7 +1039,7 @@
             })
             .catch(error => console.error("Error:", error));
     });
-    
+
     // Fetch feed settings on page load
     $(document).ready(function() {
         fetchFeedSettings();
@@ -1054,18 +1173,18 @@
 
     // Function to update the chart with new feed history data
     function updateChart(feedData) {
-    // Check if feedData is empty or undefined
-    if (!feedData || feedData.length === 0) {
-        console.warn("No data available to update the chart.");
-        lineChart.data.labels = []; // Clear labels
-        lineChart.data.datasets[0].data = []; // Clear dataset
-        lineChart.update();
-        return;
-    }
+        // Check if feedData is empty or undefined
+        if (!feedData || feedData.length === 0) {
+            console.warn("No data available to update the chart.");
+            lineChart.data.labels = []; // Clear labels
+            lineChart.data.datasets[0].data = []; // Clear dataset
+            lineChart.update();
+            return;
+        }
 
-    // Proceed with populating the chart if data is available
-    var labels = feedData.map(entry => formatTimeTo12Hour(entry.feed_time));
-    var data = feedData.map(entry => entry.amount);
+        // Proceed with populating the chart if data is available
+        var labels = feedData.map(entry => formatTimeTo12Hour(entry.feed_time));
+        var data = feedData.map(entry => entry.amount);
 
         lineChart.data.labels = labels;
         lineChart.data.datasets[0].data = data;
@@ -1087,8 +1206,8 @@
             datasets: [{
                 label: 'Total Daily Feed History',
                 data: [], // Initially empty
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1
             }]
         },
@@ -1122,37 +1241,37 @@
     // Fetch feed history for the selected date
     function fetchFeedHistory() {
         var selectedDate = document.getElementById('date').value;
-    console.log('Fetching feed history for date:', selectedDate);
+        console.log('Fetching feed history for date:', selectedDate);
 
         $.ajax({
-        url: '/feed_settings_ajax/get_feed_history.php',
+            url: '/feed_settings_ajax/get_feed_history.php',
             type: 'POST',
             dataType: 'json',
             data: {
                 selectedDate: selectedDate
             }, // Send selected date to the server
             success: function(response) {
-            console.log('Server response:', response);
+                console.log('Server response:', response);
 
-            if (response.message) {
-                console.warn(response.message);
-                alert(response.message);
-                lineChart.data.labels = [];
-                lineChart.data.datasets[0].data = [];
-                lineChart.update();
-                return;
-            }
+                if (response.message) {
+                    console.warn(response.message);
+                    alert(response.message);
+                    lineChart.data.labels = [];
+                    lineChart.data.datasets[0].data = [];
+                    lineChart.update();
+                    return;
+                }
 
-            if (response && Array.isArray(response)) {
-                updateChart(response);
-            } else {
-                console.error("Invalid data format received from the server:", response);
-            }
+                if (response && Array.isArray(response)) {
+                    updateChart(response);
+                } else {
+                    console.error("Invalid data format received from the server:", response);
+                }
             },
-        error: function(xhr, status, error) {
-            console.error('Error fetching feed history:', xhr);
-            console.error('Status:', status);
-            console.error('Error:', error);
+            error: function(xhr, status, error) {
+                console.error('Error fetching feed history:', xhr);
+                console.error('Status:', status);
+                console.error('Error:', error);
             }
         });
     }
@@ -1458,6 +1577,29 @@
             modal.style.display = "none";
         }
     }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const modal = document.getElementById("imageModal");
+        const openModalButton = document.getElementById("openImageModal");
+        const closeModalButton = modal.querySelector(".close");
+
+        // Open the modal
+        openModalButton.addEventListener("click", function() {
+            modal.style.display = "flex";
+        });
+
+        // Close the modal
+        closeModalButton.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        // Close the modal when clicking outside the modal content
+        window.addEventListener("click", function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
 </script>
 
 

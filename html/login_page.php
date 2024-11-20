@@ -293,7 +293,9 @@ $conn->close();
 <body>
     <div class="container">
         <div class="image-section">
+            <a href="index.php">
             <img src="./images/equasmartlogo_nobackground.png" alt="EquaSmart Logo">
+            </a>
         </div>
         <div class="login-section">
             <h2> Login</h2>

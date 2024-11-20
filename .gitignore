@@ -1,0 +1,7 @@
+
+cronjobs/cron_error_log.txt
+cronjobs/cron_output.log
+html/cron_output.txt
+html/esp32water_logs.txt
+html/sequence_log.txt
+html/water_testing_logs.txt

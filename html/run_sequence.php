@@ -98,36 +98,30 @@ function getTestSequence($testType, $conn) {
         $controlwater_time = getMotorTime($conn, "control_water");
         $ammonia1_time = getMotorTime($conn, "ammonia1");
         $ammonia2_time = getMotorTime($conn, "ammonia2");
-        $nitrate1_time = getMotorTime($conn, "nitrate1");
-        $nitrate2_time = getMotorTime($conn, "nitrate2");
-        $ph_time = getMotorTime($conn, "ph");
         $pondwater_time = getMotorTime($conn, "pond_water");
 
         $sequence = [
-            ["servo" => true, "angle" => 0, "duration" => 1000],
+            ["servo" => true, "angle" => 0, "duration" => 10000],
             ["delay" => 1000],
             ["motor" => "pond_water", "direction" => "forward", "time" => $pondwater_time],
             ["delay" => $pondwater_time],
             ["motor" => "control_water", "direction" => "forward", "time" => $controlwater_time],
             ["delay" => $controlwater_time],
+            ["delay" => 1000],
             ["motor" => "ammonia1", "direction" => "forward", "time" => $ammonia1_time],
-            ["delay" => $ammonia1_time],
+            ["delay" => 2500],
             ["motor" => "ammonia2", "direction" => "forward", "time" => $ammonia2_time],
-            ["delay" => $ammonia2_time],
-            ["motor" => "nitrate1", "direction" => "forward", "time" => $nitrate1_time],
-            ["delay" => $nitrate1_time],
-            ["motor" => "nitrate2", "direction" => "forward", "time" => $nitrate2_time],
-            ["delay" => $nitrate2_time],
-            ["motor" => "ph", "direction" => "forward", "time" => $ph_time],
-            ["delay" => $ph_time],
-            ["motor" => "air_pump", "direction" => "forward", "time" => 5000],
+            ["delay" => 2500],
+            ["motor" => "air_pump", "direction" => "forward", "time" => 100],
             // reverse for air pump is correct
-            ["delay" => 5000],
-            ["servo" => true, "angle" => 170, "duration" => 1000],
-            ["delay" => 2000],
-            ["servo" => true, "angle" => 0, "duration" => 1000],
-            ["delay" => 2000],
-            ["action" => "capture_image"]
+            ["delay" => 500],
+            ["motor" => "air_pump", "direction" => "forward", "time" => 100],
+            // reverse for air pump is correct
+            ["delay" => 60000],
+            ["action" => "capture_image"],
+            ["delay" => 10000],
+            ["servo" => true, "angle" => 170, "duration" => 10000],
+            ["delay" => 1000]
 
         // $sequence = [
         //     ["servo" => true, "angle" => 0, "duration" => 1000],
@@ -158,55 +152,117 @@ function getTestSequence($testType, $conn) {
         $controlwater_time = getMotorTime($conn, "control_water");
         $nitrate1_time = getMotorTime($conn, "nitrate1");
         $nitrate2_time = getMotorTime($conn, "nitrate2");
+        $pondwater_time = getMotorTime($conn, "pond_water");
 
         $sequence = [
-            ["servo" => true, "angle" => 0, "duration" => 1000],
-            ["delay" => 5000],
+            ["servo" => true, "angle" => 0, "duration" => 10000],
+            ["delay" => 1000],
+            // ["motor" => "pond_water", "direction" => "forward", "time" => $pondwater_time],
+            // ["delay" => $pondwater_time],
             ["motor" => "control_water", "direction" => "forward", "time" => $controlwater_time],
             ["delay" => $controlwater_time],
-            ["motor" => "control_water", "direction" => "reverse", "time" => $controlwater_time],
-            ["delay" => $controlwater_time],
+            ["delay" => 1000],
             ["motor" => "nitrate1", "direction" => "forward", "time" => $nitrate1_time],
-            ["delay" => $nitrate1_time],
-            ["motor" => "nitrate1", "direction" => "reverse", "time" => $nitrate1_time],
-            ["delay" => $nitrate1_time],
-            ["motor" => "nitrate2", "direction" => "forward", "time" => $nitrate2_time],
-            ["delay" => $nitrate2_time],
-            ["motor" => "nitrate2", "direction" => "reverse", "time" => $nitrate2_time],
-            ["delay" => $nitrate2_time],
-            ["motor" => "air_pump", "direction" => "reverse", "time" => 2500],
-            // reverse for air pump is correct
             ["delay" => 2500],
-            ["servo" => true, "angle" => 90, "duration" => 1000],
-            ["delay" => 1000],
-            ["servo" => true, "angle" => 0, "duration" => 1000],
-            ["delay" => 1000],
-            ["action" => "capture_image"]
+            ["motor" => "nitrate2", "direction" => "forward", "time" => $nitrate2_time],
+            ["delay" => 2500],
+            ["motor" => "air_pump", "direction" => "forward", "time" => 100],
+            // reverse for air pump is correct
+            ["delay" => 500],
+            ["motor" => "air_pump", "direction" => "forward", "time" => 100],
+            // reverse for air pump is correct
+            ["delay" => 60000],
+            ["action" => "capture_image"],
+            ["delay" => 10000],
+            ["servo" => true, "angle" => 170, "duration" => 10000],
+            ["delay" => 1000]
+
+
+
+
+            // ["servo" => true, "angle" => 0, "duration" => 1000],
+            // ["delay" => 5000],
+            // ["motor" => "control_water", "direction" => "forward", "time" => $controlwater_time],
+            // ["delay" => $controlwater_time],
+            // ["motor" => "control_water", "direction" => "reverse", "time" => $controlwater_time],
+            // ["delay" => $controlwater_time],
+            // ["motor" => "nitrate1", "direction" => "forward", "time" => $nitrate1_time],
+            // ["delay" => $nitrate1_time],
+            // ["motor" => "nitrate1", "direction" => "reverse", "time" => $nitrate1_time],
+            // ["delay" => $nitrate1_time],
+            // ["motor" => "nitrate2", "direction" => "forward", "time" => $nitrate2_time],
+            // ["delay" => $nitrate2_time],
+            // ["motor" => "nitrate2", "direction" => "reverse", "time" => $nitrate2_time],
+            // ["delay" => $nitrate2_time],
+            // ["motor" => "air_pump", "direction" => "reverse", "time" => 2500],
+            // // reverse for air pump is correct
+            // ["delay" => 2500],
+            // ["servo" => true, "angle" => 90, "duration" => 1000],
+            // ["delay" => 1000],
+            // ["servo" => true, "angle" => 0, "duration" => 1000],
+            // ["delay" => 1000],
+            // ["action" => "capture_image"]
         ];
     } elseif ($testType === "ph") {
         $ph_time = getMotorTime($conn, "ph");
         $controlwater_time = getMotorTime($conn, "control_water");
+        $pondwater_time = getMotorTime($conn, "pond_water");
 
         $sequence = [
-            ["servo" => true, "angle" => 0, "duration" => 1000],
-            ["delay" => 5000],
+            ["servo" => true, "angle" => 0, "duration" => 10000],
+            ["delay" => 1000],
+            ["motor" => "pond_water", "direction" => "forward", "time" => $pondwater_time],
+            ["delay" => $pondwater_time],
+            ["delay" => 1000],
             ["motor" => "control_water", "direction" => "forward", "time" => $controlwater_time],
             ["delay" => $controlwater_time],
-            ["motor" => "control_water", "direction" => "reverse", "time" => $controlwater_time],
-            ["delay" => $controlwater_time],
+            ["delay" => 1000],
             ["motor" => "ph", "direction" => "forward", "time" => $ph_time],
-            ["delay" => $ph_time],
-            ["motor" => "ph", "direction" => "reverse", "time" => $ph_time],
-            ["delay" => $ph_time],
-            ["motor" => "air_pump", "direction" => "forward", "time" => 2500],
-            // reverse for air pump is correct
             ["delay" => 2500],
-            ["servo" => true, "angle" => 170, "duration" => 1000],
-            ["delay" => 5000],
-            ["servo" => true, "angle" => 0, "duration" => 1000],
-            ["delay" => 5000],
-            ["action" => "capture_image"]
+            ["motor" => "air_pump", "direction" => "forward", "time" => 100],
+            // reverse for air pump is correct
+            ["delay" => 500],
+            ["motor" => "air_pump", "direction" => "forward", "time" => 100],
+            // reverse for air pump is correct
+            // ["delay" => 60000],
+            ["action" => "capture_image"],
+            ["delay" => 10000],
+            ["servo" => true, "angle" => 170, "duration" => 10000],
+            ["delay" => 1000]
+
+
+            // ["servo" => true, "angle" => 0, "duration" => 1000],
+            // ["delay" => 5000],
+            // ["motor" => "control_water", "direction" => "forward", "time" => $controlwater_time],
+            // ["delay" => $controlwater_time],
+            // ["motor" => "control_water", "direction" => "reverse", "time" => $controlwater_time],
+            // ["delay" => $controlwater_time],
+            // ["motor" => "ph", "direction" => "forward", "time" => $ph_time],
+            // ["delay" => $ph_time],
+            // ["motor" => "ph", "direction" => "reverse", "time" => $ph_time],
+            // ["delay" => $ph_time],
+            // ["motor" => "air_pump", "direction" => "forward", "time" => 2500],
+            // // reverse for air pump is correct
+            // ["delay" => 2500],
+            // ["servo" => true, "angle" => 170, "duration" => 1000],
+            // ["delay" => 5000],
+            // ["servo" => true, "angle" => 0, "duration" => 1000],
+            // ["delay" => 5000],
+            // ["action" => "capture_image"]
         ];
+    } elseif ($testType === "flush_test_tube") {
+
+        $controlwater_time = getMotorTime($conn, "control_water");
+        $pondwater_time = getMotorTime($conn, "pond_water");
+
+        $sequence = [
+            ["servo" => true, "angle" => 0, "duration" => 10000],
+            ["delay" => 1000],
+            ["motor" => "control_water", "direction" => "forward", "time" => $controlwater_time],
+            ["delay" => 1000],
+            ["servo" => true, "angle" => 170, "duration" => 10000],
+            ["delay" => 1000]
+        ];    
     }
     return $sequence;
 }

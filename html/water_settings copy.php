@@ -1200,7 +1200,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $(this).closest('.time-input').remove(); // Remove the field
             });
 
-            // Save schedule data
             $('#saveWaterSchedule').on('click', function() {
                 const selectedDays = [];
                 const testingTimes = [];
@@ -1219,11 +1218,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                 });
 
-                if (selectedDays.length === 0 || testingTimes.length === 0) {
-                    alert('Please select at least one day and one testing time.');
-                    return;
-                }
-
                 // Save data via AJAX
                 $.ajax({
                     url: './water_settings_ajax/save_water_schedule.php',
@@ -1231,8 +1225,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     contentType: 'application/json',
                     data: JSON.stringify({
                         testType: testType,
-                        daysOfWeek: selectedDays,
-                        testingTimes: testingTimes,
+                        daysOfWeek: selectedDays, // Can be empty
+                        testingTimes: testingTimes, // Can be empty
                     }),
                     success: function() {
                         alert('Schedule saved successfully.');
@@ -1243,6 +1237,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     },
                 });
             });
+
 
             // Open modal and load schedules for default test type
             $('#openSchedulerButton').on('click', function() {
@@ -1259,7 +1254,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Update schedules when test type is changed
             $('#testTypeSelector').on('change', function() {
                 const testType = $(this).val();
-                fetchSchedulesForTestType(testType); // Load schedules for the selected test type
+                fetchAndPopulateSchedule(testType); // Fetch and display the schedule
             });
 
             // Initial population for the default test type
