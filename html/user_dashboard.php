@@ -79,55 +79,54 @@
     }
     body {
         display: grid;
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 260px 1fr;
         grid-template-rows: auto;
         height: 100vh;
     }
-
     .container_menu {
-        grid-area: 1 / 2 / -1 / -1;
+        grid-area: 2 / 2 / -1 / -1; /* Start below the header */
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto 1fr 1fr;
-        background-color: azure;
-        /* margin-top: var(--space-s); */
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        grid-template-rows: auto;
+        gap: 10px;
+        padding: 20px;
+        background-color: #e6e8ed;
     }
 
     .chart_header {
-        grid-area: 1 / 1 / 2 / span 3;
+        grid-area: 1;
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        margin-block: 2%;
+        gap: 20px;
     }
-
     #feedQuick:hover,
     #waterQuick:hover,
     #tempQuick:hover {
-        font-size: var(--step-2);
+        width: 85%;
+        padding: 15px;
+        cursor: pointer;
+        font-size: var(--step-3);
     }
-
     #feedQuick,
     #waterQuick,
     #tempQuick {
         background-color: khaki;
-        height: 100%;
-        width: 100%;
+        height: 15%;
+        width: 80%;
         color: goldenrod;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 10px;
         margin: var(--space-2xs);
-        font-size: var(--step-0);
+        font-size: var(--step-2);
         padding: var(--space-s);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     }
     #feedQuick{
-        margin-left: var(--space-9xl);
     }
-
     #waterQuick {
         background-color: cornflowerblue;
         color: whitesmoke;
@@ -138,35 +137,33 @@
     #tempQuick {
         background-color: lightcoral;
         color: whitesmoke;
-        margin-right: var(--space-9xl);
     }
-
     #feedQuick .icon,
     #waterQuick .icon,
-    #tempQuick .icon {
+    #tempQuick .icon{
         font-size: var(--step-5);
         margin-right: var(--space-xs);
     }
-
     .liveImage {
-        grid-row: 2 / span 2;
-        grid-column: 1 / span 3;
+        grid-column: 2;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        width: 100%;
+        width:100%;
         height: 100%;
         position: relative;
     }
     .videoWrapper {
         display: flex;
         justify-content: center;
+        align-items: center;
         width: 100%;
         height: 100%;
     }
     .liveImage #video1{
-        width:40%;
+        width: auto;/* Maintain aspect ratio */
+        height: auto;/* Maintain aspect ratio */
         transform: rotate(90deg);
         border: 5px solid #333;          /* Creates a solid border around the image */
         border-radius: 15px;               /* Adds rounded corners for a frame effect */
@@ -175,12 +172,12 @@
         background-color: #f8f8f8;         /* Background color for the frame effect */
     }
     #liveClock {
-        font-size: var(--step-0);
+        font-size: var(--step-2);
         color: darkslategray;
         text-align: center;
     }
     #liveClock:hover{
-        font-size: var(--step-2);
+        font-size: var(--step-3);
     }
     @media (max-width: 1010px){/* added by mark romualdo */
     .container_menu{
@@ -188,7 +185,6 @@
         grid-template-rows: auto; /* Adjust rows to fit the content */
         padding: 0px; /* Add padding to the container */
     }
-
     .chart_header {
         flex-direction: column; /* Stack the elements vertically */
         align-items: flex-start; /* Align items to the start of the container */
@@ -207,7 +203,6 @@
         width: 100%; /* Ensure full width */
         height: auto; /* Allow height to adjust */
     }
-
     .videoWrapper {
         overflow:hidden;
         margin-bottom: 5%;
@@ -260,6 +255,7 @@ $conn->close();
 ?>
 
 <body>
+<?php include "header.php"; ?>
     <?php include "user_menu.php"; ?>
     <div class="container_menu">
 
