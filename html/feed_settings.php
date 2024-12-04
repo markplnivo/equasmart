@@ -1,4 +1,3 @@
-<!-- j -->
 <?php ob_start();
 
 ini_set('display_errors', 1);
@@ -93,113 +92,123 @@ error_reporting(E_ALL); ?>
             --step-5: clamp(1.3997rem, 0.9577rem + 2.2098vw, 2.6703rem);
             --step-6: clamp(1.6796rem, 1.1028rem + 2.8839vw, 3.3379rem);
         }
-
         html {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            display: grid;
-            grid-template-columns: auto 1fr;
             margin: 0;
-            height: 100vh;
-            background-color: azure;
-        }
-
-        .container_menu {
-            grid-area: 1 / 2 / -1 / -1;
+            font-family: "Montserrat", sans-serif;
             display: grid;
-            grid-template-columns: 50% 50%;
-            grid-template-rows: 30% 70%;
-            background-color: azure;
+            grid-template-columns: 265px 1fr;
+            padding-top: 70px;
+        }
+        .container_menu {
+            grid-area: 2 / 2 / -1 / -1; /* Start below the header */
+            display: flex;
+            flex-direction: column;
+            align-items: stretch; /* Stretch to the container width */
+            gap: 20px; /* Add spacing between elements */
+            background-color: #e6e8ed;
             padding: 1%;
         }
-
-        h2 {
-            font-family: verdana;
-            text-align: center;
-            font-size: var(--step-1);
+        #pageTitle{
+            font-family: "Montserrat", sans-serif;
+            color: #666666;
+            font-weight: 600;
+            text-align: left;
+            margin-block: 1%;
         }
-
-        .date_container {
-            /* grid-area: 2/1/2/2; */
-            margin: auto;
-            /* margin-left: 24%; */
-            padding: 2%;
-            background-color: lemonchiffon;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-            /* vertical-align: top; */
-            width: 66%;
-            font-size: var(--step-0);
-        }
-
-        .date_container input {
-            /* width: 50%; */
-            margin: 0 auto;
-            padding: 5%;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            display: block;
-            font-size: var(--step--1);
-            width: 70%;
-        }
-
-        .chart_container {
+        /* Dashboard Cards */
+        .dashboard {
             display: grid;
-            grid-template-columns: 40% 1fr;
-            grid-area: 1/1/2/span 2;
-            width: 100%;
-            /* Increase width */
-            height: 120%;
-            /* Increase height */
-            padding-block: 1%;
-            padding-inline: 2%;
-            background-color: lemonchiffon;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-            margin: auto;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 90%;
+            margin: 0 auto; /* Adjust top and bottom spacing */
         }
-
+        .dashboard button:hover{
+            cursor: pointer;
+        }
+        .dashboard button:active {
+            transform: scale(0.95);
+            /* Scales down the button slightly */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            /* Reduces shadow to make it look pressed */
+        }
+        .card {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+            border: 1px solid #d2d2d3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .card i {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .card h3 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .card span {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .chart_container {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            /* Increase width */
+            max-height: 60%;
+            /* Increase height */
+            padding: 2%;
+            background-color: white;
+            border: 1px solid #d2d2d3;
+            border-radius: 5px;
+            box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+        }
+        .lineChart_container{
+            max-width: 100%;
+            height: 100%;
+        }
         #lineChart {
             width: 100%;
-            /* Make canvas width 100% of container */
-            height: 100%;
-            /* Make canvas height 100% of container */
+            height: 80%;
         }
-
+        .date_container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
+        }
+        .date_container h2{
+            font-size: var(--step-0);
+            color: #666666;
+            font-family: "Montserrat", sans-serif;
+        }
+        .date_container input {
+            width: 20%;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #d2d2d3;
+            box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+            display: block;
+            font-size: var(--step--1);
+            text-align: center;
+        }
         label {
             display: block;
             margin-bottom: 8px;
             text-align: center;
         }
-
-        .view-buttons {
-            display: flex;
-            flex-direction: column;
-            row-gap: 10px;
-        }
-
-        #feedLogs {
-            /* view feed logs button */
-            font-size: var(--step-0);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: lightsalmon;
-            color: #000;
-            height: auto;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-            width: 65%;
-            margin: 5px auto;
-        }
-
-        #feedLogs:hover {
-            background-color: #ff8554;
-        }
-
         .button-container {
             text-align: center;
             margin-top: 20px;
@@ -207,12 +216,10 @@ error_reporting(E_ALL); ?>
             justify-content: flex-end;
             /* Align items to the right */
         }
-
         .button-container button {
             width: 20%;
             /* Adjust width if needed */
         }
-
         /* Added styles for new containers */
         .feedset_container {
             /* grid-area: 2 / 1 / 3 / 2; */
@@ -227,30 +234,18 @@ error_reporting(E_ALL); ?>
             display: inline-block;
             vertical-align: top; */
         }
-
         .confmen_container {
-            display: grid;
-            margin: 3% auto;
-            grid-area: 2 / 1 / 3 / span 2;
-            width: 100%;
-            /* height: 85%;
-            margin-left: 10%; */
-            margin-top: 5%;
-            padding: 20px;
-            background-color: lemonchiffon;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-            /* display: inline-block;
-            vertical-align: top; */
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr;
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            padding: 2%;
+            background-color: white;
+            border: 1px solid #d2d2d3;
+            border-radius: 5px;
+            box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
             gap: 2%;
         }
-
-        h4 {
-            text-align: center;
-        }
-
         .boxSettings {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -258,49 +253,47 @@ error_reporting(E_ALL); ?>
             width: 100%;
             margin: 3% auto;
             padding: var(--space-2xs);
-            background-color: #fff;
-            border-radius: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: honeydew;
             font-style: arial;
             gap: var(--space-2xs);
             /* Added gap */
         }
-
         .button {
+            width: 100%;
             display: inline-block;
-            padding-block: var(--space-xs);
-            padding-inline: var(--space-2xl);
-            font-size: var(--step-0);
+            padding: 25px;
+            font-size: var(--step-1);
+            font-family: "Montserrat", sans-serif;
             font-weight: bold;
             text-align: center;
-            text-decoration: none;
             color: #fff;
-            background-color: mediumaquamarine;
+            background-color: #007bff;
             border: none;
             border-radius: 5px;
+            box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+            border: 1px solid #d2d2d3;
             cursor: pointer;
-            margin: 10px;
         }
-
         /* Hover effect */
         .button:hover {
-            background-color: mediumseagreen;
+            background-color: #0056b3;
         }
-
-        #pageTitle {
-            grid-area: 1 / 1 / 1 / span 3;
-            height: 10px;
+        .button:active {
+            transform: scale(0.95);
+            /* Scales down the button slightly */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            /* Reduces shadow to make it look pressed */
         }
-
         .gear-icon {
+            color: #666666;
             min-width: 10%;
             display: inline-block;
             cursor: pointer;
-            margin: 1%;
-            font-size: var(--step-1);
         }
-
+        #changeSettings {
+            color: #666666;
+            font-size: var(--step-0);
+            font-family: "Montserrat", sans-serif;
+        }
         .overlay {
             position: fixed;
             top: 0;
@@ -313,7 +306,6 @@ error_reporting(E_ALL); ?>
             align-items: center;
             z-index: 1000;
         }
-
         .overlay-content {
             background-color: white;
             padding: 20px;
@@ -322,23 +314,19 @@ error_reporting(E_ALL); ?>
             max-width: 500px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
         .overlay-content h2 {
             text-align: center;
         }
-
         .overlay-content form {
             display: flex;
             flex-direction: column;
         }
-
         .overlay-content form input {
             margin-bottom: 15px;
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
         }
-
         .overlay-content form button {
             padding: 10px;
             border: none;
@@ -348,64 +336,53 @@ error_reporting(E_ALL); ?>
             font-size: 16px;
             cursor: pointer;
         }
-
         .overlay-content form button:hover {
             background-color: mediumseagreen;
         }
-
         #feedSettingsForm {
             font-size: 20px;
         }
-
         .boxSettings .icon {
             font-size: var(--step-1);
             margin: var(--space-3xs-2xs);
         }
-
         .boxSettings span {
             text-align: center;
             font-size: var(--step-2);
         }
-
         .boxSettings #amountbox {
             grid-area: 2 / 1;
             background-color: orange;
             padding: 20px;
             border-radius: 30px;
+            box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+            border: 1px solid #d2d2d3;
         }
-
         .boxSettings #sessionbox {
             grid-area: 2 / 2;
             background-color: moccasin;
             padding: 20px;
             border-radius: 30px;
+            box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+            border: 1px solid #d2d2d3;
         }
-
         .boxSettings #adjustbox {
             grid-area: 2 / 3;
             background-color: palegreen;
             padding: 20px;
             border-radius: 30px;
+            box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+            border: 1px solid #d2d2d3;
         }
-
-        #changeSettings {
-            grid-area: 1 / 1 / 1 / span 3;
-            margin-block: 3%;
-            margin-inline: 3%;
-            font-size: var(--step-0);
-        }
-
         .settingsdef {
             font-size: 16px;
         }
-
         .day-toggle {
             margin-bottom: 10px;
             display: flex;
             justify-content: center;
             column-gap: 15px;
         }
-
         .day-toggle button {
             padding: var(--space-2xs);
             border: none;
@@ -413,12 +390,10 @@ error_reporting(E_ALL); ?>
             cursor: pointer;
             font-size: var(--step-1);
         }
-
         .day-toggle button.active {
             background-color: mediumaquamarine;
             color: white;
         }
-
         #feedingTimesContainer {
             height: auto;
             /* Set the desired height */
@@ -431,7 +406,6 @@ error_reporting(E_ALL); ?>
             /* background-color: #f9f9f9; */
             display: grid;
         }
-
         .boxx {
             text-align: center;
         }
@@ -439,7 +413,6 @@ error_reporting(E_ALL); ?>
         .boxx label {
             font-size: var(--step-1);
         }
-
         .boxx input {
             font-size: var(--step-1);
         }
@@ -567,39 +540,13 @@ error_reporting(E_ALL); ?>
             text-decoration: none;
             cursor: pointer;
         }
-
         #debugMenu {
             grid-area: 1 / 1 / 1 / span 3;
         }
-
         #calibrateMotorBtn {
             grid-area: 3 / 1/ 4/ span 3;
             padding-block: var(--space-s);
         }
-
-        .view-buttons {
-            display: flex;
-            justify-content: start;
-            margin-bottom: 1%;
-            margin-top: 1%;
-        }
-
-        .view-buttons button {
-            margin: auto 0;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: lightsalmon;
-            color: #000;
-            height: 50%;
-        }
-
-        .view-buttons button:hover {
-            background-color: peru;
-        }
-
         /* Styling for the log table */
         #feedLogTable {
             width: 100%;
@@ -668,7 +615,7 @@ error_reporting(E_ALL); ?>
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.0);
             display: none;
             /* Initially hidden */
             justify-content: center;
@@ -690,7 +637,6 @@ error_reporting(E_ALL); ?>
             max-width: 100%;
             max-height: 100%;
         }
-
         .chart_container .img-modal .close {
             position: absolute;
             top: 10px;
@@ -700,14 +646,11 @@ error_reporting(E_ALL); ?>
             color: #333;
             cursor: pointer;
         }
-
         .chart_container .img-modal .close:hover {
             color: #ff0000;
         }
-
         /* Scoped button styles */
         .chart_container .img-modal-button {
-
             padding: 5px 10px;
             background-color: #ff8554;
             color: #fff;
@@ -721,11 +664,9 @@ error_reporting(E_ALL); ?>
             max-width: 100%;
             margin: 0 auto;
         }
-
         .chart_container .img-modal-button:hover {
             background-color: #0056b3;
         }
-
         @media (max-width: 1010px) {
             body {
                 display: grid;
@@ -734,7 +675,6 @@ error_reporting(E_ALL); ?>
                 height: 100vh;
                 background-color: azure;
             }
-
             #pageTitle,
             #debugMenu {
                 grid-area: unset;
@@ -752,12 +692,6 @@ error_reporting(E_ALL); ?>
                 display: flex;
                 flex-direction: column;
             }
-
-            #feedLogs {
-                width: 65%;
-                align-self: center;
-            }
-
             .date_container {
                 grid-area: auto;
                 margin: 2% auto;
@@ -874,20 +808,70 @@ error_reporting(E_ALL); ?>
             }
 
         }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
 
+            .card h3 {
+                font-size: 20px;
+            }
+
+            .card span {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .card h3 {
+                font-size: 18px;
+            }
+
+            .card span {
+                font-size: 10px;
+            }
+        }
 
     </style>
 </head>
 
 <body>
+    <?php include "header.php"; ?>
+
     <?php include "user_menu.php"; ?>
+
+    
     <div class="container_menu">
         <h2 id="pageTitle">FEED SETTINGS</h2>
         <!-- Debug Menu Icon -->
-        <div id="debugMenu">
+        <!-- <div id="debugMenu">
             <i id="openDebug" class="fa-solid fa-gear gear-icon" onclick="openDebugMenu()">debug</i>
+        </div> -->
+            <!-- Dashboard Cards -->
+        <div class="dashboard">
+            <button class="card" id="feedLogs">
+                <i class="fas fa-history"></i>
+                <span>View Logs</span>
+            </button>
+            <button class="card img-modal-button" id="openImageModal">
+                <i class="fa-solid fa-clipboard"></i>
+                <span>Feeding Information</span>
+            </button>
+            <button class="card" id="feedTimes-modal-button">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Feeding Times Settings</span>
+            </button>
+            <!-- <button class="card">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>$4500</h3>
+                <span>Earnings</span>
+            </button> -->
         </div>
-
         <div id="logModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeLogModal()">&times;</span>
@@ -927,9 +911,62 @@ error_reporting(E_ALL); ?>
                 <p id="statusMessage"></p>
             </div>
         </div>
-
+        <!-- Left Container -->
+        <!-- Daily Feed History Container -->
+        <div class="chart_container">
+            <div class="date_container">
+                    <h2>Select Date</h2>
+                    <input id="date" type="date" value="2021-07-22">
+            </div>
+            <div class="lineChart_container">
+            <canvas id="lineChart"></canvas>
+            </div>
+            <!-- Modal Structure -->
+            <div id="imageModal" class="img-modal">
+                <div class="img-modal-content">
+                    <span class="close">&times;</span>
+                    <img id="modalImage" src="images/feeding.png" alt="Captured Image">
+                </div>
+            </div>
+        </div>
+        <!-- Link to the external CSS file -->
+        <link rel="stylesheet" href="styles.css">
+        <!-- FEEDING TIMES MODAL/CONTAINER-->
+        <div id="FeedingTimesModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeFeedingTimesModal()">&times;</span>
+                    <div class="box1" id="feedingTimesContainer">
+                            <h4>Configuration Menu for Feeding Times</h4>
+                            <!-- Feeding times will be dynamically inserted here -->
+                            <button class="button" id="saveFeedingTimes">Save Feeding Times</button>
+                            <!-- <button class="button" id="resetFeedingTimes">Reset to Default</button>  -->
+                    </div>
+            </div>
+        </div>
+        <!-- Additional containers -->
+        <div class="confmen_container">
+                <i class="fa-solid fa-gear gear-icon">
+                <span id="changeSettings" >Change Settings</span>
+                </i>
+                <div class="boxSettings">
+                    <div id="amountbox">
+                        <center><i class="fa-solid fa-utensils icon"></i> <span id="amountPerFeeding"></span></center>
+                        <center><span class="settingsdef"> Amount per Feeding (grams)</span></center>
+                    </div>
+                    <div id="sessionbox">
+                        <center><i class="fa-solid fa-sync icon"></i> <span id="feedingTimes"></span></center>
+                        <center><span class="settingsdef"> Feed session per day</span></center>
+                    </div>
+                    <div id="adjustbox">
+                        <center><i class="fa-solid fa-sliders-h icon"></i> <span id="adjustAmountBy"></span></center>
+                        <center><span class="settingsdef"> Adjust Amount by<br> (grams)</span></center>
+                    </div>
+                </div>
+                <button class="button" id="calibrateMotorBtn">Calibrate Motor</button>
+        </div>
+    </div>
         <!-- Calibration Modal -->
-        <div id="calibrateMotorModal" class="modal">
+    <div id="calibrateMotorModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeCalibrateModal()">&times;</span>
                 <h3>Calibrate Machine</h3>
@@ -945,73 +982,6 @@ error_reporting(E_ALL); ?>
                 <button class="overly_button" onclick="saveCalibrationData()">Save Calibration</button>
                 <p id="statusMessage"></p>
             </div>
-        </div>
-
-
-        <!-- Left Container -->
-        <div class="chart_container">
-            <div class="view-buttons">
-                <button id="feedLogs"><i class="fas fa-history"></i> View Logs</button>
-
-                <!-- Button to Open Modal for Image -->
-                <button id="openImageModal" class="img-modal-button"><i class="fas fa-image"></i>Feeding Information</button>
-
-                <div class="date_container">
-                    <h2>Select Date</h2>
-                    <input id="date" type="date" value="2021-07-22">
-                </div>
-            </div>
-
-            <canvas id="lineChart" style="justify-self:center;"></canvas>
-
-            <!-- Modal Structure -->
-            <div id="imageModal" class="img-modal">
-                <div class="img-modal-content">
-                    <span class="close">&times;</span>
-                    <img id="modalImage" src="images/feeding.png" alt="Captured Image">
-                </div>
-            </div>
-        </div>
-
-        <!-- Link to the external CSS file -->
-        <link rel="stylesheet" href="styles.css">
-
-
-
-
-        <!-- Additional containers -->
-
-
-        <div class="confmen_container">
-            <div class="box1" id="feedingTimesContainer">
-                <h4>Configuration Menu for Feeding Times</h4>
-                <!-- Feeding times will be dynamically inserted here -->
-                <button class="button" id="saveFeedingTimes">Save Feeding Times</button>
-                <!-- <button class="button" id="resetFeedingTimes">Reset to Default</button>  -->
-            </div>
-
-
-            <div class="boxSettings">
-                <i id="changeSettings" class="fa-solid fa-gear gear-icon"> Change settings</i>
-                <br></br>
-                <div id="amountbox">
-                    <center><i class="fa-solid fa-utensils icon"></i> <span id="amountPerFeeding"></span></center>
-                    <center><span class="settingsdef"> Amount per Feeding (grams)</span></center>
-                </div>
-                <br>
-                <div id="sessionbox">
-                    <center><i class="fa-solid fa-sync icon"></i> <span id="feedingTimes"></span></center>
-                    <center><span class="settingsdef"> Feed session per day</span></center>
-                </div>
-                <br>
-                <div id="adjustbox">
-                    <center><i class="fa-solid fa-sliders-h icon"></i> <span id="adjustAmountBy"></span></center>
-                    <center><span class="settingsdef"> Adjust Amount by<br> (grams)</span></center>
-                </div>
-                <button class="button" id="calibrateMotorBtn">Calibrate Motor</button>
-
-            </div>
-        </div>
     </div>
     <div class="overlay" id="overlay">
         <div class="overlay-content">
@@ -1030,6 +1000,7 @@ error_reporting(E_ALL); ?>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
     document.getElementById("requestButton").addEventListener("click", function() {
         fetch("send_distancerequest.php")
@@ -1039,7 +1010,6 @@ error_reporting(E_ALL); ?>
             })
             .catch(error => console.error("Error:", error));
     });
-
     // Fetch feed settings on page load
     $(document).ready(function() {
         fetchFeedSettings();
@@ -1093,18 +1063,22 @@ error_reporting(E_ALL); ?>
             modal.style.display = "none";
         }
     };
-
-
     // Function to open the calibration modal
     function openCalibrateModal() {
         document.getElementById('calibrateMotorModal').style.display = 'block';
     }
-
     // Function to close the calibration modal
     function closeCalibrateModal() {
         document.getElementById('calibrateMotorModal').style.display = 'none';
     }
-
+    // Function to open the FEEDING TIMES modal
+    function openFeedingTimesModal() {
+        document.getElementById('FeedingTimesModal').style.display = 'block';
+    }
+    // Function to close the FEEDING TIMES modal
+    function closeFeedingTimesModal() {
+        document.getElementById('FeedingTimesModal').style.display = 'none';
+    }
     // Function to save calibration data (grams per second)
     function saveCalibrationData() {
         var gramsPerSecond = document.getElementById('gramsPerSecond').value;
@@ -1131,10 +1105,10 @@ error_reporting(E_ALL); ?>
             }
         });
     }
-
     // Event listener to open modal on button click
     document.getElementById('calibrateMotorBtn').addEventListener('click', openCalibrateModal);
-
+    // Event listener to open feeding times modal on button click
+    document.getElementById('feedTimes-modal-button').addEventListener('click', openFeedingTimesModal);
     // Close modal if the user clicks outside the modal content
     window.onclick = function(event) {
         var modal = document.getElementById('calibrateMotorModal');
@@ -1199,52 +1173,113 @@ error_reporting(E_ALL); ?>
 
     // Initialize the chart
     var ctx = document.getElementById('lineChart').getContext('2d');
-    var lineChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: [], // Initially empty
-            datasets: [{
+
+// Create gradient for the dataset
+const gradientFill = ctx.createLinearGradient(0, 0, 0, 400);
+gradientFill.addColorStop(0, 'rgba(75, 192, 192, 0.5)'); // Light turquoise at top
+gradientFill.addColorStop(1, 'rgba(75, 192, 192, 0)'); // Transparent at bottom
+
+var lineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [], // Initially empty
+        datasets: [
+            {
                 label: 'Total Daily Feed History',
                 data: [], // Initially empty
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
+                backgroundColor: gradientFill, // Gradient fill
+                borderColor: 'rgba(75, 192, 192, 1)', // Solid turquoise border
+                borderWidth: 2, // Thicker line
+                tension: 0.4, // Smooth curve
+                fill: true, // Enable gradient fill
+                pointRadius: 4, // Point size
+                pointBackgroundColor: 'white', // White center for points
+                pointBorderColor: 'rgba(75, 192, 192, 1)', // Point border color
+                pointBorderWidth: 2, // Point border width
             },
-            tooltips: {
+        ],
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false, // Allow the chart to stretch to the container
+        plugins: {
+            legend: {
+                position: 'bottom', // Legend below the chart
+                labels: {
+                    font: {
+                        family: 'Arial', // Font family for labels
+                        size: 12, // Font size
+                        weight: 'bold', // Bold text
+                    },
+                    usePointStyle: true, // Use circular markers in legend
+                },
+            },
+            tooltip: {
                 callbacks: {
-                    label: function(tooltipItem, data) {
-                        var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                    label: function (tooltipItem) {
+                        let label = tooltipItem.dataset.label || '';
                         if (label) {
                             label += ': ';
                         }
-                        label += tooltipItem.yLabel;
+                        label += tooltipItem.raw; // Add value
                         return label;
                     },
-                    title: function(tooltipItems, data) {
-                        // Format the title (feed_time) in 12-hour format in tooltips
-                        var dateLabel = data.labels[tooltipItems[0].index];
-                        return `Time: ${dateLabel}`;
-                    }
-                }
-            }
-        }
-    });
+                    title: function (tooltipItems) {
+                        // Display the title (time) for tooltip
+                        return `Time: ${tooltipItems[0].label}`;
+                    },
+                },
+            },
+            title: {
+                display: true,
+                text: 'Daily Feed History', // Chart title
+                font: {
+                    size: 16,
+                    weight: 'bold',
+                    family: 'Arial',
+                },
+                padding: {
+                    top: 10,
+                    bottom: 20,
+                },
+            },
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false, // Hide vertical gridlines
+                },
+                title: {
+                    display: false, // Disable X-axis title
+                },
+            },
+            y: {
+                beginAtZero: true, // Start Y-axis at 0
+                grid: {
+                    color: 'rgba(0, 0, 0, 0.1)', // Light horizontal gridlines
+                },
+                title: {
+                    display: false, // Disable Y-axis title
+                },
+            },
+        },
+        elements: {
+            point: {
+                radius: 4, // Size of points
+                backgroundColor: 'white', // White center
+                borderWidth: 2, // Border width for points
+            },
+        },
+    },
+});
 
 
     // Fetch feed history for the selected date
     function fetchFeedHistory() {
         var selectedDate = document.getElementById('date').value;
         console.log('Fetching feed history for date:', selectedDate);
-
         $.ajax({
-            url: '/feed_settings_ajax/get_feed_history.php',
+            url: '/equasmart-main/feed_settings_ajax/get_feed_history.php',
             type: 'POST',
             dataType: 'json',
             data: {
@@ -1252,7 +1287,6 @@ error_reporting(E_ALL); ?>
             }, // Send selected date to the server
             success: function(response) {
                 console.log('Server response:', response);
-
                 if (response.message) {
                     console.warn(response.message);
                     alert(response.message);
@@ -1261,7 +1295,6 @@ error_reporting(E_ALL); ?>
                     lineChart.update();
                     return;
                 }
-
                 if (response && Array.isArray(response)) {
                     updateChart(response);
                 } else {
@@ -1600,6 +1633,7 @@ error_reporting(E_ALL); ?>
             }
         });
     });
+    
 </script>
 
 
