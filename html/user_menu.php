@@ -1,172 +1,166 @@
-<!-- github by jayson -->
 <?php ob_start(); ?>
-    <?php include "session_handler.php"; 
-    
-    if (!isLoggedIn()) {
-        header("Location: ../login_page.php");
-        exit();
-    }
-    ?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <title>Custom Menu Bar</title>
-        <style>
-            *, body{
+<?php include "session_handler.php"; 
+
+if (!isLoggedIn()) {
+    header("Location: ../login_page.php");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="shortcut icon" href="images/equasmartlogo_croppedlogo.png" type="image/svg+xml">
+    <link rel="stylesheet" href="css/css/all.min.css">
+    <link rel="stylesheet" href="css/css/fontawesome.min.css">
+    <title>Responsive Custom Menu Bar</title>
+    <style>
+        *, body {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', 'Arial', sans-serif;
-            }
-            
-        .custom-menu {
-            width: 200px; /* Set the width to 200px by default */
-            height: auto;
-            overflow: hidden;
-            background-color: mediumaquamarine;
-            margin: 0;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
+            font-family: "Montserrat", 'Poppins', 'Arial', sans-serif;
         }
-        .custom-menu ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 7px 0;
-        }
-        .custom-menu ul.logout {
-            margin-bottom: 30%;
-        }
-        .custom-menu li {
-            width: 100%;
-            color: white;
-        }
-        .custom-menu li a {
-            display: flex;
-            align-items: center;
-            color: whitesmoke;
-            text-decoration: none;
-            padding: 15px;
-            background-color: mediumaquamarine;
-        }
-        .custom-menu li:hover a {
-            background-color: mediumseagreen;
-            color: white;
-        }
-        .icon {
-            min-width: 10%;
-            text-align: center;
-            font-size: 1.5em;
-        }
-        .custom-menu .nav-text {
-            display: flex; /* Always show the nav-text */
-            margin-left: 15px;
-            font-size: 1em;
-        }
-        #menuLogo {
-            margin-top: 15px;
-            align-self: center;
-            width: 50%;
-        }
-        .logout button {
-            display: flex;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.2em;
-            cursor: pointer;
-            height: 100%;
-            width: 100%;
-            padding: 15px;
-        }
-        .logout li a{
-            padding: 0;
-        }
-        .logout span{
-            align-self: left;
-            font-size: 1.2em;
-            margin-right: 10%;
-        }
-    @media (max-width: 1010px) {
-        .custom-menu {
-            width: 60px;
-            height: auto;
-            overflow: hidden;
-            background-color: mediumaquamarine;
-            margin: 0;
-            transition: width .05s linear;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            grid-area: 1 / 1 / -1 / 2;
-        }
-        .custom-menu:hover {
-            display: flex;
-            width: 200px;
-            background: mediumaquamarine;
-            overflow: visible;
-            grid-area: 1 / 1 / -1 / 2;
-        }
-        .custom-menu ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 7px 0;
-        }
-        .custom-menu ul.logout {
-            margin-bottom: 30%;
-        }
-        .custom-menu li {
-            width: 100%;
-            color: white;
-        }
-        .custom-menu li a {
-            display: flex;
-            align-items: center;
-            color: whitesmoke;
-            text-decoration: none;
-            padding: 15px;
-            background-color: mediumaquamarine;
-        }
-        .custom-menu li:hover a {
-            background-color: mediumseagreen;
-            color: white;
-        }
-        .icon {
-            min-width: 10%;
-            text-align: center;
-            font-size: 1.5em;
-        }
-        .custom-menu .nav-text {
-            display: none;
-            font-size: 1.2em;
-        }
-        .custom-menu:hover .nav-text {
-            display: flex;
-            margin-left: 15px;
-            font-size: 1em;
-        }
-        #menuLogo {
-            margin-top: 15px;
-            align-self: center;
-            width: 50%;
-        }
-        .logout button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.2em;
-            cursor: pointer;
-        }
-        .logout li a{
-            padding: 0;
-        }
-    }
 
-        </style>
-    </head>
+        /* Default Menu Styles */
+        .custom-menu {
+            position: fixed;
+            width: 265px;
+            height: 100vh;
+            background-color: #21232d;
+            transition: transform 0.3s ease;
+            transform: translateX(0); /* Default is visible */
+            z-index: 1000;
+        }
+
+        .custom-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+            display: block;
+        }
+
+        .custom-menu li {
+            width: 100%;
+        }
+
+        .custom-menu li a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #9799ab;
+    text-decoration: none;
+    padding: 15px;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+        .custom-menu li:hover a {
+            color: #fff; /* Change text color on hover */
+        }
+
+        .custom-menu li a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(0, 123, 255, 0.3); /* Ripple color */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.custom-menu li:hover a::before {
+    width: 300px; /* Adjust size for ripple effect */
+    height: 300px; /* Adjust size for ripple effect */
+}
+
+
+        .custom-menu li:hover a {
+            color: #fff; /* Change text color on hover */
+        }
+
+
+
+        .icon {
+            min-width: 40px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .nav-text {
+            margin-left: 15px;
+            font-size: 1em;
+        }
+
+        #menuLogo {
+            margin: 20px auto;
+            width: 50%;
+            display: block;
+        }
+
+        .logout button {
+            background: none;
+            border: none;
+            color: #9799ab;
+            font-size: 1.2em;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+
+        /* Hamburger Button */
+        .hamburger {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            font-size: 2rem;
+            color: black;
+            background: none;
+            border: none;
+            z-index: 1100;
+            cursor: pointer;
+            display: none; /* Hidden by default */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .custom-menu {
+                width: 200px;
+                transform: translateX(-100%); /* Hidden by default */
+            }
+
+            .custom-menu.open {
+                transform: translateX(0); /* Slide into view */
+            }
+
+            .hamburger {
+                display: block; /* Show hamburger button */
+            }
+
+            .nav-text {
+                display: none; /* Hide text by default */
+            }
+
+            .custom-menu.open .nav-text {
+                display: inline-block; /* Show text when menu is open */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hamburger Button -->
+    <button class="hamburger">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <!-- Custom Menu -->
     <div class="custom-menu">
         <img src="./images/equasmartlogo_croppedlogo.png" alt="EquaSmart Logo" id="menuLogo">
         <ul>
@@ -176,12 +170,6 @@
                     <span class="nav-text">Dashboard</span>
                 </a>
             </li>
-            <!-- <li>
-                <a href="add_system.php">
-                    <span class="icon fa fa-plus-circle"></span>
-                    <span class="nav-text">Add a Machine</span>
-                </a>
-            </li> -->
             <li>
                 <a href="feed_settings.php">
                     <span class="icon fa fa-fish"></span>
@@ -194,12 +182,6 @@
                     <span class="nav-text">Water Settings</span>
                 </a>
             </li>
-            <!-- <li>
-                <a href="notification_settings.php">
-                    <span class="icon fa fa-bell"></span>
-                    <span class="nav-text">Notification Settings</span>
-                </a>
-            </li> -->
             <li>
                 <a href="print_logs.php">
                     <span class="icon fa fa-scroll"></span>
@@ -230,6 +212,22 @@
                 </li>
             </ul>
         </form>
+            </li>
+        </ul>
     </div>
-    </html>
-    <?php ob_end_flush(); ?>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menu = document.querySelector(".custom-menu");
+            const hamburger = document.querySelector(".hamburger");
+
+            // Toggle the menu on hamburger click
+            hamburger.addEventListener("click", () => {
+                menu.classList.toggle("open");
+            });
+        });
+    </script>
+</body>
+</html>
+<?php ob_end_flush(); ?>
