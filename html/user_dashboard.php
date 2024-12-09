@@ -53,10 +53,8 @@
         --space-10xl-11xl: clamp(54px, 36.2609px + 5.5435cqi, 105px);
         --space-11xl-12xl: clamp(60px, 40.5217px + 6.087cqi, 116px);
         --space-12xl-13xl: clamp(66px, 45.1304px + 6.5217cqi, 126px);
-
         /* Custom pairs */
         --space-s-l: clamp(12px, 7.4783px + 1.413cqi, 25px);
-
         /* FLUID RESPONSIVE FONT SIZE BASE VALUE = 9px MIN WIDTH = 425px AND MAX VALUE = 14px MAX WIDTH = 1480px*/
         --step--6: clamp(0.1884rem, 0.1741rem + 0.0713vw, 0.2294rem);
         --step--5: clamp(0.2261rem, 0.205rem + 0.1055vw, 0.2867rem);
@@ -79,94 +77,109 @@
     }
     body {
         display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto;
+        grid-template-columns: 265px 1fr;
         height: 100vh;
     }
-
     .container_menu {
-        grid-area: 1 / 2 / -1 / -1;
+        grid-area: 2 / 2 / -1 / -1; /* Start below the header */
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto 1fr 1fr;
-        background-color: azure;
-        /* margin-top: var(--space-s); */
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        grid-template-rows: auto;
+        gap: 10px;
+        padding: 20px;
+        background-color: #e6e8ed;
     }
-
     .chart_header {
-        grid-area: 1 / 1 / 2 / span 3;
+        grid-area: 1;
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        margin-block: 2%;
+        gap: 20px;
     }
-
-    #feedQuick:hover,
-    #waterQuick:hover,
-    #tempQuick:hover {
-        font-size: var(--step-2);
-    }
-
     #feedQuick,
     #waterQuick,
     #tempQuick {
-        background-color: khaki;
-        height: 100%;
-        width: 100%;
-        color: goldenrod;
+        height: 15%;
+        width: 80%;
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 10px;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        border: 1px solid #d2d2d3;
+        border-radius: 5px;
         margin: var(--space-2xs);
-        font-size: var(--step-0);
         padding: var(--space-s);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+        box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+    }
+    #feedQuick:hover,
+    #waterQuick:hover,
+    #tempQuick:hover {
+        cursor: pointer;
     }
     #feedQuick{
-        margin-left: var(--space-9xl);
+        color: #666666;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 900;
+        border-left: 7px solid goldenrod;;
     }
-
     #waterQuick {
-        background-color: cornflowerblue;
-        color: whitesmoke;
+        color: #666666;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 900;
+        border-left: 7px solid cornflowerblue;
     }
     #waterQuick a{
         text-decoration: none;
     }
     #tempQuick {
-        background-color: lightcoral;
-        color: whitesmoke;
-        margin-right: var(--space-9xl);
+        color: #666666;
+        font-family: "Montserrat", sans-serif;
+        border-left: 7px solid lightcoral;
     }
-
+    #liveClock {
+        font-weight: 900;
+        color: #666666;
+        text-align: center;
+    }
     #feedQuick .icon,
-    #waterQuick .icon,
-    #tempQuick .icon {
-        font-size: var(--step-5);
-        margin-right: var(--space-xs);
+    #waterQuick .fa-scale-unbalanced-flip,
+    #tempQuick .icon{
+        margin-right: 6%;
     }
-
+    #feedQuick .icon{
+        color: goldenrod;
+        font-size: var(--step-4);
+    }
+    #waterQuick .fa-scale-unbalanced-flip{
+        font-size: var(--step-3);
+        color: cornflowerblue;
+    }
+    #tempQuick .icon{
+        font-size: var(--step-3);
+        color: lightcoral;
+    }
     .liveImage {
-        grid-row: 2 / span 2;
-        grid-column: 1 / span 3;
+        grid-column: 2;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        width: 100%;
+        justify-items: center;
+        width:100%;
         height: 100%;
         position: relative;
     }
     .videoWrapper {
         display: flex;
-        justify-content: center;
+        justify-items: center;
+        align-items: center;
         width: 100%;
         height: 100%;
     }
     .liveImage #video1{
-        width:40%;
+        width: 600px;/* Maintain aspect ratio */
+        height: auto;/* Maintain aspect ratio */
         transform: rotate(90deg);
         border: 5px solid #333;          /* Creates a solid border around the image */
         border-radius: 15px;               /* Adds rounded corners for a frame effect */
@@ -174,60 +187,61 @@
         padding: .5%;                      /* Space between image and frame */
         background-color: #f8f8f8;         /* Background color for the frame effect */
     }
-    #liveClock {
-        font-size: var(--step-0);
-        color: darkslategray;
-        text-align: center;
+    @media (max-width: 1010px) {
+    body {
+        display: grid;
+        grid-template-rows: auto; /* Allow flexible height */
+        grid-template-columns: 1fr; /* Single column layout */
+        height: 100%; /* Occupy full height */
+        margin: 0;
+        padding: 0;
     }
-    #liveClock:hover{
-        font-size: var(--step-2);
+    .container_menu {
+        grid-area: 2 / 1 / -1 / -1;
+        width: 100%; /* Full width */
+        height: auto; /* Adjust to content */
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px; /* Space between items */
+        padding: 10px;
     }
-    @media (max-width: 1010px){/* added by mark romualdo */
-    .container_menu{
-        grid-template-columns: 1fr; /* Make the columns stack vertically */
-        grid-template-rows: auto; /* Adjust rows to fit the content */
-        padding: 0px; /* Add padding to the container */
+    .chart_header{
+        width: 100%;
+        height: 40%;
+        gap: 0;
     }
-
-    .chart_header {
-        flex-direction: column; /* Stack the elements vertically */
-        align-items: flex-start; /* Align items to the start of the container */
-        padding: 20px;
-    }
-    #feedQuick,
-    #waterQuick,
-    #tempQuick{
-        margin: 5px; /* Adjust margin for the quick stats */
+    #feedQuick, 
+    #waterQuick, 
+    #tempQuick {
+        width: 100%; /* Slight margin from edges */
+        height: 40%;
+        margin: 10px auto; /* Center items with spacing */
     }
     .liveImage {
-        display: flex;
-        flex-direction: column; /* Stack videos vertically */
-        align-items: center; /* Center align the videos */
-        justify-content: center;
-        width: 100%; /* Ensure full width */
-        height: auto; /* Allow height to adjust */
-    }
-
-    .videoWrapper {
-        overflow:hidden;
-        margin-bottom: 5%;
-        padding-inline: 5%;
+        width: 100%;
+        height: 100%;
+        margin-block: 10px;
     }
     .liveImage #video1 {
-        max-width: 800px; /* Adjust video width */
+        width: 350px;
         height: auto; /* Maintain aspect ratio */
-        transform: rotate(90deg);
-        align-self: center;
-        margin-block: 2%;
-        width: 100%;
+        margin: 0 auto;
     }
+}
     @media (max-width: 370px){
-        .liveImage #video1{
-            height: 200px;
-        }
+    .videoWrapper{
+        display: flex;
+        background-color: green;
+    }
+    .liveImage #video1 {
+        width: 250px;
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 auto;
+    }
     }
 
-}
 
 
 </style>
@@ -260,23 +274,21 @@ $conn->close();
 ?>
 
 <body>
+<?php include "header.php"; ?>
     <?php include "user_menu.php"; ?>
     <div class="container_menu">
 
         <!-- Header Section -->
         <div class="chart_header">
             <div id="feedQuick">
-                <span class="icon fa fa-fish"></span><span class="feedAmount">0 grams fed</span>
+            <span class="icon fa fa-fish"></span><span class="feedAmount">0 grams fed</span>
             </div>
             <div id="waterQuick">
-            <div id="calculated_value">Feed Remaining: <?php echo isset($calculated_value) ? round($calculated_value) : 0; ?> <i class="fa-solid fa-percent"></i></div>
-
-
-
+            <span class="fa-solid fa-scale-unbalanced-flip"></span><div id="calculated_value">Feed Remaining: <?php echo isset($calculated_value) ? round($calculated_value) : 0; ?> <i class="fa-solid fa-percent"></i></div>
             </div>
             <div id="tempQuick">
                 <!-- <span class="icon fa fa-thermometer-half"></span> -->
-                <span>    <span class="icon fa fa-clock"></span><span id="liveClock"></span></span>
+                <span class="icon fa fa-clock"></span><span id="liveClock"></span>
             </div>
         </div>
 
@@ -288,8 +300,8 @@ $conn->close();
             <div class="videoWrapper">
                 <!-- <video id="video1" autoplay controls> -->
                     <!-- <source src="./video/fish_swimming.mp4" type="video/mp4"> -->
-                    <!-- <img id="video1" src="http://esp32feeder.local:81/stream" alt="ESP32 Cam Stream" style="transform: rotate(90deg);margin-top:10%; margin-right:2%;"> -->
-                    <img id="video1" src="https://equasmart.local/esp32-feederstream" alt="ESP32 Cam Stream">
+                    <img id="video1" src="http://esp32feeder.local:81/stream" alt="ESP32 Cam Stream">
+                    <!-- <img id="video1" src="https://equasmart.local/esp32-feederstream" alt="ESP32 Cam Stream"> -->
 
                 <!-- </video> -->
                 <!-- <video id="video2" autoplay controls>
