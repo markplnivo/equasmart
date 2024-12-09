@@ -106,9 +106,10 @@
         .container_menu {
             grid-area: 1 / 2 / -1 / -1;
             display: grid;
-            grid-template-columns: 50% 50%;
+            grid-template-columns:50% 50%;
             grid-template-rows: auto;
             background-color: azure;
+
         }
 
         h2 {
@@ -119,12 +120,14 @@
 
         .container {
             grid-area: 2 / 1 / 2 / span 2;
-            width: 95%;
+            width: 86%;
+            max-width: 4000px; /* Add a maximum width to prevent over-expansion */
             margin: 0 auto;
             margin-top: 4%;
+            margin-left: 14%;
             padding: 4% 2%;
-            border-radius: 15px;
-            background-color: lemonchiffon;
+            border-radius: 10px;
+            background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             display: flex;
             flex-direction: row;
@@ -199,12 +202,13 @@
             align-items: center;
             /* Centers content horizontally */
             margin: auto;
+            margin-left: 28%;
             flex-direction: column;
-            background-color: lemonchiffon;
+            background-color: white;
             border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
             padding: 40px;
-            width: 90%;
+            width: 80%;
             height: 90%;
         }
 
@@ -297,7 +301,8 @@
             width: 90%;
             height: 90%;
             margin: auto;
-            background-color: lemonchiffon;
+            margin-left: 10%;
+            background-color: white;
             border-radius: 20px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
@@ -386,54 +391,80 @@
         }
 
         #testAmonia_btn {
-            background-color: #FF0000;
-            width: calc(50% - 10px);
-            /* Adjust to account for the gap */
-        }
-
-        #testAmonia_btn:hover {
-            background-color: #c91616;
+            background-color: #FF0000; /* Red */
         }
 
         #testNitrate_btn {
-            background-color: #0000FF;
-            width: calc(50% - 10px);
-            /* Adjust to account for the gap */
-        }
-
-        #testNitrate_btn:hover {
-            background-color: #1a1ac9;
+            background-color: #0000FF; /* Blue */
         }
 
         #testPh_btn {
-            background-color: #FFA500;
-            width: calc(50% - 10px);
-            /* Adjust to account for the gap */
-        }
-
-        #testPh_btn:hover {
-            background-color: #d18f17;
+            background-color: #FFA500; /* Orange */
         }
 
         #flushTube_btn {
-            background-color: #b651e8;
-            width: calc(50% - 10px);
-            /* Adjust to account for the gap */
-        }
-
-        #flushTube_btn:hover {
-            background-color: #9436c2;
+            background-color: #B651E8; /* Purple */
         }
 
         .openConfig_btn {
-            background-color: #4CAF50;
-            width: calc(100% - 10px);
-            /* Adjust to account for the gap */
+            background-color: #4CAF50; /* Green */
+        }
+
+        #testAmonia_btn:hover {
+            background-color: #C91616; /* Darker Red */
+        }
+
+        #testNitrate_btn:hover {
+            background-color: #1A1AC9; /* Darker Blue */
+        }
+
+        #testPh_btn:hover {
+            background-color: #D18F17; /* Darker Orange */
+        }
+
+        #flushTube_btn:hover {
+            background-color: #9436C2; /* Darker Purple */
         }
 
         .openConfig_btn:hover {
-            background-color: #23a627;
+            background-color: #23A627; /* Darker Green */
         }
+
+        /* Shared Button Styles */
+        #testAmonia_btn,
+        #testNitrate_btn,
+        #testPh_btn,
+        #flushTube_btn,
+        .openConfig_btn {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4),
+                        inset 0 -2px 5px rgba(0, 0, 0, 0.3),
+                        inset 0 2px 3px rgba(255, 255, 255, 0.4);
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 12px 24px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            outline: none;
+            transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+            width: calc(50% - 10px);
+        }
+
+        #testAmonia_btn:hover,
+        #testNitrate_btn:hover,
+        #testPh_btn:hover,
+        #flushTube_btn:hover,
+        .openConfig_btn:hover {
+            box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.6),
+                        inset 0 -2px 5px rgba(0, 0, 0, 0.4),
+                        3px 3px 6px rgba(0, 0, 0, 0.6);
+            transform: scale(0.98);
+        }
+
 
         #pageTitle {
             grid-area: 1 / 1 / 1 / span 3;
@@ -462,6 +493,34 @@
         #activateButton2:hover {
             background-color: #45a049;
         }
+
+        #saveTestResultsButton {
+    background-color: #4CAF50; /* Green color similar to Open Configuration */
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.3),
+                inset 0 2px 3px rgba(255, 255, 255, 0.4);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+}
+
+#saveTestResultsButton:hover {
+    background-color: #23A627; /* Darker green for hover */
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.6),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.4),
+                3px 3px 6px rgba(0, 0, 0, 0.6);
+    transform: scale(0.98);
+}
+
 
         .gallery-container {
             width: 100%;
@@ -915,6 +974,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <?php include "user_menu.php"; ?>
+    <?php include "header.php"; ?>
     <div class="container_menu">
         <!-- <h2 id="pageTitle">WATER SETTINGS</h2> -->
         <!-- Modal for Enlarged Image -->
@@ -1524,109 +1584,204 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         });
 
         document.addEventListener("DOMContentLoaded", function() {
-            const ctx = document.getElementById('lineChart').getContext('2d');
-            const lineChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: [],
-                    datasets: [{
-                            label: 'Ammonia',
-                            data: [],
-                            borderColor: '#ff0000',
-                            borderWidth: 3,
-                            tension: 0.4,
-                            pointRadius: 0,
-                            backgroundColor: 'rgba(255, 107, 107, 0.1)',
-                        },
-                        {
-                            label: 'Nitrate',
-                            data: [],
-                            borderColor: '#0000FF',
-                            borderWidth: 3,
-                            tension: 0.4,
-                            pointRadius: 0,
-                            backgroundColor: 'rgba(77, 150, 255, 0.1)',
-                        },
-                        {
-                            label: 'pH',
-                            data: [],
-                            borderColor: '#ffa500',
-                            borderWidth: 3,
-                            tension: 0.4,
-                            pointRadius: 0,
-                            backgroundColor: 'rgba(255, 217, 61, 0.1)',
-                        },
-                    ],
+    const ctx = document.getElementById('lineChart').getContext('2d');
+
+    // Gradients for datasets
+    const ammoniaGradient = ctx.createLinearGradient(0, 0, 0, 400);
+    ammoniaGradient.addColorStop(0, 'rgba(255, 107, 107, 0.5)');
+    ammoniaGradient.addColorStop(1, 'rgba(255, 107, 107, 0.1)');
+
+    const nitrateGradient = ctx.createLinearGradient(0, 0, 0, 400);
+    nitrateGradient.addColorStop(0, 'rgba(77, 150, 255, 0.5)');
+    nitrateGradient.addColorStop(1, 'rgba(77, 150, 255, 0.1)');
+
+    const phGradient = ctx.createLinearGradient(0, 0, 0, 400);
+    phGradient.addColorStop(0, 'rgba(255, 217, 61, 0.5)');
+    phGradient.addColorStop(1, 'rgba(255, 217, 61, 0.1)');
+
+    const lineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [], // Dynamically updated labels
+            datasets: [
+                {
+                    label: 'Ammonia',
+                    data: [],
+                    borderColor: '#ff0000',
+                    borderWidth: 3,
+                    tension: 0.4, // Smooth curve
+                    pointRadius: 3, // Highlighted points
+                    pointBackgroundColor: 'white',
+                    pointBorderColor: '#ff0000',
+                    backgroundColor: ammoniaGradient, // Gradient fill
+                    fill: true, // Enable gradient fill
                 },
-                options: {
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
+                {
+                    label: 'Nitrate',
+                    data: [],
+                    borderColor: '#0000FF',
+                    borderWidth: 3,
+                    tension: 0.4,
+                    pointRadius: 3,
+                    pointBackgroundColor: 'white',
+                    pointBorderColor: '#0000FF',
+                    backgroundColor: nitrateGradient,
+                    fill: true,
+                },
+                {
+                    label: 'pH',
+                    data: [],
+                    borderColor: '#ffa500',
+                    borderWidth: 3,
+                    tension: 0.4,
+                    pointRadius: 3,
+                    pointBackgroundColor: 'white',
+                    pointBorderColor: '#ffa500',
+                    backgroundColor: phGradient,
+                    fill: true,
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, // For flexibility in canvas sizing
+            plugins: {
+                legend: {
+                    position: 'bottom', // Legend below the chart
+                    labels: {
+                        font: {
+                            family: 'Arial', // Font family
+                            size: 12, // Font size
+                            weight: 'bold', // Bold text
                         },
-                        x: {
-                            grid: {
-                                display: false,
-                            },
+                        usePointStyle: true, // Circular markers
+                        padding: 20, // Spacing between legend items
+                    },
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            const value = tooltipItem.raw; // Data value
+                            return `${tooltipItem.dataset.label}: ${value}`;
+                        },
+                        title: function(tooltipItems) {
+                            return `Date: ${tooltipItems[0].label}`; // Tooltip title
+                        },
+                    },
+                    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Dark background
+                    titleFont: {
+                        size: 14,
+                        weight: 'bold',
+                    },
+                    bodyFont: {
+                        size: 12,
+                    },
+                    bodySpacing: 5,
+                    padding: 10,
+                    cornerRadius: 5,
+                },
+                title: {
+                    display: true,
+                    text: 'Water Quality Trends',
+                    font: {
+                        size: 16,
+                        weight: 'bold',
+                    },
+                    padding: {
+                        top: 10,
+                        bottom: 20,
+                    },
+                },
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false, // Hide vertical gridlines
+                    },
+                    ticks: {
+                        font: {
+                            size: 12,
+                            family: 'Arial',
                         },
                     },
                 },
-            });
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.1)', // Light gridlines
+                    },
+                    ticks: {
+                        font: {
+                            size: 12,
+                            family: 'Arial',
+                        },
+                    },
+                },
+            },
+            elements: {
+                line: {
+                    tension: 0.4, // Smooth curve
+                },
+                point: {
+                    radius: 4, // Size of points
+                    borderWidth: 2,
+                },
+            },
+        },
+    });
 
+    // Function to update chart data dynamically
+    function updateChart() {
+        const selectedDate = document.getElementById('calendar').value;
+        const dateRange = document.getElementById('dateRange').value;
 
-            function updateChart() {
-                const selectedDate = document.getElementById('calendar').value;
-                const dateRange = document.getElementById('dateRange').value;
+        fetch(`fetch_water_data.php?date=${selectedDate}&range=${dateRange}`)
+            .then((response) => response.json())
+            .then((data) => {
+                const labels = [];
+                const ammoniaData = [];
+                const nitrateData = [];
+                const pHData = [];
 
-                fetch(`fetch_water_data.php?date=${selectedDate}&range=${dateRange}`)
-                    .then((response) => response.json())
-                    .then((data) => {
-                        const labels = [];
-                        const ammoniaData = [];
-                        const nitrateData = [];
-                        const pHData = [];
+                data.forEach((entry) => {
+                    const date = entry.Date_and_Time;
+                    const value = parseFloat(entry.Value);
 
-                        // Process fetched data
-                        data.forEach((entry) => {
-                            const date = entry.Date_and_Time;
-                            const value = parseFloat(entry.Value);
+                    // Add unique dates to labels
+                    if (!labels.includes(date)) {
+                        labels.push(date);
+                    }
 
-                            // Push unique dates to labels
-                            if (!labels.includes(date)) {
-                                labels.push(date);
-                            }
+                    // Populate data arrays
+                    if (entry.Name === 'Ammonia') {
+                        ammoniaData.push(value);
+                    } else if (entry.Name === 'Nitrate') {
+                        nitrateData.push(value);
+                    } else if (entry.Name === 'pH') {
+                        pHData.push(value);
+                    }
+                });
 
-                            // Populate data arrays based on the Name field
-                            if (entry.Name === 'Ammonia') {
-                                ammoniaData.push(value);
-                            } else if (entry.Name === 'Nitrate') {
-                                nitrateData.push(value);
-                            } else if (entry.Name === 'pH') {
-                                pHData.push(value);
-                            }
-                        });
+                // Update chart with new data
+                lineChart.data.labels = labels;
+                lineChart.data.datasets[0].data = ammoniaData;
+                lineChart.data.datasets[1].data = nitrateData;
+                lineChart.data.datasets[2].data = pHData;
+                lineChart.update(); // Refresh the chart
+            })
+            .catch((error) => console.error('Error fetching data:', error));
+    }
 
-                        // Update chart data
-                        lineChart.data.labels = labels;
-                        lineChart.data.datasets[0].data = ammoniaData;
-                        lineChart.data.datasets[1].data = nitrateData;
-                        lineChart.data.datasets[2].data = pHData;
+    // Set default date and load data
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('calendar').value = today;
+    updateChart();
 
-                        // Refresh the chart to show new data
-                        lineChart.update();
-                    })
-                    .catch((error) => console.error('Error fetching data:', error));
-            }
+    // Trigger chart update on date or range change
+    document.getElementById('calendar').addEventListener('change', updateChart);
+    document.getElementById('dateRange').addEventListener('change', updateChart);
+});
 
-            // Set default date and load initial data
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('calendar').value = today;
-            updateChart();
-
-            // Trigger chart update when date or range changes
-            document.getElementById('calendar').addEventListener('change', updateChart);
-            document.getElementById('dateRange').addEventListener('change', updateChart);
-        });
 
         // Initialize with default values
         document.addEventListener("DOMContentLoaded", function() {
